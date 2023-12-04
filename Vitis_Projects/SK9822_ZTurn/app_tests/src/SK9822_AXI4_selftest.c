@@ -5,10 +5,11 @@
 #include "stdio.h"
 #include "xil_io.h"
 
+#include <stdint.h>
 #include <unistd.h>
 
 /************************** Constant Definitions ***************************/
-#define READ_WRITE_MUL_FACTOR 0x10
+
 
 /************************** Function Definitions ***************************/
 
@@ -101,7 +102,7 @@ SK9822_TransmissionOptions init_SK9822_TransmissionOptionsType(
     return init;
 } 
 
-bool SK9822_transmission_setup(SK9822_BaseAddresses addresses, SK9822_TransmissionOptions options)
+void SK9822_transmission_setup(SK9822_BaseAddresses addresses, SK9822_TransmissionOptions options)
 {
 	SK9822_set_transmission_interrupt_enable(addresses.Settings_BaseAddress, false);
 
@@ -114,7 +115,7 @@ bool SK9822_transmission_setup(SK9822_BaseAddresses addresses, SK9822_Transmissi
 	SK9822_set_transmission_interrupt_enable(addresses.Settings_BaseAddress, options.transmission_interrupt_enable);
 }
 
-bool SK9822_binaryColorTransmissionTest(SK9822_BaseAddresses addresses, SK9822_TransmissionOptions options)
+void SK9822_binaryColorTransmissionTest(SK9822_BaseAddresses addresses, SK9822_TransmissionOptions options)
 {
 	SK9822_transmission_setup(addresses, options);
 
@@ -129,7 +130,7 @@ bool SK9822_binaryColorTransmissionTest(SK9822_BaseAddresses addresses, SK9822_T
 	SK9822_start_transmission(addresses.Settings_BaseAddress);
 }
 
-bool SK9822_fullColorTransmissionTest(SK9822_BaseAddresses addresses, SK9822_TransmissionOptions options)
+void SK9822_fullColorTransmissionTest(SK9822_BaseAddresses addresses, SK9822_TransmissionOptions options)
 {
 	SK9822_transmission_setup(addresses, options);
 
@@ -142,38 +143,57 @@ bool SK9822_fullColorTransmissionTest(SK9822_BaseAddresses addresses, SK9822_Tra
 	SK9822_start_transmission(addresses.Settings_BaseAddress);
 }
 
-void SK9822_waitTrasmissionEnd(SK9822_BaseAddresses addresses, size_t wait_us)
+bool SK9822_waitTrasmissionEnd(SK9822_BaseAddresses addresses, size_t wait_us)
 {
 	usleep(wait_us);
 	while (SK9822_get_transmission_indication(addresses.Settings_BaseAddress))
 	{
 		SK9822_set_continuous_transmission(addresses.Settings_BaseAddress, false);
 	}
+
+    return SK9822_get_transmission_interrupt_status(addresses.Settings_BaseAddress);
 }
 
-bool SK9822_AsyclicTransmissionTest(SK9822_BaseAddresses addresses)
+bool SK9822_AcyclicTransmissionTest(SK9822_BaseAddresses addresses)
 {
 	bool predicate = true;
 
-	SK9822_waitTrasmissionEnd(addresses, 1000);
+	predicate = predicate && SK9822_waitTrasmissionEnd(addresses, 1000);
 
-	predicate = predicate && SK9822_binaryColorTransmissionTest(addresses, init_SK9822_TransmissionOptionsType(binary, global, max_brightness, true, false));
-	SK9822_waitTrasmissionEnd(addresses, 1000);
-	predicate = predicate && SK9822_binaryColorTransmissionTest(addresses, init_SK9822_TransmissionOptionsType(binary, individual, max_brightness, true, false));
+	SK9822_binaryColorTransmissionTest(addresses, init_SK9822_TransmissionOptionsType(binary, global, max_brightness, true, false));
+	predicate = predicate && SK9822_waitTrasmissionEnd(addresses, 1000);
 
-	SK9822_waitTrasmissionEnd(addresses, 1000);
-	predicate = predicate && SK9822_fullColorTransmissionTest(addresses, init_SK9822_TransmissionOptionsType(full, global, max_brightness, true, false));
+	SK9822_binaryColorTransmissionTest(addresses, init_SK9822_TransmissionOptionsType(binary, individual, max_brightness, true, false));
+	predicate = predicate && SK9822_waitTrasmissionEnd(addresses, 1000);
 
-	SK9822_waitTrasmissionEnd(addresses, 1000);
-	predicate = predicate && SK9822_fullColorTransmissionTest(addresses, init_SK9822_TransmissionOptionsType(full, individual, max_brightness, true, false));
-    
-	SK9822_waitTrasmissionEnd(addresses, 1000);
+	SK9822_fullColorTransmissionTest(addresses, init_SK9822_TransmissionOptionsType(full, global, max_brightness, true, false));
+	predicate = predicate && SK9822_waitTrasmissionEnd(addresses, 1000);
+
+	SK9822_fullColorTransmissionTest(addresses, init_SK9822_TransmissionOptionsType(full, individual, max_brightness, true, false));
+	predicate = predicate && SK9822_waitTrasmissionEnd(addresses, 1000);
 
 	return predicate;
 }
 
 bool SK9822_CyclicTransmissionTest(SK9822_BaseAddresses addresses)
 {
+    bool predicate = true;
+
+	predicate = predicate && SK9822_waitTrasmissionEnd(addresses, 1000);
+
+	SK9822_binaryColorTransmissionTest(addresses, init_SK9822_TransmissionOptionsType(binary, global, max_brightness, true, true));
+	predicate = predicate && SK9822_waitTrasmissionEnd(addresses, 1000);
+
+	SK9822_binaryColorTransmissionTest(addresses, init_SK9822_TransmissionOptionsType(binary, individual, max_brightness, true, true));
+	predicate = predicate && SK9822_waitTrasmissionEnd(addresses, 1000);
+
+	SK9822_fullColorTransmissionTest(addresses, init_SK9822_TransmissionOptionsType(full, global, max_brightness, true, true));
+	predicate = predicate && SK9822_waitTrasmissionEnd(addresses, 1000);
+
+	SK9822_fullColorTransmissionTest(addresses, init_SK9822_TransmissionOptionsType(full, individual, max_brightness, true, true));
+	predicate = predicate && SK9822_waitTrasmissionEnd(addresses, 1000);
+
+	return predicate;
 }
 
 /**
@@ -206,10 +226,42 @@ XStatus SK9822_AXI4_Reg_SelfTest(uintptr_t Settings_BaseAddress, uintptr_t LED_B
 	xil_printf("******************************\n\n\r");
 
 	SK9822_BaseAddresses addresses = init_SK9822_BaseAddressesType(Settings_BaseAddress, LED_BaseAddress, R_BaseAddress, G_BaseAddress, B_BaseAddress);
-    
-	SK9822_resetTest(addresses);
 
-	SK9822_resetTest(addresses);
+    // testcase: reset before transmissions
+	bool reset_1_result = SK9822_resetTest(addresses);
+    if (reset_1_result){
+        xil_printf("Reset_1 passed.\n");
+    }
+    else{
+        xil_printf("Reset_1 failed.\n");
+    }
+
+    // testcase: one-time transmission
+    bool acyclic_result = SK9822_AcyclicTransmissionTest(addresses);
+    if (acyclic_result){
+        xil_printf("Acyclic transmission passed.\n");
+    }
+    else{
+        xil_printf("Acyclic transmission failed.\n");
+    }
+
+    // testcase: many-times transmission
+    bool cyclic_result = SK9822_CyclicTransmissionTest(addresses);
+    if (cyclic_result){
+        xil_printf("Cyclic transmission passed.\n");
+    }
+    else{
+        xil_printf("Cyclic transmission failed.\n");
+    }
+
+    // testcase: reset after transmissions    
+	bool reset_2_result = SK9822_resetTest(addresses);
+    if (reset_2_result){
+        xil_printf("Reset_2 passed.\n");
+    }
+    else{
+        xil_printf("Reset_2 failed.\n");
+    }
 
 	return XST_SUCCESS;
 }

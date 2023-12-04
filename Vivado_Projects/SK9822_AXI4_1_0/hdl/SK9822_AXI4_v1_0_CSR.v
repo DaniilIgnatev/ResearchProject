@@ -276,16 +276,16 @@
                     slv_reg0[0] <= CSR_TI;
                     
                     //TSR
-                    if (TSR_ST)
-                        slv_reg1[0] <= 0;
+//                    if (TSR_ST)
+//                        slv_reg1[0] <= 0;
                     
                     // ICSR
                     slv_reg3[1] <= ICSR_TI;
-                    if (ICSR_CTI)
-                        slv_reg3[2] <= 0;
+//                    if (ICSR_CTI)
+//                        slv_reg3[2] <= 0;
                     
-                    if (ICSR_STI)    
-                        slv_reg3[3] <= 0;
+//                    if (ICSR_STI)    
+//                        slv_reg3[3] <= 0;
                 end
 	        endcase
 	      end

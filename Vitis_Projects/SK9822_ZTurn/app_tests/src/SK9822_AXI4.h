@@ -321,57 +321,56 @@ BrightnessSourcesEnum;
 // Settings structure
 typedef struct
 {
-  volatile uint32_t reg;
-
-  union
-  {
-    volatile uint8_t reg;
-
-    struct
+    union
     {
-      volatile uint8_t TI : 1;    // Transmission status
-      volatile uint8_t INSEL : 1; // Color source selection
-      volatile uint8_t LOOP : 1;  // Continuous transmission option
-      uint8_t : 5;
-    } bit;
-  } CSR;
+        volatile uint32_t reg;
 
-  union
-  {
-    volatile uint8_t reg;
+        struct
+        {
+            volatile uint32_t TI : 1;    // Transmission status
+            volatile uint32_t INSEL : 1; // Color source selection
+            volatile uint32_t LOOP : 1;  // Continuous transmission option
+            uint32_t : 29;
+        } bit;
+    } CSR;
 
-    struct
+    union
     {
-      volatile uint8_t ST : 1; // Start transmission command
-      uint8_t : 7;
-    } bit;
-  } TSR;
+        volatile uint32_t reg;
 
-  union
-  {
-    volatile uint8_t reg;
+        struct
+        {
+            volatile uint32_t ST : 1; // Start transmission command
+            uint32_t : 30;
+        } bit;
+    } TSR;
 
-    struct
+    union
     {
-      volatile uint8_t INSEL : 1; // Global brightness input selection in full colored mode
-      uint8_t : 2;
-      volatile uint8_t GB : 5; // Global brightness value
-    } bit;
-  } GBCR;
+        volatile uint32_t reg;
 
-  union
-  {
-    volatile uint8_t reg;
+        struct
+        {
+            volatile uint32_t INSEL : 1; // Global brightness input selection in full colored mode
+            uint32_t : 2;
+            volatile uint32_t GB : 5; // Global brightness value
+            uint32_t : 24;
+        } bit;
+    } GBCR;
 
-    struct
+    union
     {
-      volatile uint8_t TIEN : 1; // Transmission interrupt enable
-      volatile uint8_t TI : 1;   // Transmission interrupt status
-      volatile uint8_t CTI : 1;  // Clear transmission interrupt
-      volatile uint8_t STI : 1;  // Set transmission interrupt
-      uint8_t : 4;
-    } bit;
-  } ICSR;
+        volatile uint32_t reg;
+
+        struct
+        {
+            volatile uint32_t TIEN : 1; // Transmission interrupt enable
+            volatile uint32_t TI : 1;   // Transmission interrupt status
+            volatile uint32_t CTI : 1;  // Clear transmission interrupt
+            volatile uint32_t STI : 1;  // Set transmission interrupt
+            uint32_t : 28;
+        } bit;
+    } ICSR;
 } Settings_Type;
 
 // Arbitrary LED structure
@@ -390,6 +389,8 @@ typedef union
 } LED_Type;
 
 Settings_Type get_Settings(uintptr_t Settings_BaseAddress);
+
+void set_Settings(uintptr_t Settings_BaseAddress, Settings_Type value);
 
 void SK9822_reset(uintptr_t Settings_BaseAddress, uintptr_t LED_BaseAddress, uintptr_t R_BaseAddress, uintptr_t G_BaseAddress, uintptr_t B_BaseAddress);
 

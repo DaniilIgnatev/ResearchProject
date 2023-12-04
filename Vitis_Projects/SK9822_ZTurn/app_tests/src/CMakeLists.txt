@@ -21,10 +21,23 @@ collect(PROJECT_LIB_DEPS xiltimer)
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
 collect(PROJECT_LIB_DEPS gcc)
 collect(PROJECT_LIB_DEPS c)
 
-collect (PROJECT_LIB_SOURCES helloworld.c)
+collect (PROJECT_LIB_SOURCES main.c)
 collect (PROJECT_LIB_SOURCES platform.c)
 collect (PROJECT_LIB_SOURCES SK9822_AXI4.c)
 collect (PROJECT_LIB_SOURCES SK9822_AXI4_selftest.c)

@@ -8,12 +8,21 @@
 /************************** Function Definitions ***************************/
 
 Settings_Type get_Settings(uintptr_t Settings_BaseAddress){
-    uint32_t data = SK9822_AXI4_mReadReg(Settings_BaseAddress, SK9822_AXI4_CSR_SLV_REG0_OFFSET);
-
     Settings_Type settings;
-    settings.reg = data;
+
+    settings.CSR.reg = SK9822_AXI4_mReadReg(Settings_BaseAddress, SK9822_AXI4_CSR_SLV_REG0_OFFSET);
+    settings.TSR.reg = SK9822_AXI4_mReadReg(Settings_BaseAddress, SK9822_AXI4_CSR_SLV_REG1_OFFSET);
+    settings.GBCR.reg = SK9822_AXI4_mReadReg(Settings_BaseAddress, SK9822_AXI4_CSR_SLV_REG2_OFFSET);
+    settings.ICSR.reg = SK9822_AXI4_mReadReg(Settings_BaseAddress, SK9822_AXI4_CSR_SLV_REG3_OFFSET);
 
     return settings;
+}
+
+void set_Settings(uintptr_t Settings_BaseAddress, Settings_Type value){
+    SK9822_AXI4_mWriteReg(Settings_BaseAddress, SK9822_AXI4_CSR_SLV_REG0_OFFSET, value.CSR.reg);
+    SK9822_AXI4_mWriteReg(Settings_BaseAddress, SK9822_AXI4_CSR_SLV_REG1_OFFSET, value.TSR.reg);
+    SK9822_AXI4_mWriteReg(Settings_BaseAddress, SK9822_AXI4_CSR_SLV_REG2_OFFSET, value.GBCR.reg);
+    SK9822_AXI4_mWriteReg(Settings_BaseAddress, SK9822_AXI4_CSR_SLV_REG3_OFFSET, value.ICSR.reg);
 }
 
 void SK9822_reset(uintptr_t Settings_BaseAddress, uintptr_t LED_BaseAddress, uintptr_t R_BaseAddress, uintptr_t G_BaseAddress, uintptr_t B_BaseAddress){
@@ -53,7 +62,7 @@ void SK9822_set_color_source_selection(uintptr_t Settings_BaseAddress, ColorSour
     Settings_Type settings = get_Settings(Settings_BaseAddress);
     settings.CSR.bit.INSEL = (int)option;
 
-    SK9822_AXI4_mWriteReg(Settings_BaseAddress, SK9822_AXI4_CSR_SLV_REG0_OFFSET, settings.reg);
+    set_Settings(Settings_BaseAddress, settings);
 }
 
 bool SK9822_get_continuous_transmission(uintptr_t Settings_BaseAddress){
@@ -66,14 +75,14 @@ void SK9822_set_continuous_transmission(uintptr_t Settings_BaseAddress, bool on_
     Settings_Type settings = get_Settings(Settings_BaseAddress);
     settings.CSR.bit.LOOP = on_off;
 
-    SK9822_AXI4_mWriteReg(Settings_BaseAddress, SK9822_AXI4_CSR_SLV_REG0_OFFSET, settings.reg);
+    set_Settings(Settings_BaseAddress, settings);
 }
 
 void SK9822_start_transmission(uintptr_t Settings_BaseAddress){
     Settings_Type settings = get_Settings(Settings_BaseAddress);
     settings.TSR.bit.ST = 1;
 
-    SK9822_AXI4_mWriteReg(Settings_BaseAddress, SK9822_AXI4_CSR_SLV_REG0_OFFSET, settings.reg);
+    set_Settings(Settings_BaseAddress, settings);
 }
 
 BrightnessSourcesEnum SK9822_get_brightness_source_selection(uintptr_t Settings_BaseAddress){
@@ -86,7 +95,7 @@ void SK9822_set_brightness_source_selection(uintptr_t Settings_BaseAddress, Brig
     Settings_Type settings = get_Settings(Settings_BaseAddress);
     settings.GBCR.bit.INSEL = (int)option;
 
-    SK9822_AXI4_mWriteReg(Settings_BaseAddress, SK9822_AXI4_CSR_SLV_REG0_OFFSET, settings.reg);
+    set_Settings(Settings_BaseAddress, settings);
 }
 
 uint8_t SK9822_get_global_brightness(uintptr_t Settings_BaseAddress){
@@ -99,7 +108,7 @@ void SK9822_set_global_brightness(uintptr_t Settings_BaseAddress, uint8_t value)
     Settings_Type settings = get_Settings(Settings_BaseAddress);
     settings.GBCR.bit.GB = value;
 
-    SK9822_AXI4_mWriteReg(Settings_BaseAddress, SK9822_AXI4_CSR_SLV_REG0_OFFSET, settings.reg);
+    set_Settings(Settings_BaseAddress, settings);
 }
 
 bool SK9822_get_transmission_interrupt_enable(uintptr_t Settings_BaseAddress){
@@ -112,7 +121,7 @@ void SK9822_set_transmission_interrupt_enable(uintptr_t Settings_BaseAddress, bo
     Settings_Type settings = get_Settings(Settings_BaseAddress);
     settings.ICSR.bit.TIEN = value;
 
-    SK9822_AXI4_mWriteReg(Settings_BaseAddress, SK9822_AXI4_CSR_SLV_REG0_OFFSET, settings.reg);
+    set_Settings(Settings_BaseAddress, settings);
 }
 
 bool SK9822_get_transmission_interrupt_status(uintptr_t Settings_BaseAddress){
@@ -125,14 +134,14 @@ void SK9822_clear_transmission_interrupt_status(uintptr_t Settings_BaseAddress){
     Settings_Type settings = get_Settings(Settings_BaseAddress);
     settings.ICSR.bit.CTI = 1;
 
-    SK9822_AXI4_mWriteReg(Settings_BaseAddress, SK9822_AXI4_CSR_SLV_REG0_OFFSET, settings.reg);
+    set_Settings(Settings_BaseAddress, settings);
 }
 
 void SK9822_set_transmission_interrupt_status(uintptr_t Settings_BaseAddress){
     Settings_Type settings = get_Settings(Settings_BaseAddress);
     settings.ICSR.bit.STI = 1;
 
-    SK9822_AXI4_mWriteReg(Settings_BaseAddress, SK9822_AXI4_CSR_SLV_REG0_OFFSET, settings.reg);
+    set_Settings(Settings_BaseAddress, settings);
 }
 
 LED_Type SK9822_get_LED(uintptr_t LED_BaseAddress, uint8_t id){
