@@ -7,8 +7,7 @@
       "name": "design_main",
       "rev_ctrl_bd_flag": "RevCtrlBdOff",
       "synth_flow_mode": "Hierarchical",
-      "tool_version": "2023.2",
-      "validated": "true"
+      "tool_version": "2023.2"
     },
     "design_tree": {
       "processing_system7_0": "",
@@ -2336,35 +2335,35 @@
             "segments": {
               "SEG_SK9822_AXI4_0_B_reg": {
                 "address_block": "/SK9822_AXI4_0/B/B_reg",
-                "offset": "0x43C00000",
+                "offset": "0x43C40000",
                 "range": "64K",
                 "offset_base_param": "C_B_BASEADDR",
                 "offset_high_param": "C_B_HIGHADDR"
               },
               "SEG_SK9822_AXI4_0_CSR_reg": {
                 "address_block": "/SK9822_AXI4_0/CSR/CSR_reg",
-                "offset": "0x43C10000",
+                "offset": "0x43C00000",
                 "range": "64K",
                 "offset_base_param": "C_CSR_BASEADDR",
                 "offset_high_param": "C_CSR_HIGHADDR"
               },
               "SEG_SK9822_AXI4_0_G_reg": {
                 "address_block": "/SK9822_AXI4_0/G/G_reg",
-                "offset": "0x43C20000",
+                "offset": "0x43C30000",
                 "range": "64K",
                 "offset_base_param": "C_G_BASEADDR",
                 "offset_high_param": "C_G_HIGHADDR"
               },
               "SEG_SK9822_AXI4_0_LEDs_reg": {
                 "address_block": "/SK9822_AXI4_0/LEDs/LEDs_reg",
-                "offset": "0x43C30000",
+                "offset": "0x43C10000",
                 "range": "64K",
                 "offset_base_param": "C_LEDs_BASEADDR",
                 "offset_high_param": "C_LEDs_HIGHADDR"
               },
               "SEG_SK9822_AXI4_0_R_reg": {
                 "address_block": "/SK9822_AXI4_0/R/R_reg",
-                "offset": "0x43C40000",
+                "offset": "0x43C20000",
                 "range": "64K",
                 "offset_base_param": "C_R_BASEADDR",
                 "offset_high_param": "C_R_HIGHADDR"
