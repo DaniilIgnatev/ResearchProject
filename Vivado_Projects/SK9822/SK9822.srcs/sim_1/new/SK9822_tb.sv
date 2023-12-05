@@ -21,10 +21,10 @@
 
 
 module SK9822_tb;
-    parameter LED_number = 8;
+    parameter LED_number = 3;
     parameter max_brightness = 8;
     parameter const_brightness = 0;
-    parameter CLK_divider = 2;
+    parameter CLK_divider = 50;
 
     logic CLK;
     logic NRST;
