@@ -1159,7 +1159,7 @@
       <spirit:parameters>
         <spirit:parameter>
           <spirit:name>POLARITY</spirit:name>
-          <spirit:value spirit:id="BUSIFPARAM_VALUE.RESETN.POLARITY" spirit:choiceRef="choice_list_74b5137e">ACTIVE_LOW</spirit:value>
+          <spirit:value spirit:id="BUSIFPARAM_VALUE.RESETN.POLARITY" spirit:choiceRef="choice_list_9d8b0d81">ACTIVE_LOW</spirit:value>
         </spirit:parameter>
       </spirit:parameters>
     </spirit:busInterface>
@@ -1280,7 +1280,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>dcf21a2e</spirit:value>
+            <spirit:value>c71cb625</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -1296,7 +1296,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>dcf21a2e</spirit:value>
+            <spirit:value>c71cb625</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -1310,7 +1310,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>467ed70a</spirit:value>
+            <spirit:value>c93a45b0</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -1324,7 +1324,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>e1bccc2e</spirit:value>
+            <spirit:value>c3f36002</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -1338,7 +1338,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>16328387</spirit:value>
+            <spirit:value>45a2f450</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -3039,11 +3039,6 @@
       <spirit:enumeration>32</spirit:enumeration>
     </spirit:choice>
     <spirit:choice>
-      <spirit:name>choice_list_74b5137e</spirit:name>
-      <spirit:enumeration>ACTIVE_HIGH</spirit:enumeration>
-      <spirit:enumeration>ACTIVE_LOW</spirit:enumeration>
-    </spirit:choice>
-    <spirit:choice>
       <spirit:name>choice_list_9d8b0d81</spirit:name>
       <spirit:enumeration>ACTIVE_HIGH</spirit:enumeration>
       <spirit:enumeration>ACTIVE_LOW</spirit:enumeration>
@@ -3109,7 +3104,7 @@
       <spirit:file>
         <spirit:name>hdl/SK9822_AXI4_v1_0.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
-        <spirit:userFileType>CHECKSUM_0833be74</spirit:userFileType>
+        <spirit:userFileType>CHECKSUM_bd710334</spirit:userFileType>
       </spirit:file>
     </spirit:fileSet>
     <spirit:fileSet>
@@ -3499,18 +3494,18 @@
       <xilinx:displayName>SK9822_AXI4_v1.0</xilinx:displayName>
       <xilinx:vendorDisplayName>TU Ilmenau</xilinx:vendorDisplayName>
       <xilinx:vendorURL>https://www.tu-ilmenau.de/</xilinx:vendorURL>
-      <xilinx:coreRevision>8</xilinx:coreRevision>
+      <xilinx:coreRevision>11</xilinx:coreRevision>
       <xilinx:upgrades>
         <xilinx:canUpgradeFrom>infineon.com:user:SK9822_AXI4:1.0</xilinx:canUpgradeFrom>
       </xilinx:upgrades>
-      <xilinx:coreCreationDateTime>2023-12-01T12:56:11Z</xilinx:coreCreationDateTime>
+      <xilinx:coreCreationDateTime>2023-12-05T09:33:49Z</xilinx:coreCreationDateTime>
     </xilinx:coreExtensions>
     <xilinx:packagingInfo>
       <xilinx:xilinxVersion>2023.2</xilinx:xilinxVersion>
-      <xilinx:checksum xilinx:scope="busInterfaces" xilinx:value="6d1938d5"/>
+      <xilinx:checksum xilinx:scope="busInterfaces" xilinx:value="ec766cd4"/>
       <xilinx:checksum xilinx:scope="memoryMaps" xilinx:value="3b62cb7e"/>
-      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="a4dc0812"/>
-      <xilinx:checksum xilinx:scope="ports" xilinx:value="a04dbd9a"/>
+      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="10445ab1"/>
+      <xilinx:checksum xilinx:scope="ports" xilinx:value="a43cfb99"/>
       <xilinx:checksum xilinx:scope="hdlParameters" xilinx:value="9ac07b7a"/>
       <xilinx:checksum xilinx:scope="parameters" xilinx:value="5cb3f04f"/>
     </xilinx:packagingInfo>

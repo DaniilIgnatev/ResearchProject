@@ -247,14 +247,19 @@
 	              if ( S_AXI_WSTRB[byte_index] == 1 ) begin
 	                // Respective byte enables are asserted as per write strobes 
 	                // Slave register 0
-	                slv_reg0[(byte_index*8) +: 8] <= S_AXI_WDATA[(byte_index*8) +: 8];
-	              end  
+//	                slv_reg0[(byte_index*8) +: 8] <= S_AXI_WDATA[(byte_index*8) +: 8];
+	                
+	                slv_reg0[(byte_index*8) +: 8] <= {S_AXI_WDATA[((byte_index*8) + 1) +: 7], CSR_TI};
+	              end
 	          2'h1:
 	            for ( byte_index = 0; byte_index <= (C_S_AXI_DATA_WIDTH/8)-1; byte_index = byte_index+1 )
 	              if ( S_AXI_WSTRB[byte_index] == 1 ) begin
 	                // Respective byte enables are asserted as per write strobes 
 	                // Slave register 1
-	                slv_reg1[(byte_index*8) +: 8] <= S_AXI_WDATA[(byte_index*8) +: 8];
+	                if (TSR_ST)
+	                   slv_reg1[(byte_index*8) +: 8] <= {S_AXI_WDATA[((byte_index*8) + 1) +: 7], 1'b0};
+	                else
+	                   slv_reg1[(byte_index*8) +: 8] <= S_AXI_WDATA[(byte_index*8) +: 8];
 	              end  
 	          2'h2:
 	            for ( byte_index = 0; byte_index <= (C_S_AXI_DATA_WIDTH/8)-1; byte_index = byte_index+1 )
@@ -262,35 +267,50 @@
 	                // Respective byte enables are asserted as per write strobes 
 	                // Slave register 2
 	                slv_reg2[(byte_index*8) +: 8] <= S_AXI_WDATA[(byte_index*8) +: 8];
+	                
+	                if (byte_index == 3)
+	                   slv_reg2[(byte_index*8) +: 8] <= slv_reg2[(byte_index*8) +: 8] + 'b1;
 	              end  
 	          2'h3:
 	            for ( byte_index = 0; byte_index <= (C_S_AXI_DATA_WIDTH/8)-1; byte_index = byte_index+1 )
 	              if ( S_AXI_WSTRB[byte_index] == 1 ) begin
 	                // Respective byte enables are asserted as per write strobes 
 	                // Slave register 3
-	                slv_reg3[(byte_index*8) +: 8] <= S_AXI_WDATA[(byte_index*8) +: 8];
+//	                slv_reg3[(byte_index*8) +: 8] <= S_AXI_WDATA[(byte_index*8) +: 8];
+	                if (ICSR_CTI)
+	                    slv_reg3[(byte_index*8) +: 8] <= {S_AXI_WDATA[((byte_index*8) + 3) +: 5], 1'b0, ICSR_TI, S_AXI_WDATA[(byte_index*8)]};
+	                else if (ICSR_STI)
+	                    slv_reg3[(byte_index*8) +: 8] <= {S_AXI_WDATA[((byte_index*8) + 4) +: 4], 1'b0, S_AXI_WDATA[((byte_index*8) + 2)], ICSR_TI, S_AXI_WDATA[(byte_index*8)]};
+	                else    
+                        slv_reg3[(byte_index*8) +: 8] <= {S_AXI_WDATA[((byte_index*8) + 2) +: 6], ICSR_TI, S_AXI_WDATA[(byte_index*8)]};
 	              end  
 	          default: 
 	          begin
-                    // CSR
-                    slv_reg0[0] <= CSR_TI;
-                    
-                    //TSR
-//                    if (TSR_ST)
-//                        slv_reg1[0] <= 0;
-                    
-                    // ICSR
-                    slv_reg3[1] <= ICSR_TI;
-//                    if (ICSR_CTI)
-//                        slv_reg3[2] <= 0;
-                    
-//                    if (ICSR_STI)    
-//                        slv_reg3[3] <= 0;
-                end
+                  slv_reg0 <= slv_reg0;
+                  slv_reg1 <= slv_reg1;
+                  slv_reg2 <= slv_reg2;
+                  slv_reg3 <= slv_reg3;
+              end
 	        endcase
+	      end else begin
+//          CSR
+            slv_reg0[0] <= CSR_TI;
+            
+//          TSR
+            if (TSR_ST)
+                slv_reg1[0] <= 0;
+            
+//          ICSR
+            slv_reg3[1] <= ICSR_TI;
+            
+            if (ICSR_CTI)
+                slv_reg3[2] <= 0;
+            
+            if (ICSR_STI)    
+                slv_reg3[3] <= 0;   
 	      end
 	  end
-	end    
+	end 
 
 	// Implement write response logic generation
 	// The write response and response valid signals are asserted by the slave 
@@ -435,7 +455,7 @@
 	
 	assign ICSR_CTI = slv_reg3[2];
     assign ICSR_STI = slv_reg3[3];
-    // some logic is located on the line 274
+    // some logic is located on the line 274 in always @( posedge S_AXI_ACLK )
 	// User logic ends
 
 	endmodule

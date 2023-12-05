@@ -445,15 +445,15 @@
     genvar i;
     generate
         for(i = 0; i < LED_number; i = i + 1) begin : loop
-            case (i / 8)
-            0: assign D[i] = slv_reg0[i % 8];
-            1: assign D[i] = slv_reg1[i % 8];
-            2: assign D[i] = slv_reg2[i % 8];
-            3: assign D[i] = slv_reg3[i % 8];
-            4: assign D[i] = slv_reg4[i % 8];
-            5: assign D[i] = slv_reg5[i % 8];
-            6: assign D[i] = slv_reg6[i % 8];
-            7: assign D[i] = slv_reg7[i % 8];
+            case (i / 32)
+            0: assign D[i] = slv_reg0[i % 32];
+            1: assign D[i] = slv_reg1[i % 32];
+            2: assign D[i] = slv_reg2[i % 32];
+            3: assign D[i] = slv_reg3[i % 32];
+            4: assign D[i] = slv_reg4[i % 32];
+            5: assign D[i] = slv_reg5[i % 32];
+            6: assign D[i] = slv_reg6[i % 32];
+            7: assign D[i] = slv_reg7[i % 32];
             endcase
         end
     endgenerate
