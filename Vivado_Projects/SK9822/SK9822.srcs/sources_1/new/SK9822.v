@@ -20,7 +20,7 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
-module SK9822 #(LED_number = 8, max_brightness = 8, const_brightness = 0)(
+module SK9822 #(LED_number = 8, max_brightness = 8, const_brightness = 0, CLK_divider = 50)(
     input CLK,
     input NRST,
     output SCLK,
@@ -58,7 +58,7 @@ module SK9822 #(LED_number = 8, max_brightness = 8, const_brightness = 0)(
     reg BT_ST_reg;
     wire BT_ST = BT_ST_reg;// bytes transmitter can transmit
 
-    Bytes_Transmitter bytes_transmitter (
+    Bytes_Transmitter #(CLK_divider) bytes_transmitter (
         .CLK(CLK),
         .NRST(NRST),
         .SCLK(SCLK),

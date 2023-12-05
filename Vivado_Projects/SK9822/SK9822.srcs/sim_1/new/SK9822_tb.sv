@@ -24,6 +24,7 @@ module SK9822_tb;
     parameter LED_number = 8;
     parameter max_brightness = 8;
     parameter const_brightness = 0;
+    parameter CLK_divider = 2;
 
     logic CLK;
     logic NRST;
@@ -50,7 +51,7 @@ module SK9822_tb;
     logic [(((LED_number-1) / 8) + 1) * 8 - 1 : 0] B;// the size is made to be multiple of 8 bit
 
     // DUT (device under test)
-    SK9822 #(LED_number, max_brightness, const_brightness) dut(
+    SK9822 #(LED_number, max_brightness, const_brightness, CLK_divider) dut(
         .CLK(CLK),
         .NRST(NRST),
         .SCLK(SCLK),
@@ -244,7 +245,7 @@ module SK9822_tb;
         end
     endtask
     
-    task Transmission_Test(int sleep_clocks);
+    task Transmission_Test(input int sleep_clocks);
             ICSR_TIEN = 1;// transmission interrupt is enabled
             TSR_ST = 1;            
             #2

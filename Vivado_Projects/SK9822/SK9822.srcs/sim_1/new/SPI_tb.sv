@@ -21,6 +21,8 @@
 
 
 module SPI_tb;
+    parameter CLK_divider = 1;
+    
     logic CLK;
     logic NRST;
     logic [7:0] D;
@@ -30,7 +32,7 @@ module SPI_tb;
     logic TI;
 
     // DUT (device under test)
-    SPI dut (
+    SPI #(CLK_divider) dut (
         .CLK(CLK),
         .NRST(NRST),
         .D(D),
@@ -43,7 +45,7 @@ module SPI_tb;
     // Clock generator
     always #1ns CLK = ~CLK;
 
-    byte test_data = 65;
+    byte test_data = 8'b01000001;
 
     // Testbench
     initial begin

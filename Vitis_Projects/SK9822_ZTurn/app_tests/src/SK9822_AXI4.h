@@ -380,11 +380,11 @@ typedef union
 
   struct
   {
-    volatile uint8_t BS : 5; // Individual brightness
-    uint8_t : 3;
-    volatile uint8_t R : 8; // Red
-    volatile uint8_t G : 8; // Green
-    volatile uint8_t B : 8; // Blue
+    volatile uint32_t BS : 5; // Individual brightness
+    uint32_t : 3;
+    volatile uint32_t R : 8; // Red
+    volatile uint32_t G : 8; // Green
+    volatile uint32_t B : 8; // Blue
   } bit;
 } LED_Type;
 

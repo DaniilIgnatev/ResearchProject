@@ -159,7 +159,7 @@ void SK9822_set_LED(uintptr_t LED_BaseAddress, uint8_t id, LED_Type data){
 bool SK9822_get_R(uintptr_t R_BaseAddress, uint8_t id){
     uintptr_t offset = SK9822_AXI4_R_SLV_REG0_OFFSET + ((id / 32) * 4);
     uint32_t data = SK9822_AXI4_mReadReg(R_BaseAddress, offset);
-    bool on_off = (data & (1 << id)) != 0;
+    bool on_off = (data & (1 << (id % 32))) != 0;
 
     return on_off;
 }
@@ -181,7 +181,7 @@ void SK9822_set_R(uintptr_t R_BaseAddress, uint8_t id, bool on_off){
 bool SK9822_get_G(uintptr_t G_BaseAddress, uint8_t id){
     uintptr_t offset = SK9822_AXI4_G_SLV_REG0_OFFSET + ((id / 32) * 4);
     uint32_t data = SK9822_AXI4_mReadReg(G_BaseAddress, offset);
-    bool on_off = (data & (1 << id)) != 0;
+    bool on_off = (data & (1 << (id % 32))) != 0;
 
     return on_off;
 }
@@ -203,7 +203,7 @@ void SK9822_set_G(uintptr_t G_BaseAddress, uint8_t id, bool on_off){
 bool SK9822_get_B(uintptr_t B_BaseAddress, uint8_t id){
     uintptr_t offset = SK9822_AXI4_B_SLV_REG0_OFFSET + ((id / 32) * 4);
     uint32_t data = SK9822_AXI4_mReadReg(B_BaseAddress, offset);
-    bool on_off = (data & (1 << id)) != 0;
+    bool on_off = (data & (1 << (id % 32))) != 0;
 
     return on_off;
 }

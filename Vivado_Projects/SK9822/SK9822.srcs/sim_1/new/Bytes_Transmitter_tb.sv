@@ -22,6 +22,7 @@
 
 module Bytes_Transmitter_tb;
     parameter bytes_number = 3;
+    parameter CLK_divider = 4;
 
     logic CLK;
     logic NRST;
@@ -39,7 +40,7 @@ module Bytes_Transmitter_tb;
     assign NEXT_BYTE = testData[TX_COUNTER];
     
     // Device under test
-    Bytes_Transmitter dut (
+    Bytes_Transmitter #(CLK_divider) dut (
         .CLK(CLK),
         .NRST(NRST),
         .SCLK(SCLK),

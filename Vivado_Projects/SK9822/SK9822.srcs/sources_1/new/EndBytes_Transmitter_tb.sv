@@ -22,6 +22,7 @@
 
 module EndBytes_Transmitter_tb;
     parameter LED_number = 16;
+    parameter CLK_divider = 2;
 
     logic CLK;
     logic NRST;
@@ -35,7 +36,7 @@ module EndBytes_Transmitter_tb;
     logic [7:0] NEXT_BYTE;
     
     // Device under test
-    Bytes_Transmitter bytes_Transmitter (
+    Bytes_Transmitter #(CLK_divider) bytes_Transmitter (
         .CLK(CLK),
         .NRST(NRST),
         .SCLK(SCLK),

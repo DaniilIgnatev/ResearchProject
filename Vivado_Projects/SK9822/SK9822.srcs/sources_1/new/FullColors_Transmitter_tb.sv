@@ -24,6 +24,7 @@ module FullColors_Transmitter_tb;
     parameter LED_number = 3;
     parameter max_brightness = 8;
     parameter const_brightness = 0;
+    parameter CLK_divider = 2;
 
     logic CLK;
     logic NRST;
@@ -37,7 +38,7 @@ module FullColors_Transmitter_tb;
     logic [7:0] NEXT_BYTE;
     
     // Device under test
-    Bytes_Transmitter bytes_Transmitter (
+    Bytes_Transmitter #(CLK_divider) bytes_Transmitter (
         .CLK(CLK),
         .NRST(NRST),
         .SCLK(SCLK),

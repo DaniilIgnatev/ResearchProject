@@ -1,9 +1,9 @@
 {
    "ActiveEmotionalView":"Default View",
    "Default View_ScaleFactor":"1.0",
-   "Default View_TopLeft":"-235,-825",
+   "Default View_TopLeft":"-235,-904",
    "ExpandedHierarchyInLayout":"",
-   "guistr":"# # String gsaved with Nlview 7.5.8 2022-09-21 7111 VDI=41 GEI=38 GUI=JA:10.0
+   "guistr":"# # String gsaved with Nlview 7.5.8 2022-09-21 7111 VDI=41 GEI=38 GUI=JA:10.0 threadsafe
 #  -string -flagsOSRD
 preplace port DDR -pg 1 -lvl 4 -x 1310 -y -690 -defaultsOSRD
 preplace port FIXED_IO -pg 1 -lvl 4 -x 1310 -y -660 -defaultsOSRD
@@ -14,22 +14,19 @@ preplace inst processing_system7_0 -pg 1 -lvl 1 -x 190 -y -280 -defaultsOSRD
 preplace inst SK9822_AXI4_0 -pg 1 -lvl 3 -x 990 -y -450 -defaultsOSRD
 preplace inst ps7_0_axi_periph -pg 1 -lvl 2 -x 640 -y -460 -defaultsOSRD
 preplace inst rst_ps7_0_50M -pg 1 -lvl 1 -x 190 -y -550 -defaultsOSRD
-preplace inst clk_wiz_0 -pg 1 -lvl 2 -x 640 -y -180 -defaultsOSRD
-preplace netloc SK9822_AXI4_0_MOSI 1 3 1 1090 -460n
-preplace netloc SK9822_AXI4_0_SCLK 1 3 1 1090 -490n
-preplace netloc SK9822_AXI4_0_TI 1 3 1 N -430
+preplace inst clk_divider_0 -pg 1 -lvl 2 -x 640 -y -740 -defaultsOSRD
+preplace netloc clk_divider_0_clk_out 1 2 2 860 -680 1290
+preplace netloc processing_system7_0_FCLK_CLK0 1 0 3 -20 -660 470 -660 830
 preplace netloc processing_system7_0_FCLK_RESET0_N 1 0 2 -10 -650 390
 preplace netloc rst_ps7_0_50M_peripheral_aresetn 1 1 2 490 -260 890
-preplace netloc processing_system7_0_FCLK_CLK0 1 0 3 -20 -660 460 -660 860
-preplace netloc clk_wiz_0_clk_out1 1 2 1 880 -510n
-preplace netloc processing_system7_0_DDR 1 1 3 400J -680 N -680 1090
-preplace netloc processing_system7_0_FIXED_IO 1 1 3 470J -670 N -670 1090
+preplace netloc processing_system7_0_DDR 1 1 3 400J -800 880 -690 N
+preplace netloc processing_system7_0_FIXED_IO 1 1 3 410J -670 N -670 1090
 preplace netloc processing_system7_0_M_AXI_GP0 1 1 1 480J -600n
-preplace netloc ps7_0_axi_periph_M00_AXI 1 2 1 810 -530n
+preplace netloc ps7_0_axi_periph_M00_AXI 1 2 1 850 -530n
 preplace netloc ps7_0_axi_periph_M01_AXI 1 2 1 790 -610n
-preplace netloc ps7_0_axi_periph_M02_AXI 1 2 1 820 -550n
-preplace netloc ps7_0_axi_periph_M03_AXI 1 2 1 800 -590n
-preplace netloc ps7_0_axi_periph_M04_AXI 1 2 1 870 -570n
+preplace netloc ps7_0_axi_periph_M02_AXI 1 2 1 870 -550n
+preplace netloc ps7_0_axi_periph_M03_AXI 1 2 1 840 -590n
+preplace netloc ps7_0_axi_periph_M04_AXI 1 2 1 880 -570n
 levelinfo -pg 1 -40 190 640 990 1310
 pagesize -pg 1 -db -bbox -sgen -90 -1090 1810 590
 "

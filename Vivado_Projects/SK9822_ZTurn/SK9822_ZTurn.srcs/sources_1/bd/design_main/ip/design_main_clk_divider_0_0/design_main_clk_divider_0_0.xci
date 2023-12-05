@@ -1,0 +1,48 @@
+{
+  "schema": "xilinx.com:schema:json_instance:1.0",
+  "ip_inst": {
+    "xci_name": "design_main_clk_divider_0_0",
+    "cell_name": "clk_divider_0",
+    "component_reference": "xilinx.com:module_ref:clk_divider:1.0",
+    "ip_revision": "1",
+    "gen_directory": "../../../../../../SK9822_ZTurn.gen/sources_1/bd/design_main/ip/design_main_clk_divider_0_0",
+    "parameters": {
+      "component_parameters": {
+        "divider": [ { "value": "50", "resolve_type": "user", "format": "long", "usage": "all" } ],
+        "Component_Name": [ { "value": "design_main_clk_divider_0_0", "resolve_type": "user", "usage": "all" } ]
+      },
+      "model_parameters": {
+        "divider": [ { "value": "50", "resolve_type": "generated", "format": "long", "usage": "all" } ]
+      },
+      "project_parameters": {
+        "ARCHITECTURE": [ { "value": "zynq" } ],
+        "BASE_BOARD_PART": [ { "value": "" } ],
+        "BOARD_CONNECTIONS": [ { "value": "" } ],
+        "DEVICE": [ { "value": "xc7z020" } ],
+        "PACKAGE": [ { "value": "clg400" } ],
+        "PREFHDL": [ { "value": "VERILOG" } ],
+        "SILICON_REVISION": [ { "value": "" } ],
+        "SIMULATOR_LANGUAGE": [ { "value": "MIXED" } ],
+        "SPEEDGRADE": [ { "value": "-1" } ],
+        "STATIC_POWER": [ { "value": "" } ],
+        "TEMPERATURE_GRADE": [ { "value": "" } ]
+      },
+      "runtime_parameters": {
+        "IPCONTEXT": [ { "value": "IP_Integrator" } ],
+        "IPREVISION": [ { "value": "1" } ],
+        "MANAGED": [ { "value": "TRUE" } ],
+        "OUTPUTDIR": [ { "value": "../../../../../../SK9822_ZTurn.gen/sources_1/bd/design_main/ip/design_main_clk_divider_0_0" } ],
+        "SELECTEDSIMMODEL": [ { "value": "" } ],
+        "SHAREDDIR": [ { "value": "../../ipshared" } ],
+        "SWVERSION": [ { "value": "2023.2" } ],
+        "SYNTHESISFLOW": [ { "value": "OOC_HIERARCHICAL" } ]
+      }
+    },
+    "boundary": {
+      "ports": {
+        "clk_in": [ { "direction": "in" } ],
+        "clk_out": [ { "direction": "out" } ]
+      }
+    }
+  }
+}
