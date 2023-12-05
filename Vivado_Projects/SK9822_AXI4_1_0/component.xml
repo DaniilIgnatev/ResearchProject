@@ -1280,7 +1280,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>c71cb625</spirit:value>
+            <spirit:value>6b574c45</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -1296,7 +1296,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>c71cb625</spirit:value>
+            <spirit:value>6b574c45</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -1310,7 +1310,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>c93a45b0</spirit:value>
+            <spirit:value>0a84afd2</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -1324,7 +1324,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>c3f36002</spirit:value>
+            <spirit:value>37342982</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -1338,7 +1338,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>45a2f450</spirit:value>
+            <spirit:value>16328387</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -3031,6 +3031,11 @@
         <spirit:displayName>Const Brightness</spirit:displayName>
         <spirit:value spirit:format="bool" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.const_brightness">false</spirit:value>
       </spirit:modelParameter>
+      <spirit:modelParameter spirit:dataType="integer">
+        <spirit:name>CLK_divider</spirit:name>
+        <spirit:displayName>Clk Divider</spirit:displayName>
+        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.CLK_divider">50</spirit:value>
+      </spirit:modelParameter>
     </spirit:modelParameters>
   </spirit:model>
   <spirit:choices>
@@ -3104,7 +3109,7 @@
       <spirit:file>
         <spirit:name>hdl/SK9822_AXI4_v1_0.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
-        <spirit:userFileType>CHECKSUM_bd710334</spirit:userFileType>
+        <spirit:userFileType>CHECKSUM_b70a3261</spirit:userFileType>
       </spirit:file>
     </spirit:fileSet>
     <spirit:fileSet>
@@ -3199,7 +3204,7 @@
       <spirit:file>
         <spirit:name>xgui/SK9822_AXI4_v1_0.tcl</spirit:name>
         <spirit:fileType>tclSource</spirit:fileType>
-        <spirit:userFileType>CHECKSUM_e1bccc2e</spirit:userFileType>
+        <spirit:userFileType>CHECKSUM_37342982</spirit:userFileType>
         <spirit:userFileType>XGUI_VERSION_2</spirit:userFileType>
       </spirit:file>
     </spirit:fileSet>
@@ -3482,6 +3487,11 @@
       <spirit:displayName>Constant brightness</spirit:displayName>
       <spirit:value spirit:format="bool" spirit:resolve="user" spirit:id="PARAM_VALUE.const_brightness">false</spirit:value>
     </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>CLK_divider</spirit:name>
+      <spirit:displayName>CLK Divider</spirit:displayName>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.CLK_divider" spirit:minimum="1" spirit:maximum="65535" spirit:rangeType="long">50</spirit:value>
+    </spirit:parameter>
   </spirit:parameters>
   <spirit:vendorExtensions>
     <xilinx:coreExtensions>
@@ -3494,20 +3504,20 @@
       <xilinx:displayName>SK9822_AXI4_v1.0</xilinx:displayName>
       <xilinx:vendorDisplayName>TU Ilmenau</xilinx:vendorDisplayName>
       <xilinx:vendorURL>https://www.tu-ilmenau.de/</xilinx:vendorURL>
-      <xilinx:coreRevision>11</xilinx:coreRevision>
+      <xilinx:coreRevision>12</xilinx:coreRevision>
       <xilinx:upgrades>
         <xilinx:canUpgradeFrom>infineon.com:user:SK9822_AXI4:1.0</xilinx:canUpgradeFrom>
       </xilinx:upgrades>
-      <xilinx:coreCreationDateTime>2023-12-05T09:33:49Z</xilinx:coreCreationDateTime>
+      <xilinx:coreCreationDateTime>2023-12-05T14:49:02Z</xilinx:coreCreationDateTime>
     </xilinx:coreExtensions>
     <xilinx:packagingInfo>
       <xilinx:xilinxVersion>2023.2</xilinx:xilinxVersion>
       <xilinx:checksum xilinx:scope="busInterfaces" xilinx:value="ec766cd4"/>
       <xilinx:checksum xilinx:scope="memoryMaps" xilinx:value="3b62cb7e"/>
-      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="10445ab1"/>
+      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="521c6051"/>
       <xilinx:checksum xilinx:scope="ports" xilinx:value="a43cfb99"/>
-      <xilinx:checksum xilinx:scope="hdlParameters" xilinx:value="9ac07b7a"/>
-      <xilinx:checksum xilinx:scope="parameters" xilinx:value="5cb3f04f"/>
+      <xilinx:checksum xilinx:scope="hdlParameters" xilinx:value="65953596"/>
+      <xilinx:checksum xilinx:scope="parameters" xilinx:value="a4bb6f61"/>
     </xilinx:packagingInfo>
   </spirit:vendorExtensions>
 </spirit:component>
