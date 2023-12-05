@@ -32,11 +32,13 @@ always @(posedge clk_in) begin
   counter <= counter + 1;
   
   // When counter reaches (divider-1), set output clock high for 1 cycle
-  if (counter == (divider - 1)) begin
+  if (counter == divider) begin
     counter <= 0;
-    clk_out <= 1'b1;
-  end else begin
-    clk_out <= 1'b0;
+    clk_out <= ~clk_out;
+  end
+  
+  if (counter == divider / 2) begin
+    clk_out <= ~clk_out;
   end
 end
 
