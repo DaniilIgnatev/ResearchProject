@@ -248,7 +248,7 @@ module SK9822_tb;
     task Transmission_Test(input int sleep_clocks);
             ICSR_TIEN = 1;// transmission interrupt is enabled
             TSR_ST = 1;            
-            #2
+            #200
             #2
             assert (
                 TSR_ST == 1 &&

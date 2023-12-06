@@ -27,7 +27,8 @@ module SPI #(CLK_divider = 50) (
   output MOSI,
   input [7:0] D,
   input DS,
-  output TI
+  output TI,
+  output reg RDONE
 );
     reg [7:0] data_buffer;
     reg [7:0] counter;
@@ -41,7 +42,7 @@ module SPI #(CLK_divider = 50) (
 
     // SCLK
     always @(CLK) begin
-        if (clk_counter == ((CLK_divider << 0))) begin
+        if (clk_counter == CLK_divider) begin
             clk_counter = 1;
             SCLK_internal = ~SCLK_internal;
         end else
@@ -59,6 +60,8 @@ module SPI #(CLK_divider = 50) (
             start_request <= 1'b0;
             start_request_ack <= 1'b0;
             mosi_reg <= 0;
+            
+            RDONE <= 1;
         end
         else begin
             if (!start_request_ack && !start_request && DS) begin

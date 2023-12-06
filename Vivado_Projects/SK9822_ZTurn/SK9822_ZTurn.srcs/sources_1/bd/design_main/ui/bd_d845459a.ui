@@ -1,38 +1,36 @@
 {
    "ActiveEmotionalView":"Default View",
    "Default View_ScaleFactor":"1.0",
-   "Default View_TopLeft":"-227,-925",
+   "Default View_TopLeft":"73,-697",
    "ExpandedHierarchyInLayout":"",
    "guistr":"# # String gsaved with Nlview 7.5.8 2022-09-21 7111 VDI=41 GEI=38 GUI=JA:10.0
 #  -string -flagsOSRD
-preplace port DDR -pg 1 -lvl 4 -x 1310 -y -690 -defaultsOSRD
-preplace port FIXED_IO -pg 1 -lvl 4 -x 1310 -y -660 -defaultsOSRD
-preplace portBus SCLK_0 -pg 1 -lvl 4 -x 1310 -y -560 -defaultsOSRD
-preplace portBus MOSI_0 -pg 1 -lvl 4 -x 1310 -y -540 -defaultsOSRD
-preplace portBus TI_0 -pg 1 -lvl 4 -x 1310 -y -520 -defaultsOSRD
-preplace inst processing_system7_0 -pg 1 -lvl 1 -x 190 -y -280 -defaultsOSRD
-preplace inst SK9822_AXI4_0 -pg 1 -lvl 3 -x 990 -y -450 -defaultsOSRD
-preplace inst ps7_0_axi_periph -pg 1 -lvl 2 -x 640 -y -460 -defaultsOSRD
-preplace inst rst_ps7_0_50M -pg 1 -lvl 1 -x 190 -y -550 -defaultsOSRD
-preplace inst clk_divider_0 -pg 1 -lvl 2 -x 640 -y -740 -defaultsOSRD
-preplace netloc processing_system7_0_FCLK_CLK0 1 0 4 -20 -660 470 -800 870 -700 1100
-preplace netloc processing_system7_0_FCLK_RESET0_N 1 0 2 -10 -650 390
-preplace netloc rst_ps7_0_50M_peripheral_aresetn 1 1 2 490 -660 830
-preplace netloc processing_system7_0_FCLK_CLK1 1 1 3 420 -810 NJ -810 1290J
-preplace netloc processing_system7_0_DDR 1 1 3 410J -260 840 -690 N
-preplace netloc processing_system7_0_FIXED_IO 1 1 3 400J -670 N -670 1090
-preplace netloc processing_system7_0_M_AXI_GP0 1 1 1 480J -600n
-preplace netloc ps7_0_axi_periph_M00_AXI 1 2 1 860 -530n
-preplace netloc ps7_0_axi_periph_M01_AXI 1 2 1 790 -610n
-preplace netloc ps7_0_axi_periph_M02_AXI 1 2 1 880 -550n
-preplace netloc ps7_0_axi_periph_M03_AXI 1 2 1 850 -590n
-preplace netloc ps7_0_axi_periph_M04_AXI 1 2 1 890 -570n
-levelinfo -pg 1 -40 190 640 990 1310
-pagesize -pg 1 -db -bbox -sgen -90 -1090 1810 590
+preplace port DDR -pg 1 -lvl 5 -x 1640 -y -690 -defaultsOSRD
+preplace port FIXED_IO -pg 1 -lvl 5 -x 1640 -y -660 -defaultsOSRD
+preplace port port-id_P61 -pg 1 -lvl 5 -x 1640 -y -400 -defaultsOSRD
+preplace port port-id_P62 -pg 1 -lvl 5 -x 1640 -y -380 -defaultsOSRD
+preplace port port-id_P63 -pg 1 -lvl 5 -x 1640 -y -360 -defaultsOSRD
+preplace port port-id_P64 -pg 1 -lvl 5 -x 1640 -y -340 -defaultsOSRD
+preplace port port-id_P65 -pg 1 -lvl 5 -x 1640 -y -320 -defaultsOSRD
+preplace port port-id_P66 -pg 1 -lvl 5 -x 1640 -y -300 -defaultsOSRD
+preplace port port-id_P68 -pg 1 -lvl 5 -x 1640 -y -260 -defaultsOSRD
+preplace port port-id_P67 -pg 1 -lvl 5 -x 1640 -y -280 -defaultsOSRD
+preplace inst processing_system7_0 -pg 1 -lvl 3 -x 630 -y -700 -defaultsOSRD
+preplace inst xlconstant_6 -pg 1 -lvl 2 -x 280 -y 50 -defaultsOSRD
+preplace inst SPI_0 -pg 1 -lvl 3 -x 630 -y 20 -defaultsOSRD
+preplace inst reset_generator_0 -pg 1 -lvl 4 -x 950 -y -460 -defaultsOSRD
+preplace netloc processing_system7_0_FCLK_CLK0 1 2 2 430 -810 830
+preplace netloc xlconstant_6_dout 1 2 1 360 30n
+preplace netloc SPI_0_RDONE 1 3 2 NJ 50 1060
+preplace netloc processing_system7_0_FCLK_RESET0_N 1 2 2 430 -70 830
+preplace netloc processing_system7_0_DDR 1 3 2 NJ -750 1060
+preplace netloc processing_system7_0_FIXED_IO 1 3 2 NJ -730 1050
+levelinfo -pg 1 -20 80 280 630 950 1640
+pagesize -pg 1 -db -bbox -sgen -90 -1110 1810 590
 "
 }
 {
-   "da_axi4_cnt":"15",
-   "da_clkrst_cnt":"4",
+   "da_axi4_cnt":"25",
+   "da_clkrst_cnt":"6",
    "da_ps7_cnt":"2"
 }

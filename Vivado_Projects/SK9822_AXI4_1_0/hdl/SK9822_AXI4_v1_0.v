@@ -158,6 +158,25 @@
 		output wire  b_rvalid,
 		input wire  b_rready
 	);
+	wire CSR_TI;
+	wire CSR_INSEL;
+	wire CSR_LOOP;
+	
+	wire TSR_ST;
+	
+	wire GBCR_INSEL;
+	wire GBCR_GB;
+	
+	wire ICSR_TIEN;
+	wire ICSR_TI;
+	wire ICSR_CTI;
+	wire ICSR_STI;
+	
+	wire [((32 * LED_number) - 1):0] LEDs;// the size is made to be multiple of 32 bit
+    wire [(((LED_number-1) / 8) + 1) * 8 - 1 : 0] R;// the size is made to be multiple of 8 bit
+    wire [(((LED_number-1) / 8) + 1) * 8 - 1 : 0] G;// the size is made to be multiple of 8 bit
+    wire [(((LED_number-1) / 8) + 1) * 8 - 1 : 0] B;// the size is made to be multiple of 8 bit
+	
 // Instantiation of Axi Bus Interface CSR
 	SK9822_AXI4_v1_0_CSR # (
 	    .max_brightness(max_brightness), 
