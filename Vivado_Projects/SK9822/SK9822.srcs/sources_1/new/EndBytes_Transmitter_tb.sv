@@ -21,7 +21,7 @@
 
 
 module EndBytes_Transmitter_tb;
-    parameter LED_number = 16;
+    parameter LED_number = 30;
     parameter CLK_divider = 2;
 
     logic CLK;

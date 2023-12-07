@@ -187,6 +187,96 @@
                 "VH": "2",
                 "VT": "PM",
                 "TU": "active"
+            },
+            "V3": {
+                "VT": "AC",
+                "BA": "0x43C00000",
+                "HA": "0x43C0FFFF",
+                "BP": "C_B_BASEADDR",
+                "HP": "C_B_HIGHADDR",
+                "MA": "Data",
+                "MX": "/processing_system7_0",
+                "MI": "M_AXI_GP0",
+                "MS": "SEG_SK9822_AXI4_0_B_reg",
+                "MV": "xilinx.com:ip:processing_system7:5.5",
+                "SX": "/SK9822_AXI4_0",
+                "SI": "B",
+                "SS": "B_reg",
+                "SV": "tu-ilmenau.de:SK9822_AXI4:SK9822_AXI4:1.0",
+                "TM": "both",
+                "TU": "register"
+            },
+            "V4": {
+                "VT": "AC",
+                "BA": "0x43C10000",
+                "HA": "0x43C1FFFF",
+                "BP": "C_CSR_BASEADDR",
+                "HP": "C_CSR_HIGHADDR",
+                "MA": "Data",
+                "MX": "/processing_system7_0",
+                "MI": "M_AXI_GP0",
+                "MS": "SEG_SK9822_AXI4_0_CSR_reg",
+                "MV": "xilinx.com:ip:processing_system7:5.5",
+                "SX": "/SK9822_AXI4_0",
+                "SI": "CSR",
+                "SS": "CSR_reg",
+                "SV": "tu-ilmenau.de:SK9822_AXI4:SK9822_AXI4:1.0",
+                "TM": "both",
+                "TU": "register"
+            },
+            "V5": {
+                "VT": "AC",
+                "BA": "0x43C20000",
+                "HA": "0x43C2FFFF",
+                "BP": "C_G_BASEADDR",
+                "HP": "C_G_HIGHADDR",
+                "MA": "Data",
+                "MX": "/processing_system7_0",
+                "MI": "M_AXI_GP0",
+                "MS": "SEG_SK9822_AXI4_0_G_reg",
+                "MV": "xilinx.com:ip:processing_system7:5.5",
+                "SX": "/SK9822_AXI4_0",
+                "SI": "G",
+                "SS": "G_reg",
+                "SV": "tu-ilmenau.de:SK9822_AXI4:SK9822_AXI4:1.0",
+                "TM": "both",
+                "TU": "register"
+            },
+            "V6": {
+                "VT": "AC",
+                "BA": "0x43C30000",
+                "HA": "0x43C3FFFF",
+                "BP": "C_LEDs_BASEADDR",
+                "HP": "C_LEDs_HIGHADDR",
+                "MA": "Data",
+                "MX": "/processing_system7_0",
+                "MI": "M_AXI_GP0",
+                "MS": "SEG_SK9822_AXI4_0_LEDs_reg",
+                "MV": "xilinx.com:ip:processing_system7:5.5",
+                "SX": "/SK9822_AXI4_0",
+                "SI": "LEDs",
+                "SS": "LEDs_reg",
+                "SV": "tu-ilmenau.de:SK9822_AXI4:SK9822_AXI4:1.0",
+                "TM": "both",
+                "TU": "register"
+            },
+            "V7": {
+                "VT": "AC",
+                "BA": "0x43C40000",
+                "HA": "0x43C4FFFF",
+                "BP": "C_R_BASEADDR",
+                "HP": "C_R_HIGHADDR",
+                "MA": "Data",
+                "MX": "/processing_system7_0",
+                "MI": "M_AXI_GP0",
+                "MS": "SEG_SK9822_AXI4_0_R_reg",
+                "MV": "xilinx.com:ip:processing_system7:5.5",
+                "SX": "/SK9822_AXI4_0",
+                "SI": "R",
+                "SS": "R_reg",
+                "SV": "tu-ilmenau.de:SK9822_AXI4:SK9822_AXI4:1.0",
+                "TM": "both",
+                "TU": "register"
             }
         },
         "edges": [
@@ -197,6 +287,31 @@
             {
                 "src": "V1",
                 "trg": "V2"
+            },
+            {
+                "src": "V3",
+                "trg": "V2",
+                "EH": "2"
+            },
+            {
+                "src": "V4",
+                "trg": "V2",
+                "EH": "2"
+            },
+            {
+                "src": "V5",
+                "trg": "V2",
+                "EH": "2"
+            },
+            {
+                "src": "V6",
+                "trg": "V2",
+                "EH": "2"
+            },
+            {
+                "src": "V7",
+                "trg": "V2",
+                "EH": "2"
             }
         ]
     }

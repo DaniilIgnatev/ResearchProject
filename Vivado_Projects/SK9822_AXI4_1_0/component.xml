@@ -1280,7 +1280,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>debcc623</spirit:value>
+            <spirit:value>5fe80bf5</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -1296,7 +1296,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>debcc623</spirit:value>
+            <spirit:value>5fe80bf5</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -3111,6 +3111,11 @@
         <spirit:fileType>verilogSource</spirit:fileType>
         <spirit:userFileType>CHECKSUM_c5dcd6cd</spirit:userFileType>
       </spirit:file>
+      <spirit:file>
+        <spirit:name>../SK9822/SK9822.srcs/sources_1/new/FrequencyDivider.v</spirit:name>
+        <spirit:fileType>verilogSource</spirit:fileType>
+        <spirit:userFileType>CHECKSUM_6e691f0f</spirit:userFileType>
+      </spirit:file>
     </spirit:fileSet>
     <spirit:fileSet>
       <spirit:name>xilinx_verilogbehavioralsimulation_view_fileset</spirit:name>
@@ -3164,6 +3169,10 @@
       </spirit:file>
       <spirit:file>
         <spirit:name>hdl/SK9822_AXI4_v1_0.v</spirit:name>
+        <spirit:fileType>verilogSource</spirit:fileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>../SK9822/SK9822.srcs/sources_1/new/FrequencyDivider.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
       </spirit:file>
     </spirit:fileSet>
@@ -3504,17 +3513,17 @@
       <xilinx:displayName>SK9822_AXI4_v1.0</xilinx:displayName>
       <xilinx:vendorDisplayName>TU Ilmenau</xilinx:vendorDisplayName>
       <xilinx:vendorURL>https://www.tu-ilmenau.de/</xilinx:vendorURL>
-      <xilinx:coreRevision>18</xilinx:coreRevision>
+      <xilinx:coreRevision>23</xilinx:coreRevision>
       <xilinx:upgrades>
         <xilinx:canUpgradeFrom>infineon.com:user:SK9822_AXI4:1.0</xilinx:canUpgradeFrom>
       </xilinx:upgrades>
-      <xilinx:coreCreationDateTime>2023-12-06T13:28:11Z</xilinx:coreCreationDateTime>
+      <xilinx:coreCreationDateTime>2023-12-07T20:44:58Z</xilinx:coreCreationDateTime>
     </xilinx:coreExtensions>
     <xilinx:packagingInfo>
       <xilinx:xilinxVersion>2023.2</xilinx:xilinxVersion>
       <xilinx:checksum xilinx:scope="busInterfaces" xilinx:value="ec766cd4"/>
       <xilinx:checksum xilinx:scope="memoryMaps" xilinx:value="3b62cb7e"/>
-      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="54b9ba97"/>
+      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="f3399bea"/>
       <xilinx:checksum xilinx:scope="ports" xilinx:value="a43cfb99"/>
       <xilinx:checksum xilinx:scope="hdlParameters" xilinx:value="65953596"/>
       <xilinx:checksum xilinx:scope="parameters" xilinx:value="a4bb6f61"/>

@@ -444,7 +444,7 @@
 	assign CSR_INSEL = slv_reg0[1];
 	assign CSR_LOOP = slv_reg0[2];
 	//TSR
-	assign TSR_ST = 1;//slv_reg1[0];
+	assign TSR_ST = slv_reg1[0];
 	// GBCR
 	assign GBCR_INSEL = slv_reg2[0];
 	assign GBCR_GB = slv_reg2[7:3];
