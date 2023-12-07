@@ -1,19 +1,22 @@
 {
   "design": {
     "design_info": {
-      "boundary_crc": "0x7C2A0E65C056FDEB",
+      "boundary_crc": "0x9DF7F058AE250C59",
       "device": "xc7z020clg400-1",
       "gen_directory": "../../../../SK9822_ZTurn.gen/sources_1/bd/design_main",
       "name": "design_main",
       "rev_ctrl_bd_flag": "RevCtrlBdOff",
       "synth_flow_mode": "Hierarchical",
-      "tool_version": "2023.2"
+      "tool_version": "2023.2",
+      "validated": "true"
     },
     "design_tree": {
       "processing_system7_0": "",
       "xlconstant_6": "",
-      "SPI_0": "",
-      "reset_generator_0": ""
+      "util_vector_logic_0": "",
+      "util_vector_logic_1": "",
+      "Bytes_Transmitter_0": "",
+      "xlconstant_0": ""
     },
     "interface_ports": {
       "DDR": {
@@ -187,13 +190,47 @@
     },
     "ports": {
       "P61": {
-        "direction": "O"
+        "direction": "O",
+        "parameters": {
+          "CLK_DOMAIN": {
+            "value": "design_main_processing_system7_0_0_FCLK_CLK0",
+            "value_src": "default_prop"
+          },
+          "FREQ_HZ": {
+            "value": "5000000",
+            "value_src": "user_prop"
+          },
+          "PHASE": {
+            "value": "0.0",
+            "value_src": "default_prop"
+          }
+        }
       },
       "P62": {
-        "direction": "O"
+        "direction": "O",
+        "parameters": {
+          "CLK_DOMAIN": {
+            "value": "design_main_processing_system7_0_0_FCLK_CLK1",
+            "value_src": "default_prop"
+          },
+          "FREQ_HZ": {
+            "value": "500000",
+            "value_src": "user_prop"
+          },
+          "PHASE": {
+            "value": "0.0",
+            "value_src": "default_prop"
+          }
+        }
       },
       "P63": {
-        "direction": "O"
+        "direction": "O",
+        "parameters": {
+          "POLARITY": {
+            "value": "ACTIVE_LOW",
+            "value_src": "default_prop"
+          }
+        }
       },
       "P64": {
         "direction": "O"
@@ -202,10 +239,44 @@
         "direction": "O"
       },
       "P66": {
-        "direction": "O"
+        "direction": "O",
+        "parameters": {
+          "PortType": {
+            "value": "undef",
+            "value_src": "ip_prop"
+          },
+          "PortType.PROP_SRC": {
+            "value": "false",
+            "value_src": "ip_prop"
+          }
+        }
       },
       "P68": {
-        "direction": "O"
+        "direction": "O",
+        "left": "0",
+        "right": "0",
+        "parameters": {
+          "CLK_DOMAIN": {
+            "value": "design_main_processing_system7_0_0_FCLK_CLK1",
+            "value_src": "ip_prop"
+          },
+          "FREQ_HZ": {
+            "value": "500000",
+            "value_src": "ip_prop"
+          },
+          "PHASE": {
+            "value": "0.0",
+            "value_src": "ip_prop"
+          },
+          "PortType": {
+            "value": "clk",
+            "value_src": "ip_prop"
+          },
+          "PortType.PROP_SRC": {
+            "value": "false",
+            "value_src": "ip_prop"
+          }
+        }
       },
       "P67": {
         "direction": "O"
@@ -241,7 +312,7 @@
             "value": "10.000000"
           },
           "PCW_ACT_FPGA0_PERIPHERAL_FREQMHZ": {
-            "value": "50.000000"
+            "value": "5.000000"
           },
           "PCW_ACT_FPGA1_PERIPHERAL_FREQMHZ": {
             "value": "0.500000"
@@ -331,7 +402,7 @@
             "value": "0"
           },
           "PCW_CLK0_FREQ": {
-            "value": "50000000"
+            "value": "5000000"
           },
           "PCW_CLK1_FREQ": {
             "value": "500000"
@@ -604,7 +675,7 @@
             "value": "FALSE"
           },
           "PCW_FPGA0_PERIPHERAL_FREQMHZ": {
-            "value": "50"
+            "value": "5"
           },
           "PCW_FPGA1_PERIPHERAL_FREQMHZ": {
             "value": "0.5"
@@ -662,9 +733,6 @@
           },
           "PCW_INCLUDE_ACP_TRANS_CHECK": {
             "value": "0"
-          },
-          "PCW_IRQ_F2P_MODE": {
-            "value": "DIRECT"
           },
           "PCW_MIO_40_IOTYPE": {
             "value": "LVCMOS 1.8V"
@@ -1031,18 +1099,6 @@
           },
           "PCW_SPI_PERIPHERAL_VALID": {
             "value": "0"
-          },
-          "PCW_S_AXI_HP0_DATA_WIDTH": {
-            "value": "64"
-          },
-          "PCW_S_AXI_HP1_DATA_WIDTH": {
-            "value": "64"
-          },
-          "PCW_S_AXI_HP2_DATA_WIDTH": {
-            "value": "64"
-          },
-          "PCW_S_AXI_HP3_DATA_WIDTH": {
-            "value": "64"
           },
           "PCW_TPIU_PERIPHERAL_CLKSRC": {
             "value": "External"
@@ -1554,20 +1610,45 @@
           }
         }
       },
-      "SPI_0": {
-        "vlnv": "xilinx.com:module_ref:SPI:1.0",
-        "ip_revision": "1",
-        "xci_name": "design_main_SPI_0_0",
-        "xci_path": "ip\\design_main_SPI_0_0\\design_main_SPI_0_0.xci",
-        "inst_hier_path": "SPI_0",
+      "util_vector_logic_0": {
+        "vlnv": "xilinx.com:ip:util_vector_logic:2.0",
+        "ip_revision": "3",
+        "xci_name": "design_main_util_vector_logic_0_0",
+        "xci_path": "ip\\design_main_util_vector_logic_0_0\\design_main_util_vector_logic_0_0.xci",
+        "inst_hier_path": "util_vector_logic_0",
         "parameters": {
-          "CLK_divider": {
-            "value": "2"
+          "C_OPERATION": {
+            "value": "not"
+          },
+          "C_SIZE": {
+            "value": "1"
           }
-        },
+        }
+      },
+      "util_vector_logic_1": {
+        "vlnv": "xilinx.com:ip:util_vector_logic:2.0",
+        "ip_revision": "3",
+        "xci_name": "design_main_util_vector_logic_1_0",
+        "xci_path": "ip\\design_main_util_vector_logic_1_0\\design_main_util_vector_logic_1_0.xci",
+        "inst_hier_path": "util_vector_logic_1",
+        "parameters": {
+          "C_OPERATION": {
+            "value": "and"
+          },
+          "C_SIZE": {
+            "value": "1"
+          }
+        }
+      },
+      "Bytes_Transmitter_0": {
+        "vlnv": "xilinx.com:module_ref:Bytes_Transmitter:1.0",
+        "ip_revision": "1",
+        "xci_name": "design_main_Bytes_Transmitter_0_0",
+        "xci_path": "ip\\design_main_Bytes_Transmitter_0_0\\design_main_Bytes_Transmitter_0_0.xci",
+        "inst_hier_path": "Bytes_Transmitter_0",
         "reference_info": {
           "ref_type": "hdl",
-          "ref_name": "SPI",
+          "ref_name": "Bytes_Transmitter",
           "boundary_crc": "0x0"
         },
         "ports": {
@@ -1576,11 +1657,11 @@
             "direction": "I",
             "parameters": {
               "FREQ_HZ": {
-                "value": "500000",
+                "value": "5000000",
                 "value_src": "user_prop"
               },
               "CLK_DOMAIN": {
-                "value": "design_main_processing_system7_0_0_FCLK_CLK1",
+                "value": "design_main_processing_system7_0_0_FCLK_CLK0",
                 "value_src": "default_prop"
               }
             }
@@ -1600,12 +1681,7 @@
           "MOSI": {
             "direction": "O"
           },
-          "D": {
-            "direction": "I",
-            "left": "7",
-            "right": "0"
-          },
-          "DS": {
+          "ST": {
             "direction": "I",
             "parameters": {
               "FREQ_HZ": {
@@ -1623,69 +1699,44 @@
             }
           },
           "TI": {
-            "direction": "O"
-          },
-          "RDONE": {
             "direction": "O",
             "parameters": {
-              "FREQ_HZ": {
-                "value": "193164",
-                "value_src": "user_prop"
+              "PortType": {
+                "value": "undef",
+                "value_src": "ip_prop"
               },
-              "PHASE": {
-                "value": "0.0",
-                "value_src": "default_prop"
-              },
-              "CLK_DOMAIN": {
-                "value": "design_main_processing_system7_0_0_FCLK_CLK1",
-                "value_src": "default_prop"
+              "PortType.PROP_SRC": {
+                "value": "false",
+                "value_src": "ip_prop"
               }
             }
+          },
+          "TX_COUNTER_MAX": {
+            "direction": "I",
+            "left": "15",
+            "right": "0"
+          },
+          "TX_COUNTER": {
+            "direction": "O",
+            "left": "15",
+            "right": "0"
+          },
+          "NEXT_BYTE": {
+            "direction": "I",
+            "left": "7",
+            "right": "0"
           }
         }
       },
-      "reset_generator_0": {
-        "vlnv": "xilinx.com:module_ref:reset_generator:1.0",
-        "ip_revision": "1",
-        "xci_name": "design_main_reset_generator_0_0",
-        "xci_path": "ip\\design_main_reset_generator_0_0\\design_main_reset_generator_0_0.xci",
-        "inst_hier_path": "reset_generator_0",
-        "reference_info": {
-          "ref_type": "hdl",
-          "ref_name": "reset_generator",
-          "boundary_crc": "0x0"
-        },
-        "ports": {
-          "CLK": {
-            "type": "clk",
-            "direction": "I",
-            "parameters": {
-              "FREQ_HZ": {
-                "value": "500000",
-                "value_src": "user_prop"
-              },
-              "CLK_DOMAIN": {
-                "value": "design_main_processing_system7_0_0_FCLK_CLK1",
-                "value_src": "default_prop"
-              }
-            }
-          },
-          "NRST": {
-            "direction": "O",
-            "parameters": {
-              "CLK_DOMAIN": {
-                "value": "design_main_processing_system7_0_0_FCLK_CLK1",
-                "value_src": "default_prop"
-              },
-              "FREQ_HZ": {
-                "value": "1000000",
-                "value_src": "user_prop"
-              },
-              "PHASE": {
-                "value": "0.0",
-                "value_src": "default_prop"
-              }
-            }
+      "xlconstant_0": {
+        "vlnv": "xilinx.com:ip:xlconstant:1.1",
+        "ip_revision": "8",
+        "xci_name": "design_main_xlconstant_0_0",
+        "xci_path": "ip\\design_main_xlconstant_0_0\\design_main_xlconstant_0_0.xci",
+        "inst_hier_path": "xlconstant_0",
+        "parameters": {
+          "CONST_WIDTH": {
+            "value": "16"
           }
         }
       }
@@ -1705,28 +1756,75 @@
       }
     },
     "nets": {
+      "Bytes_Transmitter_0_MOSI": {
+        "ports": [
+          "Bytes_Transmitter_0/MOSI",
+          "P65"
+        ]
+      },
+      "Bytes_Transmitter_0_SCLK": {
+        "ports": [
+          "Bytes_Transmitter_0/SCLK",
+          "P64"
+        ]
+      },
       "SPI_0_RDONE": {
         "ports": [
-          "SPI_0/RDONE",
-          "P61"
+          "P67"
+        ]
+      },
+      "SPI_0_TI": {
+        "ports": [
+          "Bytes_Transmitter_0/TI",
+          "P66",
+          "util_vector_logic_0/Op1"
         ]
       },
       "processing_system7_0_FCLK_CLK0": {
         "ports": [
           "processing_system7_0/FCLK_CLK0",
-          "processing_system7_0/M_AXI_GP0_ACLK"
+          "processing_system7_0/M_AXI_GP0_ACLK",
+          "P61",
+          "Bytes_Transmitter_0/CLK"
+        ]
+      },
+      "processing_system7_0_FCLK_CLK1": {
+        "ports": [
+          "processing_system7_0/FCLK_CLK1",
+          "util_vector_logic_1/Op2",
+          "P62",
+          "Bytes_Transmitter_0/ST"
         ]
       },
       "processing_system7_0_FCLK_RESET0_N": {
         "ports": [
           "processing_system7_0/FCLK_RESET0_N",
-          "SPI_0/NRST"
+          "P63",
+          "Bytes_Transmitter_0/NRST"
+        ]
+      },
+      "util_vector_logic_0_Res": {
+        "ports": [
+          "util_vector_logic_0/Res",
+          "util_vector_logic_1/Op1"
+        ]
+      },
+      "util_vector_logic_1_Res": {
+        "ports": [
+          "util_vector_logic_1/Res",
+          "P68"
+        ]
+      },
+      "xlconstant_0_dout": {
+        "ports": [
+          "xlconstant_0/dout",
+          "Bytes_Transmitter_0/TX_COUNTER_MAX"
         ]
       },
       "xlconstant_6_dout": {
         "ports": [
           "xlconstant_6/dout",
-          "SPI_0/D"
+          "Bytes_Transmitter_0/NEXT_BYTE"
         ]
       }
     }

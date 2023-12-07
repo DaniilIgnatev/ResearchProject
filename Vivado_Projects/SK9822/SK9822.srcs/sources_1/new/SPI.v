@@ -27,41 +27,28 @@ module SPI #(CLK_divider = 50) (
   output MOSI,
   input [7:0] D,
   input DS,
-  output TI,
-  output reg RDONE
+  output TI
 );
     reg [7:0] data_buffer;
-    reg [7:0] counter;
     
-    reg [15:0] clk_counter;//CLK_divider max value is 65535
-    reg SCLK_internal;
+    wire SCLK_internal;
     
-    reg start_request;// spi is asked for transmission
-    reg start_request_ack;// spi has accepted transmission request
-    reg [7:0] mosi_reg;
+    reg start_request = 0;// spi is asked for transmission
+    reg start_request_ack = 0;// spi has accepted transmission request
+    reg [7:0] counter = 0;
+    reg [7:0] mosi_reg = 0;
 
-    // SCLK
-    always @(CLK) begin
-        if (clk_counter == CLK_divider) begin
-            clk_counter = 1;
-            SCLK_internal = ~SCLK_internal;
-        end else
-            clk_counter = (clk_counter + 1);
-    end
+    FrequencyDivider #(CLK_divider) F_div(
+        .CLK_IN(CLK),
+        .NRST(NRST),
+        .CLK_OUT(SCLK_internal)
+    );
 
     //reset, init
     always @(posedge CLK) begin
         if (!NRST) begin
             data_buffer <= 0;
-            counter <= 8'b00000000;
-            clk_counter = 0;
-            SCLK_internal = 1'b1;
-            
-            start_request <= 1'b0;
-            start_request_ack <= 1'b0;
-            mosi_reg <= 0;
-            
-            RDONE <= 1;
+            start_request <= 0;
         end
         else begin
             if (!start_request_ack && !start_request && DS) begin
@@ -76,10 +63,15 @@ module SPI #(CLK_divider = 50) (
     end
     
     wire TI_internal;// spi is busy
-    assign TI_internal = counter != 8'b00000000;
+    assign TI_internal = counter != 0;
     
     always @(posedge SCLK_internal) begin
-        if (NRST) begin
+        if (!NRST) begin
+            start_request_ack <= 0;
+            counter <= 0;
+            mosi_reg <= 0;
+        end else
+        begin
             if (!TI_internal && start_request) begin
                 start_request_ack <= 1'b1;
                 counter <= 8'b11111111;

@@ -67,6 +67,7 @@ module SPI_tb;
         assert (D == test_data && MOSI == D[7] && TI == 1) 
         else $fatal("Data set failed!");
         DS = 0;
+        #2ns
         
         // Testcase: Data shift
         for (int j = 6; j >= 0; j--) begin

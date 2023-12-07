@@ -4,7 +4,7 @@
 <!-- Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.                   -->
 <!-- Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.   -->
 
-<Project Product="Vivado" Version="7" Minor="65" Path="C:/Users/Ignatev/Desktop/ResearchProject/Vivado_Projects/SK9822_ZTurn/SK9822_ZTurn.xpr">
+<Project Product="Vivado" Version="7" Minor="65" Path="C:/Users/Daniil/Desktop/ResearchProject/Vivado_Projects/SK9822_ZTurn/SK9822_ZTurn.xpr">
   <DefaultLaunch Dir="$PRUNDIR"/>
   <Configuration>
     <Option Name="Id" Val="6e57bba6dc9f434ba833ab5c3576feba"/>
@@ -67,13 +67,13 @@
     <Option Name="WTVcsLaunchSim" Val="0"/>
     <Option Name="WTRivieraLaunchSim" Val="0"/>
     <Option Name="WTActivehdlLaunchSim" Val="0"/>
-    <Option Name="WTXSimExportSim" Val="18"/>
-    <Option Name="WTModelSimExportSim" Val="18"/>
-    <Option Name="WTQuestaExportSim" Val="18"/>
+    <Option Name="WTXSimExportSim" Val="21"/>
+    <Option Name="WTModelSimExportSim" Val="21"/>
+    <Option Name="WTQuestaExportSim" Val="21"/>
     <Option Name="WTIesExportSim" Val="0"/>
-    <Option Name="WTVcsExportSim" Val="18"/>
-    <Option Name="WTRivieraExportSim" Val="18"/>
-    <Option Name="WTActivehdlExportSim" Val="18"/>
+    <Option Name="WTVcsExportSim" Val="21"/>
+    <Option Name="WTRivieraExportSim" Val="21"/>
+    <Option Name="WTActivehdlExportSim" Val="21"/>
     <Option Name="GenerateIPUpgradeLog" Val="TRUE"/>
     <Option Name="XSimRadix" Val="hex"/>
     <Option Name="XSimTimeUnit" Val="ns"/>
@@ -91,6 +91,13 @@
   <FileSets Version="1" Minor="32">
     <FileSet Name="sources_1" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1" RelGenDir="$PGENDIR/sources_1">
       <Filter Type="Srcs"/>
+      <File Path="$PPRDIR/../SK9822/SK9822.srcs/sources_1/new/FrequencyDivider.v">
+        <FileInfo>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
       <File Path="$PPRDIR/../SK9822/SK9822.srcs/sources_1/new/SPI.v">
         <FileInfo>
           <Attr Name="UsedIn" Val="synthesis"/>
@@ -98,7 +105,7 @@
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PSRCDIR/sources_1/new/reset_generator.v">
+      <File Path="$PPRDIR/../SK9822/SK9822.srcs/sources_1/new/Bytes_Transmitter.v">
         <FileInfo>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
@@ -111,14 +118,17 @@
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
-        <CompFileExtendedInfo CompFileName="design_main.bd" FileRelPathName="ip/design_main_SPI_0_0/design_main_SPI_0_0.xci">
-          <Proxy FileSetName="design_main_SPI_0_0"/>
+        <CompFileExtendedInfo CompFileName="design_main.bd" FileRelPathName="ip/design_main_Bytes_Transmitter_0_0/design_main_Bytes_Transmitter_0_0.xci">
+          <Proxy FileSetName="design_main_Bytes_Transmitter_0_0"/>
         </CompFileExtendedInfo>
         <CompFileExtendedInfo CompFileName="design_main.bd" FileRelPathName="ip/design_main_processing_system7_0_0/design_main_processing_system7_0_0.xci">
           <Proxy FileSetName="design_main_processing_system7_0_0"/>
         </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="design_main.bd" FileRelPathName="ip/design_main_reset_generator_0_0/design_main_reset_generator_0_0.xci">
-          <Proxy FileSetName="design_main_reset_generator_0_0"/>
+        <CompFileExtendedInfo CompFileName="design_main.bd" FileRelPathName="ip/design_main_util_vector_logic_0_0/design_main_util_vector_logic_0_0.xci">
+          <Proxy FileSetName="design_main_util_vector_logic_0_0"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="design_main.bd" FileRelPathName="ip/design_main_util_vector_logic_1_0/design_main_util_vector_logic_1_0.xci">
+          <Proxy FileSetName="design_main_util_vector_logic_1_0"/>
         </CompFileExtendedInfo>
       </File>
       <File Path="$PGENDIR/sources_1/bd/design_main/hdl/design_main_wrapper.v">
@@ -129,14 +139,6 @@
         </FileInfo>
       </File>
       <File Path="$PPRDIR/../SK9822/SK9822.srcs/sources_1/new/BinaryColors_Transmitter.v">
-        <FileInfo>
-          <Attr Name="AutoDisabled" Val="1"/>
-          <Attr Name="UsedIn" Val="synthesis"/>
-          <Attr Name="UsedIn" Val="implementation"/>
-          <Attr Name="UsedIn" Val="simulation"/>
-        </FileInfo>
-      </File>
-      <File Path="$PPRDIR/../SK9822/SK9822.srcs/sources_1/new/Bytes_Transmitter.v">
         <FileInfo>
           <Attr Name="AutoDisabled" Val="1"/>
           <Attr Name="UsedIn" Val="synthesis"/>
@@ -176,10 +178,17 @@
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
+      <File Path="$PSRCDIR/sources_1/new/reset_generator.v">
+        <FileInfo>
+          <Attr Name="AutoDisabled" Val="1"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
       <Config>
         <Option Name="DesignMode" Val="RTL"/>
         <Option Name="TopModule" Val="design_main_wrapper"/>
-        <Option Name="TopAutoSet" Val="TRUE"/>
       </Config>
     </FileSet>
     <FileSet Name="constrs_1" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1" RelGenDir="$PGENDIR/constrs_1">
@@ -199,7 +208,7 @@
       <Filter Type="Srcs"/>
       <Config>
         <Option Name="DesignMode" Val="RTL"/>
-        <Option Name="TopModule" Val="design_main_wrapper"/>
+        <Option Name="TopModule" Val="SK9822"/>
         <Option Name="TopLib" Val="xil_defaultlib"/>
         <Option Name="TopAutoSet" Val="TRUE"/>
         <Option Name="TransportPathDelay" Val="0"/>
@@ -233,15 +242,21 @@
         <Option Name="UseBlackboxStub" Val="1"/>
       </Config>
     </FileSet>
-    <FileSet Name="design_main_SPI_0_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/design_main_SPI_0_0" RelGenDir="$PGENDIR/design_main_SPI_0_0">
+    <FileSet Name="design_main_util_vector_logic_0_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/design_main_util_vector_logic_0_0" RelGenDir="$PGENDIR/design_main_util_vector_logic_0_0">
       <Config>
-        <Option Name="TopModule" Val="design_main_SPI_0_0"/>
+        <Option Name="TopModule" Val="design_main_util_vector_logic_0_0"/>
         <Option Name="UseBlackboxStub" Val="1"/>
       </Config>
     </FileSet>
-    <FileSet Name="design_main_reset_generator_0_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/design_main_reset_generator_0_0" RelGenDir="$PGENDIR/design_main_reset_generator_0_0">
+    <FileSet Name="design_main_util_vector_logic_1_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/design_main_util_vector_logic_1_0" RelGenDir="$PGENDIR/design_main_util_vector_logic_1_0">
       <Config>
-        <Option Name="TopModule" Val="design_main_reset_generator_0_0"/>
+        <Option Name="TopModule" Val="design_main_util_vector_logic_1_0"/>
+        <Option Name="UseBlackboxStub" Val="1"/>
+      </Config>
+    </FileSet>
+    <FileSet Name="design_main_Bytes_Transmitter_0_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/design_main_Bytes_Transmitter_0_0" RelGenDir="$PGENDIR/design_main_Bytes_Transmitter_0_0">
+      <Config>
+        <Option Name="TopModule" Val="design_main_Bytes_Transmitter_0_0"/>
         <Option Name="UseBlackboxStub" Val="1"/>
       </Config>
     </FileSet>
@@ -277,9 +292,7 @@
     </Run>
     <Run Id="design_main_processing_system7_0_0_synth_1" Type="Ft3:Synth" SrcSet="design_main_processing_system7_0_0" Part="xc7z020clg400-1" ConstrsSet="design_main_processing_system7_0_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/design_main_processing_system7_0_0_synth_1" IncludeInArchive="true" IsChild="false" AutoIncrementalDir="$PSRCDIR/utils_1/imports/design_main_processing_system7_0_0_synth_1" AutoRQSDir="$PSRCDIR/utils_1/imports/design_main_processing_system7_0_0_synth_1">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2023">
-          <Desc>Vivado Synthesis Defaults</Desc>
-        </StratHandle>
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2023"/>
         <Step Id="synth_design"/>
       </Strategy>
       <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
@@ -287,7 +300,7 @@
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
       <RQSFiles/>
     </Run>
-    <Run Id="design_main_SPI_0_0_synth_1" Type="Ft3:Synth" SrcSet="design_main_SPI_0_0" Part="xc7z020clg400-1" ConstrsSet="design_main_SPI_0_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/design_main_SPI_0_0_synth_1" IncludeInArchive="true" IsChild="false" AutoIncrementalDir="$PSRCDIR/utils_1/imports/design_main_SPI_0_0_synth_1" AutoRQSDir="$PSRCDIR/utils_1/imports/design_main_SPI_0_0_synth_1">
+    <Run Id="design_main_util_vector_logic_0_0_synth_1" Type="Ft3:Synth" SrcSet="design_main_util_vector_logic_0_0" Part="xc7z020clg400-1" ConstrsSet="design_main_util_vector_logic_0_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/design_main_util_vector_logic_0_0_synth_1" IncludeInArchive="true" IsChild="false" AutoIncrementalDir="$PSRCDIR/utils_1/imports/design_main_util_vector_logic_0_0_synth_1" AutoRQSDir="$PSRCDIR/utils_1/imports/design_main_util_vector_logic_0_0_synth_1">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2023">
           <Desc>Vivado Synthesis Defaults</Desc>
@@ -299,7 +312,7 @@
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
       <RQSFiles/>
     </Run>
-    <Run Id="design_main_reset_generator_0_0_synth_1" Type="Ft3:Synth" SrcSet="design_main_reset_generator_0_0" Part="xc7z020clg400-1" ConstrsSet="design_main_reset_generator_0_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/design_main_reset_generator_0_0_synth_1" IncludeInArchive="true" IsChild="false" AutoIncrementalDir="$PSRCDIR/utils_1/imports/design_main_reset_generator_0_0_synth_1" AutoRQSDir="$PSRCDIR/utils_1/imports/design_main_reset_generator_0_0_synth_1">
+    <Run Id="design_main_util_vector_logic_1_0_synth_1" Type="Ft3:Synth" SrcSet="design_main_util_vector_logic_1_0" Part="xc7z020clg400-1" ConstrsSet="design_main_util_vector_logic_1_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/design_main_util_vector_logic_1_0_synth_1" IncludeInArchive="true" IsChild="false" AutoIncrementalDir="$PSRCDIR/utils_1/imports/design_main_util_vector_logic_1_0_synth_1" AutoRQSDir="$PSRCDIR/utils_1/imports/design_main_util_vector_logic_1_0_synth_1">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2023">
           <Desc>Vivado Synthesis Defaults</Desc>
@@ -311,7 +324,19 @@
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
       <RQSFiles/>
     </Run>
-    <Run Id="impl_1" Type="Ft2:EntireDesign" Part="xc7z020clg400-1" ConstrsSet="constrs_1" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" State="current" Dir="$PRUNDIR/impl_1" SynthRun="synth_1" IncludeInArchive="true" IsChild="false" GenFullBitstream="true" AutoIncrementalDir="$PSRCDIR/utils_1/imports/impl_1" LaunchOptions="-jobs 12 " AutoRQSDir="$PSRCDIR/utils_1/imports/impl_1">
+    <Run Id="design_main_Bytes_Transmitter_0_0_synth_1" Type="Ft3:Synth" SrcSet="design_main_Bytes_Transmitter_0_0" Part="xc7z020clg400-1" ConstrsSet="design_main_Bytes_Transmitter_0_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/design_main_Bytes_Transmitter_0_0_synth_1" IncludeInArchive="true" IsChild="false" AutoIncrementalDir="$PSRCDIR/utils_1/imports/design_main_Bytes_Transmitter_0_0_synth_1" AutoRQSDir="$PSRCDIR/utils_1/imports/design_main_Bytes_Transmitter_0_0_synth_1">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2023">
+          <Desc>Vivado Synthesis Defaults</Desc>
+        </StratHandle>
+        <Step Id="synth_design"/>
+      </Strategy>
+      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
+      <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2023"/>
+      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
+      <RQSFiles/>
+    </Run>
+    <Run Id="impl_1" Type="Ft2:EntireDesign" Part="xc7z020clg400-1" ConstrsSet="constrs_1" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" State="current" Dir="$PRUNDIR/impl_1" SynthRun="synth_1" IncludeInArchive="true" IsChild="false" GenFullBitstream="true" AutoIncrementalDir="$PSRCDIR/utils_1/imports/impl_1" LaunchOptions="-jobs 32 " AutoRQSDir="$PSRCDIR/utils_1/imports/impl_1">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2023"/>
         <Step Id="init_design"/>
@@ -331,9 +356,7 @@
     </Run>
     <Run Id="design_main_processing_system7_0_0_impl_1" Type="Ft2:EntireDesign" Part="xc7z020clg400-1" ConstrsSet="design_main_processing_system7_0_0" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="design_main_processing_system7_0_0_synth_1" IncludeInArchive="false" IsChild="false" GenFullBitstream="true" AutoIncrementalDir="$PSRCDIR/utils_1/imports/design_main_processing_system7_0_0_impl_1" AutoRQSDir="$PSRCDIR/utils_1/imports/design_main_processing_system7_0_0_impl_1">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2023">
-          <Desc>Default settings for Implementation.</Desc>
-        </StratHandle>
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2023"/>
         <Step Id="init_design"/>
         <Step Id="opt_design"/>
         <Step Id="power_opt_design"/>
@@ -348,7 +371,7 @@
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
       <RQSFiles/>
     </Run>
-    <Run Id="design_main_SPI_0_0_impl_1" Type="Ft2:EntireDesign" Part="xc7z020clg400-1" ConstrsSet="design_main_SPI_0_0" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="design_main_SPI_0_0_synth_1" IncludeInArchive="false" IsChild="false" GenFullBitstream="true" AutoIncrementalDir="$PSRCDIR/utils_1/imports/design_main_SPI_0_0_impl_1" AutoRQSDir="$PSRCDIR/utils_1/imports/design_main_SPI_0_0_impl_1">
+    <Run Id="design_main_util_vector_logic_0_0_impl_1" Type="Ft2:EntireDesign" Part="xc7z020clg400-1" ConstrsSet="design_main_util_vector_logic_0_0" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="design_main_util_vector_logic_0_0_synth_1" IncludeInArchive="false" IsChild="false" GenFullBitstream="true" AutoIncrementalDir="$PSRCDIR/utils_1/imports/design_main_util_vector_logic_0_0_impl_1" AutoRQSDir="$PSRCDIR/utils_1/imports/design_main_util_vector_logic_0_0_impl_1">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2023">
           <Desc>Default settings for Implementation.</Desc>
@@ -367,7 +390,26 @@
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
       <RQSFiles/>
     </Run>
-    <Run Id="design_main_reset_generator_0_0_impl_1" Type="Ft2:EntireDesign" Part="xc7z020clg400-1" ConstrsSet="design_main_reset_generator_0_0" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="design_main_reset_generator_0_0_synth_1" IncludeInArchive="false" IsChild="false" GenFullBitstream="true" AutoIncrementalDir="$PSRCDIR/utils_1/imports/design_main_reset_generator_0_0_impl_1" AutoRQSDir="$PSRCDIR/utils_1/imports/design_main_reset_generator_0_0_impl_1">
+    <Run Id="design_main_util_vector_logic_1_0_impl_1" Type="Ft2:EntireDesign" Part="xc7z020clg400-1" ConstrsSet="design_main_util_vector_logic_1_0" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="design_main_util_vector_logic_1_0_synth_1" IncludeInArchive="false" IsChild="false" GenFullBitstream="true" AutoIncrementalDir="$PSRCDIR/utils_1/imports/design_main_util_vector_logic_1_0_impl_1" AutoRQSDir="$PSRCDIR/utils_1/imports/design_main_util_vector_logic_1_0_impl_1">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2023">
+          <Desc>Default settings for Implementation.</Desc>
+        </StratHandle>
+        <Step Id="init_design"/>
+        <Step Id="opt_design"/>
+        <Step Id="power_opt_design"/>
+        <Step Id="place_design"/>
+        <Step Id="post_place_power_opt_design"/>
+        <Step Id="phys_opt_design"/>
+        <Step Id="route_design"/>
+        <Step Id="post_route_phys_opt_design"/>
+        <Step Id="write_bitstream"/>
+      </Strategy>
+      <ReportStrategy Name="Vivado Implementation Default Reports" Flow="Vivado Implementation 2023"/>
+      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
+      <RQSFiles/>
+    </Run>
+    <Run Id="design_main_Bytes_Transmitter_0_0_impl_1" Type="Ft2:EntireDesign" Part="xc7z020clg400-1" ConstrsSet="design_main_Bytes_Transmitter_0_0" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="design_main_Bytes_Transmitter_0_0_synth_1" IncludeInArchive="false" IsChild="false" GenFullBitstream="true" AutoIncrementalDir="$PSRCDIR/utils_1/imports/design_main_Bytes_Transmitter_0_0_impl_1" AutoRQSDir="$PSRCDIR/utils_1/imports/design_main_Bytes_Transmitter_0_0_impl_1">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2023">
           <Desc>Default settings for Implementation.</Desc>
