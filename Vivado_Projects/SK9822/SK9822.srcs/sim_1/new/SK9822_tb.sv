@@ -241,7 +241,7 @@ module SK9822_tb;
             GBCR_INSEL = 1;// local brightness mode
             GBCR_GB = 5;// global brightness = 5, but it will be replaced in this case
 
-            Transmission_Test(250);
+            Transmission_Test(2500);
         end
     endtask
     

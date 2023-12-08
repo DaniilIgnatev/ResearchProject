@@ -47,6 +47,8 @@
     <Option Name="ActiveSimSet" Val="sim_1"/>
     <Option Name="DefaultLib" Val="xil_defaultlib"/>
     <Option Name="ProjectType" Val="Default"/>
+    <Option Name="IPRepoPath" Val="$PPRDIR/../SK9822_AXI4_30/SK9822_AXI4_30_1_0"/>
+    <Option Name="IPRepoPath" Val="$PPRDIR/../SK9822_30LEDs_1_0"/>
     <Option Name="IPRepoPath" Val="$PPRDIR/../ip_repo/myip_1_0"/>
     <Option Name="IPRepoPath" Val="$PPRDIR/../../Vivado_Projects"/>
     <Option Name="IPOutputRepo" Val="$PCACHEDIR/ip"/>

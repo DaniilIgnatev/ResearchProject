@@ -46,18 +46,18 @@ bool SK9822_resetTest(SK9822_BaseAddresses addresses)
 
 	for (int i = 0; i < LED_number; i++)
 	{
-		predicate = predicate && (SK9822_AXI4_mReadReg(addresses.LED_BaseAddress, SK9822_AXI4_LEDs_SLV_REG0_OFFSET + i * 4) == max_brightness);
+		predicate = predicate && (SK9822_AXI4_mReadReg(addresses.LED_BaseAddress, i * 4) == max_brightness);
 	}
 
 	for (int i = 0; i < (((LED_number - 1) / 32) + 1); i++)
 	{
-		uintptr_t offset_R = SK9822_AXI4_R_SLV_REG0_OFFSET + i * 4;
+		uintptr_t offset_R = i * 4;
 		predicate = predicate && (SK9822_AXI4_mReadReg(addresses.R_BaseAddress, offset_R) == 0);
 
-		uintptr_t offset_G = SK9822_AXI4_G_SLV_REG0_OFFSET + i * 4;
+		uintptr_t offset_G = i * 4;
 		predicate = predicate && (SK9822_AXI4_mReadReg(addresses.G_BaseAddress, offset_G) == 0);
 
-		uintptr_t offset_B = SK9822_AXI4_B_SLV_REG0_OFFSET + i * 4;
+		uintptr_t offset_B = i * 4;
 		predicate = predicate && (SK9822_AXI4_mReadReg(addresses.B_BaseAddress, offset_B) == 0);
 	}
 

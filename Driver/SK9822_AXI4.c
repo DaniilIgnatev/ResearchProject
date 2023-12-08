@@ -31,17 +31,17 @@ void SK9822_reset(uintptr_t Settings_BaseAddress, uintptr_t LED_BaseAddress, uin
     }
     
     for (int i = 0; i < LED_number; i++){
-        SK9822_AXI4_mWriteReg(LED_BaseAddress, SK9822_AXI4_LEDs_SLV_REG0_OFFSET + i * 4, max_brightness);
+        SK9822_AXI4_mWriteReg(LED_BaseAddress, i * 4, max_brightness);
     }
 
     for (int i = 0; i <  (((LED_number - 1) / 32) + 1); i++){
-        uintptr_t offset_R = SK9822_AXI4_R_SLV_REG0_OFFSET + i * 4;
+        uintptr_t offset_R = i * 4;
         SK9822_AXI4_mWriteReg(R_BaseAddress, offset_R, 0);
 
-        uintptr_t offset_G = SK9822_AXI4_G_SLV_REG0_OFFSET + i * 4;
+        uintptr_t offset_G = i * 4;
         SK9822_AXI4_mWriteReg(G_BaseAddress, offset_G, 0);
 
-        uintptr_t offset_B = SK9822_AXI4_B_SLV_REG0_OFFSET + i * 4;
+        uintptr_t offset_B = i * 4;
         SK9822_AXI4_mWriteReg(B_BaseAddress, offset_B, 0);
     }
 }
@@ -145,7 +145,7 @@ void SK9822_set_transmission_interrupt_status(uintptr_t Settings_BaseAddress){
 }
 
 LED_Type SK9822_get_LED(uintptr_t LED_BaseAddress, uint8_t id){
-    uint32_t data = SK9822_AXI4_mReadReg(LED_BaseAddress, SK9822_AXI4_LEDs_SLV_REG0_OFFSET + id * 4);
+    uint32_t data = SK9822_AXI4_mReadReg(LED_BaseAddress, id * 4);
     LED_Type led;
     led.reg = data;
 
@@ -153,11 +153,11 @@ LED_Type SK9822_get_LED(uintptr_t LED_BaseAddress, uint8_t id){
 }
 
 void SK9822_set_LED(uintptr_t LED_BaseAddress, uint8_t id, LED_Type data){
-    SK9822_AXI4_mWriteReg(LED_BaseAddress, SK9822_AXI4_LEDs_SLV_REG0_OFFSET + id * 4, data.reg);
+    SK9822_AXI4_mWriteReg(LED_BaseAddress, id * 4, data.reg);
 }
 
 bool SK9822_get_R(uintptr_t R_BaseAddress, uint8_t id){
-    uintptr_t offset = SK9822_AXI4_R_SLV_REG0_OFFSET + ((id / 32) * 4);
+    uintptr_t offset = ((id / 32) * 4);
     uint32_t data = SK9822_AXI4_mReadReg(R_BaseAddress, offset);
     bool on_off = (data & (1 << (id % 32))) != 0;
 
@@ -165,7 +165,7 @@ bool SK9822_get_R(uintptr_t R_BaseAddress, uint8_t id){
 }
 
 void SK9822_set_R(uintptr_t R_BaseAddress, uint8_t id, bool on_off){
-    uintptr_t offset = SK9822_AXI4_R_SLV_REG0_OFFSET + ((id / 32) * 4);
+    uintptr_t offset = ((id / 32) * 4);
     uint32_t data = SK9822_AXI4_mReadReg(R_BaseAddress, offset);
 
     if (on_off){
@@ -179,7 +179,7 @@ void SK9822_set_R(uintptr_t R_BaseAddress, uint8_t id, bool on_off){
 }
 
 bool SK9822_get_G(uintptr_t G_BaseAddress, uint8_t id){
-    uintptr_t offset = SK9822_AXI4_G_SLV_REG0_OFFSET + ((id / 32) * 4);
+    uintptr_t offset = ((id / 32) * 4);
     uint32_t data = SK9822_AXI4_mReadReg(G_BaseAddress, offset);
     bool on_off = (data & (1 << (id % 32))) != 0;
 
@@ -187,7 +187,7 @@ bool SK9822_get_G(uintptr_t G_BaseAddress, uint8_t id){
 }
 
 void SK9822_set_G(uintptr_t G_BaseAddress, uint8_t id, bool on_off){
-    uintptr_t offset = SK9822_AXI4_G_SLV_REG0_OFFSET + ((id / 32) * 4);
+    uintptr_t offset = ((id / 32) * 4);
     uint32_t data = SK9822_AXI4_mReadReg(G_BaseAddress, offset);
 
     if (on_off){
@@ -201,7 +201,7 @@ void SK9822_set_G(uintptr_t G_BaseAddress, uint8_t id, bool on_off){
 }
 
 bool SK9822_get_B(uintptr_t B_BaseAddress, uint8_t id){
-    uintptr_t offset = SK9822_AXI4_B_SLV_REG0_OFFSET + ((id / 32) * 4);
+    uintptr_t offset = ((id / 32) * 4);
     uint32_t data = SK9822_AXI4_mReadReg(B_BaseAddress, offset);
     bool on_off = (data & (1 << (id % 32))) != 0;
 
@@ -209,7 +209,7 @@ bool SK9822_get_B(uintptr_t B_BaseAddress, uint8_t id){
 }
 
 void SK9822_set_B(uintptr_t B_BaseAddress, uint8_t id, bool on_off){
-    uintptr_t offset = SK9822_AXI4_B_SLV_REG0_OFFSET + ((id / 32) * 4);
+    uintptr_t offset = ((id / 32) * 4);
     uint32_t data = SK9822_AXI4_mReadReg(B_BaseAddress, offset);
 
     if (on_off){
