@@ -1,7 +1,7 @@
 {
   "design": {
     "design_info": {
-      "boundary_crc": "0x33CD52EFE963536E",
+      "boundary_crc": "0x980C283E936FB23F",
       "device": "xc7z020clg400-1",
       "gen_directory": "../../../../SK9822_ZTurn.gen/sources_1/bd/design_main",
       "name": "design_main",
@@ -24,7 +24,8 @@
         "m04_couplers": {}
       },
       "rst_ps7_0_50M": "",
-      "SK9822_AXI4_0": ""
+      "SK9822_AXI4_0": "",
+      "xlconstant_0": ""
     },
     "interface_ports": {
       "FIXED_IO_0": {
@@ -205,7 +206,7 @@
             "value_src": "default_prop"
           },
           "FREQ_HZ": {
-            "value": "50000000",
+            "value": "25000000",
             "value_src": "user_prop"
           },
           "PHASE": {
@@ -224,13 +225,19 @@
         }
       },
       "P63": {
-        "direction": "O"
+        "direction": "O",
+        "left": "0",
+        "right": "0"
       },
       "P64": {
-        "direction": "O"
+        "direction": "O",
+        "left": "0",
+        "right": "0"
       },
       "P65": {
-        "direction": "O"
+        "direction": "O",
+        "left": "0",
+        "right": "0"
       },
       "P66": {
         "direction": "O"
@@ -266,7 +273,7 @@
             "value": "10.000000"
           },
           "PCW_ACT_FPGA0_PERIPHERAL_FREQMHZ": {
-            "value": "50.000000"
+            "value": "25.000000"
           },
           "PCW_ACT_FPGA1_PERIPHERAL_FREQMHZ": {
             "value": "10.000000"
@@ -320,7 +327,7 @@
             "value": "111.111115"
           },
           "PCW_CLK0_FREQ": {
-            "value": "50000000"
+            "value": "25000000"
           },
           "PCW_CLK1_FREQ": {
             "value": "10000000"
@@ -345,6 +352,9 @@
           },
           "PCW_EN_UART1": {
             "value": "1"
+          },
+          "PCW_FPGA0_PERIPHERAL_FREQMHZ": {
+            "value": "25"
           },
           "PCW_FPGA_FCLK0_ENABLE": {
             "value": "1"
@@ -1321,13 +1331,25 @@
       },
       "SK9822_AXI4_0": {
         "vlnv": "tu-ilmenau.de:SK9822_AXI4:SK9822_AXI4:1.0",
-        "ip_revision": "23",
+        "ip_revision": "28",
         "xci_name": "design_main_SK9822_AXI4_0_2",
         "xci_path": "ip\\design_main_SK9822_AXI4_0_2\\design_main_SK9822_AXI4_0_2.xci",
         "inst_hier_path": "SK9822_AXI4_0",
         "parameters": {
           "LED_number": {
             "value": "30"
+          }
+        }
+      },
+      "xlconstant_0": {
+        "vlnv": "xilinx.com:ip:xlconstant:1.1",
+        "ip_revision": "8",
+        "xci_name": "design_main_xlconstant_0_0",
+        "xci_path": "ip\\design_main_xlconstant_0_0\\design_main_xlconstant_0_0.xci",
+        "inst_hier_path": "xlconstant_0",
+        "parameters": {
+          "CONST_VAL": {
+            "value": "0"
           }
         }
       }
@@ -1445,6 +1467,14 @@
           "SK9822_AXI4_0/r_aresetn",
           "SK9822_AXI4_0/g_aresetn",
           "SK9822_AXI4_0/b_aresetn"
+        ]
+      },
+      "xlconstant_0_dout": {
+        "ports": [
+          "xlconstant_0/dout",
+          "P63",
+          "P64",
+          "P65"
         ]
       }
     },

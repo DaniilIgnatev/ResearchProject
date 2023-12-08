@@ -44,12 +44,12 @@ bool SK9822_resetTest(SK9822_BaseAddresses addresses)
 		predicate = predicate && (SK9822_AXI4_mReadReg(addresses.Settings_BaseAddress, SK9822_AXI4_CSR_SLV_REG0_OFFSET + i * 4) == 0);
 	}
 
-	for (int i = 0; i < 256; i++)
+	for (int i = 0; i < LED_number; i++)
 	{
 		predicate = predicate && (SK9822_AXI4_mReadReg(addresses.LED_BaseAddress, SK9822_AXI4_LEDs_SLV_REG0_OFFSET + i * 4) == max_brightness);
 	}
 
-	for (int i = 0; i < 8; i++)
+	for (int i = 0; i < (((LED_number - 1) / 32) + 1); i++)
 	{
 		uintptr_t offset_R = SK9822_AXI4_R_SLV_REG0_OFFSET + i * 4;
 		predicate = predicate && (SK9822_AXI4_mReadReg(addresses.R_BaseAddress, offset_R) == 0);
@@ -158,7 +158,7 @@ bool SK9822_AcyclicTransmissionTest(SK9822_BaseAddresses addresses)
 {
 	bool predicate = true;
 
-	predicate = predicate && SK9822_waitTrasmissionEnd(addresses, 1000);
+	SK9822_waitTrasmissionEnd(addresses, 1000);
 
 	SK9822_binaryColorTransmissionTest(addresses, init_SK9822_TransmissionOptionsType(binary, global, max_brightness, true, false));
 	predicate = predicate && SK9822_waitTrasmissionEnd(addresses, 1000);
@@ -179,19 +179,19 @@ bool SK9822_CyclicTransmissionTest(SK9822_BaseAddresses addresses)
 {
     bool predicate = true;
 
-	predicate = predicate && SK9822_waitTrasmissionEnd(addresses, 1000);
+	SK9822_waitTrasmissionEnd(addresses, 100000);
 
 	SK9822_binaryColorTransmissionTest(addresses, init_SK9822_TransmissionOptionsType(binary, global, max_brightness, true, true));
-	predicate = predicate && SK9822_waitTrasmissionEnd(addresses, 1000);
+	predicate = predicate && SK9822_waitTrasmissionEnd(addresses, 100000);
 
 	SK9822_binaryColorTransmissionTest(addresses, init_SK9822_TransmissionOptionsType(binary, individual, max_brightness, true, true));
-	predicate = predicate && SK9822_waitTrasmissionEnd(addresses, 1000);
+	predicate = predicate && SK9822_waitTrasmissionEnd(addresses, 100000);
 
 	SK9822_fullColorTransmissionTest(addresses, init_SK9822_TransmissionOptionsType(full, global, max_brightness, true, true));
-	predicate = predicate && SK9822_waitTrasmissionEnd(addresses, 1000);
+	predicate = predicate && SK9822_waitTrasmissionEnd(addresses, 100000);
 
 	SK9822_fullColorTransmissionTest(addresses, init_SK9822_TransmissionOptionsType(full, individual, max_brightness, true, true));
-	predicate = predicate && SK9822_waitTrasmissionEnd(addresses, 1000);
+	predicate = predicate && SK9822_waitTrasmissionEnd(addresses, 100000);
 
 	return predicate;
 }

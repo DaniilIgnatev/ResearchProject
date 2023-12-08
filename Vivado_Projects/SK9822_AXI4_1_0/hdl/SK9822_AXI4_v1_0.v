@@ -165,7 +165,7 @@
 	wire TSR_ST;
 	
 	wire GBCR_INSEL;
-	wire GBCR_GB;
+	wire [4:0] GBCR_GB;
 	
 	wire ICSR_TIEN;
 	wire ICSR_TI;

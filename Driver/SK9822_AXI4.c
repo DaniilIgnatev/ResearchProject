@@ -30,11 +30,11 @@ void SK9822_reset(uintptr_t Settings_BaseAddress, uintptr_t LED_BaseAddress, uin
         SK9822_AXI4_mWriteReg(Settings_BaseAddress, SK9822_AXI4_CSR_SLV_REG0_OFFSET + i * 4, 0);
     }
     
-    for (int i = 0; i < 256; i++){
+    for (int i = 0; i < LED_number; i++){
         SK9822_AXI4_mWriteReg(LED_BaseAddress, SK9822_AXI4_LEDs_SLV_REG0_OFFSET + i * 4, max_brightness);
     }
 
-    for (int i = 0; i < 8; i++){
+    for (int i = 0; i <  (((LED_number - 1) / 32) + 1); i++){
         uintptr_t offset_R = SK9822_AXI4_R_SLV_REG0_OFFSET + i * 4;
         SK9822_AXI4_mWriteReg(R_BaseAddress, offset_R, 0);
 

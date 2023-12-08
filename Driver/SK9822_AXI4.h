@@ -297,7 +297,7 @@
 #define SK9822_AXI4_B_SLV_REG6_OFFSET 24
 #define SK9822_AXI4_B_SLV_REG7_OFFSET 28
 
-#define LED_number 30    // The number of LEDs in chain.
+#define LED_number 30    // The number of LEDs in chain. Must be in range 1..256
 #define max_brightness 8 // The maximum allowed brightness.
 
 /**************************** Type Definitions *****************************/
