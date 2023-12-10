@@ -102,11 +102,31 @@ typedef union
   {
     volatile uint32_t BS : 5; // Individual brightness
     uint32_t : 3;
-    volatile uint32_t R : 8; // Red
-    volatile uint32_t G : 8; // Green
     volatile uint32_t B : 8; // Blue
+    volatile uint32_t G : 8; // Green
+    volatile uint32_t R : 8; // Red
   } bit;
 } LED_Type;
+
+typedef struct
+{
+	uintptr_t Settings_BaseAddress;
+    uintptr_t LED_BaseAddress;
+	uintptr_t R_BaseAddress;
+	uintptr_t G_BaseAddress;
+	uintptr_t B_BaseAddress;
+} SK9822_BaseAddresses;
+
+typedef struct
+{
+	ColorSourcesEnum colorSource;
+	BrightnessSourcesEnum brightnessSource;
+	uint8_t global_brightness;
+	bool transmission_interrupt_enable;
+	bool continuous_mode;
+} SK9822_TransmissionOptions;
+
+LED_Type init_SK9822_LEDType(uint32_t brightness, uint32_t R, uint32_t G, uint32_t B);
 
 Settings_Type get_Settings(uintptr_t Settings_BaseAddress);
 
@@ -159,6 +179,17 @@ void SK9822_set_G(uintptr_t G_BaseAddress, uint8_t id, bool on_off);
 bool SK9822_get_B(uintptr_t B_BaseAddress, uint8_t id);
 
 void SK9822_set_B(uintptr_t B_BaseAddress, uint8_t id, bool on_off);
+
+SK9822_BaseAddresses init_SK9822_BaseAddressesType(uintptr_t Settings_BaseAddress, uintptr_t LED_BaseAddress, uintptr_t R_BaseAddress, uintptr_t G_BaseAddress, uintptr_t B_BaseAddress);
+
+SK9822_TransmissionOptions init_SK9822_TransmissionOptionsType(
+        ColorSourcesEnum colorSource,
+        BrightnessSourcesEnum brightnessSource,
+        uint8_t global_brightness,
+        bool transmission_interrupt_enable,
+        bool continuous_mode);
+
+void SK9822_transmission_setup(SK9822_BaseAddresses addresses, SK9822_TransmissionOptions options);
 
 /**
  *
@@ -223,6 +254,6 @@ void SK9822_set_B(uintptr_t B_BaseAddress, uint8_t id, bool on_off);
  * bus.
  *
  */
-XStatus SK9822_AXI4_Reg_SelfTest(uintptr_t Settings_BaseAddress, uintptr_t LED_BaseAddress, uintptr_t R_BaseAddress, uintptr_t G_BaseAddress, uintptr_t B_BaseAddress);
+XStatus SK9822_AXI4_Reg_SelfTest(SK9822_BaseAddresses addresses);
 
 #endif // SK9822_AXI4_H

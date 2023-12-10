@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <sys/unistd.h>
 #include "platform.h"
 #include "xscugic.h"
 #include "xil_exception.h"
@@ -107,9 +108,9 @@ int main()
     print("Hello World\n\r");
     print("Successfully ran Hello World application");
 
-    while (true) {
-        SK9822_AXI4_Reg_SelfTest(SK9822_AXI4_SETTINGS_BASEADDR, SK9822_AXI4_LED_BASEADDR, SK9822_AXI4_R_BASEADDR, SK9822_AXI4_G_BASEADDR, SK9822_AXI4_B_BASEADDR);
-    }
+    SK9822_BaseAddresses addresses = init_SK9822_BaseAddressesType(SK9822_AXI4_SETTINGS_BASEADDR, SK9822_AXI4_LED_BASEADDR, SK9822_AXI4_R_BASEADDR, SK9822_AXI4_G_BASEADDR, SK9822_AXI4_B_BASEADDR);
+
+    SK9822_AXI4_Reg_SelfTest(addresses);
     
     cleanup_platform();
     return 0;

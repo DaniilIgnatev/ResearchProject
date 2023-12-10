@@ -7,6 +7,17 @@
 
 /************************** Function Definitions ***************************/
 
+LED_Type init_SK9822_LEDType(uint32_t brightness, uint32_t R, uint32_t G, uint32_t B){
+    LED_Type led;
+
+    led.bit.BS = brightness;
+    led.bit.R = R;
+    led.bit.G = G;
+    led.bit.B = B;
+
+    return led;
+}
+
 Settings_Type get_Settings(uintptr_t Settings_BaseAddress){
     Settings_Type settings;
 
@@ -220,4 +231,42 @@ void SK9822_set_B(uintptr_t B_BaseAddress, uint8_t id, bool on_off){
     }
     
     SK9822_AXI4_mWriteReg(B_BaseAddress, offset, data);
+}
+
+SK9822_BaseAddresses init_SK9822_BaseAddressesType(uintptr_t Settings_BaseAddress, uintptr_t LED_BaseAddress, uintptr_t R_BaseAddress, uintptr_t G_BaseAddress, uintptr_t B_BaseAddress){
+    SK9822_BaseAddresses init;
+
+    init.Settings_BaseAddress = Settings_BaseAddress;
+    init.LED_BaseAddress = LED_BaseAddress;
+    init.R_BaseAddress = R_BaseAddress;
+    init.G_BaseAddress = G_BaseAddress;
+    init.B_BaseAddress = B_BaseAddress;
+
+    return init;
+}
+
+SK9822_TransmissionOptions init_SK9822_TransmissionOptionsType(
+        ColorSourcesEnum colorSource,
+        BrightnessSourcesEnum brightnessSource,
+        uint8_t global_brightness,
+        bool transmission_interrupt_enable,
+        bool continuous_mode){
+    SK9822_TransmissionOptions init;
+
+    init.colorSource = colorSource;
+    init.brightnessSource = brightnessSource;
+    init.global_brightness = global_brightness;
+    init.transmission_interrupt_enable = transmission_interrupt_enable;
+    init.continuous_mode = continuous_mode;
+
+    return init;
+} 
+
+void SK9822_transmission_setup(SK9822_BaseAddresses addresses, SK9822_TransmissionOptions options)
+{
+	SK9822_set_color_source_selection(addresses.Settings_BaseAddress, options.colorSource);
+	SK9822_set_brightness_source_selection(addresses.Settings_BaseAddress, options.brightnessSource);
+	SK9822_set_global_brightness(addresses.Settings_BaseAddress, options.global_brightness);
+	SK9822_set_continuous_transmission(addresses.Settings_BaseAddress, options.continuous_mode);
+    SK9822_set_transmission_interrupt_enable(addresses.Settings_BaseAddress, options.transmission_interrupt_enable);
 }
