@@ -2,7 +2,7 @@
 //Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2023.2 (win64) Build 4029153 Fri Oct 13 20:14:34 MDT 2023
-//Date        : Fri Dec  8 20:51:37 2023
+//Date        : Sun Dec 10 14:05:56 2023
 //Host        : Daniil-Nuc running 64-bit major release  (build 9200)
 //Command     : generate_target design_main.bd
 //Design      : design_main
@@ -10,7 +10,7 @@
 //--------------------------------------------------------------------------------
 `timescale 1 ps / 1 ps
 
-(* CORE_GENERATION_INFO = "design_main,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=design_main,x_ipVersion=1.00.a,x_ipLanguage=VERILOG,numBlks=10,numReposBlks=5,numNonXlnxBlks=0,numHierBlks=5,maxHierDepth=0,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=0,numPkgbdBlks=0,bdsource=USER,da_axi4_cnt=48,da_clkrst_cnt=25,da_ps7_cnt=3,synth_mode=Hierarchical}" *) (* HW_HANDOFF = "design_main.hwdef" *) 
+(* CORE_GENERATION_INFO = "design_main,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=design_main,x_ipVersion=1.00.a,x_ipLanguage=VERILOG,numBlks=11,numReposBlks=6,numNonXlnxBlks=0,numHierBlks=5,maxHierDepth=0,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=0,numPkgbdBlks=0,bdsource=USER,da_axi4_cnt=48,da_clkrst_cnt=25,da_ps7_cnt=3,synth_mode=Hierarchical}" *) (* HW_HANDOFF = "design_main.hwdef" *) 
 module design_main
    (DDR_0_addr,
     DDR_0_ba,
@@ -185,6 +185,7 @@ module design_main
   wire [3:0]ps7_0_axi_periph_M02_AXI_WSTRB;
   wire [0:0]ps7_0_axi_periph_M02_AXI_WVALID;
   wire [0:0]rst_ps7_0_25M_peripheral_aresetn;
+  wire [0:0]xlconcat_0_dout;
 
   assign P61 = SK9822_AXI4_30_0_MOSI;
   assign P62 = SK9822_AXI4_30_0_TI;
@@ -279,6 +280,7 @@ module design_main
         .DDR_WEB(DDR_0_we_n),
         .FCLK_CLK0(processing_system7_0_FCLK_CLK0),
         .FCLK_RESET0_N(processing_system7_0_FCLK_RESET0_N),
+        .IRQ_F2P(xlconcat_0_dout),
         .MIO(FIXED_IO_0_mio[53:0]),
         .M_AXI_GP0_ACLK(processing_system7_0_FCLK_CLK0),
         .M_AXI_GP0_ARADDR(processing_system7_0_M_AXI_GP0_ARADDR),
@@ -435,6 +437,9 @@ module design_main
         .mb_debug_sys_rst(1'b0),
         .peripheral_aresetn(rst_ps7_0_25M_peripheral_aresetn),
         .slowest_sync_clk(processing_system7_0_FCLK_CLK0));
+  design_main_xlconcat_0_0 xlconcat_0
+       (.In0(SK9822_AXI4_30_0_TI),
+        .dout(xlconcat_0_dout));
 endmodule
 
 module design_main_ps7_0_axi_periph_3

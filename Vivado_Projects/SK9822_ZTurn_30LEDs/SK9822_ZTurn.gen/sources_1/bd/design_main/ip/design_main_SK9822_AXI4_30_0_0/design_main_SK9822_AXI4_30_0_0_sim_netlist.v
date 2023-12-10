@@ -2,7 +2,7 @@
 // Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2023.2 (win64) Build 4029153 Fri Oct 13 20:14:34 MDT 2023
-// Date        : Fri Dec  8 20:50:52 2023
+// Date        : Sun Dec 10 13:47:59 2023
 // Host        : Daniil-Nuc running 64-bit major release  (build 9200)
 // Command     : write_verilog -force -mode funcsim
 //               c:/Users/Daniil/Desktop/ResearchProject/Vivado_Projects/SK9822_ZTurn_30LEDs/SK9822_ZTurn.gen/sources_1/bd/design_main/ip/design_main_SK9822_AXI4_30_0_0/design_main_SK9822_AXI4_30_0_0_sim_netlist.v
@@ -84,12 +84,12 @@ module design_main_SK9822_AXI4_30_0_0
     rgb_axi_rresp,
     rgb_axi_rvalid,
     rgb_axi_rready);
-  (* X_INTERFACE_INFO = "xilinx.com:signal:clock:1.0 CLK CLK" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME CLK, FREQ_HZ 25000000, FREQ_TOLERANCE_HZ 0, PHASE 0.0, CLK_DOMAIN design_main_processing_system7_0_2_FCLK_CLK0, INSERT_VIP 0" *) input CLK;
+  (* X_INTERFACE_INFO = "xilinx.com:signal:clock:1.0 CLK CLK" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME CLK, FREQ_HZ 30000000, FREQ_TOLERANCE_HZ 0, PHASE 0.0, CLK_DOMAIN design_main_processing_system7_0_2_FCLK_CLK0, INSERT_VIP 0" *) input CLK;
   (* X_INTERFACE_INFO = "xilinx.com:signal:reset:1.0 RESETN RST" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME RESETN, POLARITY ACTIVE_LOW, INSERT_VIP 0" *) input RESETN;
   output SCLK;
   output MOSI;
   output TI;
-  (* X_INTERFACE_INFO = "xilinx.com:signal:clock:1.0 Settings_AXI_CLK CLK" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME Settings_AXI_CLK, ASSOCIATED_BUSIF Settings_AXI, ASSOCIATED_RESET settings_axi_aresetn, FREQ_HZ 25000000, FREQ_TOLERANCE_HZ 0, PHASE 0.0, CLK_DOMAIN design_main_processing_system7_0_2_FCLK_CLK0, INSERT_VIP 0" *) input settings_axi_aclk;
+  (* X_INTERFACE_INFO = "xilinx.com:signal:clock:1.0 Settings_AXI_CLK CLK" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME Settings_AXI_CLK, ASSOCIATED_BUSIF Settings_AXI, ASSOCIATED_RESET settings_axi_aresetn, FREQ_HZ 30000000, FREQ_TOLERANCE_HZ 0, PHASE 0.0, CLK_DOMAIN design_main_processing_system7_0_2_FCLK_CLK0, INSERT_VIP 0" *) input settings_axi_aclk;
   (* X_INTERFACE_INFO = "xilinx.com:signal:reset:1.0 Settings_AXI_RST RST" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME Settings_AXI_RST, POLARITY ACTIVE_LOW, INSERT_VIP 0" *) input settings_axi_aresetn;
   (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 Settings_AXI AWADDR" *) input [3:0]settings_axi_awaddr;
   (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 Settings_AXI AWPROT" *) input [2:0]settings_axi_awprot;
@@ -109,8 +109,8 @@ module design_main_SK9822_AXI4_30_0_0
   (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 Settings_AXI RDATA" *) output [31:0]settings_axi_rdata;
   (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 Settings_AXI RRESP" *) output [1:0]settings_axi_rresp;
   (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 Settings_AXI RVALID" *) output settings_axi_rvalid;
-  (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 Settings_AXI RREADY" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME Settings_AXI, WIZ_DATA_WIDTH 32, WIZ_NUM_REG 4, SUPPORTS_NARROW_BURST 0, DATA_WIDTH 32, PROTOCOL AXI4LITE, FREQ_HZ 25000000, ID_WIDTH 0, ADDR_WIDTH 4, AWUSER_WIDTH 0, ARUSER_WIDTH 0, WUSER_WIDTH 0, RUSER_WIDTH 0, BUSER_WIDTH 0, READ_WRITE_MODE READ_WRITE, HAS_BURST 0, HAS_LOCK 0, HAS_PROT 1, HAS_CACHE 0, HAS_QOS 0, HAS_REGION 0, HAS_WSTRB 1, HAS_BRESP 1, HAS_RRESP 1, NUM_READ_OUTSTANDING 2, NUM_WRITE_OUTSTANDING 2, MAX_BURST_LENGTH 1, PHASE 0.0, CLK_DOMAIN design_main_processing_system7_0_2_FCLK_CLK0, NUM_READ_THREADS 1, NUM_WRITE_THREADS 1, RUSER_BITS_PER_BYTE 0, WUSER_BITS_PER_BYTE 0, INSERT_VIP 0" *) input settings_axi_rready;
-  (* X_INTERFACE_INFO = "xilinx.com:signal:clock:1.0 LEDs_AXI_CLK CLK" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME LEDs_AXI_CLK, ASSOCIATED_BUSIF LEDs_AXI, ASSOCIATED_RESET leds_axi_aresetn, FREQ_HZ 25000000, FREQ_TOLERANCE_HZ 0, PHASE 0.0, CLK_DOMAIN design_main_processing_system7_0_2_FCLK_CLK0, INSERT_VIP 0" *) input leds_axi_aclk;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 Settings_AXI RREADY" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME Settings_AXI, WIZ_DATA_WIDTH 32, WIZ_NUM_REG 4, SUPPORTS_NARROW_BURST 0, DATA_WIDTH 32, PROTOCOL AXI4LITE, FREQ_HZ 30000000, ID_WIDTH 0, ADDR_WIDTH 4, AWUSER_WIDTH 0, ARUSER_WIDTH 0, WUSER_WIDTH 0, RUSER_WIDTH 0, BUSER_WIDTH 0, READ_WRITE_MODE READ_WRITE, HAS_BURST 0, HAS_LOCK 0, HAS_PROT 1, HAS_CACHE 0, HAS_QOS 0, HAS_REGION 0, HAS_WSTRB 1, HAS_BRESP 1, HAS_RRESP 1, NUM_READ_OUTSTANDING 2, NUM_WRITE_OUTSTANDING 2, MAX_BURST_LENGTH 1, PHASE 0.0, CLK_DOMAIN design_main_processing_system7_0_2_FCLK_CLK0, NUM_READ_THREADS 1, NUM_WRITE_THREADS 1, RUSER_BITS_PER_BYTE 0, WUSER_BITS_PER_BYTE 0, INSERT_VIP 0" *) input settings_axi_rready;
+  (* X_INTERFACE_INFO = "xilinx.com:signal:clock:1.0 LEDs_AXI_CLK CLK" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME LEDs_AXI_CLK, ASSOCIATED_BUSIF LEDs_AXI, ASSOCIATED_RESET leds_axi_aresetn, FREQ_HZ 30000000, FREQ_TOLERANCE_HZ 0, PHASE 0.0, CLK_DOMAIN design_main_processing_system7_0_2_FCLK_CLK0, INSERT_VIP 0" *) input leds_axi_aclk;
   (* X_INTERFACE_INFO = "xilinx.com:signal:reset:1.0 LEDs_AXI_RST RST" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME LEDs_AXI_RST, POLARITY ACTIVE_LOW, INSERT_VIP 0" *) input leds_axi_aresetn;
   (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 LEDs_AXI AWADDR" *) input [6:0]leds_axi_awaddr;
   (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 LEDs_AXI AWPROT" *) input [2:0]leds_axi_awprot;
@@ -130,8 +130,8 @@ module design_main_SK9822_AXI4_30_0_0
   (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 LEDs_AXI RDATA" *) output [31:0]leds_axi_rdata;
   (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 LEDs_AXI RRESP" *) output [1:0]leds_axi_rresp;
   (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 LEDs_AXI RVALID" *) output leds_axi_rvalid;
-  (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 LEDs_AXI RREADY" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME LEDs_AXI, WIZ_DATA_WIDTH 32, WIZ_NUM_REG 30, SUPPORTS_NARROW_BURST 0, DATA_WIDTH 32, PROTOCOL AXI4LITE, FREQ_HZ 25000000, ID_WIDTH 0, ADDR_WIDTH 7, AWUSER_WIDTH 0, ARUSER_WIDTH 0, WUSER_WIDTH 0, RUSER_WIDTH 0, BUSER_WIDTH 0, READ_WRITE_MODE READ_WRITE, HAS_BURST 0, HAS_LOCK 0, HAS_PROT 1, HAS_CACHE 0, HAS_QOS 0, HAS_REGION 0, HAS_WSTRB 1, HAS_BRESP 1, HAS_RRESP 1, NUM_READ_OUTSTANDING 2, NUM_WRITE_OUTSTANDING 2, MAX_BURST_LENGTH 1, PHASE 0.0, CLK_DOMAIN design_main_processing_system7_0_2_FCLK_CLK0, NUM_READ_THREADS 1, NUM_WRITE_THREADS 1, RUSER_BITS_PER_BYTE 0, WUSER_BITS_PER_BYTE 0, INSERT_VIP 0" *) input leds_axi_rready;
-  (* X_INTERFACE_INFO = "xilinx.com:signal:clock:1.0 RGB_AXI_CLK CLK" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME RGB_AXI_CLK, ASSOCIATED_BUSIF RGB_AXI, ASSOCIATED_RESET rgb_axi_aresetn, FREQ_HZ 25000000, FREQ_TOLERANCE_HZ 0, PHASE 0.0, CLK_DOMAIN design_main_processing_system7_0_2_FCLK_CLK0, INSERT_VIP 0" *) input rgb_axi_aclk;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 LEDs_AXI RREADY" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME LEDs_AXI, WIZ_DATA_WIDTH 32, WIZ_NUM_REG 30, SUPPORTS_NARROW_BURST 0, DATA_WIDTH 32, PROTOCOL AXI4LITE, FREQ_HZ 30000000, ID_WIDTH 0, ADDR_WIDTH 7, AWUSER_WIDTH 0, ARUSER_WIDTH 0, WUSER_WIDTH 0, RUSER_WIDTH 0, BUSER_WIDTH 0, READ_WRITE_MODE READ_WRITE, HAS_BURST 0, HAS_LOCK 0, HAS_PROT 1, HAS_CACHE 0, HAS_QOS 0, HAS_REGION 0, HAS_WSTRB 1, HAS_BRESP 1, HAS_RRESP 1, NUM_READ_OUTSTANDING 2, NUM_WRITE_OUTSTANDING 2, MAX_BURST_LENGTH 1, PHASE 0.0, CLK_DOMAIN design_main_processing_system7_0_2_FCLK_CLK0, NUM_READ_THREADS 1, NUM_WRITE_THREADS 1, RUSER_BITS_PER_BYTE 0, WUSER_BITS_PER_BYTE 0, INSERT_VIP 0" *) input leds_axi_rready;
+  (* X_INTERFACE_INFO = "xilinx.com:signal:clock:1.0 RGB_AXI_CLK CLK" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME RGB_AXI_CLK, ASSOCIATED_BUSIF RGB_AXI, ASSOCIATED_RESET rgb_axi_aresetn, FREQ_HZ 30000000, FREQ_TOLERANCE_HZ 0, PHASE 0.0, CLK_DOMAIN design_main_processing_system7_0_2_FCLK_CLK0, INSERT_VIP 0" *) input rgb_axi_aclk;
   (* X_INTERFACE_INFO = "xilinx.com:signal:reset:1.0 RGB_AXI_RST RST" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME RGB_AXI_RST, POLARITY ACTIVE_LOW, INSERT_VIP 0" *) input rgb_axi_aresetn;
   (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 RGB_AXI AWADDR" *) input [3:0]rgb_axi_awaddr;
   (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 RGB_AXI AWPROT" *) input [2:0]rgb_axi_awprot;
@@ -151,7 +151,7 @@ module design_main_SK9822_AXI4_30_0_0
   (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 RGB_AXI RDATA" *) output [31:0]rgb_axi_rdata;
   (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 RGB_AXI RRESP" *) output [1:0]rgb_axi_rresp;
   (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 RGB_AXI RVALID" *) output rgb_axi_rvalid;
-  (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 RGB_AXI RREADY" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME RGB_AXI, WIZ_DATA_WIDTH 32, WIZ_NUM_REG 4, SUPPORTS_NARROW_BURST 0, DATA_WIDTH 32, PROTOCOL AXI4LITE, FREQ_HZ 25000000, ID_WIDTH 0, ADDR_WIDTH 4, AWUSER_WIDTH 0, ARUSER_WIDTH 0, WUSER_WIDTH 0, RUSER_WIDTH 0, BUSER_WIDTH 0, READ_WRITE_MODE READ_WRITE, HAS_BURST 0, HAS_LOCK 0, HAS_PROT 1, HAS_CACHE 0, HAS_QOS 0, HAS_REGION 0, HAS_WSTRB 1, HAS_BRESP 1, HAS_RRESP 1, NUM_READ_OUTSTANDING 2, NUM_WRITE_OUTSTANDING 2, MAX_BURST_LENGTH 1, PHASE 0.0, CLK_DOMAIN design_main_processing_system7_0_2_FCLK_CLK0, NUM_READ_THREADS 1, NUM_WRITE_THREADS 1, RUSER_BITS_PER_BYTE 0, WUSER_BITS_PER_BYTE 0, INSERT_VIP 0" *) input rgb_axi_rready;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 RGB_AXI RREADY" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME RGB_AXI, WIZ_DATA_WIDTH 32, WIZ_NUM_REG 4, SUPPORTS_NARROW_BURST 0, DATA_WIDTH 32, PROTOCOL AXI4LITE, FREQ_HZ 30000000, ID_WIDTH 0, ADDR_WIDTH 4, AWUSER_WIDTH 0, ARUSER_WIDTH 0, WUSER_WIDTH 0, RUSER_WIDTH 0, BUSER_WIDTH 0, READ_WRITE_MODE READ_WRITE, HAS_BURST 0, HAS_LOCK 0, HAS_PROT 1, HAS_CACHE 0, HAS_QOS 0, HAS_REGION 0, HAS_WSTRB 1, HAS_BRESP 1, HAS_RRESP 1, NUM_READ_OUTSTANDING 2, NUM_WRITE_OUTSTANDING 2, MAX_BURST_LENGTH 1, PHASE 0.0, CLK_DOMAIN design_main_processing_system7_0_2_FCLK_CLK0, NUM_READ_THREADS 1, NUM_WRITE_THREADS 1, RUSER_BITS_PER_BYTE 0, WUSER_BITS_PER_BYTE 0, INSERT_VIP 0" *) input rgb_axi_rready;
 
   wire \<const0> ;
   wire CLK;
@@ -855,44 +855,29 @@ module design_main_SK9822_AXI4_30_0_0_FrequencyDivider
    (CLK_OUT_reg_0,
     SCLK,
     CLK,
-    RESETN,
-    Q);
+    Q,
+    RESETN);
   output CLK_OUT_reg_0;
   output SCLK;
   input CLK;
-  input RESETN;
   input [0:0]Q;
+  input RESETN;
 
   wire CLK;
-  wire CLK_OUT;
   wire CLK_OUT_i_1_n_0;
   wire CLK_OUT_reg_0;
   wire [0:0]Q;
   wire RESETN;
   wire SCLK;
   wire \count[0]_i_1_n_0 ;
-  wire \count[0]_i_4_n_0 ;
-  wire [5:0]count_reg;
-  wire \count_reg[0]_i_2_n_0 ;
-  wire \count_reg[0]_i_2_n_1 ;
-  wire \count_reg[0]_i_2_n_2 ;
-  wire \count_reg[0]_i_2_n_3 ;
-  wire \count_reg[0]_i_2_n_4 ;
-  wire \count_reg[0]_i_2_n_5 ;
-  wire \count_reg[0]_i_2_n_6 ;
-  wire \count_reg[0]_i_2_n_7 ;
-  wire \count_reg[4]_i_1_n_3 ;
-  wire \count_reg[4]_i_1_n_6 ;
-  wire \count_reg[4]_i_1_n_7 ;
-  wire [3:1]\NLW_count_reg[4]_i_1_CO_UNCONNECTED ;
-  wire [3:2]\NLW_count_reg[4]_i_1_O_UNCONNECTED ;
+  wire [0:0]count_reg;
 
   (* SOFT_HLUTNM = "soft_lutpair0" *) 
   LUT3 #(
     .INIT(8'h60)) 
     CLK_OUT_i_1
        (.I0(CLK_OUT_reg_0),
-        .I1(CLK_OUT),
+        .I1(count_reg),
         .I2(RESETN),
         .O(CLK_OUT_i_1_n_0));
   FDRE CLK_OUT_reg
@@ -901,84 +886,25 @@ module design_main_SK9822_AXI4_30_0_0_FrequencyDivider
         .D(CLK_OUT_i_1_n_0),
         .Q(CLK_OUT_reg_0),
         .R(1'b0));
-  (* SOFT_HLUTNM = "soft_lutpair0" *) 
   LUT2 #(
     .INIT(4'h8)) 
     SCLK_INST_0
        (.I0(CLK_OUT_reg_0),
         .I1(Q),
         .O(SCLK));
+  (* SOFT_HLUTNM = "soft_lutpair0" *) 
   LUT2 #(
-    .INIT(4'hB)) 
+    .INIT(4'h2)) 
     \count[0]_i_1 
-       (.I0(CLK_OUT),
-        .I1(RESETN),
+       (.I0(RESETN),
+        .I1(count_reg),
         .O(\count[0]_i_1_n_0 ));
-  LUT6 #(
-    .INIT(64'h0010000000000000)) 
-    \count[0]_i_3 
-       (.I0(count_reg[2]),
-        .I1(count_reg[3]),
-        .I2(count_reg[0]),
-        .I3(count_reg[1]),
-        .I4(count_reg[5]),
-        .I5(count_reg[4]),
-        .O(CLK_OUT));
-  LUT1 #(
-    .INIT(2'h1)) 
-    \count[0]_i_4 
-       (.I0(count_reg[0]),
-        .O(\count[0]_i_4_n_0 ));
   FDRE \count_reg[0] 
        (.C(CLK),
         .CE(1'b1),
-        .D(\count_reg[0]_i_2_n_7 ),
-        .Q(count_reg[0]),
-        .R(\count[0]_i_1_n_0 ));
-  CARRY4 \count_reg[0]_i_2 
-       (.CI(1'b0),
-        .CO({\count_reg[0]_i_2_n_0 ,\count_reg[0]_i_2_n_1 ,\count_reg[0]_i_2_n_2 ,\count_reg[0]_i_2_n_3 }),
-        .CYINIT(1'b0),
-        .DI({1'b0,1'b0,1'b0,1'b1}),
-        .O({\count_reg[0]_i_2_n_4 ,\count_reg[0]_i_2_n_5 ,\count_reg[0]_i_2_n_6 ,\count_reg[0]_i_2_n_7 }),
-        .S({count_reg[3:1],\count[0]_i_4_n_0 }));
-  FDRE \count_reg[1] 
-       (.C(CLK),
-        .CE(1'b1),
-        .D(\count_reg[0]_i_2_n_6 ),
-        .Q(count_reg[1]),
-        .R(\count[0]_i_1_n_0 ));
-  FDRE \count_reg[2] 
-       (.C(CLK),
-        .CE(1'b1),
-        .D(\count_reg[0]_i_2_n_5 ),
-        .Q(count_reg[2]),
-        .R(\count[0]_i_1_n_0 ));
-  FDRE \count_reg[3] 
-       (.C(CLK),
-        .CE(1'b1),
-        .D(\count_reg[0]_i_2_n_4 ),
-        .Q(count_reg[3]),
-        .R(\count[0]_i_1_n_0 ));
-  FDRE \count_reg[4] 
-       (.C(CLK),
-        .CE(1'b1),
-        .D(\count_reg[4]_i_1_n_7 ),
-        .Q(count_reg[4]),
-        .R(\count[0]_i_1_n_0 ));
-  CARRY4 \count_reg[4]_i_1 
-       (.CI(\count_reg[0]_i_2_n_0 ),
-        .CO({\NLW_count_reg[4]_i_1_CO_UNCONNECTED [3:1],\count_reg[4]_i_1_n_3 }),
-        .CYINIT(1'b0),
-        .DI({1'b0,1'b0,1'b0,1'b0}),
-        .O({\NLW_count_reg[4]_i_1_O_UNCONNECTED [3:2],\count_reg[4]_i_1_n_6 ,\count_reg[4]_i_1_n_7 }),
-        .S({1'b0,1'b0,count_reg[5:4]}));
-  FDRE \count_reg[5] 
-       (.C(CLK),
-        .CE(1'b1),
-        .D(\count_reg[4]_i_1_n_6 ),
-        .Q(count_reg[5]),
-        .R(\count[0]_i_1_n_0 ));
+        .D(\count[0]_i_1_n_0 ),
+        .Q(count_reg),
+        .R(1'b0));
 endmodule
 
 (* ORIG_REF_NAME = "FullColors_Transmitter" *) 

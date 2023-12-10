@@ -2,7 +2,7 @@
 -- Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2023.2 (win64) Build 4029153 Fri Oct 13 20:14:34 MDT 2023
--- Date        : Fri Dec  8 20:50:52 2023
+-- Date        : Sun Dec 10 13:47:59 2023
 -- Host        : Daniil-Nuc running 64-bit major release  (build 9200)
 -- Command     : write_vhdl -force -mode funcsim
 --               c:/Users/Daniil/Desktop/ResearchProject/Vivado_Projects/SK9822_ZTurn_30LEDs/SK9822_ZTurn.gen/sources_1/bd/design_main/ip/design_main_SK9822_AXI4_30_0_0/design_main_SK9822_AXI4_30_0_0_sim_netlist.vhdl
@@ -20,36 +20,21 @@ entity design_main_SK9822_AXI4_30_0_0_FrequencyDivider is
     CLK_OUT_reg_0 : out STD_LOGIC;
     SCLK : out STD_LOGIC;
     CLK : in STD_LOGIC;
-    RESETN : in STD_LOGIC;
-    Q : in STD_LOGIC_VECTOR ( 0 to 0 )
+    Q : in STD_LOGIC_VECTOR ( 0 to 0 );
+    RESETN : in STD_LOGIC
   );
   attribute ORIG_REF_NAME : string;
   attribute ORIG_REF_NAME of design_main_SK9822_AXI4_30_0_0_FrequencyDivider : entity is "FrequencyDivider";
 end design_main_SK9822_AXI4_30_0_0_FrequencyDivider;
 
 architecture STRUCTURE of design_main_SK9822_AXI4_30_0_0_FrequencyDivider is
-  signal CLK_OUT : STD_LOGIC;
   signal CLK_OUT_i_1_n_0 : STD_LOGIC;
   signal \^clk_out_reg_0\ : STD_LOGIC;
   signal \count[0]_i_1_n_0\ : STD_LOGIC;
-  signal \count[0]_i_4_n_0\ : STD_LOGIC;
-  signal count_reg : STD_LOGIC_VECTOR ( 5 downto 0 );
-  signal \count_reg[0]_i_2_n_0\ : STD_LOGIC;
-  signal \count_reg[0]_i_2_n_1\ : STD_LOGIC;
-  signal \count_reg[0]_i_2_n_2\ : STD_LOGIC;
-  signal \count_reg[0]_i_2_n_3\ : STD_LOGIC;
-  signal \count_reg[0]_i_2_n_4\ : STD_LOGIC;
-  signal \count_reg[0]_i_2_n_5\ : STD_LOGIC;
-  signal \count_reg[0]_i_2_n_6\ : STD_LOGIC;
-  signal \count_reg[0]_i_2_n_7\ : STD_LOGIC;
-  signal \count_reg[4]_i_1_n_3\ : STD_LOGIC;
-  signal \count_reg[4]_i_1_n_6\ : STD_LOGIC;
-  signal \count_reg[4]_i_1_n_7\ : STD_LOGIC;
-  signal \NLW_count_reg[4]_i_1_CO_UNCONNECTED\ : STD_LOGIC_VECTOR ( 3 downto 1 );
-  signal \NLW_count_reg[4]_i_1_O_UNCONNECTED\ : STD_LOGIC_VECTOR ( 3 downto 2 );
+  signal count_reg : STD_LOGIC_VECTOR ( 0 to 0 );
   attribute SOFT_HLUTNM : string;
   attribute SOFT_HLUTNM of CLK_OUT_i_1 : label is "soft_lutpair0";
-  attribute SOFT_HLUTNM of SCLK_INST_0 : label is "soft_lutpair0";
+  attribute SOFT_HLUTNM of \count[0]_i_1\ : label is "soft_lutpair0";
 begin
   CLK_OUT_reg_0 <= \^clk_out_reg_0\;
 CLK_OUT_i_1: unisim.vcomponents.LUT3
@@ -58,7 +43,7 @@ CLK_OUT_i_1: unisim.vcomponents.LUT3
     )
         port map (
       I0 => \^clk_out_reg_0\,
-      I1 => CLK_OUT,
+      I1 => count_reg(0),
       I2 => RESETN,
       O => CLK_OUT_i_1_n_0
     );
@@ -81,110 +66,20 @@ SCLK_INST_0: unisim.vcomponents.LUT2
     );
 \count[0]_i_1\: unisim.vcomponents.LUT2
     generic map(
-      INIT => X"B"
+      INIT => X"2"
     )
         port map (
-      I0 => CLK_OUT,
-      I1 => RESETN,
+      I0 => RESETN,
+      I1 => count_reg(0),
       O => \count[0]_i_1_n_0\
-    );
-\count[0]_i_3\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"0010000000000000"
-    )
-        port map (
-      I0 => count_reg(2),
-      I1 => count_reg(3),
-      I2 => count_reg(0),
-      I3 => count_reg(1),
-      I4 => count_reg(5),
-      I5 => count_reg(4),
-      O => CLK_OUT
-    );
-\count[0]_i_4\: unisim.vcomponents.LUT1
-    generic map(
-      INIT => X"1"
-    )
-        port map (
-      I0 => count_reg(0),
-      O => \count[0]_i_4_n_0\
     );
 \count_reg[0]\: unisim.vcomponents.FDRE
      port map (
       C => CLK,
       CE => '1',
-      D => \count_reg[0]_i_2_n_7\,
+      D => \count[0]_i_1_n_0\,
       Q => count_reg(0),
-      R => \count[0]_i_1_n_0\
-    );
-\count_reg[0]_i_2\: unisim.vcomponents.CARRY4
-     port map (
-      CI => '0',
-      CO(3) => \count_reg[0]_i_2_n_0\,
-      CO(2) => \count_reg[0]_i_2_n_1\,
-      CO(1) => \count_reg[0]_i_2_n_2\,
-      CO(0) => \count_reg[0]_i_2_n_3\,
-      CYINIT => '0',
-      DI(3 downto 0) => B"0001",
-      O(3) => \count_reg[0]_i_2_n_4\,
-      O(2) => \count_reg[0]_i_2_n_5\,
-      O(1) => \count_reg[0]_i_2_n_6\,
-      O(0) => \count_reg[0]_i_2_n_7\,
-      S(3 downto 1) => count_reg(3 downto 1),
-      S(0) => \count[0]_i_4_n_0\
-    );
-\count_reg[1]\: unisim.vcomponents.FDRE
-     port map (
-      C => CLK,
-      CE => '1',
-      D => \count_reg[0]_i_2_n_6\,
-      Q => count_reg(1),
-      R => \count[0]_i_1_n_0\
-    );
-\count_reg[2]\: unisim.vcomponents.FDRE
-     port map (
-      C => CLK,
-      CE => '1',
-      D => \count_reg[0]_i_2_n_5\,
-      Q => count_reg(2),
-      R => \count[0]_i_1_n_0\
-    );
-\count_reg[3]\: unisim.vcomponents.FDRE
-     port map (
-      C => CLK,
-      CE => '1',
-      D => \count_reg[0]_i_2_n_4\,
-      Q => count_reg(3),
-      R => \count[0]_i_1_n_0\
-    );
-\count_reg[4]\: unisim.vcomponents.FDRE
-     port map (
-      C => CLK,
-      CE => '1',
-      D => \count_reg[4]_i_1_n_7\,
-      Q => count_reg(4),
-      R => \count[0]_i_1_n_0\
-    );
-\count_reg[4]_i_1\: unisim.vcomponents.CARRY4
-     port map (
-      CI => \count_reg[0]_i_2_n_0\,
-      CO(3 downto 1) => \NLW_count_reg[4]_i_1_CO_UNCONNECTED\(3 downto 1),
-      CO(0) => \count_reg[4]_i_1_n_3\,
-      CYINIT => '0',
-      DI(3 downto 0) => B"0000",
-      O(3 downto 2) => \NLW_count_reg[4]_i_1_O_UNCONNECTED\(3 downto 2),
-      O(1) => \count_reg[4]_i_1_n_6\,
-      O(0) => \count_reg[4]_i_1_n_7\,
-      S(3 downto 2) => B"00",
-      S(1 downto 0) => count_reg(5 downto 4)
-    );
-\count_reg[5]\: unisim.vcomponents.FDRE
-     port map (
-      C => CLK,
-      CE => '1',
-      D => \count_reg[4]_i_1_n_6\,
-      Q => count_reg(5),
-      R => \count[0]_i_1_n_0\
+      R => '0'
     );
 end STRUCTURE;
 library IEEE;
@@ -27244,11 +27139,11 @@ architecture STRUCTURE of design_main_SK9822_AXI4_30_0_0 is
   attribute X_INTERFACE_INFO : string;
   attribute X_INTERFACE_INFO of CLK : signal is "xilinx.com:signal:clock:1.0 CLK CLK";
   attribute X_INTERFACE_PARAMETER : string;
-  attribute X_INTERFACE_PARAMETER of CLK : signal is "XIL_INTERFACENAME CLK, FREQ_HZ 25000000, FREQ_TOLERANCE_HZ 0, PHASE 0.0, CLK_DOMAIN design_main_processing_system7_0_2_FCLK_CLK0, INSERT_VIP 0";
+  attribute X_INTERFACE_PARAMETER of CLK : signal is "XIL_INTERFACENAME CLK, FREQ_HZ 30000000, FREQ_TOLERANCE_HZ 0, PHASE 0.0, CLK_DOMAIN design_main_processing_system7_0_2_FCLK_CLK0, INSERT_VIP 0";
   attribute X_INTERFACE_INFO of RESETN : signal is "xilinx.com:signal:reset:1.0 RESETN RST";
   attribute X_INTERFACE_PARAMETER of RESETN : signal is "XIL_INTERFACENAME RESETN, POLARITY ACTIVE_LOW, INSERT_VIP 0";
   attribute X_INTERFACE_INFO of leds_axi_aclk : signal is "xilinx.com:signal:clock:1.0 LEDs_AXI_CLK CLK";
-  attribute X_INTERFACE_PARAMETER of leds_axi_aclk : signal is "XIL_INTERFACENAME LEDs_AXI_CLK, ASSOCIATED_BUSIF LEDs_AXI, ASSOCIATED_RESET leds_axi_aresetn, FREQ_HZ 25000000, FREQ_TOLERANCE_HZ 0, PHASE 0.0, CLK_DOMAIN design_main_processing_system7_0_2_FCLK_CLK0, INSERT_VIP 0";
+  attribute X_INTERFACE_PARAMETER of leds_axi_aclk : signal is "XIL_INTERFACENAME LEDs_AXI_CLK, ASSOCIATED_BUSIF LEDs_AXI, ASSOCIATED_RESET leds_axi_aresetn, FREQ_HZ 30000000, FREQ_TOLERANCE_HZ 0, PHASE 0.0, CLK_DOMAIN design_main_processing_system7_0_2_FCLK_CLK0, INSERT_VIP 0";
   attribute X_INTERFACE_INFO of leds_axi_aresetn : signal is "xilinx.com:signal:reset:1.0 LEDs_AXI_RST RST";
   attribute X_INTERFACE_PARAMETER of leds_axi_aresetn : signal is "XIL_INTERFACENAME LEDs_AXI_RST, POLARITY ACTIVE_LOW, INSERT_VIP 0";
   attribute X_INTERFACE_INFO of leds_axi_arready : signal is "xilinx.com:interface:aximm:1.0 LEDs_AXI ARREADY";
@@ -27258,12 +27153,12 @@ architecture STRUCTURE of design_main_SK9822_AXI4_30_0_0 is
   attribute X_INTERFACE_INFO of leds_axi_bready : signal is "xilinx.com:interface:aximm:1.0 LEDs_AXI BREADY";
   attribute X_INTERFACE_INFO of leds_axi_bvalid : signal is "xilinx.com:interface:aximm:1.0 LEDs_AXI BVALID";
   attribute X_INTERFACE_INFO of leds_axi_rready : signal is "xilinx.com:interface:aximm:1.0 LEDs_AXI RREADY";
-  attribute X_INTERFACE_PARAMETER of leds_axi_rready : signal is "XIL_INTERFACENAME LEDs_AXI, WIZ_DATA_WIDTH 32, WIZ_NUM_REG 30, SUPPORTS_NARROW_BURST 0, DATA_WIDTH 32, PROTOCOL AXI4LITE, FREQ_HZ 25000000, ID_WIDTH 0, ADDR_WIDTH 7, AWUSER_WIDTH 0, ARUSER_WIDTH 0, WUSER_WIDTH 0, RUSER_WIDTH 0, BUSER_WIDTH 0, READ_WRITE_MODE READ_WRITE, HAS_BURST 0, HAS_LOCK 0, HAS_PROT 1, HAS_CACHE 0, HAS_QOS 0, HAS_REGION 0, HAS_WSTRB 1, HAS_BRESP 1, HAS_RRESP 1, NUM_READ_OUTSTANDING 2, NUM_WRITE_OUTSTANDING 2, MAX_BURST_LENGTH 1, PHASE 0.0, CLK_DOMAIN design_main_processing_system7_0_2_FCLK_CLK0, NUM_READ_THREADS 1, NUM_WRITE_THREADS 1, RUSER_BITS_PER_BYTE 0, WUSER_BITS_PER_BYTE 0, INSERT_VIP 0";
+  attribute X_INTERFACE_PARAMETER of leds_axi_rready : signal is "XIL_INTERFACENAME LEDs_AXI, WIZ_DATA_WIDTH 32, WIZ_NUM_REG 30, SUPPORTS_NARROW_BURST 0, DATA_WIDTH 32, PROTOCOL AXI4LITE, FREQ_HZ 30000000, ID_WIDTH 0, ADDR_WIDTH 7, AWUSER_WIDTH 0, ARUSER_WIDTH 0, WUSER_WIDTH 0, RUSER_WIDTH 0, BUSER_WIDTH 0, READ_WRITE_MODE READ_WRITE, HAS_BURST 0, HAS_LOCK 0, HAS_PROT 1, HAS_CACHE 0, HAS_QOS 0, HAS_REGION 0, HAS_WSTRB 1, HAS_BRESP 1, HAS_RRESP 1, NUM_READ_OUTSTANDING 2, NUM_WRITE_OUTSTANDING 2, MAX_BURST_LENGTH 1, PHASE 0.0, CLK_DOMAIN design_main_processing_system7_0_2_FCLK_CLK0, NUM_READ_THREADS 1, NUM_WRITE_THREADS 1, RUSER_BITS_PER_BYTE 0, WUSER_BITS_PER_BYTE 0, INSERT_VIP 0";
   attribute X_INTERFACE_INFO of leds_axi_rvalid : signal is "xilinx.com:interface:aximm:1.0 LEDs_AXI RVALID";
   attribute X_INTERFACE_INFO of leds_axi_wready : signal is "xilinx.com:interface:aximm:1.0 LEDs_AXI WREADY";
   attribute X_INTERFACE_INFO of leds_axi_wvalid : signal is "xilinx.com:interface:aximm:1.0 LEDs_AXI WVALID";
   attribute X_INTERFACE_INFO of rgb_axi_aclk : signal is "xilinx.com:signal:clock:1.0 RGB_AXI_CLK CLK";
-  attribute X_INTERFACE_PARAMETER of rgb_axi_aclk : signal is "XIL_INTERFACENAME RGB_AXI_CLK, ASSOCIATED_BUSIF RGB_AXI, ASSOCIATED_RESET rgb_axi_aresetn, FREQ_HZ 25000000, FREQ_TOLERANCE_HZ 0, PHASE 0.0, CLK_DOMAIN design_main_processing_system7_0_2_FCLK_CLK0, INSERT_VIP 0";
+  attribute X_INTERFACE_PARAMETER of rgb_axi_aclk : signal is "XIL_INTERFACENAME RGB_AXI_CLK, ASSOCIATED_BUSIF RGB_AXI, ASSOCIATED_RESET rgb_axi_aresetn, FREQ_HZ 30000000, FREQ_TOLERANCE_HZ 0, PHASE 0.0, CLK_DOMAIN design_main_processing_system7_0_2_FCLK_CLK0, INSERT_VIP 0";
   attribute X_INTERFACE_INFO of rgb_axi_aresetn : signal is "xilinx.com:signal:reset:1.0 RGB_AXI_RST RST";
   attribute X_INTERFACE_PARAMETER of rgb_axi_aresetn : signal is "XIL_INTERFACENAME RGB_AXI_RST, POLARITY ACTIVE_LOW, INSERT_VIP 0";
   attribute X_INTERFACE_INFO of rgb_axi_arready : signal is "xilinx.com:interface:aximm:1.0 RGB_AXI ARREADY";
@@ -27273,12 +27168,12 @@ architecture STRUCTURE of design_main_SK9822_AXI4_30_0_0 is
   attribute X_INTERFACE_INFO of rgb_axi_bready : signal is "xilinx.com:interface:aximm:1.0 RGB_AXI BREADY";
   attribute X_INTERFACE_INFO of rgb_axi_bvalid : signal is "xilinx.com:interface:aximm:1.0 RGB_AXI BVALID";
   attribute X_INTERFACE_INFO of rgb_axi_rready : signal is "xilinx.com:interface:aximm:1.0 RGB_AXI RREADY";
-  attribute X_INTERFACE_PARAMETER of rgb_axi_rready : signal is "XIL_INTERFACENAME RGB_AXI, WIZ_DATA_WIDTH 32, WIZ_NUM_REG 4, SUPPORTS_NARROW_BURST 0, DATA_WIDTH 32, PROTOCOL AXI4LITE, FREQ_HZ 25000000, ID_WIDTH 0, ADDR_WIDTH 4, AWUSER_WIDTH 0, ARUSER_WIDTH 0, WUSER_WIDTH 0, RUSER_WIDTH 0, BUSER_WIDTH 0, READ_WRITE_MODE READ_WRITE, HAS_BURST 0, HAS_LOCK 0, HAS_PROT 1, HAS_CACHE 0, HAS_QOS 0, HAS_REGION 0, HAS_WSTRB 1, HAS_BRESP 1, HAS_RRESP 1, NUM_READ_OUTSTANDING 2, NUM_WRITE_OUTSTANDING 2, MAX_BURST_LENGTH 1, PHASE 0.0, CLK_DOMAIN design_main_processing_system7_0_2_FCLK_CLK0, NUM_READ_THREADS 1, NUM_WRITE_THREADS 1, RUSER_BITS_PER_BYTE 0, WUSER_BITS_PER_BYTE 0, INSERT_VIP 0";
+  attribute X_INTERFACE_PARAMETER of rgb_axi_rready : signal is "XIL_INTERFACENAME RGB_AXI, WIZ_DATA_WIDTH 32, WIZ_NUM_REG 4, SUPPORTS_NARROW_BURST 0, DATA_WIDTH 32, PROTOCOL AXI4LITE, FREQ_HZ 30000000, ID_WIDTH 0, ADDR_WIDTH 4, AWUSER_WIDTH 0, ARUSER_WIDTH 0, WUSER_WIDTH 0, RUSER_WIDTH 0, BUSER_WIDTH 0, READ_WRITE_MODE READ_WRITE, HAS_BURST 0, HAS_LOCK 0, HAS_PROT 1, HAS_CACHE 0, HAS_QOS 0, HAS_REGION 0, HAS_WSTRB 1, HAS_BRESP 1, HAS_RRESP 1, NUM_READ_OUTSTANDING 2, NUM_WRITE_OUTSTANDING 2, MAX_BURST_LENGTH 1, PHASE 0.0, CLK_DOMAIN design_main_processing_system7_0_2_FCLK_CLK0, NUM_READ_THREADS 1, NUM_WRITE_THREADS 1, RUSER_BITS_PER_BYTE 0, WUSER_BITS_PER_BYTE 0, INSERT_VIP 0";
   attribute X_INTERFACE_INFO of rgb_axi_rvalid : signal is "xilinx.com:interface:aximm:1.0 RGB_AXI RVALID";
   attribute X_INTERFACE_INFO of rgb_axi_wready : signal is "xilinx.com:interface:aximm:1.0 RGB_AXI WREADY";
   attribute X_INTERFACE_INFO of rgb_axi_wvalid : signal is "xilinx.com:interface:aximm:1.0 RGB_AXI WVALID";
   attribute X_INTERFACE_INFO of settings_axi_aclk : signal is "xilinx.com:signal:clock:1.0 Settings_AXI_CLK CLK";
-  attribute X_INTERFACE_PARAMETER of settings_axi_aclk : signal is "XIL_INTERFACENAME Settings_AXI_CLK, ASSOCIATED_BUSIF Settings_AXI, ASSOCIATED_RESET settings_axi_aresetn, FREQ_HZ 25000000, FREQ_TOLERANCE_HZ 0, PHASE 0.0, CLK_DOMAIN design_main_processing_system7_0_2_FCLK_CLK0, INSERT_VIP 0";
+  attribute X_INTERFACE_PARAMETER of settings_axi_aclk : signal is "XIL_INTERFACENAME Settings_AXI_CLK, ASSOCIATED_BUSIF Settings_AXI, ASSOCIATED_RESET settings_axi_aresetn, FREQ_HZ 30000000, FREQ_TOLERANCE_HZ 0, PHASE 0.0, CLK_DOMAIN design_main_processing_system7_0_2_FCLK_CLK0, INSERT_VIP 0";
   attribute X_INTERFACE_INFO of settings_axi_aresetn : signal is "xilinx.com:signal:reset:1.0 Settings_AXI_RST RST";
   attribute X_INTERFACE_PARAMETER of settings_axi_aresetn : signal is "XIL_INTERFACENAME Settings_AXI_RST, POLARITY ACTIVE_LOW, INSERT_VIP 0";
   attribute X_INTERFACE_INFO of settings_axi_arready : signal is "xilinx.com:interface:aximm:1.0 Settings_AXI ARREADY";
@@ -27288,7 +27183,7 @@ architecture STRUCTURE of design_main_SK9822_AXI4_30_0_0 is
   attribute X_INTERFACE_INFO of settings_axi_bready : signal is "xilinx.com:interface:aximm:1.0 Settings_AXI BREADY";
   attribute X_INTERFACE_INFO of settings_axi_bvalid : signal is "xilinx.com:interface:aximm:1.0 Settings_AXI BVALID";
   attribute X_INTERFACE_INFO of settings_axi_rready : signal is "xilinx.com:interface:aximm:1.0 Settings_AXI RREADY";
-  attribute X_INTERFACE_PARAMETER of settings_axi_rready : signal is "XIL_INTERFACENAME Settings_AXI, WIZ_DATA_WIDTH 32, WIZ_NUM_REG 4, SUPPORTS_NARROW_BURST 0, DATA_WIDTH 32, PROTOCOL AXI4LITE, FREQ_HZ 25000000, ID_WIDTH 0, ADDR_WIDTH 4, AWUSER_WIDTH 0, ARUSER_WIDTH 0, WUSER_WIDTH 0, RUSER_WIDTH 0, BUSER_WIDTH 0, READ_WRITE_MODE READ_WRITE, HAS_BURST 0, HAS_LOCK 0, HAS_PROT 1, HAS_CACHE 0, HAS_QOS 0, HAS_REGION 0, HAS_WSTRB 1, HAS_BRESP 1, HAS_RRESP 1, NUM_READ_OUTSTANDING 2, NUM_WRITE_OUTSTANDING 2, MAX_BURST_LENGTH 1, PHASE 0.0, CLK_DOMAIN design_main_processing_system7_0_2_FCLK_CLK0, NUM_READ_THREADS 1, NUM_WRITE_THREADS 1, RUSER_BITS_PER_BYTE 0, WUSER_BITS_PER_BYTE 0, INSERT_VIP 0";
+  attribute X_INTERFACE_PARAMETER of settings_axi_rready : signal is "XIL_INTERFACENAME Settings_AXI, WIZ_DATA_WIDTH 32, WIZ_NUM_REG 4, SUPPORTS_NARROW_BURST 0, DATA_WIDTH 32, PROTOCOL AXI4LITE, FREQ_HZ 30000000, ID_WIDTH 0, ADDR_WIDTH 4, AWUSER_WIDTH 0, ARUSER_WIDTH 0, WUSER_WIDTH 0, RUSER_WIDTH 0, BUSER_WIDTH 0, READ_WRITE_MODE READ_WRITE, HAS_BURST 0, HAS_LOCK 0, HAS_PROT 1, HAS_CACHE 0, HAS_QOS 0, HAS_REGION 0, HAS_WSTRB 1, HAS_BRESP 1, HAS_RRESP 1, NUM_READ_OUTSTANDING 2, NUM_WRITE_OUTSTANDING 2, MAX_BURST_LENGTH 1, PHASE 0.0, CLK_DOMAIN design_main_processing_system7_0_2_FCLK_CLK0, NUM_READ_THREADS 1, NUM_WRITE_THREADS 1, RUSER_BITS_PER_BYTE 0, WUSER_BITS_PER_BYTE 0, INSERT_VIP 0";
   attribute X_INTERFACE_INFO of settings_axi_rvalid : signal is "xilinx.com:interface:aximm:1.0 Settings_AXI RVALID";
   attribute X_INTERFACE_INFO of settings_axi_wready : signal is "xilinx.com:interface:aximm:1.0 Settings_AXI WREADY";
   attribute X_INTERFACE_INFO of settings_axi_wvalid : signal is "xilinx.com:interface:aximm:1.0 Settings_AXI WVALID";
