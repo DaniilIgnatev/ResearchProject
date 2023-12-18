@@ -26,7 +26,7 @@ module FrequencyDivider #(CLK_divider = 2) (
     output reg CLK_OUT    // Output divided clock signal
 );
 
-    reg [31:0] count; // Counter to keep track of divisions
+    reg [15:0] count; // Counter to keep track of divisions
 
     always @* begin
         if (CLK_divider == 1) begin
@@ -34,7 +34,7 @@ module FrequencyDivider #(CLK_divider = 2) (
         end
     end
 
-    always @(posedge CLK_IN) begin
+    always @(CLK_IN) begin
         if (!NRST) begin
             CLK_OUT <= 0;
             count <= 0;

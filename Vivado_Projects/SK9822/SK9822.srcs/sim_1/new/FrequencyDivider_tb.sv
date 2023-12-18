@@ -41,7 +41,7 @@ module FrequencyDivider_tb;
     // Testbench
     initial begin
         // Testcase: Reset
-        CLK_IN = 1;
+        CLK_IN = 0;
         NRST = 0;
         #2;
         NRST = 1;
