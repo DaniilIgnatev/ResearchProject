@@ -15,6 +15,7 @@
 	)
 	(
 		// Users to add ports here
+		input wire EXT_ST_IN,
         // CSR
         input wire CSR_TI,
         output wire CSR_INSEL,
@@ -229,6 +230,8 @@
 	// and the slave is ready to accept the write address and write data.
 	assign slv_reg_wren = axi_wready && S_AXI_WVALID && axi_awready && S_AXI_AWVALID;
 
+    wire SYNC_ST;
+
 	always @( posedge S_AXI_ACLK )
 	begin
 	  if ( S_AXI_ARESETN == 1'b0 )
@@ -246,9 +249,7 @@
 	            for ( byte_index = 0; byte_index <= (C_S_AXI_DATA_WIDTH/8)-1; byte_index = byte_index+1 )
 	              if ( S_AXI_WSTRB[byte_index] == 1 ) begin
 	                // Respective byte enables are asserted as per write strobes 
-	                // Slave register 0
-	                //slv_reg0[(byte_index*8) +: 8] <= S_AXI_WDATA[(byte_index*8) +: 8];
-	                
+	                // Slave register 0           
 	                slv_reg0[(byte_index*8) +: 8] <= {S_AXI_WDATA[((byte_index*8) + 1) +: 7], CSR_TI};
 	              end  
 	          2'h1:
@@ -256,8 +257,10 @@
 	              if ( S_AXI_WSTRB[byte_index] == 1 ) begin
 	                // Respective byte enables are asserted as per write strobes 
 	                // Slave register 1
-	                if (TSR_ST)
+	                if (slv_reg1[0])//TSR_ST
 	                   slv_reg1[(byte_index*8) +: 8] <= {S_AXI_WDATA[((byte_index*8) + 1) +: 7], 1'b0};
+	                else if (slv_reg1[7])//TSR_SYNC_ST
+	                   slv_reg1[(byte_index*8) +: 8] <= {1'b0, S_AXI_WDATA[(byte_index*8) +: 7]};
 	                else
 	                   slv_reg1[(byte_index*8) +: 8] <= S_AXI_WDATA[(byte_index*8) +: 8];
 	              end  
@@ -273,11 +276,9 @@
 	              if ( S_AXI_WSTRB[byte_index] == 1 ) begin
 	                // Respective byte enables are asserted as per write strobes 
 	                // Slave register 3
-	                //slv_reg3[(byte_index*8) +: 8] <= S_AXI_WDATA[(byte_index*8) +: 8];
-
-	                if (ICSR_CTI)
+	                if (slv_reg3[2])//ICSR_CTI
 	                    slv_reg3[(byte_index*8) +: 8] <= {S_AXI_WDATA[((byte_index*8) + 3) +: 5], 1'b0, ICSR_TI, S_AXI_WDATA[(byte_index*8)]};
-	                else if (ICSR_STI)
+	                else if (slv_reg3[3])//ICSR_STI
 	                    slv_reg3[(byte_index*8) +: 8] <= {S_AXI_WDATA[((byte_index*8) + 4) +: 4], 1'b0, S_AXI_WDATA[((byte_index*8) + 2)], ICSR_TI, S_AXI_WDATA[(byte_index*8)]};
 	                else    
                         slv_reg3[(byte_index*8) +: 8] <= {S_AXI_WDATA[((byte_index*8) + 2) +: 6], ICSR_TI, S_AXI_WDATA[(byte_index*8)]};
@@ -290,21 +291,27 @@
 	                    end
 	        endcase
 	      end else begin
-//          CSR
+//          CSR_TI
             slv_reg0[0] <= CSR_TI;
             
-//          TSR
-            if (TSR_ST)
-                slv_reg1[0] <= 0;
+//          TSR_ST
+            if (slv_reg1[0])
+                slv_reg1[0] <= 1'b0;
             
-//          ICSR
+//          TSR_SYNC_ST
+            if (slv_reg1[7])
+                slv_reg1[7] <= 1'b0;
+                
+//          ICSR_TI
             slv_reg3[1] <= ICSR_TI;
             
-            if (ICSR_CTI)
-                slv_reg3[2] <= 0;
+//          ICSR_CTI
+            if (slv_reg3[2])
+                slv_reg3[2] <= 1'b0;
             
-            if (ICSR_STI)    
-                slv_reg3[3] <= 0; 
+//          ICSR_STI
+            if (slv_reg3[3])    
+                slv_reg3[3] <= 1'b0; 
 	      end
 	  end
 	end    
@@ -443,7 +450,8 @@
 	assign CSR_INSEL = slv_reg0[1];
 	assign CSR_LOOP = slv_reg0[2];
 	//TSR
-	assign TSR_ST = slv_reg1[0];
+	assign TSR_SYNC_ST = slv_reg1[7];
+	assign TSR_ST = slv_reg1[0] || TSR_SYNC_ST || EXT_ST_IN;
 	// GBCR
 	assign GBCR_INSEL = slv_reg2[0];
 	assign GBCR_GB = slv_reg2[7:3];

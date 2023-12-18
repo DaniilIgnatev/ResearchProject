@@ -31,6 +31,8 @@
         output wire SCLK,// SPI clock output
         output wire MOSI,// SPI data
         output wire TI,// transmission interrupt
+        input wire EXT_ST_IN,
+        output wire EXT_ST_OUT,
 		// User ports ends
 		// Do not modify the ports beyond this line
 
@@ -129,6 +131,7 @@
 		.C_S_AXI_DATA_WIDTH(C_Settings_AXI_DATA_WIDTH),
 		.C_S_AXI_ADDR_WIDTH(C_Settings_AXI_ADDR_WIDTH)
 	) SK9822_AXI4_30_v1_0_Settings_AXI_inst (
+	    .EXT_ST_IN(EXT_ST_IN),
         // CSR
         .CSR_TI(CSR_TI),
         .CSR_INSEL(CSR_INSEL),
@@ -253,6 +256,7 @@
     );
 
     assign TI = ICSR_TI;
+    assign EXT_ST_OUT = EXT_ST_IN;
 	// User logic ends
 
 	endmodule
