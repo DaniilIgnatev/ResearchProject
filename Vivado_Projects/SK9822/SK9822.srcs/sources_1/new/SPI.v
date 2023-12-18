@@ -65,8 +65,6 @@ module SPI #(CLK_divider = 50) (
     wire TI_internal;// spi is busy
     assign TI_internal = counter != 0;
     
-    reg SCLK_reg;
-    
     always @(posedge SCLK_internal) begin
         if (!NRST) begin
             start_request_ack <= 0;
@@ -91,11 +89,7 @@ module SPI #(CLK_divider = 50) (
         end
     end
     
-    always @(TI_internal) begin
-        SCLK_reg = SCLK_internal && TI_internal;
-    end
-    
-    assign SCLK = SCLK_reg && counter[7];
+    assign SCLK = SCLK_internal && TI_internal && counter[7];
     assign MOSI = mosi_reg[7] && TI;
     assign TI = start_request || start_request_ack;
 
