@@ -61,7 +61,9 @@ typedef struct
         struct
         {
             volatile uint32_t ST : 1; // Start transmission command
-            uint32_t : 30;
+            uint32_t : 6;
+            volatile uint32_t SYNC_ST : 1; // Start synchronous transmission command
+            uint32_t : 24;
         } bit;
     } TSR;
 
@@ -145,6 +147,8 @@ bool SK9822_get_continuous_transmission(uintptr_t Settings_BaseAddress);
 void SK9822_set_continuous_transmission(uintptr_t Settings_BaseAddress, bool on_off);
 
 void SK9822_start_transmission(uintptr_t Settings_BaseAddress);
+
+void SK9822_start_synchronous_transmission(uintptr_t Settings_BaseAddress);
 
 BrightnessSourcesEnum SK9822_get_brightness_source_selection(uintptr_t Settings_BaseAddress);
 

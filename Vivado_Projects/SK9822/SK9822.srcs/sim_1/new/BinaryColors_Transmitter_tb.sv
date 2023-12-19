@@ -24,9 +24,9 @@ module BinaryColors_Transmitter_tb;
     parameter LED_number = 3;
     parameter max_brightness = 8;
     parameter const_brightness = 0;
-    parameter CLK_divider = 2;
 
     logic CLK;
+    logic SPI_CLK;
     logic NRST;
     logic SCLK;
     logic MOSI;
@@ -38,8 +38,9 @@ module BinaryColors_Transmitter_tb;
     logic [7:0] NEXT_BYTE;
     
     // Device under test
-    Bytes_Transmitter #(CLK_divider) bytes_Transmitter (
+    Bytes_Transmitter bytes_Transmitter (
         .CLK(CLK),
+        .SPI_CLK(SPI_CLK),
         .NRST(NRST),
         .SCLK(SCLK),
         .MOSI(MOSI),
@@ -71,6 +72,9 @@ module BinaryColors_Transmitter_tb;
 
     // Clock generator
     always #1ns CLK = ~CLK;
+    
+    // SPI clock generator
+    always #4ns SPI_CLK = ~SPI_CLK;
 
     // Testbench
     initial begin
@@ -90,6 +94,7 @@ module BinaryColors_Transmitter_tb;
     task Reset_Test();
         begin
             CLK = 1;
+            SPI_CLK = 1;
             NRST = 0;
             GBCR_GB = max_brightness;
             ST = 0;

@@ -96,6 +96,13 @@ void SK9822_start_transmission(uintptr_t Settings_BaseAddress){
     set_Settings(Settings_BaseAddress, settings);
 }
 
+void SK9822_start_synchronous_transmission(uintptr_t Settings_BaseAddress){
+    Settings_Type settings = get_Settings(Settings_BaseAddress);
+    settings.TSR.bit.SYNC_ST = 1;
+
+    set_Settings(Settings_BaseAddress, settings);
+}
+
 BrightnessSourcesEnum SK9822_get_brightness_source_selection(uintptr_t Settings_BaseAddress){
     Settings_Type settings = get_Settings(Settings_BaseAddress);
 

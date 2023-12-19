@@ -20,8 +20,9 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
-module Bytes_Transmitter #(CLK_divider = 50) (
+module Bytes_Transmitter (
     input CLK,
+    input SPI_CLK,
     input NRST,
     output SCLK,
     output MOSI,
@@ -35,8 +36,9 @@ module Bytes_Transmitter #(CLK_divider = 50) (
     wire SPI_DS;
     wire SPI_TI;
     
-    SPI #(CLK_divider) spi(
+    SPI spi(
         .CLK(CLK),
+        .SPI_CLK(SPI_CLK),
         .NRST(NRST),
         .SCLK(SCLK),
         .MOSI(MOSI),

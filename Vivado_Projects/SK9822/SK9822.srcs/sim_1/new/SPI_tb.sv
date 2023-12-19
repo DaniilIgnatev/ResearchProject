@@ -20,10 +20,9 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
-module SPI_tb;
-    parameter CLK_divider = 1;
-    
+module SPI_tb;    
     logic CLK;
+    logic SPI_CLK;
     logic NRST;
     logic [7:0] D;
     logic DS;
@@ -32,8 +31,9 @@ module SPI_tb;
     logic TI;
 
     // DUT (device under test)
-    SPI #(CLK_divider) dut (
+    SPI dut (
         .CLK(CLK),
+        .SPI_CLK(SPI_CLK),
         .NRST(NRST),
         .D(D),
         .DS(DS),
@@ -44,6 +44,9 @@ module SPI_tb;
 
     // Clock generator
     always #1ns CLK = ~CLK;
+    
+    // SPI clock generator
+    always #4ns SPI_CLK = ~SPI_CLK;
 
     byte test_data = 8'b01000001;
 
@@ -51,10 +54,11 @@ module SPI_tb;
     initial begin
         // Testcase: Reset
         CLK = 1;
+        SPI_CLK = 1;
         NRST = 0;
         D = 0;
         DS = 0;
-        #2ns
+        #8ns
         assert (D == 0 && MOSI == 0 && TI == 0)
         else $fatal("Reset failed!");
         NRST = 1;
@@ -63,29 +67,29 @@ module SPI_tb;
         D = test_data;
         $display("Data = %0d", D);
         DS = 1;
-        #2ns
+        #8ns
         assert (D == test_data && MOSI == D[7] && TI == 1) 
         else $fatal("Data set failed!");
         DS = 0;
-        #2ns
+        #8ns
         
         // Testcase: Data shift
         for (int j = 6; j >= 0; j--) begin
-            #2ns
+            #8ns
             assert (D == test_data && MOSI == D[j] && TI == 1) 
             else $fatal("Data shift failed!");
         end
         
         wait(TI == 0);
-        #2ns;
+        #8ns
 
         // Testcase: Idle
-        #2ns
+        #8ns
         assert (MOSI == 0 && TI == 0) 
         else $fatal("Idle failed!");
 
         // End simulation
-        #10ns $finish;
+        #24ns $finish;
     end
 
 endmodule

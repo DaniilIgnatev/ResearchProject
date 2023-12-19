@@ -22,6 +22,7 @@
 
 module SK9822 #(LED_number = 8, max_brightness = 8, const_brightness = 0, CLK_divider = 50)(
     input CLK,
+    input SPI_CLK,
     input NRST,
     output SCLK,
     output MOSI,
@@ -60,6 +61,7 @@ module SK9822 #(LED_number = 8, max_brightness = 8, const_brightness = 0, CLK_di
 
     Bytes_Transmitter #(CLK_divider) bytes_transmitter (
         .CLK(CLK),
+        .SPI_CLK(SPI_CLK),
         .NRST(NRST),
         .SCLK(SCLK),
         .MOSI(MOSI),

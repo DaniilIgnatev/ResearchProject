@@ -24,9 +24,9 @@ module SK9822_tb;
     parameter LED_number = 3;
     parameter max_brightness = 8;
     parameter const_brightness = 0;
-    parameter CLK_divider = 50;
 
     logic CLK;
+    logic SPI_CLK;
     logic NRST;
     logic SCLK;
     logic MOSI;
@@ -51,8 +51,9 @@ module SK9822_tb;
     logic [(((LED_number-1) / 8) + 1) * 8 - 1 : 0] B;// the size is made to be multiple of 8 bit
 
     // DUT (device under test)
-    SK9822 #(LED_number, max_brightness, const_brightness, CLK_divider) dut(
+    SK9822 #(LED_number, max_brightness, const_brightness) dut(
         .CLK(CLK),
+        .SPI_CLK(SPI_CLK),
         .NRST(NRST),
         .SCLK(SCLK),
         .MOSI(MOSI),
@@ -82,6 +83,9 @@ module SK9822_tb;
 
     // Clock generator
     always #1ns CLK = ~CLK;
+    
+    // SPI clock generator
+    always #4ns SPI_CLK = ~SPI_CLK;
 
     // Testbench
     initial begin
@@ -107,6 +111,7 @@ module SK9822_tb;
     task Reset_Test();
         begin
             CLK = 1;
+            SPI_CLK = 1;
             NRST = 0;
             TSR_ST = 0;
             #2ns
