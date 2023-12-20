@@ -18,18 +18,8 @@ proc init_gui { IPINST } {
 
   ipgui::add_param $IPINST -name "max_brightness"
   ipgui::add_param $IPINST -name "const_brightness"
-  ipgui::add_param $IPINST -name "CLK_divider"
   ipgui::add_param $IPINST -name "LED_number"
 
-}
-
-proc update_PARAM_VALUE.CLK_divider { PARAM_VALUE.CLK_divider } {
-	# Procedure called to update CLK_divider when any of the dependent parameters in the arguments change
-}
-
-proc validate_PARAM_VALUE.CLK_divider { PARAM_VALUE.CLK_divider } {
-	# Procedure called to validate CLK_divider
-	return true
 }
 
 proc update_PARAM_VALUE.LED_number { PARAM_VALUE.LED_number } {
@@ -211,10 +201,5 @@ proc update_MODELPARAM_VALUE.max_brightness { MODELPARAM_VALUE.max_brightness PA
 proc update_MODELPARAM_VALUE.const_brightness { MODELPARAM_VALUE.const_brightness PARAM_VALUE.const_brightness } {
 	# Procedure called to set VHDL generic/Verilog parameter value(s) based on TCL parameter value
 	set_property value [get_property value ${PARAM_VALUE.const_brightness}] ${MODELPARAM_VALUE.const_brightness}
-}
-
-proc update_MODELPARAM_VALUE.CLK_divider { MODELPARAM_VALUE.CLK_divider PARAM_VALUE.CLK_divider } {
-	# Procedure called to set VHDL generic/Verilog parameter value(s) based on TCL parameter value
-	set_property value [get_property value ${PARAM_VALUE.CLK_divider}] ${MODELPARAM_VALUE.CLK_divider}
 }
 

@@ -7,7 +7,6 @@
 		parameter integer LED_number = 30,
         parameter integer max_brightness = 8,
         parameter integer const_brightness = 0,
-        parameter integer CLK_divider = 50,
 		// User parameters ends
 		// Do not modify the parameters beyond this line
 
@@ -27,7 +26,6 @@
 	(
 		// Users to add ports here
         input wire CLK,// clock input
-        input wire SPI_CLK,// clock input for SPI
         input wire RESETN,// reset low
         output wire SCLK,// SPI clock output
         output wire MOSI,// SPI data
@@ -235,9 +233,8 @@
 	);
 
 	// Add user logic here
-    SK9822 #(LED_number, max_brightness, const_brightness, CLK_divider) SK9822_0 (
+    SK9822 #(LED_number, max_brightness, const_brightness) SK9822_0 (
       .CLK(CLK),                // input wire CLK
-      .SPI_CLK(SPI_CLK),        // clock input for SPI
       .NRST(RESETN),            // input wire NRST
       .SCLK(SCLK),              // output wire SCLK
       .MOSI(MOSI),              // output wire MOSI
