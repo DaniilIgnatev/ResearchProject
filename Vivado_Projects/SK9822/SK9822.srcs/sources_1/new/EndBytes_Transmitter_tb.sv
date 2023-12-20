@@ -62,7 +62,7 @@ module EndBytes_Transmitter_tb;
     always #1ns CLK = ~CLK;
     
     // SPI clock generator
-    always #4ns SPI_CLK = ~SPI_CLK;
+    always #1ns SPI_CLK = ~SPI_CLK;
 
     // Testbench
     initial begin
