@@ -37,7 +37,6 @@ module Bytes_Transmitter (
     wire SPI_TI;
     
     SPI spi(
-        .CLK(CLK),
         .SPI_CLK(SPI_CLK),
         .NRST(NRST),
         .SCLK(SCLK),
