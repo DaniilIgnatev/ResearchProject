@@ -26,7 +26,6 @@ module SK9822_tb;
     parameter const_brightness = 0;
 
     logic CLK;
-    logic SPI_CLK;
     logic NRST;
     logic SCLK;
     logic MOSI;
@@ -53,7 +52,6 @@ module SK9822_tb;
     // DUT (device under test)
     SK9822 #(LED_number, max_brightness, const_brightness) dut(
         .CLK(CLK),
-        .SPI_CLK(SPI_CLK),
         .NRST(NRST),
         .SCLK(SCLK),
         .MOSI(MOSI),
@@ -83,9 +81,6 @@ module SK9822_tb;
 
     // Clock generator
     always #1ns CLK = ~CLK;
-    
-    // SPI clock generator
-    always #1ns SPI_CLK = ~SPI_CLK;
 
     // Testbench
     initial begin
@@ -111,7 +106,6 @@ module SK9822_tb;
     task Reset_Test();
         begin
             CLK = 1;
-            SPI_CLK = 1;
             NRST = 0;
             TSR_ST = 0;
             #2ns

@@ -22,7 +22,6 @@
 
 module Bytes_Transmitter (
     input CLK,
-    input SPI_CLK,
     input NRST,
     output SCLK,
     output MOSI,
@@ -37,7 +36,7 @@ module Bytes_Transmitter (
     wire SPI_TI;
     
     SPI spi(
-        .SPI_CLK(SPI_CLK),
+        .CLK(CLK),
         .NRST(NRST),
         .SCLK(SCLK),
         .MOSI(MOSI),
