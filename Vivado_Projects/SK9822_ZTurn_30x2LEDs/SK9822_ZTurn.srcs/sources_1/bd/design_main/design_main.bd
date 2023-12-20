@@ -1014,15 +1014,10 @@
       },
       "SK9822_AXI4_30_0": {
         "vlnv": "xilinx.com:user:SK9822_AXI4_30:1.0",
-        "ip_revision": "7",
+        "ip_revision": "12",
         "xci_name": "design_main_SK9822_AXI4_30_0_0",
         "xci_path": "ip\\design_main_SK9822_AXI4_30_0_0\\design_main_SK9822_AXI4_30_0_0.xci",
-        "inst_hier_path": "SK9822_AXI4_30_0",
-        "parameters": {
-          "CLK_divider": {
-            "value": "2"
-          }
-        }
+        "inst_hier_path": "SK9822_AXI4_30_0"
       },
       "ps7_0_axi_periph": {
         "vlnv": "xilinx.com:ip:axi_interconnect:2.1",
@@ -1820,15 +1815,10 @@
       },
       "SK9822_AXI4_30_1": {
         "vlnv": "xilinx.com:user:SK9822_AXI4_30:1.0",
-        "ip_revision": "7",
+        "ip_revision": "12",
         "xci_name": "design_main_SK9822_AXI4_30_1_0",
         "xci_path": "ip\\design_main_SK9822_AXI4_30_1_0\\design_main_SK9822_AXI4_30_1_0.xci",
-        "inst_hier_path": "SK9822_AXI4_30_1",
-        "parameters": {
-          "CLK_divider": {
-            "value": "2"
-          }
-        }
+        "inst_hier_path": "SK9822_AXI4_30_1"
       },
       "util_vector_logic_0": {
         "vlnv": "xilinx.com:ip:util_vector_logic:2.0",
