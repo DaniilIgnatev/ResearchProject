@@ -7,8 +7,7 @@
       "name": "design_main",
       "rev_ctrl_bd_flag": "RevCtrlBdOff",
       "synth_flow_mode": "Hierarchical",
-      "tool_version": "2023.2",
-      "validated": "true"
+      "tool_version": "2023.2"
     },
     "design_tree": {
       "processing_system7_0": "",
@@ -208,17 +207,7 @@
       "P67": {
         "direction": "O",
         "left": "0",
-        "right": "0",
-        "parameters": {
-          "PortType": {
-            "value": "undef",
-            "value_src": "ip_prop"
-          },
-          "PortType.PROP_SRC": {
-            "value": "false",
-            "value_src": "ip_prop"
-          }
-        }
+        "right": "0"
       },
       "P63": {
         "direction": "O"
@@ -248,7 +237,7 @@
             "value": "10.000000"
           },
           "PCW_ACT_FPGA0_PERIPHERAL_FREQMHZ": {
-            "value": "60.000000"
+            "value": "1.000000"
           },
           "PCW_ACT_FPGA1_PERIPHERAL_FREQMHZ": {
             "value": "10.000000"
@@ -302,7 +291,7 @@
             "value": "111.111115"
           },
           "PCW_CLK0_FREQ": {
-            "value": "60000000"
+            "value": "1000000"
           },
           "PCW_CLK1_FREQ": {
             "value": "10000000"
@@ -332,7 +321,7 @@
             "value": "1"
           },
           "PCW_FPGA0_PERIPHERAL_FREQMHZ": {
-            "value": "60"
+            "value": "1"
           },
           "PCW_FPGA_FCLK0_ENABLE": {
             "value": "1"
@@ -1014,7 +1003,7 @@
       },
       "SK9822_AXI4_30_0": {
         "vlnv": "xilinx.com:user:SK9822_AXI4_30:1.0",
-        "ip_revision": "12",
+        "ip_revision": "13",
         "xci_name": "design_main_SK9822_AXI4_30_0_0",
         "xci_path": "ip\\design_main_SK9822_AXI4_30_0_0\\design_main_SK9822_AXI4_30_0_0.xci",
         "inst_hier_path": "SK9822_AXI4_30_0"
@@ -1815,7 +1804,7 @@
       },
       "SK9822_AXI4_30_1": {
         "vlnv": "xilinx.com:user:SK9822_AXI4_30:1.0",
-        "ip_revision": "12",
+        "ip_revision": "13",
         "xci_name": "design_main_SK9822_AXI4_30_1_0",
         "xci_path": "ip\\design_main_SK9822_AXI4_30_1_0\\design_main_SK9822_AXI4_30_1_0.xci",
         "inst_hier_path": "SK9822_AXI4_30_1"
