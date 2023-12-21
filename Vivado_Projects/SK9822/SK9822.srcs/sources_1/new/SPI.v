@@ -30,30 +30,28 @@ module SPI (
     output wire TI
 );    
 
-    // TRANSMITTER
-    reg [7:0] mosi_counter;
     reg [7:0] mosi_data;
-
-    //reset, init
-    always @(posedge CLK) begin
+    reg [7:0] mosi_counter;
+    
+    assign TI = mosi_counter[7];
+    
+    always @(negedge CLK) begin
         if (!NRST) begin
+            mosi_data = 0;
             mosi_counter <= 0;
-            mosi_data <= 0;
         end
-        else begin 
+        else begin
             if (TI) begin
-                mosi_data <= {mosi_data[6:0], 1'd0};
+                mosi_data = {mosi_data[6:0], 1'd0};
                 mosi_counter <= {mosi_counter[6:0], 1'd0};
-            end else begin
-                if (DS) begin
-                    mosi_data <= D;
-                    mosi_counter <= 8'b11111111;
-                end
+            end else
+            if (DS) begin
+                mosi_data = D;
+                mosi_counter <= 8'b11111111;
             end
         end
     end
     
-    assign TI = mosi_counter[7];
     assign SCLK = CLK && TI;
     assign MOSI = mosi_data[7] && TI;
 

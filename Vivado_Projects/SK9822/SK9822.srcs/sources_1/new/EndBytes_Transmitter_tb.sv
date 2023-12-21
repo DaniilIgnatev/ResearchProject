@@ -24,7 +24,6 @@ module EndBytes_Transmitter_tb;
     parameter LED_number = 30;
 
     logic CLK;
-    logic SPI_CLK;
     logic NRST;
     logic SCLK;
     logic MOSI;
@@ -38,7 +37,6 @@ module EndBytes_Transmitter_tb;
     // Device under test
     Bytes_Transmitter bytes_Transmitter (
         .CLK(CLK),
-        .SPI_CLK(SPI_CLK),
         .NRST(NRST),
         .SCLK(SCLK),
         .MOSI(MOSI),
@@ -60,9 +58,6 @@ module EndBytes_Transmitter_tb;
 
     // Clock generator
     always #1ns CLK = ~CLK;
-    
-    // SPI clock generator
-    always #1ns SPI_CLK = ~SPI_CLK;
 
     // Testbench
     initial begin
@@ -83,7 +78,6 @@ module EndBytes_Transmitter_tb;
         begin
             ST = 0;
             CLK = 1;
-            SPI_CLK = 1;
             NRST = 0;
             #2ns
             NRST = 1;

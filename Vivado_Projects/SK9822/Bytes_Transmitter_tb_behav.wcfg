@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="Bytes_Transmitter_tb_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="Bytes_Transmitter_tb" />
+            <top_module name="glbl" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="0.000 ns"></ZoomStartTime>
+      <ZoomEndTime time="58.001 ns"></ZoomEndTime>
+      <Cursor1Time time="41.000 ns"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="154"></NameColumnWidth>
+      <ValueColumnWidth column_width="143"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="37" />
+   <wvobject fp_name="/Bytes_Transmitter_tb/CLK" type="logic">
+      <obj_property name="ElementShortName">CLK</obj_property>
+      <obj_property name="ObjectShortName">CLK</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Bytes_Transmitter_tb/NRST" type="logic">
+      <obj_property name="ElementShortName">NRST</obj_property>
+      <obj_property name="ObjectShortName">NRST</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Bytes_Transmitter_tb/SCLK" type="logic">
+      <obj_property name="ElementShortName">SCLK</obj_property>
+      <obj_property name="ObjectShortName">SCLK</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Bytes_Transmitter_tb/MOSI" type="logic">
+      <obj_property name="ElementShortName">MOSI</obj_property>
+      <obj_property name="ObjectShortName">MOSI</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Bytes_Transmitter_tb/ST" type="logic">
+      <obj_property name="ElementShortName">ST</obj_property>
+      <obj_property name="ObjectShortName">ST</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Bytes_Transmitter_tb/TI" type="logic">
+      <obj_property name="ElementShortName">TI</obj_property>
+      <obj_property name="ObjectShortName">TI</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Bytes_Transmitter_tb/testData" type="array">
+      <obj_property name="ElementShortName">testData[0:2][7:0]</obj_property>
+      <obj_property name="ObjectShortName">testData[0:2][7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Bytes_Transmitter_tb/TX_COUNTER_MAX" type="array">
+      <obj_property name="ElementShortName">TX_COUNTER_MAX[15:0]</obj_property>
+      <obj_property name="ObjectShortName">TX_COUNTER_MAX[15:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Bytes_Transmitter_tb/TX_COUNTER" type="array">
+      <obj_property name="ElementShortName">TX_COUNTER[15:0]</obj_property>
+      <obj_property name="ObjectShortName">TX_COUNTER[15:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Bytes_Transmitter_tb/NEXT_BYTE" type="array">
+      <obj_property name="ElementShortName">NEXT_BYTE[7:0]</obj_property>
+      <obj_property name="ObjectShortName">NEXT_BYTE[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Bytes_Transmitter_tb/bytes_number" type="array">
+      <obj_property name="ElementShortName">bytes_number[31:0]</obj_property>
+      <obj_property name="ObjectShortName">bytes_number[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Bytes_Transmitter_tb/dut/CLK" type="logic">
+      <obj_property name="ElementShortName">CLK</obj_property>
+      <obj_property name="ObjectShortName">CLK</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Bytes_Transmitter_tb/dut/NRST" type="logic">
+      <obj_property name="ElementShortName">NRST</obj_property>
+      <obj_property name="ObjectShortName">NRST</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Bytes_Transmitter_tb/dut/SCLK" type="logic">
+      <obj_property name="ElementShortName">SCLK</obj_property>
+      <obj_property name="ObjectShortName">SCLK</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Bytes_Transmitter_tb/dut/MOSI" type="logic">
+      <obj_property name="ElementShortName">MOSI</obj_property>
+      <obj_property name="ObjectShortName">MOSI</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Bytes_Transmitter_tb/dut/ST" type="logic">
+      <obj_property name="ElementShortName">ST</obj_property>
+      <obj_property name="ObjectShortName">ST</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Bytes_Transmitter_tb/dut/TI" type="logic">
+      <obj_property name="ElementShortName">TI</obj_property>
+      <obj_property name="ObjectShortName">TI</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Bytes_Transmitter_tb/dut/TX_COUNTER_MAX" type="array">
+      <obj_property name="ElementShortName">TX_COUNTER_MAX[15:0]</obj_property>
+      <obj_property name="ObjectShortName">TX_COUNTER_MAX[15:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Bytes_Transmitter_tb/dut/TX_COUNTER" type="array">
+      <obj_property name="ElementShortName">TX_COUNTER[15:0]</obj_property>
+      <obj_property name="ObjectShortName">TX_COUNTER[15:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Bytes_Transmitter_tb/dut/NEXT_BYTE" type="array">
+      <obj_property name="ElementShortName">NEXT_BYTE[7:0]</obj_property>
+      <obj_property name="ObjectShortName">NEXT_BYTE[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Bytes_Transmitter_tb/dut/SPI_DS" type="logic">
+      <obj_property name="ElementShortName">SPI_DS</obj_property>
+      <obj_property name="ObjectShortName">SPI_DS</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Bytes_Transmitter_tb/dut/SPI_TI" type="logic">
+      <obj_property name="ElementShortName">SPI_TI</obj_property>
+      <obj_property name="ObjectShortName">SPI_TI</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Bytes_Transmitter_tb/dut/tx_counter_reg" type="array">
+      <obj_property name="ElementShortName">tx_counter_reg[15:0]</obj_property>
+      <obj_property name="ObjectShortName">tx_counter_reg[15:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Bytes_Transmitter_tb/dut/FSM_state" type="logic">
+      <obj_property name="ElementShortName">FSM_state</obj_property>
+      <obj_property name="ObjectShortName">FSM_state</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Bytes_Transmitter_tb/dut/FSM_IDLE_STATE" type="array">
+      <obj_property name="ElementShortName">FSM_IDLE_STATE[31:0]</obj_property>
+      <obj_property name="ObjectShortName">FSM_IDLE_STATE[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Bytes_Transmitter_tb/dut/FSM_TRANSMISSION_STATE" type="array">
+      <obj_property name="ElementShortName">FSM_TRANSMISSION_STATE[31:0]</obj_property>
+      <obj_property name="ObjectShortName">FSM_TRANSMISSION_STATE[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Bytes_Transmitter_tb/dut/spi/CLK" type="logic">
+      <obj_property name="ElementShortName">CLK</obj_property>
+      <obj_property name="ObjectShortName">CLK</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Bytes_Transmitter_tb/dut/spi/NRST" type="logic">
+      <obj_property name="ElementShortName">NRST</obj_property>
+      <obj_property name="ObjectShortName">NRST</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Bytes_Transmitter_tb/dut/spi/SCLK" type="logic">
+      <obj_property name="ElementShortName">SCLK</obj_property>
+      <obj_property name="ObjectShortName">SCLK</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Bytes_Transmitter_tb/dut/spi/MOSI" type="logic">
+      <obj_property name="ElementShortName">MOSI</obj_property>
+      <obj_property name="ObjectShortName">MOSI</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Bytes_Transmitter_tb/dut/spi/D" type="array">
+      <obj_property name="ElementShortName">D[7:0]</obj_property>
+      <obj_property name="ObjectShortName">D[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Bytes_Transmitter_tb/dut/spi/DS" type="logic">
+      <obj_property name="ElementShortName">DS</obj_property>
+      <obj_property name="ObjectShortName">DS</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Bytes_Transmitter_tb/dut/spi/TI" type="logic">
+      <obj_property name="ElementShortName">TI</obj_property>
+      <obj_property name="ObjectShortName">TI</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Bytes_Transmitter_tb/dut/spi/mosi_data" type="array">
+      <obj_property name="ElementShortName">mosi_data[7:0]</obj_property>
+      <obj_property name="ObjectShortName">mosi_data[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Bytes_Transmitter_tb/dut/spi/TI_en" type="logic">
+      <obj_property name="ElementShortName">TI_en</obj_property>
+      <obj_property name="ObjectShortName">TI_en</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Bytes_Transmitter_tb/dut/spi/mosi_counter" type="array">
+      <obj_property name="ElementShortName">mosi_counter[7:0]</obj_property>
+      <obj_property name="ObjectShortName">mosi_counter[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Bytes_Transmitter_tb/dut/spi/TX_empty" type="logic">
+      <obj_property name="ElementShortName">TX_empty</obj_property>
+      <obj_property name="ObjectShortName">TX_empty</obj_property>
+   </wvobject>
+</wave_config>

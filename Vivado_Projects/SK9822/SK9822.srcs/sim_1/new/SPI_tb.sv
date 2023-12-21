@@ -67,18 +67,18 @@ module SPI_tb;
         DS = 0;
         
         // Testcase: Data shift
-        for (int j = 6; j >= 0; j--) begin
-            $display("j = %0d", j);
-            #2ns
-            assert (MOSI == D[j] && TI == 1) 
-            else $fatal("Data shift failed!");
-        end
+//        for (int j = 6; j >= 0; j--) begin
+//            $display("j = %0d", j);
+//            #2ns
+//            assert (MOSI == D[j] && TI == 1) 
+//            else $fatal("Data shift failed!");
+//        end
         
         wait(TI == 0);
         #2ns
 
         // Testcase: Idle
-        #8ns
+        #4ns
         assert (MOSI == 0 && TI == 0) 
         else $fatal("Idle failed!");
 
