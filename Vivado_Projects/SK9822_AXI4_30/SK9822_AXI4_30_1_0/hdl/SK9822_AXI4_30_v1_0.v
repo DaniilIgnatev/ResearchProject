@@ -131,6 +131,7 @@
 		.C_S_AXI_ADDR_WIDTH(C_Settings_AXI_ADDR_WIDTH)
 	) SK9822_AXI4_30_v1_0_Settings_AXI_inst (
 	    .EXT_ST_IN(EXT_ST_IN),
+	    .EXT_ST_OUT(EXT_ST_OUT),
         // CSR
         .CSR_TI(CSR_TI),
         .CSR_INSEL(CSR_INSEL),
@@ -255,7 +256,6 @@
     );
 
     assign TI = ICSR_TI;
-    assign EXT_ST_OUT = EXT_ST_IN;
 	// User logic ends
 
 	endmodule

@@ -2,8 +2,8 @@
 //Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2023.2 (win64) Build 4029153 Fri Oct 13 20:14:34 MDT 2023
-//Date        : Thu Dec 21 15:34:40 2023
-//Host        : ISCN5CG3184Y0Y running 64-bit major release  (build 9200)
+//Date        : Fri Dec 22 22:27:38 2023
+//Host        : Daniil-Nuc running 64-bit major release  (build 9200)
 //Command     : generate_target design_main_wrapper.bd
 //Design      : design_main_wrapper
 //Purpose     : IP block netlist

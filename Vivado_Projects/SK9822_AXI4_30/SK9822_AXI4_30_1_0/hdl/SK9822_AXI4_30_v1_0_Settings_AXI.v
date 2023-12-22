@@ -16,6 +16,7 @@
 	(
 		// Users to add ports here
 		input wire EXT_ST_IN,
+		output wire EXT_ST_OUT,
         // CSR
         input wire CSR_TI,
         output wire CSR_INSEL,
@@ -229,8 +230,6 @@
 	// Slave register write enable is asserted when valid address and data are available
 	// and the slave is ready to accept the write address and write data.
 	assign slv_reg_wren = axi_wready && S_AXI_WVALID && axi_awready && S_AXI_AWVALID;
-
-    wire SYNC_ST;
 
 	always @( posedge S_AXI_ACLK )
 	begin
@@ -450,8 +449,7 @@
 	assign CSR_INSEL = slv_reg0[1];
 	assign CSR_LOOP = slv_reg0[2];
 	//TSR
-	assign TSR_SYNC_ST = slv_reg1[7];
-	assign TSR_ST = slv_reg1[0] || TSR_SYNC_ST || EXT_ST_IN;
+	assign TSR_ST = slv_reg1[0] || slv_reg1[7] || EXT_ST_IN;
 	// GBCR
 	assign GBCR_INSEL = slv_reg2[0];
 	assign GBCR_GB = slv_reg2[7:3];
@@ -461,6 +459,8 @@
 	assign ICSR_CTI = slv_reg3[2];
     assign ICSR_STI = slv_reg3[3];
     // some logic is located on the line 274 in always @( posedge S_AXI_ACLK )
+    
+    assign EXT_ST_OUT = EXT_ST_IN || slv_reg1[7];
 	// User logic ends
 
 	endmodule
