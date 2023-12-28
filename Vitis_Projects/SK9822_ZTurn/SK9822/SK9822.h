@@ -1,19 +1,25 @@
 #pragma once
 
+#include <stdint.h>
+#include "definitions.h"
+
 #include "BrightnessSourcesEnum.h"
 #include "ColorSourcesEnum.h"
-#include "LED_Type.h"
-#include "std.h"
+#include "LED.h"
+#include "StartBytes_Transmitter.h"
+#include "EndBytes_Transmitter.h"
+#include "BinaryColors_Transmitter.h"
+#include "FullColors_Transmitter.h"
 
-#define LED_max 30
-
-#define max_global_brightness 8
-
-class SK9822 {
+class SK9822
+{
 protected:
-  uint8_t global_brightness;
+  uint8_t global_brightness = max_global_brightness;
 
+  
 public:
+  SK9822();
+
   void reset();
 
   bool get_transmission_indication();
@@ -36,11 +42,13 @@ public:
 
   void set_transmission_interrupt_status();
 
-  void SK9822_set_LED(uintptr_t LED_BaseAddress, uint8_t id, LED_Type data);
+  void set_LED(uint8_t id, LED data);
 
-  void SK9822_set_R(uintptr_t R_BaseAddress, uint8_t id, bool on_off);
+  void set_R(uint8_t id, bool on_off);
 
-  void SK9822_set_G(uintptr_t G_BaseAddress, uint8_t id, bool on_off);
+  void set_G(uint8_t id, bool on_off);
 
-  void SK9822_set_B(uintptr_t B_BaseAddress, uint8_t id, bool on_off);
+  void set_B(uint8_t id, bool on_off);
 };
+
+void top();

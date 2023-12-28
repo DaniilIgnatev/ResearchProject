@@ -1,0 +1,178 @@
+<ENTRY>
+{
+ "thisFile": "C:/Users\\folke\\OneDrive\\Documents\\GitHub\\ResearchProject\\Vitis_Projects\\SK9822_ZTurn\\SK9822\\SK9822\\SK9822.hlsrun_csim_summary",
+ "connectId": "",
+ "serverToken": "",
+ "timestamp": "0"
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_CmdStep",
+ "dateTimestamp": "12/28/23 16:39:17",
+ "timestampMillis": "2960108158",
+ "buildStep": {
+  "cmdId": "182a14b9-a3c1-4739-a588-2c55b45261ae",
+  "name": "vitis-run",
+  "logFile": "C:/Users\\folke\\OneDrive\\Documents\\GitHub\\ResearchProject\\Vitis_Projects\\SK9822_ZTurn\\SK9822\\SK9822\\logs\\SK9822.steps.log",
+  "commandLine": "C:/Xilinx/Vitis/2023.2/bin/unwrapped/win64.o/vitis-run.exe  --mode hls --csim --config C:\\Users\\folke\\OneDrive\\Documents\\GitHub\\ResearchProject\\Vitis_Projects\\SK9822_ZTurn\\SK9822\\hls_config.cfg --work_dir SK9822 ",
+  "args": [
+   "--mode",
+   "hls",
+   "--csim",
+   "--config",
+   "C:\\Users\\folke\\OneDrive\\Documents\\GitHub\\ResearchProject\\Vitis_Projects\\SK9822_ZTurn\\SK9822\\hls_config.cfg",
+   "--work_dir",
+   "SK9822"
+  ],
+  "iniFiles": [],
+  "cwd": "C:\\Users\\folke\\OneDrive\\Documents\\GitHub\\ResearchProject\\Vitis_Projects\\SK9822_ZTurn\\SK9822"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "12/28/23 16:39:17",
+ "timestampMillis": "2960108158",
+ "status": {
+  "cmdId": "182a14b9-a3c1-4739-a588-2c55b45261ae",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_FlowMetaData",
+ "dateTimestamp": "12/28/23 16:39:24",
+ "timestampMillis": "2960115731",
+ "buildSummary": {
+  "hardwarePlatform": "",
+  "hardwareDsa": "",
+  "platformDirectory": "",
+  "runtime": "",
+  "systemConfig": "",
+  "flow": "BF_RUN",
+  "target": "TT_HLS_C_SIM",
+  "kernels": [
+   {
+    "base": {
+     "type": "KERNEL",
+     "name": "top",
+     "file": "",
+     "reports": [],
+     "uuid": ""
+    },
+    "sources": [
+     "C:/Users\\folke\\OneDrive\\Documents\\GitHub\\ResearchProject\\Vitis_Projects\\SK9822_ZTurn\\SK9822\\SK9822.cpp",
+     "C:/Users\\folke\\OneDrive\\Documents\\GitHub\\ResearchProject\\Vitis_Projects\\SK9822_ZTurn\\SK9822\\SK9822.h",
+     "C:/Users\\folke\\OneDrive\\Documents\\GitHub\\ResearchProject\\Vitis_Projects\\SK9822_ZTurn\\SK9822\\SPI.h",
+     "C:/Users\\folke\\OneDrive\\Documents\\GitHub\\ResearchProject\\Vitis_Projects\\SK9822_ZTurn\\SK9822\\SPI.cpp",
+     "C:/Users\\folke\\OneDrive\\Documents\\GitHub\\ResearchProject\\Vitis_Projects\\SK9822_ZTurn\\SK9822\\BytesTransmitter.cpp",
+     "C:/Users\\folke\\OneDrive\\Documents\\GitHub\\ResearchProject\\Vitis_Projects\\SK9822_ZTurn\\SK9822\\BytesTransmitter.h",
+     "C:/Users\\folke\\OneDrive\\Documents\\GitHub\\ResearchProject\\Vitis_Projects\\SK9822_ZTurn\\SK9822\\StartBytes_Transmitter.cpp",
+     "C:/Users\\folke\\OneDrive\\Documents\\GitHub\\ResearchProject\\Vitis_Projects\\SK9822_ZTurn\\SK9822\\StartBytes_Transmitter.h",
+     "C:/Users\\folke\\OneDrive\\Documents\\GitHub\\ResearchProject\\Vitis_Projects\\SK9822_ZTurn\\SK9822\\EndBytes_Transmitter.h",
+     "C:/Users\\folke\\OneDrive\\Documents\\GitHub\\ResearchProject\\Vitis_Projects\\SK9822_ZTurn\\SK9822\\EndBytes_Transmitter.cpp",
+     "C:/Users\\folke\\OneDrive\\Documents\\GitHub\\ResearchProject\\Vitis_Projects\\SK9822_ZTurn\\SK9822\\BinaryColors_Transmitter.h",
+     "C:/Users\\folke\\OneDrive\\Documents\\GitHub\\ResearchProject\\Vitis_Projects\\SK9822_ZTurn\\SK9822\\BinaryColors_Transmitter.cpp",
+     "C:/Users\\folke\\OneDrive\\Documents\\GitHub\\ResearchProject\\Vitis_Projects\\SK9822_ZTurn\\SK9822\\FullColors_Transmitter.h",
+     "C:/Users\\folke\\OneDrive\\Documents\\GitHub\\ResearchProject\\Vitis_Projects\\SK9822_ZTurn\\SK9822\\FullColors_Transmitter.cpp",
+     "C:/Users\\folke\\OneDrive\\Documents\\GitHub\\ResearchProject\\Vitis_Projects\\SK9822_ZTurn\\SK9822\\LED.h",
+     "C:/Users\\folke\\OneDrive\\Documents\\GitHub\\ResearchProject\\Vitis_Projects\\SK9822_ZTurn\\SK9822\\ColorSourcesEnum.h",
+     "C:/Users\\folke\\OneDrive\\Documents\\GitHub\\ResearchProject\\Vitis_Projects\\SK9822_ZTurn\\SK9822\\BrightnessSourcesEnum.h",
+     "C:/Users\\folke\\OneDrive\\Documents\\GitHub\\ResearchProject\\Vitis_Projects\\SK9822_ZTurn\\SK9822\\std.h",
+     "C:/Users\\folke\\OneDrive\\Documents\\GitHub\\ResearchProject\\Vitis_Projects\\SK9822_ZTurn\\SK9822\\LED_Type.h",
+     "C:/Users\\folke\\OneDrive\\Documents\\GitHub\\ResearchProject\\Vitis_Projects\\SK9822_ZTurn\\SK9822\\LED.cppype.h",
+     "C:/Users\\folke\\OneDrive\\Documents\\GitHub\\ResearchProject\\Vitis_Projects\\SK9822_ZTurn\\SK9822\\LED.cpp",
+     "C:/Users\\folke\\OneDrive\\Documents\\GitHub\\ResearchProject\\Vitis_Projects\\SK9822_ZTurn\\SK9822\\std.h",
+     "C:/Users\\folke\\OneDrive\\Documents\\GitHub\\ResearchProject\\Vitis_Projects\\SK9822_ZTurn\\SK9822\\definitions.h"
+    ],
+    "psSources": [],
+    "cuNames": [],
+    "type": "HLS",
+    "frequency": 0,
+    "freqUnits": ""
+   }
+  ],
+  "toolVersion": "2023.2"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_SubCmdStep",
+ "dateTimestamp": "12/28/23 16:39:24",
+ "timestampMillis": "2960115738",
+ "buildStep": {
+  "cmdId": "5c9a53dc-14b7-41d4-87db-1a8c7ac14e17",
+  "name": "csim_design",
+  "logFile": "C:/Users\\folke\\OneDrive\\Documents\\GitHub\\ResearchProject\\Vitis_Projects\\SK9822_ZTurn\\SK9822\\SK9822\\hls\\hls.log",
+  "commandLine": "csim_design",
+  "args": [],
+  "iniFiles": [],
+  "cwd": "C:\\Users\\folke\\OneDrive\\Documents\\GitHub\\ResearchProject\\Vitis_Projects\\SK9822_ZTurn\\SK9822"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "12/28/23 16:39:24",
+ "timestampMillis": "2960115739",
+ "status": {
+  "cmdId": "5c9a53dc-14b7-41d4-87db-1a8c7ac14e17",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "12/28/23 16:39:26",
+ "timestampMillis": "2960116814",
+ "status": {
+  "cmdId": "5c9a53dc-14b7-41d4-87db-1a8c7ac14e17",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "12/28/23 16:39:26",
+ "timestampMillis": "2960116914",
+ "status": {
+  "cmdId": "182a14b9-a3c1-4739-a588-2c55b45261ae",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "12/28/23 16:39:26",
+ "timestampMillis": "2960116915",
+ "report": {
+  "path": "",
+  "name": "",
+  "fileType": "HTML",
+  "reportType": "GLOBAL_RULECHECK_GUIDANCE",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "12/28/23 16:39:26",
+ "timestampMillis": "2960116915",
+ "report": {
+  "path": "",
+  "name": "",
+  "fileType": "BINARY_PROTOBUF",
+  "reportType": "GLOBAL_RULECHECK_GUIDANCE",
+  "cmdId": ""
+ }
+}
+</ENTRY>
