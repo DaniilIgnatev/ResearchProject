@@ -1,46 +1,46 @@
 {
    "ActiveEmotionalView":"Default View",
-   "Default View_ScaleFactor":"1.0",
-   "Default View_TopLeft":"-465,-721",
+   "Default View_ScaleFactor":"0.76494",
+   "Default View_TopLeft":"-343,-967",
    "ExpandedHierarchyInLayout":"",
    "guistr":"# # String gsaved with Nlview 7.5.8 2022-09-21 7111 VDI=41 GEI=38 GUI=JA:10.0
 #  -string -flagsOSRD
-preplace port DDR -pg 1 -lvl 3 -x 860 -y -520 -defaultsOSRD
-preplace port FIXED_IO -pg 1 -lvl 3 -x 860 -y -490 -defaultsOSRD
-preplace port port-id_P61 -pg 1 -lvl 3 -x 860 -y -460 -defaultsOSRD
-preplace port port-id_P62 -pg 1 -lvl 3 -x 860 -y -430 -defaultsOSRD
-preplace port port-id_P63 -pg 1 -lvl 3 -x 860 -y -400 -defaultsOSRD
-preplace port port-id_P64 -pg 1 -lvl 3 -x 860 -y -370 -defaultsOSRD
-preplace port port-id_P65 -pg 1 -lvl 3 -x 860 -y -340 -defaultsOSRD
-preplace port port-id_P66 -pg 1 -lvl 3 -x 860 -y -310 -defaultsOSRD
-preplace port port-id_P67 -pg 1 -lvl 3 -x 860 -y -280 -defaultsOSRD
-preplace portBus P68 -pg 1 -lvl 3 -x 860 -y -220 -defaultsOSRD
-preplace inst processing_system7_0 -pg 1 -lvl 2 -x 350 -y -530 -defaultsOSRD
-preplace inst xlconstant_0 -pg 1 -lvl 1 -x 30 -y -120 -defaultsOSRD
-preplace inst xlconstant_4 -pg 1 -lvl 1 -x 30 -y -20 -defaultsOSRD
-preplace inst xlconstant_1 -pg 1 -lvl 1 -x 30 -y -230 -defaultsOSRD
-preplace inst xlconstant_3 -pg 1 -lvl 1 -x 30 -y -340 -defaultsOSRD
-preplace inst xlconstant_2 -pg 1 -lvl 1 -x 30 -y -450 -defaultsOSRD
-preplace inst SK9822_0 -pg 1 -lvl 2 -x 350 -y -170 -defaultsOSRD
-preplace netloc processing_system7_0_FCLK_CLK0 1 1 2 140 -640 550
-preplace netloc processing_system7_0_FCLK_RESET0_N 1 1 2 150 -360 550
-preplace netloc xlconstant_0_dout 1 1 1 110J -120n
-preplace netloc xlconstant_1_dout 1 1 1 110J -230n
-preplace netloc xlconstant_2_dout 1 1 1 130J -450n
-preplace netloc xlconstant_3_dout 1 1 1 120 -340n
-preplace netloc xlconstant_4_dout 1 1 1 140J -80n
-preplace netloc SK9822_0_MOSI 1 2 1 560 -460n
-preplace netloc SK9822_0_SCLK 1 2 1 580 -280n
-preplace netloc SK9822_0_CSR_TI 1 2 1 570 -340n
-preplace netloc SK9822_0_ICSR_TI 1 2 1 590 -310n
-preplace netloc processing_system7_0_DDR 1 2 1 590J -580n
-preplace netloc processing_system7_0_FIXED_IO 1 2 1 560J -560n
-levelinfo -pg 1 -50 30 350 860
-pagesize -pg 1 -db -bbox -sgen -100 -1110 1810 590
+preplace port DDR -pg 1 -lvl 3 -x 790 -y -520 -defaultsOSRD
+preplace port FIXED_IO -pg 1 -lvl 3 -x 790 -y -490 -defaultsOSRD
+preplace port port-id_P61 -pg 1 -lvl 3 -x 790 -y -460 -defaultsOSRD
+preplace port port-id_P62 -pg 1 -lvl 3 -x 790 -y -430 -defaultsOSRD
+preplace port port-id_P63 -pg 1 -lvl 3 -x 790 -y -400 -defaultsOSRD
+preplace port port-id_P64 -pg 1 -lvl 3 -x 790 -y -370 -defaultsOSRD
+preplace port port-id_P65 -pg 1 -lvl 3 -x 790 -y -340 -defaultsOSRD
+preplace port port-id_P66 -pg 1 -lvl 3 -x 790 -y -310 -defaultsOSRD
+preplace port port-id_P67 -pg 1 -lvl 3 -x 790 -y -280 -defaultsOSRD
+preplace portBus P68 -pg 1 -lvl 3 -x 790 -y -220 -defaultsOSRD
+preplace inst processing_system7_0 -pg 1 -lvl 2 -x 500 -y -860 -defaultsOSRD
+preplace inst xlconstant_0 -pg 1 -lvl 1 -x 80 -y -120 -defaultsOSRD
+preplace inst xlconstant_4 -pg 1 -lvl 1 -x 80 -y -20 -defaultsOSRD
+preplace inst xlconstant_1 -pg 1 -lvl 1 -x 80 -y -230 -defaultsOSRD
+preplace inst xlconstant_3 -pg 1 -lvl 1 -x 80 -y -340 -defaultsOSRD
+preplace inst xlconstant_2 -pg 1 -lvl 1 -x 80 -y -450 -defaultsOSRD
+preplace inst SK9822_0 -pg 1 -lvl 2 -x 500 -y -560 -defaultsOSRD
+preplace netloc SK9822_0_CSR_TI 1 2 1 730 -550n
+preplace netloc SK9822_0_ICSR_TI 1 2 1 720 -530n
+preplace netloc SK9822_0_MOSI 1 2 1 750 -570n
+preplace netloc SK9822_0_SCLK 1 2 1 740 -590n
+preplace netloc processing_system7_0_FCLK_CLK0 1 1 2 300 -750 710
+preplace netloc processing_system7_0_FCLK_RESET0_N 1 1 2 300 -370 700
+preplace netloc xlconstant_0_dout 1 1 1 280J -490n
+preplace netloc xlconstant_1_dout 1 1 1 270J -570n
+preplace netloc xlconstant_2_dout 1 1 1 260J -530n
+preplace netloc xlconstant_3_dout 1 1 1 250 -650n
+preplace netloc xlconstant_4_dout 1 1 1 290J -470n
+preplace netloc processing_system7_0_DDR 1 2 1 770J -910n
+preplace netloc processing_system7_0_FIXED_IO 1 2 1 760J -890n
+levelinfo -pg 1 -80 80 500 790
+pagesize -pg 1 -db -bbox -sgen -120 -1110 1810 590
 "
 }
 {
    "da_axi4_cnt":"25",
-   "da_clkrst_cnt":"6",
+   "da_clkrst_cnt":"7",
    "da_ps7_cnt":"2"
 }
