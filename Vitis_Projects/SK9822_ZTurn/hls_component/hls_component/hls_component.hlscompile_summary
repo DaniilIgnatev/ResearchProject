@@ -1,0 +1,254 @@
+<ENTRY>
+{
+ "thisFile": "C:/Users\\folke\\OneDrive\\Documents\\GitHub\\ResearchProject\\Vitis_Projects\\SK9822_ZTurn\\hls_component\\hls_component\\hls_component.hlscompile_summary",
+ "connectId": "",
+ "serverToken": "",
+ "timestamp": "0"
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_CmdStep",
+ "dateTimestamp": "01/01/24 14:00:20",
+ "timestampMillis": "3296170842",
+ "buildStep": {
+  "cmdId": "9fe6981e-21c9-4c34-9041-3ccacf80a8b8",
+  "name": "v++",
+  "logFile": "C:/Users\\folke\\OneDrive\\Documents\\GitHub\\ResearchProject\\Vitis_Projects\\SK9822_ZTurn\\hls_component\\hls_component\\logs\\hls_component.steps.log",
+  "commandLine": "C:/Xilinx/Vitis/2023.2/bin/unwrapped/win64.o/v++.exe  -c --mode hls --config C:\\Users\\folke\\OneDrive\\Documents\\GitHub\\ResearchProject\\Vitis_Projects\\SK9822_ZTurn\\hls_component\\hls_config.cfg --work_dir hls_component ",
+  "args": [
+   "-c",
+   "--mode",
+   "hls",
+   "--config",
+   "C:\\Users\\folke\\OneDrive\\Documents\\GitHub\\ResearchProject\\Vitis_Projects\\SK9822_ZTurn\\hls_component\\hls_config.cfg",
+   "--work_dir",
+   "hls_component"
+  ],
+  "iniFiles": [
+   {
+    "path": "C:/Users\\folke\\OneDrive\\Documents\\GitHub\\ResearchProject\\Vitis_Projects\\SK9822_ZTurn\\hls_component\\hls_config.cfg",
+    "content": "part=xc7z020clg400-1\n\n[hls]\nflow_target=vivado\npackage.output.format=ip_catalog\npackage.output.syn=false\nsyn.top=top\nsyn.rtl.reset_level=low\nsyn.file=top.cpp\nsyn.file=C:\\Users\\folke\\OneDrive\\Documents\\GitHub\\ResearchProject\\Vitis_Projects\\SK9822_ZTurn\\SK9822\\definitions.h\nsyn.file=C:\\Users\\folke\\OneDrive\\Documents\\GitHub\\ResearchProject\\Vitis_Projects\\SK9822_ZTurn\\SK9822\\SPI.cpp\nsyn.file=C:\\Users\\folke\\OneDrive\\Documents\\GitHub\\ResearchProject\\Vitis_Projects\\SK9822_ZTurn\\SK9822\\SPI.h\nsyn.file=C:\\Users\\folke\\OneDrive\\Documents\\GitHub\\ResearchProject\\Vitis_Projects\\SK9822_ZTurn\\SK9822\\StartBytes_Transmitter.cpp\nsyn.file=C:\\Users\\folke\\OneDrive\\Documents\\GitHub\\ResearchProject\\Vitis_Projects\\SK9822_ZTurn\\SK9822\\StartBytes_Transmitter.h\nsyn.file=C:\\Users\\folke\\OneDrive\\Documents\\GitHub\\ResearchProject\\Vitis_Projects\\SK9822_ZTurn\\SK9822\\EndBytes_Transmitter.cpp\nsyn.file=C:\\Users\\folke\\OneDrive\\Documents\\GitHub\\ResearchProject\\Vitis_Projects\\SK9822_ZTurn\\SK9822\\EndBytes_Transmitter.h\nsyn.file=C:\\Users\\folke\\OneDrive\\Documents\\GitHub\\ResearchProject\\Vitis_Projects\\SK9822_ZTurn\\SK9822\\FullColors_Transmitter.cpp\nsyn.file=C:\\Users\\folke\\OneDrive\\Documents\\GitHub\\ResearchProject\\Vitis_Projects\\SK9822_ZTurn\\SK9822\\FullColors_Transmitter.h\ntb.file=C:/Users/folke/OneDrive/Documents/GitHub/ResearchProject/Vitis_Projects/SK9822_ZTurn/hls_component/main.cpp\n"
+   }
+  ],
+  "cwd": "C:\\Users\\folke\\OneDrive\\Documents\\GitHub\\ResearchProject\\Vitis_Projects\\SK9822_ZTurn\\hls_component"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "01/01/24 14:00:20",
+ "timestampMillis": "3296170843",
+ "status": {
+  "cmdId": "9fe6981e-21c9-4c34-9041-3ccacf80a8b8",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_FlowMetaData",
+ "dateTimestamp": "01/01/24 14:00:25",
+ "timestampMillis": "3296176427",
+ "buildSummary": {
+  "hardwarePlatform": "",
+  "hardwareDsa": "",
+  "platformDirectory": "",
+  "runtime": "",
+  "systemConfig": "",
+  "flow": "BF_COMPILE",
+  "target": "TT_HW",
+  "kernels": [
+   {
+    "base": {
+     "type": "KERNEL",
+     "name": "top",
+     "file": "",
+     "reports": [],
+     "uuid": ""
+    },
+    "sources": [
+     "C:/Users\\folke\\OneDrive\\Documents\\GitHub\\ResearchProject\\Vitis_Projects\\SK9822_ZTurn\\hls_component\\top.cpp",
+     "C:/Users\\folke\\OneDrive\\Documents\\GitHub\\ResearchProject\\Vitis_Projects\\SK9822_ZTurn\\SK9822\\definitions.h",
+     "C:/Users\\folke\\OneDrive\\Documents\\GitHub\\ResearchProject\\Vitis_Projects\\SK9822_ZTurn\\SK9822\\SPI.cpp",
+     "C:/Users\\folke\\OneDrive\\Documents\\GitHub\\ResearchProject\\Vitis_Projects\\SK9822_ZTurn\\SK9822\\SPI.h",
+     "C:/Users\\folke\\OneDrive\\Documents\\GitHub\\ResearchProject\\Vitis_Projects\\SK9822_ZTurn\\SK9822\\StartBytes_Transmitter.cpp",
+     "C:/Users\\folke\\OneDrive\\Documents\\GitHub\\ResearchProject\\Vitis_Projects\\SK9822_ZTurn\\SK9822\\StartBytes_Transmitter.h",
+     "C:/Users\\folke\\OneDrive\\Documents\\GitHub\\ResearchProject\\Vitis_Projects\\SK9822_ZTurn\\SK9822\\EndBytes_Transmitter.cpp",
+     "C:/Users\\folke\\OneDrive\\Documents\\GitHub\\ResearchProject\\Vitis_Projects\\SK9822_ZTurn\\SK9822\\EndBytes_Transmitter.h",
+     "C:/Users\\folke\\OneDrive\\Documents\\GitHub\\ResearchProject\\Vitis_Projects\\SK9822_ZTurn\\SK9822\\FullColors_Transmitter.cpp",
+     "C:/Users\\folke\\OneDrive\\Documents\\GitHub\\ResearchProject\\Vitis_Projects\\SK9822_ZTurn\\SK9822\\FullColors_Transmitter.h"
+    ],
+    "psSources": [],
+    "cuNames": [],
+    "type": "HLS",
+    "frequency": 0,
+    "freqUnits": ""
+   }
+  ],
+  "toolVersion": "2023.2"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_SubCmdStep",
+ "dateTimestamp": "01/01/24 14:00:25",
+ "timestampMillis": "3296176431",
+ "buildStep": {
+  "cmdId": "7ddd0f9c-da12-4785-9dae-db9f75791b21",
+  "name": "csynth_design",
+  "logFile": "C:/Users\\folke\\OneDrive\\Documents\\GitHub\\ResearchProject\\Vitis_Projects\\SK9822_ZTurn\\hls_component\\hls_component\\hls\\hls.log",
+  "commandLine": "csynth_design",
+  "args": [],
+  "iniFiles": [],
+  "cwd": "C:\\Users\\folke\\OneDrive\\Documents\\GitHub\\ResearchProject\\Vitis_Projects\\SK9822_ZTurn\\hls_component"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "01/01/24 14:00:25",
+ "timestampMillis": "3296176432",
+ "status": {
+  "cmdId": "7ddd0f9c-da12-4785-9dae-db9f75791b21",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "01/01/24 14:00:25",
+ "timestampMillis": "3296176432",
+ "report": {
+  "path": "C:/Users\\folke\\OneDrive\\Documents\\GitHub\\ResearchProject\\Vitis_Projects\\SK9822_ZTurn\\hls_component\\hls_component\\hls\\hls_data.json",
+  "name": "",
+  "fileType": "JSON",
+  "reportType": "HLS_SYNTHESIS",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "01/01/24 14:00:25",
+ "timestampMillis": "3296176433",
+ "report": {
+  "path": "C:/Users\\folke\\OneDrive\\Documents\\GitHub\\ResearchProject\\Vitis_Projects\\SK9822_ZTurn\\hls_component\\hls_component\\hls\\syn\\report\\csynth.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "HLS_SYNTHESIS",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "01/01/24 14:00:25",
+ "timestampMillis": "3296176434",
+ "report": {
+  "path": "C:/Users\\folke\\OneDrive\\Documents\\GitHub\\ResearchProject\\Vitis_Projects\\SK9822_ZTurn\\hls_component\\hls_component\\hls\\syn\\report\\csynth.xml",
+  "name": "",
+  "fileType": "XML",
+  "reportType": "HLS_SYNTHESIS",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "01/01/24 14:00:56",
+ "timestampMillis": "3296207420",
+ "report": {
+  "path": "C:/Users\\folke\\OneDrive\\Documents\\GitHub\\ResearchProject\\Vitis_Projects\\SK9822_ZTurn\\hls_component\\hls_component\\hls",
+  "name": "",
+  "fileType": "DIR",
+  "reportType": "HLS_DATAFLOW",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "01/01/24 14:00:56",
+ "timestampMillis": "3296207421",
+ "report": {
+  "path": "C:/Users\\folke\\OneDrive\\Documents\\GitHub\\ResearchProject\\Vitis_Projects\\SK9822_ZTurn\\hls_component\\hls_component\\hls",
+  "name": "",
+  "fileType": "DIR",
+  "reportType": "HLS_FUNCTION_CALL_GRAPH",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "01/01/24 14:00:56",
+ "timestampMillis": "3296207422",
+ "report": {
+  "path": "C:/Users\\folke\\OneDrive\\Documents\\GitHub\\ResearchProject\\Vitis_Projects\\SK9822_ZTurn\\hls_component\\hls_component\\hls",
+  "name": "",
+  "fileType": "DIR",
+  "reportType": "HLS_SCHEDULE",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "01/01/24 14:00:56",
+ "timestampMillis": "3296207424",
+ "status": {
+  "cmdId": "7ddd0f9c-da12-4785-9dae-db9f75791b21",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "01/01/24 14:00:56",
+ "timestampMillis": "3296207554",
+ "status": {
+  "cmdId": "9fe6981e-21c9-4c34-9041-3ccacf80a8b8",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "01/01/24 14:00:56",
+ "timestampMillis": "3296207600",
+ "report": {
+  "path": "C:/Users\\folke\\OneDrive\\Documents\\GitHub\\ResearchProject\\Vitis_Projects\\SK9822_ZTurn\\hls_component\\hls_component\\reports\\v++_compile_hls_component_guidance.html",
+  "name": "",
+  "fileType": "HTML",
+  "reportType": "GLOBAL_RULECHECK_GUIDANCE",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "01/01/24 14:00:56",
+ "timestampMillis": "3296207602",
+ "report": {
+  "path": "C:/Users\\folke\\OneDrive\\Documents\\GitHub\\ResearchProject\\Vitis_Projects\\SK9822_ZTurn\\hls_component\\hls_component\\reports\\.db\\v++_compile_hls_component_guidance.pb3",
+  "name": "",
+  "fileType": "BINARY_PROTOBUF",
+  "reportType": "GLOBAL_RULECHECK_GUIDANCE",
+  "cmdId": ""
+ }
+}
+</ENTRY>

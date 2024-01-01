@@ -1,0 +1,162 @@
+<ENTRY>
+{
+ "thisFile": "C:/Users\\folke\\OneDrive\\Documents\\GitHub\\ResearchProject\\Vitis_Projects\\SK9822_ZTurn\\tutorial1\\tutorial1\\tutorial1.hlsrun_package_summary",
+ "connectId": "",
+ "serverToken": "",
+ "timestamp": "0"
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_CmdStep",
+ "dateTimestamp": "12/28/23 15:26:55",
+ "timestampMillis": "2955766733",
+ "buildStep": {
+  "cmdId": "5dfbce9f-6f7c-4389-b43a-236aef37cbb5",
+  "name": "vitis-run",
+  "logFile": "C:/Users\\folke\\OneDrive\\Documents\\GitHub\\ResearchProject\\Vitis_Projects\\SK9822_ZTurn\\tutorial1\\tutorial1\\logs\\tutorial1.steps.log",
+  "commandLine": "C:/Xilinx/Vitis/2023.2/bin/unwrapped/win64.o/vitis-run.exe  --mode hls --package --config C:\\Users\\folke\\OneDrive\\Documents\\GitHub\\ResearchProject\\Vitis_Projects\\SK9822_ZTurn\\tutorial1\\hls_config.cfg --work_dir tutorial1 ",
+  "args": [
+   "--mode",
+   "hls",
+   "--package",
+   "--config",
+   "C:\\Users\\folke\\OneDrive\\Documents\\GitHub\\ResearchProject\\Vitis_Projects\\SK9822_ZTurn\\tutorial1\\hls_config.cfg",
+   "--work_dir",
+   "tutorial1"
+  ],
+  "iniFiles": [],
+  "cwd": "C:\\Users\\folke\\OneDrive\\Documents\\GitHub\\ResearchProject\\Vitis_Projects\\SK9822_ZTurn\\tutorial1"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "12/28/23 15:26:55",
+ "timestampMillis": "2955766734",
+ "status": {
+  "cmdId": "5dfbce9f-6f7c-4389-b43a-236aef37cbb5",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_FlowMetaData",
+ "dateTimestamp": "12/28/23 15:26:59",
+ "timestampMillis": "2955770294",
+ "buildSummary": {
+  "hardwarePlatform": "",
+  "hardwareDsa": "",
+  "platformDirectory": "",
+  "runtime": "",
+  "systemConfig": "",
+  "flow": "BF_RUN",
+  "target": "TT_HLS_IP",
+  "kernels": [
+   {
+    "base": {
+     "type": "KERNEL",
+     "name": "sum_io",
+     "file": "C:/Users\\folke\\OneDrive\\Documents\\GitHub\\ResearchProject\\Vitis_Projects\\SK9822_ZTurn\\tutorial1\\tutorial1\\sum_io.zip",
+     "reports": [],
+     "uuid": ""
+    },
+    "sources": [
+     "C:/Users\\folke\\OneDrive\\Documents\\GitHub\\ResearchProject\\Vitis_Projects\\SK9822_ZTurn\\tutorial1\\fir.c",
+     "C:/Users\\folke\\OneDrive\\Documents\\GitHub\\ResearchProject\\Vitis_Projects\\SK9822_ZTurn\\tutorial1\\fir.h",
+     "C:/Users\\folke\\OneDrive\\Documents\\GitHub\\ResearchProject\\Vitis_Projects\\SK9822_ZTurn\\tutorial1\\out.gold.dat",
+     "C:/Users\\folke\\OneDrive\\Documents\\GitHub\\ResearchProject\\Vitis_Projects\\SK9822_ZTurn\\tutorial1\\sum_io.cpp"
+    ],
+    "psSources": [],
+    "cuNames": [],
+    "type": "HLS",
+    "frequency": 0,
+    "freqUnits": ""
+   }
+  ],
+  "toolVersion": "2023.2"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_SubCmdStep",
+ "dateTimestamp": "12/28/23 15:26:59",
+ "timestampMillis": "2955770297",
+ "buildStep": {
+  "cmdId": "12356f17-fe2e-414f-b352-1ff07dda8ffc",
+  "name": "export_design",
+  "logFile": "C:/Users\\folke\\OneDrive\\Documents\\GitHub\\ResearchProject\\Vitis_Projects\\SK9822_ZTurn\\tutorial1\\tutorial1\\hls\\hls.log",
+  "commandLine": "export_design -flow none",
+  "args": [
+   "-flow",
+   "none"
+  ],
+  "iniFiles": [],
+  "cwd": "C:\\Users\\folke\\OneDrive\\Documents\\GitHub\\ResearchProject\\Vitis_Projects\\SK9822_ZTurn\\tutorial1"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "12/28/23 15:26:59",
+ "timestampMillis": "2955770298",
+ "status": {
+  "cmdId": "12356f17-fe2e-414f-b352-1ff07dda8ffc",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "12/28/23 15:27:13",
+ "timestampMillis": "2955783874",
+ "status": {
+  "cmdId": "12356f17-fe2e-414f-b352-1ff07dda8ffc",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "12/28/23 15:27:13",
+ "timestampMillis": "2955783961",
+ "status": {
+  "cmdId": "5dfbce9f-6f7c-4389-b43a-236aef37cbb5",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "12/28/23 15:27:13",
+ "timestampMillis": "2955783962",
+ "report": {
+  "path": "",
+  "name": "",
+  "fileType": "HTML",
+  "reportType": "GLOBAL_RULECHECK_GUIDANCE",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "12/28/23 15:27:13",
+ "timestampMillis": "2955783962",
+ "report": {
+  "path": "",
+  "name": "",
+  "fileType": "BINARY_PROTOBUF",
+  "reportType": "GLOBAL_RULECHECK_GUIDANCE",
+  "cmdId": ""
+ }
+}
+</ENTRY>

@@ -19,7 +19,7 @@ __SIM_DDS__ = 1
 
 ObjDir = obj
 
-HLS_SOURCES = ../../../../SK9822_tests.cpp ../../../../LED.cpp ../../../../FullColors_Transmitter.cpp ../../../../BinaryColors_Transmitter.cpp ../../../../EndBytes_Transmitter.cpp ../../../../StartBytes_Transmitter.cpp ../../../../BytesTransmitter.cpp ../../../../SPI.cpp ../../../../SK9822.cpp
+HLS_SOURCES = ../../../../SK9822_tests.cpp ../../../../StartBytes_Transmitter.cpp ../../../../SPI.cpp ../../../../SK9822.cpp ../../../../LED.cpp ../../../../FullColors_Transmitter.cpp ../../../../EndBytes_Transmitter.cpp ../../../../BytesTransmitter.cpp ../../../../BinaryColors_Transmitter.cpp
 
 override TARGET := csim.exe
 
@@ -81,41 +81,11 @@ $(ObjDir)/SK9822_tests.o: ../../../../SK9822_tests.cpp $(ObjDir)/.dir
 
 -include $(ObjDir)/SK9822_tests.d
 
-$(ObjDir)/LED.o: ../../../../LED.cpp $(ObjDir)/.dir
-	$(Echo) "   Compiling ../../../../LED.cpp in $(BuildMode) mode" $(AVE_DIR_DLOG)
-	$(Verb)  $(CC) ${CCFLAG} -c -MMD  $(IFLAG) $(DFLAG) $< -o $@ ; \
-
--include $(ObjDir)/LED.d
-
-$(ObjDir)/FullColors_Transmitter.o: ../../../../FullColors_Transmitter.cpp $(ObjDir)/.dir
-	$(Echo) "   Compiling ../../../../FullColors_Transmitter.cpp in $(BuildMode) mode" $(AVE_DIR_DLOG)
-	$(Verb)  $(CC) ${CCFLAG} -c -MMD  $(IFLAG) $(DFLAG) $< -o $@ ; \
-
--include $(ObjDir)/FullColors_Transmitter.d
-
-$(ObjDir)/BinaryColors_Transmitter.o: ../../../../BinaryColors_Transmitter.cpp $(ObjDir)/.dir
-	$(Echo) "   Compiling ../../../../BinaryColors_Transmitter.cpp in $(BuildMode) mode" $(AVE_DIR_DLOG)
-	$(Verb)  $(CC) ${CCFLAG} -c -MMD  $(IFLAG) $(DFLAG) $< -o $@ ; \
-
--include $(ObjDir)/BinaryColors_Transmitter.d
-
-$(ObjDir)/EndBytes_Transmitter.o: ../../../../EndBytes_Transmitter.cpp $(ObjDir)/.dir
-	$(Echo) "   Compiling ../../../../EndBytes_Transmitter.cpp in $(BuildMode) mode" $(AVE_DIR_DLOG)
-	$(Verb)  $(CC) ${CCFLAG} -c -MMD  $(IFLAG) $(DFLAG) $< -o $@ ; \
-
--include $(ObjDir)/EndBytes_Transmitter.d
-
 $(ObjDir)/StartBytes_Transmitter.o: ../../../../StartBytes_Transmitter.cpp $(ObjDir)/.dir
 	$(Echo) "   Compiling ../../../../StartBytes_Transmitter.cpp in $(BuildMode) mode" $(AVE_DIR_DLOG)
 	$(Verb)  $(CC) ${CCFLAG} -c -MMD  $(IFLAG) $(DFLAG) $< -o $@ ; \
 
 -include $(ObjDir)/StartBytes_Transmitter.d
-
-$(ObjDir)/BytesTransmitter.o: ../../../../BytesTransmitter.cpp $(ObjDir)/.dir
-	$(Echo) "   Compiling ../../../../BytesTransmitter.cpp in $(BuildMode) mode" $(AVE_DIR_DLOG)
-	$(Verb)  $(CC) ${CCFLAG} -c -MMD  $(IFLAG) $(DFLAG) $< -o $@ ; \
-
--include $(ObjDir)/BytesTransmitter.d
 
 $(ObjDir)/SPI.o: ../../../../SPI.cpp $(ObjDir)/.dir
 	$(Echo) "   Compiling ../../../../SPI.cpp in $(BuildMode) mode" $(AVE_DIR_DLOG)
@@ -128,3 +98,33 @@ $(ObjDir)/SK9822.o: ../../../../SK9822.cpp $(ObjDir)/.dir
 	$(Verb)  $(CC) ${CCFLAG} -c -MMD  $(IFLAG) $(DFLAG) $< -o $@ ; \
 
 -include $(ObjDir)/SK9822.d
+
+$(ObjDir)/LED.o: ../../../../LED.cpp $(ObjDir)/.dir
+	$(Echo) "   Compiling ../../../../LED.cpp in $(BuildMode) mode" $(AVE_DIR_DLOG)
+	$(Verb)  $(CC) ${CCFLAG} -c -MMD  $(IFLAG) $(DFLAG) $< -o $@ ; \
+
+-include $(ObjDir)/LED.d
+
+$(ObjDir)/FullColors_Transmitter.o: ../../../../FullColors_Transmitter.cpp $(ObjDir)/.dir
+	$(Echo) "   Compiling ../../../../FullColors_Transmitter.cpp in $(BuildMode) mode" $(AVE_DIR_DLOG)
+	$(Verb)  $(CC) ${CCFLAG} -c -MMD  $(IFLAG) $(DFLAG) $< -o $@ ; \
+
+-include $(ObjDir)/FullColors_Transmitter.d
+
+$(ObjDir)/EndBytes_Transmitter.o: ../../../../EndBytes_Transmitter.cpp $(ObjDir)/.dir
+	$(Echo) "   Compiling ../../../../EndBytes_Transmitter.cpp in $(BuildMode) mode" $(AVE_DIR_DLOG)
+	$(Verb)  $(CC) ${CCFLAG} -c -MMD  $(IFLAG) $(DFLAG) $< -o $@ ; \
+
+-include $(ObjDir)/EndBytes_Transmitter.d
+
+$(ObjDir)/BytesTransmitter.o: ../../../../BytesTransmitter.cpp $(ObjDir)/.dir
+	$(Echo) "   Compiling ../../../../BytesTransmitter.cpp in $(BuildMode) mode" $(AVE_DIR_DLOG)
+	$(Verb)  $(CC) ${CCFLAG} -c -MMD  $(IFLAG) $(DFLAG) $< -o $@ ; \
+
+-include $(ObjDir)/BytesTransmitter.d
+
+$(ObjDir)/BinaryColors_Transmitter.o: ../../../../BinaryColors_Transmitter.cpp $(ObjDir)/.dir
+	$(Echo) "   Compiling ../../../../BinaryColors_Transmitter.cpp in $(BuildMode) mode" $(AVE_DIR_DLOG)
+	$(Verb)  $(CC) ${CCFLAG} -c -MMD  $(IFLAG) $(DFLAG) $< -o $@ ; \
+
+-include $(ObjDir)/BinaryColors_Transmitter.d

@@ -1,0 +1,189 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Mon Jan  1 14:01:49 2024" VIVADOVERSION="2023.2">
+
+  <SYSTEMINFO ARCH="zynq" DEVICE="7z020" NAME="design_1" PACKAGE="clg400" SPEEDGRADE="-1"/>
+
+  <EXTERNALPORTS>
+    <PORT DIR="O" NAME="MOSI_0" SIGIS="undef" SIGNAME="SPI_0_MOSI">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="SPI_0" PORT="MOSI"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" NAME="SCLK_0" SIGIS="undef" SIGNAME="SPI_0_SCLK">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="SPI_0" PORT="SCLK"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT CLKFREQUENCY="100000000" DIR="I" NAME="ap_clk_0" SIGIS="clk" SIGNAME="External_Ports_ap_clk_0">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="SPI_0" PORT="CLK"/>
+        <CONNECTION INSTANCE="top_0" PORT="ap_clk"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" NAME="ap_ctrl_0_done" SIGIS="undef" SIGNAME="top_0_ap_done">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="top_0" PORT="ap_done"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" NAME="ap_ctrl_0_idle" SIGIS="undef" SIGNAME="top_0_ap_idle">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="top_0" PORT="ap_idle"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" NAME="ap_ctrl_0_ready" SIGIS="undef" SIGNAME="top_0_ap_ready">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="top_0" PORT="ap_ready"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" NAME="ap_ctrl_0_start" SIGIS="undef" SIGNAME="top_0_ap_start">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="top_0" PORT="ap_start"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" NAME="ap_rst_n_0" POLARITY="ACTIVE_LOW" SIGIS="rst" SIGNAME="External_Ports_ap_rst_n_0">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="SPI_0" PORT="NRST"/>
+        <CONNECTION INSTANCE="top_0" PORT="ap_rst_n"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" LEFT="0" NAME="out_TI_0" RIGHT="0" SIGIS="data" SIGNAME="top_0_out_TI">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="top_0" PORT="out_TI"/>
+      </CONNECTIONS>
+    </PORT>
+  </EXTERNALPORTS>
+
+  <EXTERNALINTERFACES>
+    <BUSINTERFACE BUSNAME="External_Interface_ap_ctrl_0" NAME="ap_ctrl_0" TYPE="TARGET">
+      <PORTMAPS>
+        <PORTMAP LOGICAL="done" PHYSICAL="ap_ctrl_0_done"/>
+        <PORTMAP LOGICAL="idle" PHYSICAL="ap_ctrl_0_idle"/>
+        <PORTMAP LOGICAL="ready" PHYSICAL="ap_ctrl_0_ready"/>
+        <PORTMAP LOGICAL="start" PHYSICAL="ap_ctrl_0_start"/>
+      </PORTMAPS>
+    </BUSINTERFACE>
+  </EXTERNALINTERFACES>
+
+  <MODULES>
+    <MODULE COREREVISION="1" FULLNAME="/SPI_0" HWVERSION="1.0" INSTANCE="SPI_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="SPI" VLNV="xilinx.com:module_ref:SPI:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="Component_Name" VALUE="design_1_SPI_0_0"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT CLKFREQUENCY="100000000" DIR="I" NAME="CLK" SIGIS="clk" SIGNAME="External_Ports_ap_clk_0">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="ap_clk_0"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="7" NAME="D" RIGHT="0" SIGIS="undef" SIGNAME="top_0_out_SPI_D">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="top_0" PORT="out_SPI_D"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="DS" SIGIS="undef" SIGNAME="top_0_out_SPI_DS">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="top_0" PORT="out_SPI_DS"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="MOSI" SIGIS="undef" SIGNAME="SPI_0_MOSI">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="MOSI_0"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="NRST" POLARITY="ACTIVE_LOW" SIGIS="undef" SIGNAME="External_Ports_ap_rst_n_0">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="ap_rst_n_0"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="SCLK" SIGIS="undef" SIGNAME="SPI_0_SCLK">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="SCLK_0"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="TI" SIGIS="undef" SIGNAME="SPI_0_TI">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="top_0" PORT="in_SPI_TI"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+    <MODULE COREREVISION="2113364401" FULLNAME="/top_0" HWVERSION="1.0" INSTANCE="top_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="top" VLNV="xilinx.com:hls:top:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="Component_Name" VALUE="design_1_top_0_0"/>
+        <PARAMETER NAME="II" VALUE="x"/>
+        <PARAMETER NAME="clk_period" VALUE="10"/>
+        <PARAMETER NAME="combinational" VALUE="0"/>
+        <PARAMETER NAME="latency" VALUE="undef"/>
+        <PARAMETER NAME="machine" VALUE="64"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT CLKFREQUENCY="100000000" DIR="I" NAME="ap_clk" SIGIS="clk" SIGNAME="External_Ports_ap_clk_0">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="ap_clk_0"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="ap_done" SIGIS="undef" SIGNAME="top_0_ap_done">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="design_1_imp" PORT="ap_ctrl_0_done"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="ap_idle" SIGIS="undef" SIGNAME="top_0_ap_idle">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="design_1_imp" PORT="ap_ctrl_0_idle"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="ap_ready" SIGIS="undef" SIGNAME="top_0_ap_ready">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="design_1_imp" PORT="ap_ctrl_0_ready"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="ap_rst_n" POLARITY="ACTIVE_LOW" SIGIS="rst" SIGNAME="External_Ports_ap_rst_n_0">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="ap_rst_n_0"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="ap_start" SIGIS="undef" SIGNAME="top_0_ap_start">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="design_1_imp" PORT="ap_ctrl_0_start"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="0" NAME="in_SPI_TI" RIGHT="0" SIGIS="data" SIGNAME="SPI_0_TI">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="SPI_0" PORT="TI"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="7" NAME="out_SPI_D" RIGHT="0" SIGIS="data" SIGNAME="top_0_out_SPI_D">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="SPI_0" PORT="D"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="0" NAME="out_SPI_DS" RIGHT="0" SIGIS="data" SIGNAME="top_0_out_SPI_DS">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="SPI_0" PORT="DS"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="0" NAME="out_TI" RIGHT="0" SIGIS="data" SIGNAME="top_0_out_TI">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="out_TI_0"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES>
+        <BUSINTERFACE BUSNAME="External_Interface_ap_ctrl_0" NAME="ap_ctrl" TYPE="TARGET" VLNV="xilinx.com:interface:acc_handshake:1.0">
+          <PORTMAPS>
+            <PORTMAP LOGICAL="done" PHYSICAL="ap_done"/>
+            <PORTMAP LOGICAL="idle" PHYSICAL="ap_idle"/>
+            <PORTMAP LOGICAL="ready" PHYSICAL="ap_ready"/>
+            <PORTMAP LOGICAL="start" PHYSICAL="ap_start"/>
+          </PORTMAPS>
+        </BUSINTERFACE>
+      </BUSINTERFACES>
+    </MODULE>
+  </MODULES>
+
+</EDKSYSTEM>

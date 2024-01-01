@@ -1,0 +1,29 @@
+{
+   "ActiveEmotionalView":"Default View",
+   "Default View_ScaleFactor":"1.70875",
+   "Default View_TopLeft":"-125,-167",
+   "ExpandedHierarchyInLayout":"",
+   "guistr":"# # String gsaved with Nlview 7.5.8 2022-09-21 7111 VDI=41 GEI=38 GUI=JA:10.0
+#  -string -flagsOSRD
+preplace port ap_ctrl_0 -pg 1 -lvl 0 -x -10 -y 250 -defaultsOSRD
+preplace port port-id_ap_clk_0 -pg 1 -lvl 0 -x -10 -y 60 -defaultsOSRD
+preplace port port-id_ap_rst_n_0 -pg 1 -lvl 0 -x -10 -y 90 -defaultsOSRD
+preplace port port-id_SCLK_0 -pg 1 -lvl 3 -x 700 -y 60 -defaultsOSRD
+preplace port port-id_MOSI_0 -pg 1 -lvl 3 -x 700 -y 90 -defaultsOSRD
+preplace portBus out_TI_0 -pg 1 -lvl 3 -x 700 -y 200 -defaultsOSRD
+preplace inst SPI_0 -pg 1 -lvl 1 -x 150 -y 90 -defaultsOSRD
+preplace inst top_0 -pg 1 -lvl 2 -x 490 -y 180 -defaultsOSRD
+preplace netloc SPI_0_MOSI 1 1 2 260J 70 670J
+preplace netloc SPI_0_SCLK 1 1 2 250J 60 NJ
+preplace netloc SPI_0_TI 1 1 1 290 110n
+preplace netloc ap_clk_0_1 1 0 2 20 180 310
+preplace netloc ap_rst_n_0_1 1 0 2 30 210 280
+preplace netloc top_0_out_SPI_D 1 0 3 40 200 300J 90 650
+preplace netloc top_0_out_SPI_DS 1 0 3 50 190 270J 80 660
+preplace netloc top_0_out_TI 1 2 1 N 200
+preplace netloc ap_ctrl_0_1 1 0 2 NJ 250 320
+levelinfo -pg 1 -10 150 490 700
+pagesize -pg 1 -db -bbox -sgen -130 0 850 450
+"
+}
+0

@@ -136,3 +136,8 @@ _deps
 Vitis_Projects/SK9822_ZTurn/platform_tests/ps7_cortexa9_0/standalone_ps7_cortexa9_0/bsp/libsrc/build_configs/gen_bsp/CMakeFiles
 Vitis_Projects/SK9822_ZTurn/platform_tests/zynq_fsbl
 Vitis_Projects/SK9822_ZTurn/platform_tests
+Vitis_Projects/SK9822_ZTurn/SK9822/SK9822/hls
+Vitis_Projects/SK9822_ZTurn/sum_io/top/hls
+Vitis_Projects/SK9822_ZTurn/hls_component/hls_component/hls
+Vitis_Projects/SK9822_ZTurn/tutorial1/tutorial1/hls
+Vivado_Projects/HLS_tests/HLS_tests.sim

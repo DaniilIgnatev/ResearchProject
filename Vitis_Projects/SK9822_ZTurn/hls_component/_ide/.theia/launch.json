@@ -1,0 +1,14 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "hls_component",
+      "type": "gdb",
+      "request": "launch",
+      "target": "${workspaceFolder}\\hls_component\\hls_component\\hls\\csim\\build\\csim.exe",
+      "cwd": "${workspaceFolder}\\hls_component\\hls_component\\hls\\csim\\build",
+      "gdbpath": "${env:XILINX_HLS}\\tps\\win64\\msys64\\mingw64\\bin\\gdb.exe",
+      "valuesFormatting": "prettyPrinters"
+    }
+  ]
+}

@@ -5,20 +5,23 @@
 
 int fail() {
   fprintf(stdout, "*******************************************\n");
-  fprintf(stdout, "FAIL: Output DOES NOT match the golden output\n");
+  fprintf(stdout, "FAIL\n");
   fprintf(stdout, "*******************************************\n");
   return 1;
 }
 
 int success() {
   fprintf(stdout, "*******************************************\n");
-  fprintf(stdout, "PASS: The output matches the golden output!\n");
+  fprintf(stdout, "PASS\n");
   fprintf(stdout, "*******************************************\n");
   return 0;
 }
 
 int main() {
   bool assert = true;
+
+    SK9822 dut;
+    dut.reset();
 
   if (assert) {
     return success();

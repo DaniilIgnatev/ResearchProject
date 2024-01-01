@@ -22,19 +22,19 @@ preplace inst xlconstant_1 -pg 1 -lvl 1 -x 80 -y -230 -defaultsOSRD
 preplace inst xlconstant_3 -pg 1 -lvl 1 -x 80 -y -340 -defaultsOSRD
 preplace inst xlconstant_2 -pg 1 -lvl 1 -x 80 -y -450 -defaultsOSRD
 preplace inst SK9822_0 -pg 1 -lvl 2 -x 500 -y -560 -defaultsOSRD
-preplace netloc SK9822_0_CSR_TI 1 2 1 730 -550n
-preplace netloc SK9822_0_ICSR_TI 1 2 1 720 -530n
-preplace netloc SK9822_0_MOSI 1 2 1 750 -570n
-preplace netloc SK9822_0_SCLK 1 2 1 740 -590n
-preplace netloc processing_system7_0_FCLK_CLK0 1 1 2 300 -750 710
-preplace netloc processing_system7_0_FCLK_RESET0_N 1 1 2 300 -370 700
-preplace netloc xlconstant_0_dout 1 1 1 280J -490n
-preplace netloc xlconstant_1_dout 1 1 1 270J -570n
-preplace netloc xlconstant_2_dout 1 1 1 260J -530n
-preplace netloc xlconstant_3_dout 1 1 1 250 -650n
-preplace netloc xlconstant_4_dout 1 1 1 290J -470n
-preplace netloc processing_system7_0_DDR 1 2 1 770J -910n
-preplace netloc processing_system7_0_FIXED_IO 1 2 1 760J -890n
+preplace netloc SK9822_0_CSR_TI 1 2 1 720 -550n
+preplace netloc SK9822_0_ICSR_TI 1 2 1 710 -530n
+preplace netloc SK9822_0_MOSI 1 2 1 740 -570n
+preplace netloc SK9822_0_SCLK 1 2 1 730 -590n
+preplace netloc processing_system7_0_FCLK_CLK0 1 1 2 310 -750 700
+preplace netloc processing_system7_0_FCLK_RESET0_N 1 1 2 310 -370 690
+preplace netloc xlconstant_0_dout 1 1 1 290J -490n
+preplace netloc xlconstant_1_dout 1 1 1 280J -570n
+preplace netloc xlconstant_2_dout 1 1 1 270J -530n
+preplace netloc xlconstant_3_dout 1 1 1 260 -650n
+preplace netloc xlconstant_4_dout 1 1 1 300J -470n
+preplace netloc processing_system7_0_DDR 1 2 1 760J -910n
+preplace netloc processing_system7_0_FIXED_IO 1 2 1 750J -890n
 levelinfo -pg 1 -80 80 500 790
 pagesize -pg 1 -db -bbox -sgen -120 -1110 1810 590
 "

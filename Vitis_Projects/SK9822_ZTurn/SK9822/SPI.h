@@ -1,18 +1,6 @@
 #pragma once
 
-#include <stdint.h>
 #include "definitions.h"
 
-class SPI
-{
-private:
-    bool transmission_indication;
-public:
-    SPI();
-
-    void reset();
-    
-    void transmit(uint8_t byte);
-
-    bool get_transmission_indication();
-};
+void transmit(bit *in_SPI_TI, volatile byte *out_SPI_D,
+              volatile bit *out_SPI_DS, uint8_t data);
