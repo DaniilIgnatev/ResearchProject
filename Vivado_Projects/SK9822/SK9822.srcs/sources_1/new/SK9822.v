@@ -176,10 +176,10 @@ module SK9822 #(LED_number = 8, max_brightness = 8, const_brightness = 0)(
                 end
             end
 
-            if (ICSR_STI)
-                ICSR_TI_reg <= 1;
             if (ICSR_CTI)
                 ICSR_TI_reg <= 0;
+            else if (ICSR_STI)
+                ICSR_TI_reg <= 1;
         end
     endtask
 
