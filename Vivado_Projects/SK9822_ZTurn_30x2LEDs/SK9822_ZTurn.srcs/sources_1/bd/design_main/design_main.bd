@@ -1,13 +1,14 @@
 {
   "design": {
     "design_info": {
-      "boundary_crc": "0x24A28B3D5491D5A3",
+      "boundary_crc": "0x24A28B3DB19AFDFE",
       "device": "xc7z020clg400-1",
       "gen_directory": "../../../../SK9822_ZTurn.gen/sources_1/bd/design_main",
       "name": "design_main",
       "rev_ctrl_bd_flag": "RevCtrlBdOff",
       "synth_flow_mode": "Hierarchical",
-      "tool_version": "2023.2"
+      "tool_version": "2023.2",
+      "validated": "true"
     },
     "design_tree": {
       "processing_system7_0": "",
