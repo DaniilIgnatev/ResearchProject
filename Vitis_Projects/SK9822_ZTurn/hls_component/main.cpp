@@ -10,7 +10,7 @@ int main(){
         0b00000000000000000000000100001111,
     };
 
-    BrightnessSourcesEnum in_GBCR_INSEL = global;
+    bit in_GBCR_INSEL = 0;
     GB_T in_GBCR_GB = 5;
 
     for (int byte_i = 0; byte_i < 3 * 4; byte_i++) {
@@ -20,7 +20,7 @@ int main(){
         uint8_t led_byte_i = LED_i.range(((led_byte_id + 1) * 8) - 1, led_byte_id * 8);
 
         if (led_byte_id == 0){
-            if (in_GBCR_INSEL == BrightnessSourcesEnum::global){
+            if (!in_GBCR_INSEL){
                 led_byte_i = in_GBCR_GB;
             }
             if (led_byte_i > max_global_brightness)

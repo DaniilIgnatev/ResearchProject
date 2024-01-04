@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
-<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Mon Jan  1 14:01:49 2024" VIVADOVERSION="2023.2">
+<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Thu Jan  4 22:36:52 2024" VIVADOVERSION="2023.2">
 
   <SYSTEMINFO ARCH="zynq" DEVICE="7z020" NAME="design_1" PACKAGE="clg400" SPEEDGRADE="-1"/>
 
@@ -17,38 +17,123 @@
     <PORT CLKFREQUENCY="100000000" DIR="I" NAME="ap_clk_0" SIGIS="clk" SIGNAME="External_Ports_ap_clk_0">
       <CONNECTIONS>
         <CONNECTION INSTANCE="SPI_0" PORT="CLK"/>
-        <CONNECTION INSTANCE="top_0" PORT="ap_clk"/>
+        <CONNECTION INSTANCE="SK9822_0" PORT="ap_clk"/>
       </CONNECTIONS>
     </PORT>
-    <PORT DIR="O" NAME="ap_ctrl_0_done" SIGIS="undef" SIGNAME="top_0_ap_done">
+    <PORT DIR="O" NAME="ap_ctrl_0_done" SIGIS="undef" SIGNAME="SK9822_0_ap_done">
       <CONNECTIONS>
-        <CONNECTION INSTANCE="top_0" PORT="ap_done"/>
+        <CONNECTION INSTANCE="SK9822_0" PORT="ap_done"/>
       </CONNECTIONS>
     </PORT>
-    <PORT DIR="O" NAME="ap_ctrl_0_idle" SIGIS="undef" SIGNAME="top_0_ap_idle">
+    <PORT DIR="O" NAME="ap_ctrl_0_idle" SIGIS="undef" SIGNAME="SK9822_0_ap_idle">
       <CONNECTIONS>
-        <CONNECTION INSTANCE="top_0" PORT="ap_idle"/>
+        <CONNECTION INSTANCE="SK9822_0" PORT="ap_idle"/>
       </CONNECTIONS>
     </PORT>
-    <PORT DIR="O" NAME="ap_ctrl_0_ready" SIGIS="undef" SIGNAME="top_0_ap_ready">
+    <PORT DIR="O" NAME="ap_ctrl_0_ready" SIGIS="undef" SIGNAME="SK9822_0_ap_ready">
       <CONNECTIONS>
-        <CONNECTION INSTANCE="top_0" PORT="ap_ready"/>
+        <CONNECTION INSTANCE="SK9822_0" PORT="ap_ready"/>
       </CONNECTIONS>
     </PORT>
-    <PORT DIR="I" NAME="ap_ctrl_0_start" SIGIS="undef" SIGNAME="top_0_ap_start">
+    <PORT DIR="I" NAME="ap_ctrl_0_start" SIGIS="undef" SIGNAME="SK9822_0_ap_start">
       <CONNECTIONS>
-        <CONNECTION INSTANCE="top_0" PORT="ap_start"/>
+        <CONNECTION INSTANCE="SK9822_0" PORT="ap_start"/>
       </CONNECTIONS>
     </PORT>
     <PORT DIR="I" NAME="ap_rst_n_0" POLARITY="ACTIVE_LOW" SIGIS="rst" SIGNAME="External_Ports_ap_rst_n_0">
       <CONNECTIONS>
         <CONNECTION INSTANCE="SPI_0" PORT="NRST"/>
-        <CONNECTION INSTANCE="top_0" PORT="ap_rst_n"/>
+        <CONNECTION INSTANCE="SK9822_0" PORT="ap_rst_n"/>
       </CONNECTIONS>
     </PORT>
-    <PORT DIR="O" LEFT="0" NAME="out_TI_0" RIGHT="0" SIGIS="data" SIGNAME="top_0_out_TI">
+    <PORT DIR="I" LEFT="7" NAME="in_B_0" RIGHT="0" SIGIS="data" SIGNAME="External_Ports_in_B_0">
       <CONNECTIONS>
-        <CONNECTION INSTANCE="top_0" PORT="out_TI"/>
+        <CONNECTION INSTANCE="SK9822_0" PORT="in_B"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" LEFT="0" NAME="in_CSR_INSEL_0" RIGHT="0" SIGIS="data" SIGNAME="External_Ports_in_CSR_INSEL_0">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="SK9822_0" PORT="in_CSR_INSEL"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" LEFT="0" NAME="in_CSR_LOOP_0" RIGHT="0" SIGIS="data" SIGNAME="External_Ports_in_CSR_LOOP_0">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="SK9822_0" PORT="in_CSR_LOOP"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" LEFT="4" NAME="in_GBCR_GB_0" RIGHT="0" SIGIS="data" SIGNAME="External_Ports_in_GBCR_GB_0">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="SK9822_0" PORT="in_GBCR_GB"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" LEFT="0" NAME="in_GBCR_INSEL_0" RIGHT="0" SIGIS="data" SIGNAME="External_Ports_in_GBCR_INSEL_0">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="SK9822_0" PORT="in_GBCR_INSEL"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" LEFT="7" NAME="in_G_0" RIGHT="0" SIGIS="data" SIGNAME="External_Ports_in_G_0">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="SK9822_0" PORT="in_G"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" LEFT="0" NAME="in_ICSR_CTI_0" RIGHT="0" SIGIS="data" SIGNAME="External_Ports_in_ICSR_CTI_0">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="SK9822_0" PORT="in_ICSR_CTI"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" LEFT="0" NAME="in_ICSR_STI_0" RIGHT="0" SIGIS="data" SIGNAME="External_Ports_in_ICSR_STI_0">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="SK9822_0" PORT="in_ICSR_STI"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" LEFT="0" NAME="in_ICSR_TIEN_0" RIGHT="0" SIGIS="data" SIGNAME="External_Ports_in_ICSR_TIEN_0">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="SK9822_0" PORT="in_ICSR_TIEN"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" LEFT="95" NAME="in_LEDs_0" RIGHT="0" SIGIS="data" SIGNAME="External_Ports_in_LEDs_0">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="SK9822_0" PORT="in_LEDs"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" LEFT="7" NAME="in_R_0" RIGHT="0" SIGIS="data" SIGNAME="External_Ports_in_R_0">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="SK9822_0" PORT="in_R"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" LEFT="0" NAME="in_TSR_ST_0" RIGHT="0" SIGIS="data" SIGNAME="External_Ports_in_TSR_ST_0">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="SK9822_0" PORT="in_TSR_ST"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" LEFT="0" NAME="out_CSR_TI_0" RIGHT="0" SIGIS="data" SIGNAME="SK9822_0_out_CSR_TI">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="SK9822_0" PORT="out_CSR_TI"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" LEFT="0" NAME="out_ICSR_TI_0" RIGHT="0" SIGIS="data" SIGNAME="SK9822_0_out_ICSR_TI">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="SK9822_0" PORT="out_ICSR_TI"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" LEFT="0" NAME="out_debug1_0" RIGHT="0" SIGIS="data" SIGNAME="SK9822_0_out_debug1">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="SK9822_0" PORT="out_debug1"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" LEFT="0" NAME="out_debug2_0" RIGHT="0" SIGIS="data" SIGNAME="SK9822_0_out_debug2">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="SK9822_0" PORT="out_debug2"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" LEFT="0" NAME="out_debug3_0" RIGHT="0" SIGIS="data" SIGNAME="SK9822_0_out_debug3">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="SK9822_0" PORT="out_debug3"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" LEFT="0" NAME="out_debug4_0" RIGHT="0" SIGIS="data" SIGNAME="SK9822_0_out_debug4">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="SK9822_0" PORT="out_debug4"/>
       </CONNECTIONS>
     </PORT>
   </EXTERNALPORTS>
@@ -65,6 +150,160 @@
   </EXTERNALINTERFACES>
 
   <MODULES>
+    <MODULE COREREVISION="2113369234" FULLNAME="/SK9822_0" HWVERSION="1.0" INSTANCE="SK9822_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="SK9822" VLNV="xilinx.com:hls:SK9822:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="Component_Name" VALUE="design_1_SK9822_0_0"/>
+        <PARAMETER NAME="II" VALUE="x"/>
+        <PARAMETER NAME="clk_period" VALUE="10"/>
+        <PARAMETER NAME="combinational" VALUE="0"/>
+        <PARAMETER NAME="latency" VALUE="7"/>
+        <PARAMETER NAME="machine" VALUE="64"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT CLKFREQUENCY="100000000" DIR="I" NAME="ap_clk" SIGIS="clk" SIGNAME="External_Ports_ap_clk_0">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="ap_clk_0"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="ap_done" SIGIS="undef" SIGNAME="SK9822_0_ap_done">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="design_1_imp" PORT="ap_ctrl_0_done"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="ap_idle" SIGIS="undef" SIGNAME="SK9822_0_ap_idle">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="design_1_imp" PORT="ap_ctrl_0_idle"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="ap_ready" SIGIS="undef" SIGNAME="SK9822_0_ap_ready">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="design_1_imp" PORT="ap_ctrl_0_ready"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="ap_rst_n" POLARITY="ACTIVE_LOW" SIGIS="rst" SIGNAME="External_Ports_ap_rst_n_0">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="ap_rst_n_0"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="ap_start" SIGIS="undef" SIGNAME="SK9822_0_ap_start">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="design_1_imp" PORT="ap_ctrl_0_start"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="7" NAME="in_B" RIGHT="0" SIGIS="data" SIGNAME="External_Ports_in_B_0">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="in_B_0"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="0" NAME="in_CSR_INSEL" RIGHT="0" SIGIS="data" SIGNAME="External_Ports_in_CSR_INSEL_0">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="in_CSR_INSEL_0"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="0" NAME="in_CSR_LOOP" RIGHT="0" SIGIS="data" SIGNAME="External_Ports_in_CSR_LOOP_0">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="in_CSR_LOOP_0"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="7" NAME="in_G" RIGHT="0" SIGIS="data" SIGNAME="External_Ports_in_G_0">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="in_G_0"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="4" NAME="in_GBCR_GB" RIGHT="0" SIGIS="data" SIGNAME="External_Ports_in_GBCR_GB_0">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="in_GBCR_GB_0"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="0" NAME="in_GBCR_INSEL" RIGHT="0" SIGIS="data" SIGNAME="External_Ports_in_GBCR_INSEL_0">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="in_GBCR_INSEL_0"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="0" NAME="in_ICSR_CTI" RIGHT="0" SIGIS="data" SIGNAME="External_Ports_in_ICSR_CTI_0">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="in_ICSR_CTI_0"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="0" NAME="in_ICSR_STI" RIGHT="0" SIGIS="data" SIGNAME="External_Ports_in_ICSR_STI_0">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="in_ICSR_STI_0"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="0" NAME="in_ICSR_TIEN" RIGHT="0" SIGIS="data" SIGNAME="External_Ports_in_ICSR_TIEN_0">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="in_ICSR_TIEN_0"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="95" NAME="in_LEDs" RIGHT="0" SIGIS="data" SIGNAME="External_Ports_in_LEDs_0">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="in_LEDs_0"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="7" NAME="in_R" RIGHT="0" SIGIS="data" SIGNAME="External_Ports_in_R_0">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="in_R_0"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="0" NAME="in_TSR_ST" RIGHT="0" SIGIS="data" SIGNAME="External_Ports_in_TSR_ST_0">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="in_TSR_ST_0"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="0" NAME="out_CSR_TI" RIGHT="0" SIGIS="data" SIGNAME="SK9822_0_out_CSR_TI">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="out_CSR_TI_0"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="0" NAME="out_ICSR_TI" RIGHT="0" SIGIS="data" SIGNAME="SK9822_0_out_ICSR_TI">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="out_ICSR_TI_0"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="7" NAME="out_SPI_D" RIGHT="0" SIGIS="data" SIGNAME="SK9822_0_out_SPI_D">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="SPI_0" PORT="D"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="0" NAME="out_SPI_DS" RIGHT="0" SIGIS="data" SIGNAME="SK9822_0_out_SPI_DS">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="SPI_0" PORT="DS"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="0" NAME="out_debug1" RIGHT="0" SIGIS="data" SIGNAME="SK9822_0_out_debug1">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="out_debug1_0"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="0" NAME="out_debug2" RIGHT="0" SIGIS="data" SIGNAME="SK9822_0_out_debug2">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="out_debug2_0"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="0" NAME="out_debug3" RIGHT="0" SIGIS="data" SIGNAME="SK9822_0_out_debug3">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="out_debug3_0"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="0" NAME="out_debug4" RIGHT="0" SIGIS="data" SIGNAME="SK9822_0_out_debug4">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="out_debug4_0"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES>
+        <BUSINTERFACE BUSNAME="External_Interface_ap_ctrl_0" NAME="ap_ctrl" TYPE="TARGET" VLNV="xilinx.com:interface:acc_handshake:1.0">
+          <PORTMAPS>
+            <PORTMAP LOGICAL="done" PHYSICAL="ap_done"/>
+            <PORTMAP LOGICAL="idle" PHYSICAL="ap_idle"/>
+            <PORTMAP LOGICAL="ready" PHYSICAL="ap_ready"/>
+            <PORTMAP LOGICAL="start" PHYSICAL="ap_start"/>
+          </PORTMAPS>
+        </BUSINTERFACE>
+      </BUSINTERFACES>
+    </MODULE>
     <MODULE COREREVISION="1" FULLNAME="/SPI_0" HWVERSION="1.0" INSTANCE="SPI_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="SPI" VLNV="xilinx.com:module_ref:SPI:1.0">
       <DOCUMENTS/>
       <PARAMETERS>
@@ -77,14 +316,14 @@
             <CONNECTION INSTANCE="External_Ports" PORT="ap_clk_0"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="7" NAME="D" RIGHT="0" SIGIS="undef" SIGNAME="top_0_out_SPI_D">
+        <PORT DIR="I" LEFT="7" NAME="D" RIGHT="0" SIGIS="undef" SIGNAME="SK9822_0_out_SPI_D">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="top_0" PORT="out_SPI_D"/>
+            <CONNECTION INSTANCE="SK9822_0" PORT="out_SPI_D"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="DS" SIGIS="undef" SIGNAME="top_0_out_SPI_DS">
+        <PORT DIR="I" NAME="DS" SIGIS="undef" SIGNAME="SK9822_0_out_SPI_DS">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="top_0" PORT="out_SPI_DS"/>
+            <CONNECTION INSTANCE="SK9822_0" PORT="out_SPI_DS"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" NAME="MOSI" SIGIS="undef" SIGNAME="SPI_0_MOSI">
@@ -102,87 +341,9 @@
             <CONNECTION INSTANCE="External_Ports" PORT="SCLK_0"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" NAME="TI" SIGIS="undef" SIGNAME="SPI_0_TI">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="top_0" PORT="in_SPI_TI"/>
-          </CONNECTIONS>
-        </PORT>
+        <PORT DIR="O" NAME="TI" SIGIS="undef"/>
       </PORTS>
       <BUSINTERFACES/>
-    </MODULE>
-    <MODULE COREREVISION="2113364401" FULLNAME="/top_0" HWVERSION="1.0" INSTANCE="top_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="top" VLNV="xilinx.com:hls:top:1.0">
-      <DOCUMENTS/>
-      <PARAMETERS>
-        <PARAMETER NAME="Component_Name" VALUE="design_1_top_0_0"/>
-        <PARAMETER NAME="II" VALUE="x"/>
-        <PARAMETER NAME="clk_period" VALUE="10"/>
-        <PARAMETER NAME="combinational" VALUE="0"/>
-        <PARAMETER NAME="latency" VALUE="undef"/>
-        <PARAMETER NAME="machine" VALUE="64"/>
-        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
-      </PARAMETERS>
-      <PORTS>
-        <PORT CLKFREQUENCY="100000000" DIR="I" NAME="ap_clk" SIGIS="clk" SIGNAME="External_Ports_ap_clk_0">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="External_Ports" PORT="ap_clk_0"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" NAME="ap_done" SIGIS="undef" SIGNAME="top_0_ap_done">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="design_1_imp" PORT="ap_ctrl_0_done"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" NAME="ap_idle" SIGIS="undef" SIGNAME="top_0_ap_idle">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="design_1_imp" PORT="ap_ctrl_0_idle"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" NAME="ap_ready" SIGIS="undef" SIGNAME="top_0_ap_ready">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="design_1_imp" PORT="ap_ctrl_0_ready"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" NAME="ap_rst_n" POLARITY="ACTIVE_LOW" SIGIS="rst" SIGNAME="External_Ports_ap_rst_n_0">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="External_Ports" PORT="ap_rst_n_0"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" NAME="ap_start" SIGIS="undef" SIGNAME="top_0_ap_start">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="design_1_imp" PORT="ap_ctrl_0_start"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" LEFT="0" NAME="in_SPI_TI" RIGHT="0" SIGIS="data" SIGNAME="SPI_0_TI">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="SPI_0" PORT="TI"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" LEFT="7" NAME="out_SPI_D" RIGHT="0" SIGIS="data" SIGNAME="top_0_out_SPI_D">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="SPI_0" PORT="D"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" LEFT="0" NAME="out_SPI_DS" RIGHT="0" SIGIS="data" SIGNAME="top_0_out_SPI_DS">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="SPI_0" PORT="DS"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" LEFT="0" NAME="out_TI" RIGHT="0" SIGIS="data" SIGNAME="top_0_out_TI">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="External_Ports" PORT="out_TI_0"/>
-          </CONNECTIONS>
-        </PORT>
-      </PORTS>
-      <BUSINTERFACES>
-        <BUSINTERFACE BUSNAME="External_Interface_ap_ctrl_0" NAME="ap_ctrl" TYPE="TARGET" VLNV="xilinx.com:interface:acc_handshake:1.0">
-          <PORTMAPS>
-            <PORTMAP LOGICAL="done" PHYSICAL="ap_done"/>
-            <PORTMAP LOGICAL="idle" PHYSICAL="ap_idle"/>
-            <PORTMAP LOGICAL="ready" PHYSICAL="ap_ready"/>
-            <PORTMAP LOGICAL="start" PHYSICAL="ap_start"/>
-          </PORTMAPS>
-        </BUSINTERFACE>
-      </BUSINTERFACES>
     </MODULE>
   </MODULES>
 

@@ -2,7 +2,7 @@
 //Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2023.2 (win64) Build 4029153 Fri Oct 13 20:14:34 MDT 2023
-//Date        : Mon Jan  1 14:01:49 2024
+//Date        : Thu Jan  4 22:36:52 2024
 //Host        : DaniilSP9 running 64-bit major release  (build 9200)
 //Command     : generate_target design_1_wrapper.bd
 //Design      : design_1_wrapper
@@ -19,7 +19,24 @@ module design_1_wrapper
     ap_ctrl_0_ready,
     ap_ctrl_0_start,
     ap_rst_n_0,
-    out_TI_0);
+    in_B_0,
+    in_CSR_INSEL_0,
+    in_CSR_LOOP_0,
+    in_GBCR_GB_0,
+    in_GBCR_INSEL_0,
+    in_G_0,
+    in_ICSR_CTI_0,
+    in_ICSR_STI_0,
+    in_ICSR_TIEN_0,
+    in_LEDs_0,
+    in_R_0,
+    in_TSR_ST_0,
+    out_CSR_TI_0,
+    out_ICSR_TI_0,
+    out_debug1_0,
+    out_debug2_0,
+    out_debug3_0,
+    out_debug4_0);
   output MOSI_0;
   output SCLK_0;
   input ap_clk_0;
@@ -28,7 +45,24 @@ module design_1_wrapper
   output ap_ctrl_0_ready;
   input ap_ctrl_0_start;
   input ap_rst_n_0;
-  output [0:0]out_TI_0;
+  input [7:0]in_B_0;
+  input [0:0]in_CSR_INSEL_0;
+  input [0:0]in_CSR_LOOP_0;
+  input [4:0]in_GBCR_GB_0;
+  input [0:0]in_GBCR_INSEL_0;
+  input [7:0]in_G_0;
+  input [0:0]in_ICSR_CTI_0;
+  input [0:0]in_ICSR_STI_0;
+  input [0:0]in_ICSR_TIEN_0;
+  input [95:0]in_LEDs_0;
+  input [7:0]in_R_0;
+  input [0:0]in_TSR_ST_0;
+  output [0:0]out_CSR_TI_0;
+  output [0:0]out_ICSR_TI_0;
+  output [0:0]out_debug1_0;
+  output [0:0]out_debug2_0;
+  output [0:0]out_debug3_0;
+  output [0:0]out_debug4_0;
 
   wire MOSI_0;
   wire SCLK_0;
@@ -38,7 +72,24 @@ module design_1_wrapper
   wire ap_ctrl_0_ready;
   wire ap_ctrl_0_start;
   wire ap_rst_n_0;
-  wire [0:0]out_TI_0;
+  wire [7:0]in_B_0;
+  wire [0:0]in_CSR_INSEL_0;
+  wire [0:0]in_CSR_LOOP_0;
+  wire [4:0]in_GBCR_GB_0;
+  wire [0:0]in_GBCR_INSEL_0;
+  wire [7:0]in_G_0;
+  wire [0:0]in_ICSR_CTI_0;
+  wire [0:0]in_ICSR_STI_0;
+  wire [0:0]in_ICSR_TIEN_0;
+  wire [95:0]in_LEDs_0;
+  wire [7:0]in_R_0;
+  wire [0:0]in_TSR_ST_0;
+  wire [0:0]out_CSR_TI_0;
+  wire [0:0]out_ICSR_TI_0;
+  wire [0:0]out_debug1_0;
+  wire [0:0]out_debug2_0;
+  wire [0:0]out_debug3_0;
+  wire [0:0]out_debug4_0;
 
   design_1 design_1_i
        (.MOSI_0(MOSI_0),
@@ -49,5 +100,22 @@ module design_1_wrapper
         .ap_ctrl_0_ready(ap_ctrl_0_ready),
         .ap_ctrl_0_start(ap_ctrl_0_start),
         .ap_rst_n_0(ap_rst_n_0),
-        .out_TI_0(out_TI_0));
+        .in_B_0(in_B_0),
+        .in_CSR_INSEL_0(in_CSR_INSEL_0),
+        .in_CSR_LOOP_0(in_CSR_LOOP_0),
+        .in_GBCR_GB_0(in_GBCR_GB_0),
+        .in_GBCR_INSEL_0(in_GBCR_INSEL_0),
+        .in_G_0(in_G_0),
+        .in_ICSR_CTI_0(in_ICSR_CTI_0),
+        .in_ICSR_STI_0(in_ICSR_STI_0),
+        .in_ICSR_TIEN_0(in_ICSR_TIEN_0),
+        .in_LEDs_0(in_LEDs_0),
+        .in_R_0(in_R_0),
+        .in_TSR_ST_0(in_TSR_ST_0),
+        .out_CSR_TI_0(out_CSR_TI_0),
+        .out_ICSR_TI_0(out_ICSR_TI_0),
+        .out_debug1_0(out_debug1_0),
+        .out_debug2_0(out_debug2_0),
+        .out_debug3_0(out_debug3_0),
+        .out_debug4_0(out_debug4_0));
 endmodule

@@ -141,3 +141,9 @@ Vitis_Projects/SK9822_ZTurn/sum_io/top/hls
 Vitis_Projects/SK9822_ZTurn/hls_component/hls_component/hls
 Vitis_Projects/SK9822_ZTurn/tutorial1/tutorial1/hls
 Vivado_Projects/HLS_tests/HLS_tests.sim
+Vitis_Projects/SK9822_ZTurn/SK9822/SK9822/hls
+Vitis_Projects/SK9822_ZTurn/SK9822/SK9822/reports
+Vitis_Projects/SK9822_ZTurn/SK9822/SK9822/hash-map.txt
+*.hlscompile_summary
+Vitis_Projects/SK9822_ZTurn/SK9822/SK9822/SK9822.hlsrun_csim_summary
+Vitis_Projects/SK9822_ZTurn/SK9822/SK9822/SK9822.hlsrun_package_summary

@@ -1,7 +1,7 @@
 {
   "design": {
     "design_info": {
-      "boundary_crc": "0x63590CC529CF581A",
+      "boundary_crc": "0x750D349296A4FFB4",
       "device": "xc7z020clg400-1",
       "gen_directory": "../../../../HLS_tests.gen/sources_1/bd/design_1",
       "name": "design_1",
@@ -12,7 +12,7 @@
     },
     "design_tree": {
       "SPI_0": "",
-      "top_0": ""
+      "SK9822_0": ""
     },
     "interface_ports": {
       "ap_ctrl_0": {
@@ -90,7 +90,211 @@
       "MOSI_0": {
         "direction": "O"
       },
-      "out_TI_0": {
+      "out_CSR_TI_0": {
+        "type": "data",
+        "direction": "O",
+        "left": "0",
+        "right": "0",
+        "parameters": {
+          "LAYERED_METADATA": {
+            "value": "undef",
+            "value_src": "default"
+          }
+        }
+      },
+      "out_ICSR_TI_0": {
+        "type": "data",
+        "direction": "O",
+        "left": "0",
+        "right": "0",
+        "parameters": {
+          "LAYERED_METADATA": {
+            "value": "undef",
+            "value_src": "default"
+          }
+        }
+      },
+      "in_CSR_INSEL_0": {
+        "type": "data",
+        "direction": "I",
+        "left": "0",
+        "right": "0",
+        "parameters": {
+          "LAYERED_METADATA": {
+            "value": "undef",
+            "value_src": "default"
+          }
+        }
+      },
+      "in_CSR_LOOP_0": {
+        "type": "data",
+        "direction": "I",
+        "left": "0",
+        "right": "0",
+        "parameters": {
+          "LAYERED_METADATA": {
+            "value": "undef",
+            "value_src": "default"
+          }
+        }
+      },
+      "in_TSR_ST_0": {
+        "type": "data",
+        "direction": "I",
+        "left": "0",
+        "right": "0",
+        "parameters": {
+          "LAYERED_METADATA": {
+            "value": "undef",
+            "value_src": "default"
+          }
+        }
+      },
+      "in_GBCR_INSEL_0": {
+        "type": "data",
+        "direction": "I",
+        "left": "0",
+        "right": "0",
+        "parameters": {
+          "LAYERED_METADATA": {
+            "value": "undef",
+            "value_src": "default"
+          }
+        }
+      },
+      "in_GBCR_GB_0": {
+        "type": "data",
+        "direction": "I",
+        "left": "4",
+        "right": "0",
+        "parameters": {
+          "LAYERED_METADATA": {
+            "value": "undef",
+            "value_src": "default"
+          }
+        }
+      },
+      "in_ICSR_TIEN_0": {
+        "type": "data",
+        "direction": "I",
+        "left": "0",
+        "right": "0",
+        "parameters": {
+          "LAYERED_METADATA": {
+            "value": "undef",
+            "value_src": "default"
+          }
+        }
+      },
+      "in_ICSR_CTI_0": {
+        "type": "data",
+        "direction": "I",
+        "left": "0",
+        "right": "0",
+        "parameters": {
+          "LAYERED_METADATA": {
+            "value": "undef",
+            "value_src": "default"
+          }
+        }
+      },
+      "in_ICSR_STI_0": {
+        "type": "data",
+        "direction": "I",
+        "left": "0",
+        "right": "0",
+        "parameters": {
+          "LAYERED_METADATA": {
+            "value": "undef",
+            "value_src": "default"
+          }
+        }
+      },
+      "in_LEDs_0": {
+        "type": "data",
+        "direction": "I",
+        "left": "95",
+        "right": "0",
+        "parameters": {
+          "LAYERED_METADATA": {
+            "value": "undef",
+            "value_src": "default"
+          }
+        }
+      },
+      "in_R_0": {
+        "type": "data",
+        "direction": "I",
+        "left": "7",
+        "right": "0",
+        "parameters": {
+          "LAYERED_METADATA": {
+            "value": "undef",
+            "value_src": "default"
+          }
+        }
+      },
+      "in_G_0": {
+        "type": "data",
+        "direction": "I",
+        "left": "7",
+        "right": "0",
+        "parameters": {
+          "LAYERED_METADATA": {
+            "value": "undef",
+            "value_src": "default"
+          }
+        }
+      },
+      "in_B_0": {
+        "type": "data",
+        "direction": "I",
+        "left": "7",
+        "right": "0",
+        "parameters": {
+          "LAYERED_METADATA": {
+            "value": "undef",
+            "value_src": "default"
+          }
+        }
+      },
+      "out_debug1_0": {
+        "type": "data",
+        "direction": "O",
+        "left": "0",
+        "right": "0",
+        "parameters": {
+          "LAYERED_METADATA": {
+            "value": "undef",
+            "value_src": "default"
+          }
+        }
+      },
+      "out_debug2_0": {
+        "type": "data",
+        "direction": "O",
+        "left": "0",
+        "right": "0",
+        "parameters": {
+          "LAYERED_METADATA": {
+            "value": "undef",
+            "value_src": "default"
+          }
+        }
+      },
+      "out_debug3_0": {
+        "type": "data",
+        "direction": "O",
+        "left": "0",
+        "right": "0",
+        "parameters": {
+          "LAYERED_METADATA": {
+            "value": "undef",
+            "value_src": "default"
+          }
+        }
+      },
+      "out_debug4_0": {
         "type": "data",
         "direction": "O",
         "left": "0",
@@ -166,23 +370,71 @@
           }
         }
       },
-      "top_0": {
-        "vlnv": "xilinx.com:hls:top:1.0",
-        "ip_revision": "2113364401",
-        "xci_name": "design_1_top_0_0",
-        "xci_path": "ip\\design_1_top_0_0\\design_1_top_0_0.xci",
-        "inst_hier_path": "top_0"
+      "SK9822_0": {
+        "vlnv": "xilinx.com:hls:SK9822:1.0",
+        "ip_revision": "2113369234",
+        "xci_name": "design_1_SK9822_0_0",
+        "xci_path": "ip\\design_1_SK9822_0_0\\design_1_SK9822_0_0.xci",
+        "inst_hier_path": "SK9822_0"
       }
     },
     "interface_nets": {
       "ap_ctrl_0_1": {
         "interface_ports": [
           "ap_ctrl_0",
-          "top_0/ap_ctrl"
+          "SK9822_0/ap_ctrl"
         ]
       }
     },
     "nets": {
+      "SK9822_0_out_CSR_TI": {
+        "ports": [
+          "SK9822_0/out_CSR_TI",
+          "out_CSR_TI_0"
+        ]
+      },
+      "SK9822_0_out_ICSR_TI": {
+        "ports": [
+          "SK9822_0/out_ICSR_TI",
+          "out_ICSR_TI_0"
+        ]
+      },
+      "SK9822_0_out_SPI_D": {
+        "ports": [
+          "SK9822_0/out_SPI_D",
+          "SPI_0/D"
+        ]
+      },
+      "SK9822_0_out_SPI_DS": {
+        "ports": [
+          "SK9822_0/out_SPI_DS",
+          "SPI_0/DS"
+        ]
+      },
+      "SK9822_0_out_debug1": {
+        "ports": [
+          "SK9822_0/out_debug1",
+          "out_debug1_0"
+        ]
+      },
+      "SK9822_0_out_debug2": {
+        "ports": [
+          "SK9822_0/out_debug2",
+          "out_debug2_0"
+        ]
+      },
+      "SK9822_0_out_debug3": {
+        "ports": [
+          "SK9822_0/out_debug3",
+          "out_debug3_0"
+        ]
+      },
+      "SK9822_0_out_debug4": {
+        "ports": [
+          "SK9822_0/out_debug4",
+          "out_debug4_0"
+        ]
+      },
       "SPI_0_MOSI": {
         "ports": [
           "SPI_0/MOSI",
@@ -197,40 +449,93 @@
       },
       "SPI_0_TI": {
         "ports": [
-          "SPI_0/TI",
-          "top_0/in_SPI_TI"
+          "SPI_0/TI"
         ]
       },
       "ap_clk_0_1": {
         "ports": [
           "ap_clk_0",
           "SPI_0/CLK",
-          "top_0/ap_clk"
+          "SK9822_0/ap_clk"
         ]
       },
       "ap_rst_n_0_1": {
         "ports": [
           "ap_rst_n_0",
           "SPI_0/NRST",
-          "top_0/ap_rst_n"
+          "SK9822_0/ap_rst_n"
         ]
       },
-      "top_0_out_SPI_D": {
+      "in_B_0_1": {
         "ports": [
-          "top_0/out_SPI_D",
-          "SPI_0/D"
+          "in_B_0",
+          "SK9822_0/in_B"
         ]
       },
-      "top_0_out_SPI_DS": {
+      "in_CSR_INSEL_0_1": {
         "ports": [
-          "top_0/out_SPI_DS",
-          "SPI_0/DS"
+          "in_CSR_INSEL_0",
+          "SK9822_0/in_CSR_INSEL"
         ]
       },
-      "top_0_out_TI": {
+      "in_CSR_LOOP_0_1": {
         "ports": [
-          "top_0/out_TI",
-          "out_TI_0"
+          "in_CSR_LOOP_0",
+          "SK9822_0/in_CSR_LOOP"
+        ]
+      },
+      "in_GBCR_GB_0_1": {
+        "ports": [
+          "in_GBCR_GB_0",
+          "SK9822_0/in_GBCR_GB"
+        ]
+      },
+      "in_GBCR_INSEL_0_1": {
+        "ports": [
+          "in_GBCR_INSEL_0",
+          "SK9822_0/in_GBCR_INSEL"
+        ]
+      },
+      "in_G_0_1": {
+        "ports": [
+          "in_G_0",
+          "SK9822_0/in_G"
+        ]
+      },
+      "in_ICSR_CTI_0_1": {
+        "ports": [
+          "in_ICSR_CTI_0",
+          "SK9822_0/in_ICSR_CTI"
+        ]
+      },
+      "in_ICSR_STI_0_1": {
+        "ports": [
+          "in_ICSR_STI_0",
+          "SK9822_0/in_ICSR_STI"
+        ]
+      },
+      "in_ICSR_TIEN_0_1": {
+        "ports": [
+          "in_ICSR_TIEN_0",
+          "SK9822_0/in_ICSR_TIEN"
+        ]
+      },
+      "in_LEDs_0_1": {
+        "ports": [
+          "in_LEDs_0",
+          "SK9822_0/in_LEDs"
+        ]
+      },
+      "in_R_0_1": {
+        "ports": [
+          "in_R_0",
+          "SK9822_0/in_R"
+        ]
+      },
+      "in_TSR_ST_0_1": {
+        "ports": [
+          "in_TSR_ST_0",
+          "SK9822_0/in_TSR_ST"
         ]
       }
     }

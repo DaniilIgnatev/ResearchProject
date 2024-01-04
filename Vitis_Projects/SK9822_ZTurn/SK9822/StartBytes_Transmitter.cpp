@@ -1,8 +1,10 @@
 #include "StartBytes_Transmitter.h"
 
-void transmit_start_bytes(bit *in_SPI_TI, volatile byte *out_SPI_D,
-                          volatile bit *out_SPI_DS) {
+void transmit_start_bytes(volatile byte *out_SPI_D, volatile bit *out_SPI_DS) {
+#pragma HLS inline off
+#pragma HLS allocation function instances=transmit_byte limit=1
   for (int i = 0; i < 4; i++) {
-    transmit(in_SPI_TI, out_SPI_D, out_SPI_DS, 0);
+#pragma HLS UNROLL
+    transmit_byte(out_SPI_D, out_SPI_DS, 0);
   }
 }

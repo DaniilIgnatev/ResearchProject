@@ -9,10 +9,10 @@
 <ENTRY>
 {
  "type": "ET_CmdStep",
- "dateTimestamp": "01/01/24 14:01:10",
- "timestampMillis": "3296221065",
+ "dateTimestamp": "01/03/24 11:34:24",
+ "timestampMillis": "3460215621",
  "buildStep": {
-  "cmdId": "c7e733e6-2dc5-49e5-8a44-40f271af74a3",
+  "cmdId": "3a5010e4-f2ad-4300-86e7-08fc40a9a516",
   "name": "vitis-run",
   "logFile": "C:/Users\\folke\\OneDrive\\Documents\\GitHub\\ResearchProject\\Vitis_Projects\\SK9822_ZTurn\\hls_component\\hls_component\\logs\\hls_component.steps.log",
   "commandLine": "C:/Xilinx/Vitis/2023.2/bin/unwrapped/win64.o/vitis-run.exe  --mode hls --package --config C:\\Users\\folke\\OneDrive\\Documents\\GitHub\\ResearchProject\\Vitis_Projects\\SK9822_ZTurn\\hls_component\\hls_config.cfg --work_dir hls_component ",
@@ -33,10 +33,10 @@
 <ENTRY>
 {
  "type": "ET_Status",
- "dateTimestamp": "01/01/24 14:01:10",
- "timestampMillis": "3296221065",
+ "dateTimestamp": "01/03/24 11:34:24",
+ "timestampMillis": "3460215622",
  "status": {
-  "cmdId": "c7e733e6-2dc5-49e5-8a44-40f271af74a3",
+  "cmdId": "3a5010e4-f2ad-4300-86e7-08fc40a9a516",
   "state": "CS_RUNNING"
  }
 }
@@ -44,8 +44,8 @@
 <ENTRY>
 {
  "type": "ET_FlowMetaData",
- "dateTimestamp": "01/01/24 14:01:15",
- "timestampMillis": "3296226673",
+ "dateTimestamp": "01/03/24 11:34:34",
+ "timestampMillis": "3460224950",
  "buildSummary": {
   "hardwarePlatform": "",
   "hardwareDsa": "",
@@ -73,7 +73,9 @@
      "C:/Users\\folke\\OneDrive\\Documents\\GitHub\\ResearchProject\\Vitis_Projects\\SK9822_ZTurn\\SK9822\\EndBytes_Transmitter.cpp",
      "C:/Users\\folke\\OneDrive\\Documents\\GitHub\\ResearchProject\\Vitis_Projects\\SK9822_ZTurn\\SK9822\\EndBytes_Transmitter.h",
      "C:/Users\\folke\\OneDrive\\Documents\\GitHub\\ResearchProject\\Vitis_Projects\\SK9822_ZTurn\\SK9822\\FullColors_Transmitter.cpp",
-     "C:/Users\\folke\\OneDrive\\Documents\\GitHub\\ResearchProject\\Vitis_Projects\\SK9822_ZTurn\\SK9822\\FullColors_Transmitter.h"
+     "C:/Users\\folke\\OneDrive\\Documents\\GitHub\\ResearchProject\\Vitis_Projects\\SK9822_ZTurn\\SK9822\\FullColors_Transmitter.h",
+     "C:/Users\\folke\\OneDrive\\Documents\\GitHub\\ResearchProject\\Vitis_Projects\\SK9822_ZTurn\\SK9822\\BinaryColors_Transmitter.cpp",
+     "C:/Users\\folke\\OneDrive\\Documents\\GitHub\\ResearchProject\\Vitis_Projects\\SK9822_ZTurn\\SK9822\\BinaryColors_Transmitter.h"
     ],
     "psSources": [],
     "cuNames": [],
@@ -89,10 +91,10 @@
 <ENTRY>
 {
  "type": "ET_SubCmdStep",
- "dateTimestamp": "01/01/24 14:01:15",
- "timestampMillis": "3296226676",
+ "dateTimestamp": "01/03/24 11:34:34",
+ "timestampMillis": "3460224960",
  "buildStep": {
-  "cmdId": "c347e972-49a2-4f6f-8526-a956e9ebacf0",
+  "cmdId": "1148eaa4-88d1-4e6b-97d9-74b70e343923",
   "name": "export_design",
   "logFile": "C:/Users\\folke\\OneDrive\\Documents\\GitHub\\ResearchProject\\Vitis_Projects\\SK9822_ZTurn\\hls_component\\hls_component\\hls\\hls.log",
   "commandLine": "export_design -flow none",
@@ -108,10 +110,10 @@
 <ENTRY>
 {
  "type": "ET_Status",
- "dateTimestamp": "01/01/24 14:01:15",
- "timestampMillis": "3296226678",
+ "dateTimestamp": "01/03/24 11:34:34",
+ "timestampMillis": "3460224962",
  "status": {
-  "cmdId": "c347e972-49a2-4f6f-8526-a956e9ebacf0",
+  "cmdId": "1148eaa4-88d1-4e6b-97d9-74b70e343923",
   "state": "CS_RUNNING"
  }
 }
@@ -119,10 +121,10 @@
 <ENTRY>
 {
  "type": "ET_Status",
- "dateTimestamp": "01/01/24 14:01:30",
- "timestampMillis": "3296240844",
+ "dateTimestamp": "01/03/24 11:35:01",
+ "timestampMillis": "3460252064",
  "status": {
-  "cmdId": "c347e972-49a2-4f6f-8526-a956e9ebacf0",
+  "cmdId": "1148eaa4-88d1-4e6b-97d9-74b70e343923",
   "state": "CS_PASSED"
  }
 }
@@ -130,10 +132,10 @@
 <ENTRY>
 {
  "type": "ET_Status",
- "dateTimestamp": "01/01/24 14:01:30",
- "timestampMillis": "3296240968",
+ "dateTimestamp": "01/03/24 11:35:01",
+ "timestampMillis": "3460252279",
  "status": {
-  "cmdId": "c7e733e6-2dc5-49e5-8a44-40f271af74a3",
+  "cmdId": "3a5010e4-f2ad-4300-86e7-08fc40a9a516",
   "state": "CS_PASSED"
  }
 }
@@ -141,8 +143,8 @@
 <ENTRY>
 {
  "type": "ET_Report",
- "dateTimestamp": "01/01/24 14:01:30",
- "timestampMillis": "3296240969",
+ "dateTimestamp": "01/03/24 11:35:01",
+ "timestampMillis": "3460252280",
  "report": {
   "path": "",
   "name": "",
@@ -155,8 +157,8 @@
 <ENTRY>
 {
  "type": "ET_Report",
- "dateTimestamp": "01/01/24 14:01:30",
- "timestampMillis": "3296240969",
+ "dateTimestamp": "01/03/24 11:35:01",
+ "timestampMillis": "3460252280",
  "report": {
   "path": "",
   "name": "",
