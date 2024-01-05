@@ -112,7 +112,7 @@ void SK9822(
     RGBChannel_T in_B, // the size is made to be multiple of 8 bit
     volatile bit *out_debug1, volatile bit *out_debug2,
     volatile bit *out_debug3, volatile bit *out_debug4) {
-#pragma HLS INTERFACE mode = ap_ctrl_hs port = return
+#pragma HLS INTERFACE mode = ap_none port = return
 #pragma HLS INTERFACE mode = ap_none port = out_SPI_D
 #pragma HLS INTERFACE mode = ap_none port = out_SPI_DS
 

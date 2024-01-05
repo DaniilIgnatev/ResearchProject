@@ -1,0 +1,12 @@
+{
+  "name": "SK9822_AXI4Lite_30",
+  "type": "HLS",
+  "configuration": {
+    "componentType": "HLS",
+    "configFiles": [
+      "hls_config.cfg"
+    ],
+    "work_dir": "SK9822_AXI4Lite_30"
+  },
+  "previousBuildStatusMap": {}
+}

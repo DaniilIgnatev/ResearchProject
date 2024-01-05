@@ -147,3 +147,5 @@ Vitis_Projects/SK9822_ZTurn/SK9822/SK9822/hash-map.txt
 *.hlscompile_summary
 Vitis_Projects/SK9822_ZTurn/SK9822/SK9822/SK9822.hlsrun_csim_summary
 Vitis_Projects/SK9822_ZTurn/SK9822/SK9822/SK9822.hlsrun_package_summary
+Vitis_Projects/SK9822_ZTurn/SK9822_AXI4Lite_30/SK9822_AXI4Lite_30/hls
+Vitis_Projects/SK9822_ZTurn/SK9822_AXI4Lite_30/SK9822_AXI4Lite_30
