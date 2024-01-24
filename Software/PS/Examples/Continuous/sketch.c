@@ -60,7 +60,8 @@ void setup(){
     SK9822_TransmissionOptions options2 = init_SK9822_TransmissionOptionsType(full, global, brightness, false, true);
     SK9822_transmission_setup(addresses2, options2);
 
-    SK9822_start_synchronous_transmission(SK9822_AXI4_SETTINGS_BASEADDR_1);
+    // SK9822_start_transmission(SK9822_AXI4_SETTINGS_BASEADDR_1); // The second chain won't work as it hasn't its own CLK
+    SK9822_start_synchronous_transmission(SK9822_AXI4_SETTINGS_BASEADDR_1);// The first and the second chains share the CLK of the first
 }
 
 size_t time = 0;
@@ -74,19 +75,16 @@ void loop()
   {
     uint8_t p = time - id * 8;
     LED_Type led = hsvToRgb((uint32_t)p * 359 / 256, 255, 255);
-    SK9822_set_LED(SK9822_AXI4_LED_BASEADDR_1, id, led);
 
+    SK9822_set_LED(SK9822_AXI4_LED_BASEADDR_1, id, led);
     SK9822_set_R(SK9822_AXI4_R_BASEADDR_1, id, led.bit.R > (255 / 2));
     SK9822_set_G(SK9822_AXI4_G_BASEADDR_1, id, led.bit.G > (255 / 2));
     SK9822_set_B(SK9822_AXI4_B_BASEADDR_1, id, led.bit.B > (255 / 2));
 
 
     SK9822_set_LED(SK9822_AXI4_LED_BASEADDR_2, id, led);
-
     SK9822_set_R(SK9822_AXI4_R_BASEADDR_2, id, led.bit.R > (255 / 2));
     SK9822_set_G(SK9822_AXI4_G_BASEADDR_2, id, led.bit.G > (255 / 2));
     SK9822_set_B(SK9822_AXI4_B_BASEADDR_2, id, led.bit.B > (255 / 2));
-
-    // SK9822_start_transmission(SK9822_AXI4_SETTINGS_BASEADDR_1);
   }
 }
