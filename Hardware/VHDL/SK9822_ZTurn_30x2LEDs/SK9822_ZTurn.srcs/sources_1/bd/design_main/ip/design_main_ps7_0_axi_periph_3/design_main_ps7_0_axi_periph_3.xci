@@ -4,7 +4,7 @@
     "xci_name": "design_main_ps7_0_axi_periph_3",
     "cell_name": "ps7_0_axi_periph",
     "component_reference": "xilinx.com:ip:axi_interconnect:2.1",
-    "ip_revision": "30",
+    "ip_revision": "31",
     "gen_directory": "../../../../../../SK9822_ZTurn.gen/sources_1/bd/design_main/ip/design_main_ps7_0_axi_periph_3",
     "parameters": {
       "component_parameters": {
@@ -339,12 +339,12 @@
       },
       "runtime_parameters": {
         "IPCONTEXT": [ { "value": "IP_Integrator_AppCore" } ],
-        "IPREVISION": [ { "value": "30" } ],
+        "IPREVISION": [ { "value": "31" } ],
         "MANAGED": [ { "value": "TRUE" } ],
         "OUTPUTDIR": [ { "value": "../../../../../../SK9822_ZTurn.gen/sources_1/bd/design_main/ip/design_main_ps7_0_axi_periph_3" } ],
         "SELECTEDSIMMODEL": [ { "value": "" } ],
         "SHAREDDIR": [ { "value": "../../ipshared" } ],
-        "SWVERSION": [ { "value": "2023.2" } ],
+        "SWVERSION": [ { "value": "2023.2.1" } ],
         "SYNTHESISFLOW": [ { "value": "GLOBAL" } ]
       }
     }

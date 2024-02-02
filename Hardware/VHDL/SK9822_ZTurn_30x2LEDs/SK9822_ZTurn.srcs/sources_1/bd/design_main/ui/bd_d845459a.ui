@@ -28,7 +28,7 @@ preplace netloc processing_system7_0_FCLK_RESET0_N 1 1 2 410 -820 840
 preplace netloc rst_ps7_0_25M_peripheral_aresetn 1 1 2 420 -810 950
 preplace netloc xlconcat_0_dout 1 1 1 380 -100n
 preplace netloc xlconstant_0_dout 1 2 2 970 -700 1250
-preplace netloc processing_system7_0_DDR 1 2 2 830J -10 1270
+preplace netloc processing_system7_0_DDR 1 2 2 830J -30 1270
 preplace netloc processing_system7_0_FIXED_IO 1 2 2 820 -20 N
 preplace netloc processing_system7_0_M_AXI_GP0 1 1 2 430 -800 810
 preplace netloc ps7_0_axi_periph_M00_AXI 1 2 1 820J -620n
