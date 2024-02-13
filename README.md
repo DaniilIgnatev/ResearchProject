@@ -5,9 +5,9 @@ This project contains hardware and software implemented SK9822 controller/driver
 It has the following structure:
 * Documentation
     * Demonstration
-    * VHDL modules
-    * UML Images
+    * Export
     * UML VP Project
+    * VHDL modules
 * Hardware
     * VHDL
         * HLS_tests
@@ -29,9 +29,17 @@ It has the following structure:
 
 ## Documentation
 
-The documentation contains a demonstration of how the system works, running two LED chains on video and the corresponding oscillograms taken.
+The documentation includes a demonstration of the system's operation, launching two LED chains on video and recording the corresponding oscillograms.
 
+Export folder contains images of UML models and algorithms.
 
+UML VP Project describes the architecture of hardware and system functionality in general. 
+
+VHDL modules folder includes word documents for each of Verilog modules in the Vivado project.
+
+Registers.docx file documents memory-mapped interface of the controller.
+
+*.graphml files are used to describe flowcharts.
 
 ## Hardware
 
@@ -39,7 +47,9 @@ The documentation contains a demonstration of how the system works, running two 
 
 ## Software + Hardware
 
-Vivado quite often does not allow you to synthesise a project created on another computer. That is why you may have a problem with using an existing project "SK9822_ZTurn_30x2LEDs".
+Vivado quite often does not allow to synthesise a project created on another computer. That is why you may have a problem with using an existing project "SK9822_ZTurn_30x2LEDs".
+
+### Vivado
 
 These steps describe how to create your own "SK9822_ZTurn_30x2LEDs" project from scratch:
 
@@ -129,6 +139,9 @@ To get a hardware design, which you can use in Vitis as a hardware platform you 
 * Click "Generate Bitstream" under "PROGRAM AND DEBUG".
 * After the write_bistream is complete, go to File->Export->Export Hadware
 * Select "Include bitstream", specify the name and path for the hardware description file, click "Next" and "Finish".
+
+### Vitis
+
 
 ## Resources
 
