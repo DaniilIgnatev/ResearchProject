@@ -43,15 +43,9 @@ Registers.docx file documents memory-mapped interface of the controller.
 
 ## Hardware
 
-## Software
+### SK9822_ZTurn_30x2LEDs
 
-## Software + Hardware
-
-Vivado quite often does not allow to synthesise a project created on another computer. That is why you may have a problem with using an existing project "SK9822_ZTurn_30x2LEDs".
-
-### Vivado
-
-These steps describe how to create your own "SK9822_ZTurn_30x2LEDs" project from scratch:
+Vivado quite often does not allow to synthesise a project created on another computer. That is why you may have a problem with using an existing project "SK9822_ZTurn_30x2LEDs". These steps describe how to create your own "SK9822_ZTurn_30x2LEDs" project from scratch:
 
 * Run Vivado 2023.2.1 or a newer version.
 * From the quick start menu, select "Create Project" and press "Next"..
@@ -140,8 +134,49 @@ To get a hardware design, which you can use in Vitis as a hardware platform you 
 * After the write_bistream is complete, go to File->Export->Export Hadware
 * Select "Include bitstream", specify the name and path for the hardware description file, click "Next" and "Finish".
 
-### Vitis
+## Software
 
+## Software + Hardware
+
+This folder already contains a prepaired set of projects as a Vitis solution, which you can open and study. However, as with Vivado, Vitis doesn't allow do compile a project which is previously set up for another PC. You should follow these steps to replicate the project for yourself:
+
+* Run Vitis 2023.2.
+* Open Workspace and select an empty directory.
+* Click "Create Platform Component".
+* Select a default name and click "Next".
+* Select "Hardware Design" and click "Browse".
+* In the dialog window open "Hardware/VHDL/SK9822_ZTurn_30x2LEDs/design_main_wrapper.xsa" file and click "Next".
+* After a while the app will update configuration and detect the processor, just click "Next" and the "Finish".
+* Open "Flow" window in Vitis and select component "platform".
+* Run "Build" action.
+
+Next we need to create software projects, which will run on the defined hardware platform.
+
+This software component represents the "Single" mode, when the user has to start the next transmission manually each time they wan't to display the new data.
+
+* Go to "Get Started", "Examples" and select "Hello World" software example.
+* Click on "Create Application Component from Template".
+* Change the name for "Single" and click "Next".
+* Select the platform "platform" and click "Next", "Next" and "Finish".
+* Copy files from the repository "Software/PS/Driver" to the project folder "Single/src".
+* Delete file "Single/src/helloworld.c"
+* Copy files from the repository "Software/PS/Examples/Single" to the project folder "Single/src".
+* Open "Flow" window in Vitis and select component "Single".
+* Run "Build" action.
+* To run the project use "Debug" tab at the top left menu.
+
+This software component represents the "Continuous" mode, when the user doesn't need to start the transmission, but the controller does it when finishes the previous one.
+
+* Go to "Get Started", "Examples" and select "Hello World" software example.
+* Click on "Create Application Component from Template".
+* Change the name for "Continuous" and click "Next".
+* Select the platform "platform" and click "Next", "Next" and "Finish".
+* Copy files from the repository "Software/PS/Driver" to the project folder "Continuous/src".
+* Delete file "Continuous/src/helloworld.c"
+* Copy files from the repository "Software/PS/Examples/Continuous" to the project folder "Continuous/src".
+* Open "Flow" window in Vitis and select component "Continuous".
+* Run "Build" action.
+* To run the project use "Debug" tab at the top left menu.
 
 ## Resources
 
