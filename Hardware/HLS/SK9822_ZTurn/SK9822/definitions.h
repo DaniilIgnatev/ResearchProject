@@ -5,7 +5,7 @@
 #include <hls_stream.h>
 #include "C:/Xilinx/Vitis_HLS/2023.2/include/etc/ap_utils.h"
 
-#define LED_number 3
+#define LED_number 1
 #define max_global_brightness 8
 
 typedef ap_uint<1> bit;

@@ -1,7 +1,7 @@
 {
   "design": {
     "design_info": {
-      "boundary_crc": "0x750D349296A4FFB4",
+      "boundary_crc": "0x40492964A3E0E242",
       "device": "xc7z020clg400-1",
       "gen_directory": "../../../../HLS_tests.gen/sources_1/bd/design_1",
       "name": "design_1",
@@ -114,6 +114,54 @@
           }
         }
       },
+      "out_debug1_0": {
+        "type": "data",
+        "direction": "O",
+        "left": "0",
+        "right": "0",
+        "parameters": {
+          "LAYERED_METADATA": {
+            "value": "undef",
+            "value_src": "default"
+          }
+        }
+      },
+      "out_debug2_0": {
+        "type": "data",
+        "direction": "O",
+        "left": "0",
+        "right": "0",
+        "parameters": {
+          "LAYERED_METADATA": {
+            "value": "undef",
+            "value_src": "default"
+          }
+        }
+      },
+      "out_debug3_0": {
+        "type": "data",
+        "direction": "O",
+        "left": "0",
+        "right": "0",
+        "parameters": {
+          "LAYERED_METADATA": {
+            "value": "undef",
+            "value_src": "default"
+          }
+        }
+      },
+      "out_debug4_0": {
+        "type": "data",
+        "direction": "O",
+        "left": "0",
+        "right": "0",
+        "parameters": {
+          "LAYERED_METADATA": {
+            "value": "undef",
+            "value_src": "default"
+          }
+        }
+      },
       "in_CSR_INSEL_0": {
         "type": "data",
         "direction": "I",
@@ -186,6 +234,30 @@
           }
         }
       },
+      "in_B_0": {
+        "type": "data",
+        "direction": "I",
+        "left": "7",
+        "right": "0",
+        "parameters": {
+          "LAYERED_METADATA": {
+            "value": "undef",
+            "value_src": "default"
+          }
+        }
+      },
+      "in_G_0": {
+        "type": "data",
+        "direction": "I",
+        "left": "7",
+        "right": "0",
+        "parameters": {
+          "LAYERED_METADATA": {
+            "value": "undef",
+            "value_src": "default"
+          }
+        }
+      },
       "in_ICSR_CTI_0": {
         "type": "data",
         "direction": "I",
@@ -210,18 +282,6 @@
           }
         }
       },
-      "in_LEDs_0": {
-        "type": "data",
-        "direction": "I",
-        "left": "95",
-        "right": "0",
-        "parameters": {
-          "LAYERED_METADATA": {
-            "value": "undef",
-            "value_src": "default"
-          }
-        }
-      },
       "in_R_0": {
         "type": "data",
         "direction": "I",
@@ -234,70 +294,10 @@
           }
         }
       },
-      "in_G_0": {
+      "in_LEDs_0": {
         "type": "data",
         "direction": "I",
-        "left": "7",
-        "right": "0",
-        "parameters": {
-          "LAYERED_METADATA": {
-            "value": "undef",
-            "value_src": "default"
-          }
-        }
-      },
-      "in_B_0": {
-        "type": "data",
-        "direction": "I",
-        "left": "7",
-        "right": "0",
-        "parameters": {
-          "LAYERED_METADATA": {
-            "value": "undef",
-            "value_src": "default"
-          }
-        }
-      },
-      "out_debug1_0": {
-        "type": "data",
-        "direction": "O",
-        "left": "0",
-        "right": "0",
-        "parameters": {
-          "LAYERED_METADATA": {
-            "value": "undef",
-            "value_src": "default"
-          }
-        }
-      },
-      "out_debug2_0": {
-        "type": "data",
-        "direction": "O",
-        "left": "0",
-        "right": "0",
-        "parameters": {
-          "LAYERED_METADATA": {
-            "value": "undef",
-            "value_src": "default"
-          }
-        }
-      },
-      "out_debug3_0": {
-        "type": "data",
-        "direction": "O",
-        "left": "0",
-        "right": "0",
-        "parameters": {
-          "LAYERED_METADATA": {
-            "value": "undef",
-            "value_src": "default"
-          }
-        }
-      },
-      "out_debug4_0": {
-        "type": "data",
-        "direction": "O",
-        "left": "0",
+        "left": "31",
         "right": "0",
         "parameters": {
           "LAYERED_METADATA": {
@@ -372,7 +372,7 @@
       },
       "SK9822_0": {
         "vlnv": "xilinx.com:hls:SK9822:1.0",
-        "ip_revision": "2113369234",
+        "ip_revision": "2113427946",
         "xci_name": "design_1_SK9822_0_0",
         "xci_path": "ip\\design_1_SK9822_0_0\\design_1_SK9822_0_0.xci",
         "inst_hier_path": "SK9822_0"

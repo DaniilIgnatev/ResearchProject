@@ -48,7 +48,7 @@
 
 
 // IP VLNV: xilinx.com:hls:SK9822:1.0
-// IP Revision: 2113369234
+// IP Revision: 2113427946
 
 `timescale 1ns/1ps
 
@@ -135,7 +135,7 @@ input wire [0 : 0] in_ICSR_CTI;
 input wire [0 : 0] in_ICSR_STI;
 (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME in_LEDs, LAYERED_METADATA undef" *)
 (* X_INTERFACE_INFO = "xilinx.com:signal:data:1.0 in_LEDs DATA" *)
-input wire [95 : 0] in_LEDs;
+input wire [31 : 0] in_LEDs;
 (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME in_R, LAYERED_METADATA undef" *)
 (* X_INTERFACE_INFO = "xilinx.com:signal:data:1.0 in_R DATA" *)
 input wire [7 : 0] in_R;

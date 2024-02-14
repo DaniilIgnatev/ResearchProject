@@ -35,15 +35,14 @@ module SK9822_start_transmit (
         started_o_ap_vld
 );
 
-parameter    ap_ST_fsm_state1 = 9'd1;
-parameter    ap_ST_fsm_state2 = 9'd2;
-parameter    ap_ST_fsm_state3 = 9'd4;
-parameter    ap_ST_fsm_state4 = 9'd8;
-parameter    ap_ST_fsm_state5 = 9'd16;
-parameter    ap_ST_fsm_state6 = 9'd32;
-parameter    ap_ST_fsm_state7 = 9'd64;
-parameter    ap_ST_fsm_state8 = 9'd128;
-parameter    ap_ST_fsm_state9 = 9'd256;
+parameter    ap_ST_fsm_state1 = 8'd1;
+parameter    ap_ST_fsm_state2 = 8'd2;
+parameter    ap_ST_fsm_state3 = 8'd4;
+parameter    ap_ST_fsm_state4 = 8'd8;
+parameter    ap_ST_fsm_state5 = 8'd16;
+parameter    ap_ST_fsm_state6 = 8'd32;
+parameter    ap_ST_fsm_state7 = 8'd64;
+parameter    ap_ST_fsm_state8 = 8'd128;
 
 input   ap_clk;
 input   ap_rst;
@@ -75,24 +74,18 @@ output   started_o_ap_vld;
 reg ap_done;
 reg ap_idle;
 reg ap_ready;
+reg[7:0] out_SPI_D;
+reg out_SPI_D_ap_vld;
+reg[0:0] out_SPI_DS;
+reg out_SPI_DS_ap_vld;
 reg[0:0] out_CSR_TI;
 reg out_CSR_TI_ap_vld;
 reg out_ICSR_TI_ap_vld;
 reg[0:0] started_o;
 reg started_o_ap_vld;
 
-(* fsm_encoding = "none" *) reg   [8:0] ap_CS_fsm;
+(* fsm_encoding = "none" *) reg   [7:0] ap_CS_fsm;
 wire    ap_CS_fsm_state1;
-reg   [7:0] out_SPI_D_1_data_reg;
-reg   [7:0] out_SPI_D_1_data_in;
-reg    out_SPI_D_1_vld_reg;
-reg    out_SPI_D_1_vld_in;
-reg    out_SPI_D_1_ack_in;
-reg   [0:0] out_SPI_DS_1_data_reg;
-reg   [0:0] out_SPI_DS_1_data_in;
-reg    out_SPI_DS_1_vld_reg;
-reg    out_SPI_DS_1_vld_in;
-reg    out_SPI_DS_1_ack_in;
 wire   [0:0] started_load_load_fu_160_p1;
 reg   [0:0] started_load_reg_215;
 wire    grp_transmit_start_bytes_fu_121_ap_start;
@@ -135,31 +128,24 @@ wire    ap_CS_fsm_state4;
 reg    grp_transmit_fullcolors_fu_141_ap_start_reg;
 wire    ap_CS_fsm_state5;
 reg    grp_transmit_end_bytes_fu_152_ap_start_reg;
-wire    ap_CS_fsm_state6;
 wire    ap_CS_fsm_state7;
-reg    ap_block_state4_on_subcall_done;
 wire    ap_CS_fsm_state8;
-wire    ap_CS_fsm_state9;
-reg    ap_block_state9;
-reg   [8:0] ap_NS_fsm;
+reg    ap_block_state4_on_subcall_done;
+reg    ap_block_state8_on_subcall_done;
+reg   [7:0] ap_NS_fsm;
 reg    ap_ST_fsm_state1_blk;
 reg    ap_ST_fsm_state2_blk;
 wire    ap_ST_fsm_state3_blk;
 reg    ap_ST_fsm_state4_blk;
 wire    ap_ST_fsm_state5_blk;
 wire    ap_ST_fsm_state6_blk;
-reg    ap_ST_fsm_state7_blk;
-wire    ap_ST_fsm_state8_blk;
-reg    ap_ST_fsm_state9_blk;
+wire    ap_ST_fsm_state7_blk;
+reg    ap_ST_fsm_state8_blk;
 wire    ap_ce_reg;
 
 // power-on initialization
 initial begin
-#0 ap_CS_fsm = 9'd1;
-#0 out_SPI_D_1_data_reg = 8'd0;
-#0 out_SPI_D_1_vld_reg = 1'b0;
-#0 out_SPI_DS_1_data_reg = 1'd0;
-#0 out_SPI_DS_1_vld_reg = 1'b0;
+#0 ap_CS_fsm = 8'd1;
 #0 grp_transmit_start_bytes_fu_121_ap_start_reg = 1'b0;
 #0 grp_transmit_binarycolors_fu_129_ap_start_reg = 1'b0;
 #0 grp_transmit_fullcolors_fu_141_ap_start_reg = 1'b0;
@@ -249,7 +235,7 @@ always @ (posedge ap_clk) begin
     if (ap_rst == 1'b1) begin
         grp_transmit_end_bytes_fu_152_ap_start_reg <= 1'b0;
     end else begin
-        if ((1'b1 == ap_CS_fsm_state6)) begin
+        if ((1'b1 == ap_CS_fsm_state7)) begin
             grp_transmit_end_bytes_fu_152_ap_start_reg <= 1'b1;
         end else if ((grp_transmit_end_bytes_fu_152_ap_ready == 1'b1)) begin
             grp_transmit_end_bytes_fu_152_ap_start_reg <= 1'b0;
@@ -273,39 +259,11 @@ always @ (posedge ap_clk) begin
     if (ap_rst == 1'b1) begin
         grp_transmit_start_bytes_fu_121_ap_start_reg <= 1'b0;
     end else begin
-        if (((1'b1 == ap_CS_fsm_state1) & (ap_start == 1'b1) & (started_load_load_fu_160_p1 == 1'd1))) begin
+        if (((started_load_load_fu_160_p1 == 1'd1) & (1'b1 == ap_CS_fsm_state1) & (ap_start == 1'b1))) begin
             grp_transmit_start_bytes_fu_121_ap_start_reg <= 1'b1;
         end else if ((grp_transmit_start_bytes_fu_121_ap_ready == 1'b1)) begin
             grp_transmit_start_bytes_fu_121_ap_start_reg <= 1'b0;
         end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if ((~((1'b1 == ap_CS_fsm_state1) & (ap_start == 1'b0)) & (out_SPI_DS_1_vld_in == 1'b1) & (out_SPI_DS_1_vld_reg == 1'b0))) begin
-        out_SPI_DS_1_vld_reg <= 1'b1;
-    end else if (((1'b1 == 1'b1) & (out_SPI_DS_1_vld_in == 1'b0) & (out_SPI_DS_1_vld_reg == 1'b1))) begin
-        out_SPI_DS_1_vld_reg <= 1'b0;
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if ((~((1'b1 == ap_CS_fsm_state1) & (ap_start == 1'b0)) & (out_SPI_D_1_vld_in == 1'b1) & (out_SPI_D_1_vld_reg == 1'b0))) begin
-        out_SPI_D_1_vld_reg <= 1'b1;
-    end else if (((1'b1 == 1'b1) & (out_SPI_D_1_vld_in == 1'b0) & (out_SPI_D_1_vld_reg == 1'b1))) begin
-        out_SPI_D_1_vld_reg <= 1'b0;
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (((~((1'b1 == ap_CS_fsm_state1) & (ap_start == 1'b0)) & (1'b1 == 1'b1) & (out_SPI_DS_1_vld_in == 1'b1) & (out_SPI_DS_1_vld_reg == 1'b1)) | (~((1'b1 == ap_CS_fsm_state1) & (ap_start == 1'b0)) & (out_SPI_DS_1_vld_in == 1'b1) & (out_SPI_DS_1_vld_reg == 1'b0)))) begin
-        out_SPI_DS_1_data_reg <= out_SPI_DS_1_data_in;
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (((~((1'b1 == ap_CS_fsm_state1) & (ap_start == 1'b0)) & (1'b1 == 1'b1) & (out_SPI_D_1_vld_in == 1'b1) & (out_SPI_D_1_vld_reg == 1'b1)) | (~((1'b1 == ap_CS_fsm_state1) & (ap_start == 1'b0)) & (out_SPI_D_1_vld_in == 1'b1) & (out_SPI_D_1_vld_reg == 1'b0)))) begin
-        out_SPI_D_1_data_reg <= out_SPI_D_1_data_in;
     end
 end
 
@@ -345,26 +303,18 @@ assign ap_ST_fsm_state5_blk = 1'b0;
 
 assign ap_ST_fsm_state6_blk = 1'b0;
 
-always @ (*) begin
-    if ((grp_transmit_end_bytes_fu_152_ap_done == 1'b0)) begin
-        ap_ST_fsm_state7_blk = 1'b1;
-    end else begin
-        ap_ST_fsm_state7_blk = 1'b0;
-    end
-end
-
-assign ap_ST_fsm_state8_blk = 1'b0;
+assign ap_ST_fsm_state7_blk = 1'b0;
 
 always @ (*) begin
-    if ((1'b1 == ap_block_state9)) begin
-        ap_ST_fsm_state9_blk = 1'b1;
+    if ((1'b1 == ap_block_state8_on_subcall_done)) begin
+        ap_ST_fsm_state8_blk = 1'b1;
     end else begin
-        ap_ST_fsm_state9_blk = 1'b0;
+        ap_ST_fsm_state8_blk = 1'b0;
     end
 end
 
 always @ (*) begin
-    if ((((1'b0 == ap_block_state9) & (1'b1 == ap_CS_fsm_state9)) | ((1'b1 == ap_CS_fsm_state1) & (ap_start == 1'b0)))) begin
+    if ((((1'b1 == ap_CS_fsm_state1) & (ap_start == 1'b0)) | ((1'b1 == ap_CS_fsm_state8) & (1'b0 == ap_block_state8_on_subcall_done)))) begin
         ap_done = 1'b1;
     end else begin
         ap_done = 1'b0;
@@ -380,7 +330,7 @@ always @ (*) begin
 end
 
 always @ (*) begin
-    if (((1'b0 == ap_block_state9) & (1'b1 == ap_CS_fsm_state9))) begin
+    if (((1'b1 == ap_CS_fsm_state8) & (1'b0 == ap_block_state8_on_subcall_done))) begin
         ap_ready = 1'b1;
     end else begin
         ap_ready = 1'b0;
@@ -388,9 +338,9 @@ always @ (*) begin
 end
 
 always @ (*) begin
-    if (((1'b1 == ap_CS_fsm_state8) & (started_load_reg_215 == 1'd1))) begin
+    if (((started_load_reg_215 == 1'd1) & (1'b1 == ap_CS_fsm_state8) & (1'b0 == ap_block_state8_on_subcall_done))) begin
         out_CSR_TI = in_CSR_LOOP_val;
-    end else if (((1'b1 == ap_CS_fsm_state1) & (ap_start == 1'b1) & (started_load_load_fu_160_p1 == 1'd1))) begin
+    end else if (((started_load_load_fu_160_p1 == 1'd1) & (1'b1 == ap_CS_fsm_state1) & (ap_start == 1'b1))) begin
         out_CSR_TI = 1'd1;
     end else begin
         out_CSR_TI = 'bx;
@@ -398,7 +348,7 @@ always @ (*) begin
 end
 
 always @ (*) begin
-    if ((((1'b1 == ap_CS_fsm_state1) & (ap_start == 1'b1) & (started_load_load_fu_160_p1 == 1'd1)) | ((1'b1 == ap_CS_fsm_state8) & (started_load_reg_215 == 1'd1)))) begin
+    if ((((started_load_reg_215 == 1'd1) & (1'b1 == ap_CS_fsm_state8) & (1'b0 == ap_block_state8_on_subcall_done)) | ((started_load_load_fu_160_p1 == 1'd1) & (1'b1 == ap_CS_fsm_state1) & (ap_start == 1'b1)))) begin
         out_CSR_TI_ap_vld = 1'b1;
     end else begin
         out_CSR_TI_ap_vld = 1'b0;
@@ -406,7 +356,7 @@ always @ (*) begin
 end
 
 always @ (*) begin
-    if (((1'b1 == ap_CS_fsm_state8) & (started_load_reg_215 == 1'd1))) begin
+    if (((started_load_reg_215 == 1'd1) & (1'b1 == ap_CS_fsm_state8) & (1'b0 == ap_block_state8_on_subcall_done))) begin
         out_ICSR_TI_ap_vld = 1'b1;
     end else begin
         out_ICSR_TI_ap_vld = 1'b0;
@@ -414,74 +364,58 @@ always @ (*) begin
 end
 
 always @ (*) begin
-    if (((out_SPI_DS_1_vld_reg == 1'b0) | ((1'b1 == 1'b1) & (out_SPI_DS_1_vld_reg == 1'b1)))) begin
-        out_SPI_DS_1_ack_in = 1'b1;
+    if (((started_load_reg_215 == 1'd1) & (1'b1 == ap_CS_fsm_state8) & (grp_transmit_end_bytes_fu_152_out_SPI_D_ap_vld == 1'b1))) begin
+        out_SPI_D = grp_transmit_end_bytes_fu_152_out_SPI_D;
+    end else if (((grp_transmit_fullcolors_fu_141_out_SPI_D_ap_vld == 1'b1) & (in_CSR_INSEL_val == 1'd1) & (1'b1 == ap_CS_fsm_state4))) begin
+        out_SPI_D = grp_transmit_fullcolors_fu_141_out_SPI_D;
+    end else if (((grp_transmit_binarycolors_fu_129_out_SPI_D_ap_vld == 1'b1) & (in_CSR_INSEL_val == 1'd0) & (1'b1 == ap_CS_fsm_state4))) begin
+        out_SPI_D = grp_transmit_binarycolors_fu_129_out_SPI_D;
+    end else if (((grp_transmit_start_bytes_fu_121_out_SPI_D_ap_vld == 1'b1) & (1'b1 == ap_CS_fsm_state2))) begin
+        out_SPI_D = grp_transmit_start_bytes_fu_121_out_SPI_D;
     end else begin
-        out_SPI_DS_1_ack_in = 1'b0;
+        out_SPI_D = 'bx;
     end
 end
 
 always @ (*) begin
-    if (((1'b1 == ap_CS_fsm_state7) & (grp_transmit_end_bytes_fu_152_out_SPI_DS_ap_vld == 1'b1))) begin
-        out_SPI_DS_1_data_in = grp_transmit_end_bytes_fu_152_out_SPI_DS;
-    end else if (((1'b1 == ap_CS_fsm_state4) & (grp_transmit_fullcolors_fu_141_out_SPI_DS_ap_vld == 1'b1) & (in_CSR_INSEL_val == 1'd1))) begin
-        out_SPI_DS_1_data_in = grp_transmit_fullcolors_fu_141_out_SPI_DS;
-    end else if (((1'b1 == ap_CS_fsm_state4) & (grp_transmit_binarycolors_fu_129_out_SPI_DS_ap_vld == 1'b1) & (in_CSR_INSEL_val == 1'd0))) begin
-        out_SPI_DS_1_data_in = grp_transmit_binarycolors_fu_129_out_SPI_DS;
-    end else if (((1'b1 == ap_CS_fsm_state2) & (grp_transmit_start_bytes_fu_121_out_SPI_DS_ap_vld == 1'b1))) begin
-        out_SPI_DS_1_data_in = grp_transmit_start_bytes_fu_121_out_SPI_DS;
+    if (((started_load_reg_215 == 1'd1) & (1'b1 == ap_CS_fsm_state8) & (grp_transmit_end_bytes_fu_152_out_SPI_DS_ap_vld == 1'b1))) begin
+        out_SPI_DS = grp_transmit_end_bytes_fu_152_out_SPI_DS;
+    end else if (((in_CSR_INSEL_val == 1'd1) & (1'b1 == ap_CS_fsm_state4) & (grp_transmit_fullcolors_fu_141_out_SPI_DS_ap_vld == 1'b1))) begin
+        out_SPI_DS = grp_transmit_fullcolors_fu_141_out_SPI_DS;
+    end else if (((grp_transmit_binarycolors_fu_129_out_SPI_DS_ap_vld == 1'b1) & (in_CSR_INSEL_val == 1'd0) & (1'b1 == ap_CS_fsm_state4))) begin
+        out_SPI_DS = grp_transmit_binarycolors_fu_129_out_SPI_DS;
+    end else if (((grp_transmit_start_bytes_fu_121_out_SPI_DS_ap_vld == 1'b1) & (1'b1 == ap_CS_fsm_state2))) begin
+        out_SPI_DS = grp_transmit_start_bytes_fu_121_out_SPI_DS;
     end else begin
-        out_SPI_DS_1_data_in = 'bx;
+        out_SPI_DS = 'bx;
     end
 end
 
 always @ (*) begin
-    if ((1'b1 == ap_CS_fsm_state7)) begin
-        out_SPI_DS_1_vld_in = grp_transmit_end_bytes_fu_152_out_SPI_DS_ap_vld;
-    end else if (((1'b1 == ap_CS_fsm_state4) & (in_CSR_INSEL_val == 1'd1))) begin
-        out_SPI_DS_1_vld_in = grp_transmit_fullcolors_fu_141_out_SPI_DS_ap_vld;
-    end else if (((1'b1 == ap_CS_fsm_state4) & (in_CSR_INSEL_val == 1'd0))) begin
-        out_SPI_DS_1_vld_in = grp_transmit_binarycolors_fu_129_out_SPI_DS_ap_vld;
+    if (((started_load_reg_215 == 1'd1) & (1'b1 == ap_CS_fsm_state8))) begin
+        out_SPI_DS_ap_vld = grp_transmit_end_bytes_fu_152_out_SPI_DS_ap_vld;
+    end else if (((in_CSR_INSEL_val == 1'd1) & (1'b1 == ap_CS_fsm_state4))) begin
+        out_SPI_DS_ap_vld = grp_transmit_fullcolors_fu_141_out_SPI_DS_ap_vld;
+    end else if (((in_CSR_INSEL_val == 1'd0) & (1'b1 == ap_CS_fsm_state4))) begin
+        out_SPI_DS_ap_vld = grp_transmit_binarycolors_fu_129_out_SPI_DS_ap_vld;
     end else if ((1'b1 == ap_CS_fsm_state2)) begin
-        out_SPI_DS_1_vld_in = grp_transmit_start_bytes_fu_121_out_SPI_DS_ap_vld;
+        out_SPI_DS_ap_vld = grp_transmit_start_bytes_fu_121_out_SPI_DS_ap_vld;
     end else begin
-        out_SPI_DS_1_vld_in = 1'b0;
+        out_SPI_DS_ap_vld = 1'b0;
     end
 end
 
 always @ (*) begin
-    if (((out_SPI_D_1_vld_reg == 1'b0) | ((1'b1 == 1'b1) & (out_SPI_D_1_vld_reg == 1'b1)))) begin
-        out_SPI_D_1_ack_in = 1'b1;
-    end else begin
-        out_SPI_D_1_ack_in = 1'b0;
-    end
-end
-
-always @ (*) begin
-    if (((1'b1 == ap_CS_fsm_state7) & (grp_transmit_end_bytes_fu_152_out_SPI_D_ap_vld == 1'b1))) begin
-        out_SPI_D_1_data_in = grp_transmit_end_bytes_fu_152_out_SPI_D;
-    end else if (((1'b1 == ap_CS_fsm_state4) & (grp_transmit_fullcolors_fu_141_out_SPI_D_ap_vld == 1'b1) & (in_CSR_INSEL_val == 1'd1))) begin
-        out_SPI_D_1_data_in = grp_transmit_fullcolors_fu_141_out_SPI_D;
-    end else if (((1'b1 == ap_CS_fsm_state4) & (grp_transmit_binarycolors_fu_129_out_SPI_D_ap_vld == 1'b1) & (in_CSR_INSEL_val == 1'd0))) begin
-        out_SPI_D_1_data_in = grp_transmit_binarycolors_fu_129_out_SPI_D;
-    end else if (((1'b1 == ap_CS_fsm_state2) & (grp_transmit_start_bytes_fu_121_out_SPI_D_ap_vld == 1'b1))) begin
-        out_SPI_D_1_data_in = grp_transmit_start_bytes_fu_121_out_SPI_D;
-    end else begin
-        out_SPI_D_1_data_in = 'bx;
-    end
-end
-
-always @ (*) begin
-    if ((1'b1 == ap_CS_fsm_state7)) begin
-        out_SPI_D_1_vld_in = grp_transmit_end_bytes_fu_152_out_SPI_D_ap_vld;
-    end else if (((1'b1 == ap_CS_fsm_state4) & (in_CSR_INSEL_val == 1'd1))) begin
-        out_SPI_D_1_vld_in = grp_transmit_fullcolors_fu_141_out_SPI_D_ap_vld;
-    end else if (((1'b1 == ap_CS_fsm_state4) & (in_CSR_INSEL_val == 1'd0))) begin
-        out_SPI_D_1_vld_in = grp_transmit_binarycolors_fu_129_out_SPI_D_ap_vld;
+    if (((started_load_reg_215 == 1'd1) & (1'b1 == ap_CS_fsm_state8))) begin
+        out_SPI_D_ap_vld = grp_transmit_end_bytes_fu_152_out_SPI_D_ap_vld;
+    end else if (((in_CSR_INSEL_val == 1'd1) & (1'b1 == ap_CS_fsm_state4))) begin
+        out_SPI_D_ap_vld = grp_transmit_fullcolors_fu_141_out_SPI_D_ap_vld;
+    end else if (((in_CSR_INSEL_val == 1'd0) & (1'b1 == ap_CS_fsm_state4))) begin
+        out_SPI_D_ap_vld = grp_transmit_binarycolors_fu_129_out_SPI_D_ap_vld;
     end else if ((1'b1 == ap_CS_fsm_state2)) begin
-        out_SPI_D_1_vld_in = grp_transmit_start_bytes_fu_121_out_SPI_D_ap_vld;
+        out_SPI_D_ap_vld = grp_transmit_start_bytes_fu_121_out_SPI_D_ap_vld;
     end else begin
-        out_SPI_D_1_vld_in = 1'b0;
+        out_SPI_D_ap_vld = 1'b0;
     end
 end
 
@@ -494,7 +428,7 @@ always @ (*) begin
 end
 
 always @ (*) begin
-    if (((1'b0 == ap_block_state4_on_subcall_done) & (1'b1 == ap_CS_fsm_state4))) begin
+    if (((1'b1 == ap_CS_fsm_state4) & (1'b0 == ap_block_state4_on_subcall_done))) begin
         started_o_ap_vld = 1'b1;
     end else begin
         started_o_ap_vld = 1'b0;
@@ -504,18 +438,18 @@ end
 always @ (*) begin
     case (ap_CS_fsm)
         ap_ST_fsm_state1 : begin
-            if (((1'b1 == ap_CS_fsm_state1) & (ap_start == 1'b1) & (started_load_load_fu_160_p1 == 1'd0))) begin
+            if (((started_load_load_fu_160_p1 == 1'd0) & (1'b1 == ap_CS_fsm_state1) & (ap_start == 1'b1))) begin
                 ap_NS_fsm = ap_ST_fsm_state8;
-            end else if (((1'b1 == ap_CS_fsm_state1) & (ap_start == 1'b1) & (started_load_load_fu_160_p1 == 1'd1))) begin
+            end else if (((started_load_load_fu_160_p1 == 1'd1) & (1'b1 == ap_CS_fsm_state1) & (ap_start == 1'b1))) begin
                 ap_NS_fsm = ap_ST_fsm_state2;
             end else begin
                 ap_NS_fsm = ap_ST_fsm_state1;
             end
         end
         ap_ST_fsm_state2 : begin
-            if (((1'b1 == ap_CS_fsm_state2) & (grp_transmit_start_bytes_fu_121_ap_done == 1'b1) & (in_CSR_INSEL_val == 1'd1))) begin
+            if (((grp_transmit_start_bytes_fu_121_ap_done == 1'b1) & (in_CSR_INSEL_val == 1'd1) & (1'b1 == ap_CS_fsm_state2))) begin
                 ap_NS_fsm = ap_ST_fsm_state5;
-            end else if (((1'b1 == ap_CS_fsm_state2) & (grp_transmit_start_bytes_fu_121_ap_done == 1'b1) & (in_CSR_INSEL_val == 1'd0))) begin
+            end else if (((grp_transmit_start_bytes_fu_121_ap_done == 1'b1) & (in_CSR_INSEL_val == 1'd0) & (1'b1 == ap_CS_fsm_state2))) begin
                 ap_NS_fsm = ap_ST_fsm_state3;
             end else begin
                 ap_NS_fsm = ap_ST_fsm_state2;
@@ -525,7 +459,7 @@ always @ (*) begin
             ap_NS_fsm = ap_ST_fsm_state4;
         end
         ap_ST_fsm_state4 : begin
-            if (((1'b0 == ap_block_state4_on_subcall_done) & (1'b1 == ap_CS_fsm_state4))) begin
+            if (((1'b1 == ap_CS_fsm_state4) & (1'b0 == ap_block_state4_on_subcall_done))) begin
                 ap_NS_fsm = ap_ST_fsm_state6;
             end else begin
                 ap_NS_fsm = ap_ST_fsm_state4;
@@ -538,20 +472,13 @@ always @ (*) begin
             ap_NS_fsm = ap_ST_fsm_state7;
         end
         ap_ST_fsm_state7 : begin
-            if (((1'b1 == ap_CS_fsm_state7) & (grp_transmit_end_bytes_fu_152_ap_done == 1'b1))) begin
-                ap_NS_fsm = ap_ST_fsm_state8;
-            end else begin
-                ap_NS_fsm = ap_ST_fsm_state7;
-            end
+            ap_NS_fsm = ap_ST_fsm_state8;
         end
         ap_ST_fsm_state8 : begin
-            ap_NS_fsm = ap_ST_fsm_state9;
-        end
-        ap_ST_fsm_state9 : begin
-            if (((1'b0 == ap_block_state9) & (1'b1 == ap_CS_fsm_state9))) begin
+            if (((1'b1 == ap_CS_fsm_state8) & (1'b0 == ap_block_state8_on_subcall_done))) begin
                 ap_NS_fsm = ap_ST_fsm_state1;
             end else begin
-                ap_NS_fsm = ap_ST_fsm_state9;
+                ap_NS_fsm = ap_ST_fsm_state8;
             end
         end
         default : begin
@@ -570,20 +497,16 @@ assign ap_CS_fsm_state4 = ap_CS_fsm[32'd3];
 
 assign ap_CS_fsm_state5 = ap_CS_fsm[32'd4];
 
-assign ap_CS_fsm_state6 = ap_CS_fsm[32'd5];
-
 assign ap_CS_fsm_state7 = ap_CS_fsm[32'd6];
 
 assign ap_CS_fsm_state8 = ap_CS_fsm[32'd7];
-
-assign ap_CS_fsm_state9 = ap_CS_fsm[32'd8];
 
 always @ (*) begin
     ap_block_state4_on_subcall_done = (((grp_transmit_fullcolors_fu_141_ap_done == 1'b0) & (in_CSR_INSEL_val == 1'd1)) | ((grp_transmit_binarycolors_fu_129_ap_done == 1'b0) & (in_CSR_INSEL_val == 1'd0)));
 end
 
 always @ (*) begin
-    ap_block_state9 = ((out_SPI_DS_1_ack_in == 1'b0) | (out_SPI_D_1_ack_in == 1'b0));
+    ap_block_state8_on_subcall_done = ((started_load_reg_215 == 1'd1) & (grp_transmit_end_bytes_fu_152_ap_done == 1'b0));
 end
 
 assign grp_transmit_binarycolors_fu_129_ap_start = grp_transmit_binarycolors_fu_129_ap_start_reg;
@@ -595,14 +518,6 @@ assign grp_transmit_fullcolors_fu_141_ap_start = grp_transmit_fullcolors_fu_141_
 assign grp_transmit_start_bytes_fu_121_ap_start = grp_transmit_start_bytes_fu_121_ap_start_reg;
 
 assign out_ICSR_TI = in_ICSR_TIEN_val;
-
-assign out_SPI_D = out_SPI_D_1_data_reg;
-
-assign out_SPI_DS = out_SPI_DS_1_data_reg;
-
-assign out_SPI_DS_ap_vld = out_SPI_DS_1_vld_reg;
-
-assign out_SPI_D_ap_vld = out_SPI_D_1_vld_reg;
 
 assign started_load_load_fu_160_p1 = started_i;
 

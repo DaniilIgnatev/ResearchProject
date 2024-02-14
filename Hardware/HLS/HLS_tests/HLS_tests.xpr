@@ -4,7 +4,7 @@
 <!-- Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.                   -->
 <!-- Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.   -->
 
-<Project Product="Vivado" Version="7" Minor="65" Path="C:/Users/folke/OneDrive/Documents/GitHub/ResearchProject/Vivado_Projects/HLS_tests/HLS_tests.xpr">
+<Project Product="Vivado" Version="7" Minor="65" Path="C:/Users/Ignatev/Documents/Projects/Fork/ResearchProject/Hardware/HLS/HLS_tests/HLS_tests.xpr">
   <DefaultLaunch Dir="$PRUNDIR"/>
   <Configuration>
     <Option Name="Id" Val="6883a8c6f7ec40b19d59bb6caf8e5e89"/>
@@ -48,6 +48,7 @@
     <Option Name="DefaultLib" Val="xil_defaultlib"/>
     <Option Name="ProjectType" Val="Default"/>
     <Option Name="IPRepoPath" Val="$PPRDIR/../../Vitis_Projects/SK9822_ZTurn"/>
+    <Option Name="IPRepoPath" Val="$PPRDIR/../SK9822_ZTurn"/>
     <Option Name="IPOutputRepo" Val="$PCACHEDIR/ip"/>
     <Option Name="IPDefaultOutputPath" Val="$PGENDIR/sources_1"/>
     <Option Name="IPCachePermission" Val="read"/>
@@ -60,20 +61,20 @@
     <Option Name="IPStaticSourceDir" Val="$PIPUSERFILESDIR/ipstatic"/>
     <Option Name="EnableBDX" Val="FALSE"/>
     <Option Name="FeatureSet" Val="FeatureSet_Classic"/>
-    <Option Name="WTXSimLaunchSim" Val="212"/>
+    <Option Name="WTXSimLaunchSim" Val="216"/>
     <Option Name="WTModelSimLaunchSim" Val="0"/>
     <Option Name="WTQuestaLaunchSim" Val="0"/>
     <Option Name="WTIesLaunchSim" Val="0"/>
     <Option Name="WTVcsLaunchSim" Val="0"/>
     <Option Name="WTRivieraLaunchSim" Val="0"/>
     <Option Name="WTActivehdlLaunchSim" Val="0"/>
-    <Option Name="WTXSimExportSim" Val="144"/>
-    <Option Name="WTModelSimExportSim" Val="144"/>
-    <Option Name="WTQuestaExportSim" Val="144"/>
+    <Option Name="WTXSimExportSim" Val="146"/>
+    <Option Name="WTModelSimExportSim" Val="146"/>
+    <Option Name="WTQuestaExportSim" Val="146"/>
     <Option Name="WTIesExportSim" Val="0"/>
-    <Option Name="WTVcsExportSim" Val="144"/>
-    <Option Name="WTRivieraExportSim" Val="144"/>
-    <Option Name="WTActivehdlExportSim" Val="144"/>
+    <Option Name="WTVcsExportSim" Val="146"/>
+    <Option Name="WTRivieraExportSim" Val="146"/>
+    <Option Name="WTActivehdlExportSim" Val="146"/>
     <Option Name="GenerateIPUpgradeLog" Val="TRUE"/>
     <Option Name="XSimRadix" Val="hex"/>
     <Option Name="XSimTimeUnit" Val="ns"/>
@@ -91,8 +92,10 @@
   <FileSets Version="1" Minor="32">
     <FileSet Name="sources_1" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1" RelGenDir="$PGENDIR/sources_1">
       <Filter Type="Srcs"/>
-      <File Path="$PPRDIR/../SK9822/SK9822.srcs/sources_1/new/SPI.v">
+      <File Path="$PSRCDIR/sources_1/imports/new/SPI.v">
         <FileInfo>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../VHDL/SK9822/SK9822.srcs/sources_1/new/SPI.v"/>
+          <Attr Name="ImportTime" Val="1703167140"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
@@ -107,6 +110,14 @@
       </File>
       <File Path="$PGENDIR/sources_1/bd/design_1/hdl/design_1_wrapper.v">
         <FileInfo>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PPRDIR/../SK9822/SK9822.srcs/sources_1/new/SPI.v">
+        <FileInfo>
+          <Attr Name="AutoDisabled" Val="1"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>

@@ -716,11 +716,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Thu Jan 04 18:36:52 UTC 2024</spirit:value>
+            <spirit:value>Wed Feb 14 16:08:01 UTC 2024</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:1a4b52e2</spirit:value>
+            <spirit:value>9:9fe1a366</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -736,11 +736,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Thu Jan 04 18:36:52 UTC 2024</spirit:value>
+            <spirit:value>Wed Feb 14 16:08:01 UTC 2024</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:1a4b52e2</spirit:value>
+            <spirit:value>9:9fe1a366</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -1015,7 +1015,7 @@
         <spirit:wire>
           <spirit:direction>in</spirit:direction>
           <spirit:vector>
-            <spirit:left spirit:format="long">95</spirit:left>
+            <spirit:left spirit:format="long">31</spirit:left>
             <spirit:right spirit:format="long">0</spirit:right>
           </spirit:vector>
           <spirit:wireTypeDefs>
@@ -1144,37 +1144,37 @@
     <spirit:fileSet>
       <spirit:name>xilinx_verilogbehavioralsimulation_view_fileset</spirit:name>
       <spirit:file>
-        <spirit:name>../../ipshared/e99a/hdl/verilog/SK9822_start_transmit.v</spirit:name>
+        <spirit:name>../../ipshared/c3ea/hdl/verilog/SK9822_start_transmit.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
         <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/e99a/hdl/verilog/SK9822_transmit_binarycolors.v</spirit:name>
+        <spirit:name>../../ipshared/c3ea/hdl/verilog/SK9822_transmit_binarycolors.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
         <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/e99a/hdl/verilog/SK9822_transmit_byte.v</spirit:name>
+        <spirit:name>../../ipshared/c3ea/hdl/verilog/SK9822_transmit_byte.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
         <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/e99a/hdl/verilog/SK9822_transmit_end_bytes.v</spirit:name>
+        <spirit:name>../../ipshared/c3ea/hdl/verilog/SK9822_transmit_end_bytes.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
         <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/e99a/hdl/verilog/SK9822_transmit_fullcolors.v</spirit:name>
+        <spirit:name>../../ipshared/c3ea/hdl/verilog/SK9822_transmit_fullcolors.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
         <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/e99a/hdl/verilog/SK9822_transmit_start_bytes.v</spirit:name>
+        <spirit:name>../../ipshared/c3ea/hdl/verilog/SK9822_transmit_start_bytes.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
         <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/e99a/hdl/verilog/SK9822.v</spirit:name>
+        <spirit:name>../../ipshared/c3ea/hdl/verilog/SK9822.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
         <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
       </spirit:file>
@@ -1229,7 +1229,7 @@
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>latency</spirit:name>
-      <spirit:value spirit:id="PARAM_VALUE.latency" spirit:order="5">7</spirit:value>
+      <spirit:value spirit:id="PARAM_VALUE.latency" spirit:order="5">4</spirit:value>
       <spirit:vendorExtensions>
         <xilinx:parameterInfo>
           <xilinx:enablement>
@@ -1254,7 +1254,7 @@
     <xilinx:coreExtensions>
       <xilinx:displayName>Sk9822</xilinx:displayName>
       <xilinx:definitionSource>HLS</xilinx:definitionSource>
-      <xilinx:coreRevision>2113369234</xilinx:coreRevision>
+      <xilinx:coreRevision>2113427946</xilinx:coreRevision>
       <xilinx:sdxKernelAttributes>
         <xilinx:sdx_kernel>true</xilinx:sdx_kernel>
         <xilinx:sdx_kernel_type>hls</xilinx:sdx_kernel_type>
@@ -1294,9 +1294,9 @@
     <xilinx:packagingInfo>
       <xilinx:xilinxVersion>2023.2</xilinx:xilinxVersion>
       <xilinx:checksum xilinx:scope="busInterfaces" xilinx:value="27581b10"/>
-      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="4701bfd1"/>
-      <xilinx:checksum xilinx:scope="ports" xilinx:value="81d6a803"/>
-      <xilinx:checksum xilinx:scope="parameters" xilinx:value="2de75ae4"/>
+      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="6c0d5eb5"/>
+      <xilinx:checksum xilinx:scope="ports" xilinx:value="016db48d"/>
+      <xilinx:checksum xilinx:scope="parameters" xilinx:value="428ab267"/>
     </xilinx:packagingInfo>
   </spirit:vendorExtensions>
 </spirit:component>

@@ -4,7 +4,7 @@
     "xci_name": "design_1_SK9822_0_0",
     "cell_name": "SK9822_0",
     "component_reference": "xilinx.com:hls:SK9822:1.0",
-    "ip_revision": "2113369234",
+    "ip_revision": "2113427946",
     "gen_directory": "../../../../../../HLS_tests.gen/sources_1/bd/design_1/ip/design_1_SK9822_0_0",
     "parameters": {
       "component_parameters": {
@@ -12,7 +12,7 @@
         "clk_period": [ { "value": "10", "enabled": false, "usage": "all" } ],
         "machine": [ { "value": "64", "enabled": false, "usage": "all" } ],
         "combinational": [ { "value": "0", "enabled": false, "usage": "all" } ],
-        "latency": [ { "value": "7", "enabled": false, "usage": "all" } ],
+        "latency": [ { "value": "4", "enabled": false, "usage": "all" } ],
         "II": [ { "value": "x", "enabled": false, "usage": "all" } ]
       },
       "project_parameters": {
@@ -30,7 +30,7 @@
       },
       "runtime_parameters": {
         "IPCONTEXT": [ { "value": "IP_Integrator" } ],
-        "IPREVISION": [ { "value": "2113369234" } ],
+        "IPREVISION": [ { "value": "2113427946" } ],
         "MANAGED": [ { "value": "TRUE" } ],
         "OUTPUTDIR": [ { "value": "../../../../../../HLS_tests.gen/sources_1/bd/design_1/ip/design_1_SK9822_0_0" } ],
         "SELECTEDSIMMODEL": [ { "value": "" } ],
@@ -59,7 +59,7 @@
         "out_ICSR_TI": [ { "direction": "out", "size_left": "0", "size_right": "0" } ],
         "in_ICSR_CTI": [ { "direction": "in", "size_left": "0", "size_right": "0" } ],
         "in_ICSR_STI": [ { "direction": "in", "size_left": "0", "size_right": "0" } ],
-        "in_LEDs": [ { "direction": "in", "size_left": "95", "size_right": "0" } ],
+        "in_LEDs": [ { "direction": "in", "size_left": "31", "size_right": "0" } ],
         "in_R": [ { "direction": "in", "size_left": "7", "size_right": "0" } ],
         "in_G": [ { "direction": "in", "size_left": "7", "size_right": "0" } ],
         "in_B": [ { "direction": "in", "size_left": "7", "size_right": "0" } ],

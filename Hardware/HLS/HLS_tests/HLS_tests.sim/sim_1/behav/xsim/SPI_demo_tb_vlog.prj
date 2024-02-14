@@ -1,0 +1,23 @@
+# compile verilog/system verilog design source files
+verilog xil_defaultlib  \
+"../../../../HLS_tests.srcs/sources_1/imports/new/SPI.v" \
+"../../../../HLS_tests.ip_user_files/bd/design_1/ip/design_1_SPI_0_0/sim/design_1_SPI_0_0.v" \
+"../../../../HLS_tests.gen/sources_1/bd/design_1/ipshared/c3ea/hdl/verilog/SK9822_start_transmit.v" \
+"../../../../HLS_tests.gen/sources_1/bd/design_1/ipshared/c3ea/hdl/verilog/SK9822_transmit_binarycolors.v" \
+"../../../../HLS_tests.gen/sources_1/bd/design_1/ipshared/c3ea/hdl/verilog/SK9822_transmit_byte.v" \
+"../../../../HLS_tests.gen/sources_1/bd/design_1/ipshared/c3ea/hdl/verilog/SK9822_transmit_end_bytes.v" \
+"../../../../HLS_tests.gen/sources_1/bd/design_1/ipshared/c3ea/hdl/verilog/SK9822_transmit_fullcolors.v" \
+"../../../../HLS_tests.gen/sources_1/bd/design_1/ipshared/c3ea/hdl/verilog/SK9822_transmit_start_bytes.v" \
+"../../../../HLS_tests.gen/sources_1/bd/design_1/ipshared/c3ea/hdl/verilog/SK9822.v" \
+"../../../../HLS_tests.ip_user_files/bd/design_1/ip/design_1_SK9822_0_0/sim/design_1_SK9822_0_0.v" \
+"../../../../HLS_tests.ip_user_files/bd/design_1/sim/design_1.v" \
+"../../../../HLS_tests.gen/sources_1/bd/design_1/hdl/design_1_wrapper.v" \
+
+sv xil_defaultlib  \
+"../../../../HLS_tests.srcs/sim_1/new/SPI_demo_tb.sv" \
+
+# compile glbl module
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort

@@ -38,7 +38,7 @@ module SPI_demo_tb;
   logic [0:0]in_ICSR_CTI_0;
   logic [0:0]in_ICSR_STI_0;
   logic [0:0]in_ICSR_TIEN_0;
-  logic [95:0]in_LEDs_0;
+  logic [31:0]in_LEDs_0;
   logic [7:0]in_R_0;
   logic [0:0]in_TSR_ST_0;
   logic [0:0]out_CSR_TI_0;
@@ -93,16 +93,16 @@ module SPI_demo_tb;
         
         in_TSR_ST_0 = 0;
         
-        in_GBCR_GB_0 = 5;
+        in_GBCR_GB_0 = 1;
         in_GBCR_INSEL_0 = 0;
         
         in_ICSR_CTI_0 = 0;
         in_ICSR_STI_0 = 0;
         in_ICSR_TIEN_0 = 1;
 
-        in_R_0 = 'b11111100;
+        in_R_0 = 'b11111101;
         in_G_0 = 'b11111010;
-        in_B_0 = 'b11111001;
+        in_B_0 = 'b11111000;
         in_LEDs_0 = 0;
 
         #2ns

@@ -2,8 +2,8 @@
 //Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2023.2 (win64) Build 4029153 Fri Oct 13 20:14:34 MDT 2023
-//Date        : Thu Jan  4 22:36:52 2024
-//Host        : DaniilSP9 running 64-bit major release  (build 9200)
+//Date        : Wed Feb 14 17:08:01 2024
+//Host        : ISCN5CG3184Y0Y running 64-bit major release  (build 9200)
 //Command     : generate_target design_1_wrapper.bd
 //Design      : design_1_wrapper
 //Purpose     : IP block netlist
@@ -54,7 +54,7 @@ module design_1_wrapper
   input [0:0]in_ICSR_CTI_0;
   input [0:0]in_ICSR_STI_0;
   input [0:0]in_ICSR_TIEN_0;
-  input [95:0]in_LEDs_0;
+  input [31:0]in_LEDs_0;
   input [7:0]in_R_0;
   input [0:0]in_TSR_ST_0;
   output [0:0]out_CSR_TI_0;
@@ -81,7 +81,7 @@ module design_1_wrapper
   wire [0:0]in_ICSR_CTI_0;
   wire [0:0]in_ICSR_STI_0;
   wire [0:0]in_ICSR_TIEN_0;
-  wire [95:0]in_LEDs_0;
+  wire [31:0]in_LEDs_0;
   wire [7:0]in_R_0;
   wire [0:0]in_TSR_ST_0;
   wire [0:0]out_CSR_TI_0;

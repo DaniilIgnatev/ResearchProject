@@ -2,8 +2,8 @@
 //Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2023.2 (win64) Build 4029153 Fri Oct 13 20:14:34 MDT 2023
-//Date        : Thu Jan  4 22:36:52 2024
-//Host        : DaniilSP9 running 64-bit major release  (build 9200)
+//Date        : Wed Feb 14 17:08:01 2024
+//Host        : ISCN5CG3184Y0Y running 64-bit major release  (build 9200)
 //Command     : generate_target design_1.bd
 //Design      : design_1
 //Purpose     : IP block netlist
@@ -55,7 +55,7 @@ module design_1
   (* X_INTERFACE_INFO = "xilinx.com:signal:data:1.0 DATA.IN_ICSR_CTI_0 DATA" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME DATA.IN_ICSR_CTI_0, LAYERED_METADATA undef" *) input [0:0]in_ICSR_CTI_0;
   (* X_INTERFACE_INFO = "xilinx.com:signal:data:1.0 DATA.IN_ICSR_STI_0 DATA" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME DATA.IN_ICSR_STI_0, LAYERED_METADATA undef" *) input [0:0]in_ICSR_STI_0;
   (* X_INTERFACE_INFO = "xilinx.com:signal:data:1.0 DATA.IN_ICSR_TIEN_0 DATA" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME DATA.IN_ICSR_TIEN_0, LAYERED_METADATA undef" *) input [0:0]in_ICSR_TIEN_0;
-  (* X_INTERFACE_INFO = "xilinx.com:signal:data:1.0 DATA.IN_LEDS_0 DATA" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME DATA.IN_LEDS_0, LAYERED_METADATA undef" *) input [95:0]in_LEDs_0;
+  (* X_INTERFACE_INFO = "xilinx.com:signal:data:1.0 DATA.IN_LEDS_0 DATA" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME DATA.IN_LEDS_0, LAYERED_METADATA undef" *) input [31:0]in_LEDs_0;
   (* X_INTERFACE_INFO = "xilinx.com:signal:data:1.0 DATA.IN_R_0 DATA" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME DATA.IN_R_0, LAYERED_METADATA undef" *) input [7:0]in_R_0;
   (* X_INTERFACE_INFO = "xilinx.com:signal:data:1.0 DATA.IN_TSR_ST_0 DATA" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME DATA.IN_TSR_ST_0, LAYERED_METADATA undef" *) input [0:0]in_TSR_ST_0;
   (* X_INTERFACE_INFO = "xilinx.com:signal:data:1.0 DATA.OUT_CSR_TI_0 DATA" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME DATA.OUT_CSR_TI_0, LAYERED_METADATA undef" *) output [0:0]out_CSR_TI_0;
@@ -91,7 +91,7 @@ module design_1
   wire [0:0]in_ICSR_CTI_0_1;
   wire [0:0]in_ICSR_STI_0_1;
   wire [0:0]in_ICSR_TIEN_0_1;
-  wire [95:0]in_LEDs_0_1;
+  wire [31:0]in_LEDs_0_1;
   wire [7:0]in_R_0_1;
   wire [0:0]in_TSR_ST_0_1;
 
@@ -112,7 +112,7 @@ module design_1
   assign in_ICSR_CTI_0_1 = in_ICSR_CTI_0[0];
   assign in_ICSR_STI_0_1 = in_ICSR_STI_0[0];
   assign in_ICSR_TIEN_0_1 = in_ICSR_TIEN_0[0];
-  assign in_LEDs_0_1 = in_LEDs_0[95:0];
+  assign in_LEDs_0_1 = in_LEDs_0[31:0];
   assign in_R_0_1 = in_R_0[7:0];
   assign in_TSR_ST_0_1 = in_TSR_ST_0[0];
   assign out_CSR_TI_0[0] = SK9822_0_out_CSR_TI;
