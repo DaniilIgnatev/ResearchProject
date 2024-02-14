@@ -90,7 +90,7 @@ set_property PACKAGE_PIN T14 [get_ports P66]\
 set_property IOSTANDARD LVCMOS33 [get_ports P67]\
 set_property PACKAGE_PIN Y14 [get_ports P67]\
 set_property IOSTANDARD LVCMOS33 [get_ports P68]\
-set_property PACKAGE_PIN T15 [get_ports P68]\
+set_property PACKAGE_PIN T15 [get_ports P68]
 
 * You can also find this text in "Hardware/VHDL/SK9822_ZTurn_30x2LEDs/SK9822_ZTurn.srcs/constrs_1/new/constrants.xdc" file.
 * Return to the block design and create an output port with name "P67", pressing Ctrl+K.
