@@ -137,6 +137,9 @@ To get a hardware design, which you can use in Vitis as a hardware platform you 
 
 ## Software
 
+Arduino folder contains sketches and libraries for LED control.
+PS folder contains AXI4 driver for SK9822 and several example projects source files.
+
 ## Software + Hardware
 
 This folder already contains a prepaired set of projects as a Vitis solution, which you can open and study. However, as with Vivado, Vitis doesn't allow do compile a project which is previously set up for another PC. You should follow these steps to replicate the project for yourself:
