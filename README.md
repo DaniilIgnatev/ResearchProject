@@ -7,9 +7,9 @@ It has the following structure:
     * Demonstration
     * Export
     * UML VP Project
-    * VHDL modules
+    * HDL modules
 * Hardware
-    * VHDL
+    * HDL
         * HLS_tests
         * SK9822
         * SK9822_AXI4_30
@@ -35,7 +35,7 @@ Export folder contains images of UML models and algorithms.
 
 UML VP Project describes the architecture of hardware and system functionality in general. 
 
-VHDL modules folder includes word documents for each of Verilog modules in the Vivado project.
+HDL modules folder includes word documents for each of Verilog modules in the Vivado project.
 
 Registers.docx file documents memory-mapped interface of the controller.
 
@@ -54,7 +54,7 @@ Vivado quite often does not allow to synthesise a project created on another com
 * When you need to select the part, choose the package "clg400" and Speed "-1", then you can easily find the part "xc7z020clg400-1" and select it. Press "Next".
 * Check out the summary and press "Finish".
 * Go to "IP Catalog", do right click on existing repositories and select "Add Repository" from the drop-down list.
-* Navigate to the repository directory and go down to "Hardware/VHDL". Click "Select" and then "OK". Controller's IP cores will be added to your setup.
+* Navigate to the repository directory and go down to "Hardware/HDL". Click "Select" and then "OK". Controller's IP cores will be added to your setup.
 * Create a new empty block design with any name.
 * Add "ZynqQ7 Processing System" IP to the block design.
 * Click "Run Block Automation" sugggestion at the top of the design.
@@ -92,7 +92,7 @@ set_property PACKAGE_PIN Y14 [get_ports P67]\
 set_property IOSTANDARD LVCMOS33 [get_ports P68]\
 set_property PACKAGE_PIN T15 [get_ports P68]
 
-* You can also find this text in "Hardware/VHDL/SK9822_ZTurn_30x2LEDs/SK9822_ZTurn.srcs/constrs_1/new/constrants.xdc" file.
+* You can also find this text in "Hardware/HDL/SK9822_ZTurn_30x2LEDs/SK9822_ZTurn.srcs/constrs_1/new/constrants.xdc" file.
 * Return to the block design and create an output port with name "P67", pressing Ctrl+K.
 * Connect "SCLK" output of "SK9822_AXI4_30_0" to the port "P67".
 * Create an output port with name "P61", pressing Ctrl+K.
@@ -146,7 +146,7 @@ This folder already contains a prepaired set of projects as a Vitis solution, wh
 * Click "Create Platform Component".
 * Select a default name and click "Next".
 * Select "Hardware Design" and click "Browse".
-* In the dialog window open "Hardware/VHDL/SK9822_ZTurn_30x2LEDs/design_main_wrapper.xsa" file and click "Next".
+* In the dialog window open "Hardware/HDL/SK9822_ZTurn_30x2LEDs/design_main_wrapper.xsa" file and click "Next".
 * After a while the app will update configuration and detect the processor, just click "Next" and the "Finish".
 * Open "Flow" window in Vitis and select component "platform".
 * Run "Build" action.
