@@ -75,23 +75,24 @@ Now we need to add IO definitions to the project:
 * Create XDC file with name "constraints", click "OK", then "Finish".
 * Open the "constraints.xdc" file and place the following text into it:
 
-set_property IOSTANDARD LVCMOS33 [get_ports P61]
-set_property PACKAGE_PIN P14 [get_ports P61]
-set_property IOSTANDARD LVCMOS33 [get_ports P62]
-set_property PACKAGE_PIN C20 [get_ports P62]
-set_property IOSTANDARD LVCMOS33 [get_ports P63]
-set_property PACKAGE_PIN U15 [get_ports P63]
-set_property IOSTANDARD LVCMOS33 [get_ports P64]
-set_property PACKAGE_PIN B20 [get_ports P64]
-set_property IOSTANDARD LVCMOS33 [get_ports P65]
-set_property PACKAGE_PIN W14 [get_ports P65]
-set_property IOSTANDARD LVCMOS33 [get_ports P66]
-set_property PACKAGE_PIN T14 [get_ports P66]
-set_property IOSTANDARD LVCMOS33 [get_ports P67]
-set_property PACKAGE_PIN Y14 [get_ports P67]
-set_property IOSTANDARD LVCMOS33 [get_ports P68]
-set_property PACKAGE_PIN T15 [get_ports P68]
+set_property IOSTANDARD LVCMOS33 [get_ports P61]\
+set_property PACKAGE_PIN P14 [get_ports P61]\
+set_property IOSTANDARD LVCMOS33 [get_ports P62]\
+set_property PACKAGE_PIN C20 [get_ports P62]\
+set_property IOSTANDARD LVCMOS33 [get_ports P63]\
+set_property PACKAGE_PIN U15 [get_ports P63]\
+set_property IOSTANDARD LVCMOS33 [get_ports P64]\
+set_property PACKAGE_PIN B20 [get_ports P64]\
+set_property IOSTANDARD LVCMOS33 [get_ports P65]\
+set_property PACKAGE_PIN W14 [get_ports P65]\
+set_property IOSTANDARD LVCMOS33 [get_ports P66]\
+set_property PACKAGE_PIN T14 [get_ports P66]\
+set_property IOSTANDARD LVCMOS33 [get_ports P67]\
+set_property PACKAGE_PIN Y14 [get_ports P67]\
+set_property IOSTANDARD LVCMOS33 [get_ports P68]\
+set_property PACKAGE_PIN T15 [get_ports P68]\
 
+* You can also find this text in "Hardware/VHDL/SK9822_ZTurn_30x2LEDs/SK9822_ZTurn.srcs/constrs_1/new/constrants.xdc" file.
 * Return to the block design and create an output port with name "P67", pressing Ctrl+K.
 * Connect "SCLK" output of "SK9822_AXI4_30_0" to the port "P67".
 * Create an output port with name "P61", pressing Ctrl+K.
