@@ -1,0 +1,8 @@
+@software{Daniil_Ignatev_Research_Project_Controlling_LED_chains_with_FPGA},
+  author = {Daniil Ignatev},
+  month = {02},
+  title = {{Controlling LED chains with FPGA}},
+  url = {https://github.com/DaniilIgnatev/ResearchProject},
+  version = {1.0.0},
+  year = {2024}
+}
