@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Product Version: Vivado v2023.2.1 (64-bit)                              -->
+<!-- Product Version: Vivado v2023.2 (64-bit)                              -->
 <!--                                                                         -->
 <!-- Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.                   -->
 <!-- Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.   -->
 
-<Project Product="Vivado" Version="7" Minor="65" Path="C:/Users/Daniil/Desktop/ResearchProject/Hardware/VHDL/SK9822_ZTurn_30x2LEDs/SK9822_ZTurn.xpr">
+<Project Product="Vivado" Version="7" Minor="65" Path="C:/Users/Ignatev/Documents/Projects/Fork/ResearchProject/Hardware/HDL/SK9822_ZTurn_30x2LEDs/SK9822_ZTurn.xpr">
   <DefaultLaunch Dir="$PRUNDIR"/>
   <Configuration>
     <Option Name="Id" Val="6e57bba6dc9f434ba833ab5c3576feba"/>
@@ -49,6 +49,7 @@
     <Option Name="ProjectType" Val="Default"/>
     <Option Name="IPRepoPath" Val="e:/ResarchProject/Vivado_Projects"/>
     <Option Name="IPRepoPath" Val="$PPRDIR/../../VHDL"/>
+    <Option Name="IPRepoPath" Val="$PPRDIR/../../HDL"/>
     <Option Name="IPOutputRepo" Val="$PCACHEDIR/ip"/>
     <Option Name="IPDefaultOutputPath" Val="$PGENDIR/sources_1"/>
     <Option Name="IPCachePermission" Val="read"/>

@@ -4,7 +4,7 @@
 
 set TIME_start [clock seconds] 
 namespace eval ::optrace {
-  variable script "C:/Users/Daniil/Desktop/ResearchProject/Vivado_Projects/SK9822_AXI4_30/edit_SK9822_AXI4_30_v1_0.runs/synth_1/SK9822_AXI4_30_v1_0.tcl"
+  variable script "C:/Users/Ignatev/Documents/Projects/Fork/ResearchProject/Hardware/HDL/SK9822_AXI4_30/edit_SK9822_AXI4_30_v1_0.runs/synth_1/SK9822_AXI4_30_v1_0.tcl"
   variable category "vivado_synth"
 }
 
@@ -70,16 +70,11 @@ proc create_report { reportName command } {
   }
 }
 OPTRACE "synth_1" START { ROLLUP_AUTO }
-set_param checkpoint.writeSynthRtdsInDcp 1
-set_param synth.incrementalSynthesisCache C:/Users/Daniil/AppData/Roaming/Xilinx/Vivado/.Xil/Vivado-3872-Daniil-Nuc/incrSyn
-set_msg_config -id {HDL-1065} -limit 10000
-set_msg_config -id {Synth 8-256} -limit 10000
-set_msg_config -id {Synth 8-638} -limit 10000
-set_msg_config  -id {17-179}  -suppress 
-set_msg_config  -id {17-179}  -suppress 
-set_msg_config  -id {17-179}  -suppress 
-set_msg_config  -id {17-179}  -suppress 
-set_msg_config  -id {17-179}  -suppress 
+set_msg_config  -id {IP_Flow 19-11780}  -string {{CRITICAL WARNING: [IP_Flow 19-11780] Skipping module reference component xilinx.com:module_ref:BinaryColors_Transmitter:1.0 found in user repository c:/Users/Ignatev/Documents/Projects/Fork/ResearchProject/Vivado_Projects}}  -suppress 
+set_msg_config  -id {IP_Flow 19-1681}  -string {{CRITICAL WARNING: [IP_Flow 19-1681] Failed to reload user IP repository 'c:/Users/Daniil/Desktop/ResearchProject/Vivado_Projects/SK9822_AXI4_30/SK9822_AXI4_30_1_0'. ''c:/Users/Daniil/Desktop/ResearchProject/Vivado_Projects/SK9822_AXI4_30/SK9822_AXI4_30_1_0' is not valid: Path is contained within another repository.'}}  -suppress 
+set_msg_config  -id {IP_Flow 19-1681}  -string {{CRITICAL WARNING: [IP_Flow 19-1681] Failed to reload user IP repository 'c:/Users/Ignatev/Documents/Projects/Fork/ResearchProject/Vivado_Projects/SK9822_AXI4_30/SK9822_AXI4_30_1_0'. ''c:/Users/Ignatev/Documents/Projects/Fork/ResearchProject/Vivado_Projects/SK9822_AXI4_30/SK9822_AXI4_30_1_0' is not valid: Path is contained within another repository.'}}  -suppress 
+set_msg_config  -id {IP_Flow 19-530}  -string {{CRITICAL WARNING: [IP_Flow 19-530] File Group 'xilinx_softwaredriver (Software Driver)': Component file 'drivers/SK9822_AXI4_30_v1_0/src/Makefile' (c:/Users/Ignatev/Documents/Projects/Fork/ResearchProject/Vivado_Projects/SK9822_AXI4_30/SK9822_AXI4_30_1_0/drivers/SK9822_AXI4_30_v1_0/src/Makefile) does not exist.}}  -suppress 
+set_msg_config  -id {IP_Flow 19-11780}  -string {{CRITICAL WARNING: [IP_Flow 19-11780] Skipping module reference component xilinx.com:module_ref:SK9822:1.0 found in user repository c:/Users/Ignatev/Documents/Projects/Fork/ResearchProject/Vivado_Projects}}  -suppress 
 set_msg_config  -id {17-179}  -suppress 
 set_msg_config  -id {17-179}  -suppress 
 set_msg_config  -id {17-179}  -suppress 
@@ -92,36 +87,35 @@ create_project -in_memory -part xc7z020clg400-1
 set_param project.singleFileAddWarning.threshold 0
 set_param project.compositeFile.enableAutoGeneration 0
 set_param synth.vivado.isSynthRun true
-set_property webtalk.parent_dir C:/Users/Daniil/Desktop/ResearchProject/Vivado_Projects/SK9822_AXI4_30/edit_SK9822_AXI4_30_v1_0.cache/wt [current_project]
-set_property parent.project_path C:/Users/Daniil/Desktop/ResearchProject/Vivado_Projects/SK9822_AXI4_30/edit_SK9822_AXI4_30_v1_0.xpr [current_project]
+set_property webtalk.parent_dir C:/Users/Ignatev/Documents/Projects/Fork/ResearchProject/Hardware/HDL/SK9822_AXI4_30/edit_SK9822_AXI4_30_v1_0.cache/wt [current_project]
+set_property parent.project_path C:/Users/Ignatev/Documents/Projects/Fork/ResearchProject/Hardware/HDL/SK9822_AXI4_30/edit_SK9822_AXI4_30_v1_0.xpr [current_project]
 set_property default_lib xil_defaultlib [current_project]
 set_property target_language Verilog [current_project]
 set_property ip_repo_paths {
-  c:/Users/Daniil/Desktop/ResearchProject/Vivado_Projects/SK9822_AXI4_30/SK9822_AXI4_30_1_0
-  c:/Users/Daniil/Desktop/ResearchProject/Vivado_Projects/SK9822_30LEDs_1_0
-  c:/Users/Daniil/Desktop/ResearchProject/Vivado_Projects/ip_repo/myip_1_0
-  c:/Users/Daniil/Desktop/ResearchProject/Vivado_Projects
+  c:/Users/Ignatev/Documents/Projects/Fork/ResearchProject/Hardware/HDL/SK9822_AXI4_30/SK9822_AXI4_30_1_0
+  c:/Users/Ignatev/Documents/Projects/Fork/ResearchProject/Hardware/HDL/SK9822_30LEDs_1_0
+  c:/Users/Ignatev/Documents/Projects/Fork/ResearchProject/Hardware/HDL/ip_repo/myip_1_0
+  c:/Users/Ignatev/Documents/Projects/Fork/ResearchProject/Hardware/Vivado_Projects
 } [current_project]
 update_ip_catalog
-set_property ip_output_repo c:/Users/Daniil/Desktop/ResearchProject/Vivado_Projects/SK9822_AXI4_30/edit_SK9822_AXI4_30_v1_0.cache/ip [current_project]
+set_property ip_output_repo c:/Users/Ignatev/Documents/Projects/Fork/ResearchProject/Hardware/HDL/SK9822_AXI4_30/edit_SK9822_AXI4_30_v1_0.cache/ip [current_project]
 set_property ip_cache_permissions {read write} [current_project]
 OPTRACE "Creating in-memory project" END { }
 OPTRACE "Adding files" START { }
 read_verilog -library xil_defaultlib {
-  C:/Users/Daniil/Desktop/ResearchProject/Vivado_Projects/SK9822/SK9822.srcs/sources_1/new/BinaryColors_Transmitter.v
-  C:/Users/Daniil/Desktop/ResearchProject/Vivado_Projects/SK9822/SK9822.srcs/sources_1/new/Bytes_Transmitter.v
-  C:/Users/Daniil/Desktop/ResearchProject/Vivado_Projects/SK9822/SK9822.srcs/sources_1/new/EndBytes_Transmitter.v
-  C:/Users/Daniil/Desktop/ResearchProject/Vivado_Projects/SK9822/SK9822.srcs/sources_1/new/FrequencyDivider.v
-  C:/Users/Daniil/Desktop/ResearchProject/Vivado_Projects/SK9822/SK9822.srcs/sources_1/new/FullColors_Transmitter.v
-  C:/Users/Daniil/Desktop/ResearchProject/Vivado_Projects/SK9822/SK9822.srcs/sources_1/new/SK9822.v
-  C:/Users/Daniil/Desktop/ResearchProject/Vivado_Projects/SK9822/SK9822.srcs/sources_1/new/SPI.v
-  C:/Users/Daniil/Desktop/ResearchProject/Vivado_Projects/SK9822/SK9822.srcs/sources_1/new/StartBytes_Transmitter.v
+  C:/Users/Ignatev/Documents/Projects/Fork/ResearchProject/Hardware/HDL/SK9822/SK9822.srcs/sources_1/new/BinaryColors_Transmitter.v
+  C:/Users/Ignatev/Documents/Projects/Fork/ResearchProject/Hardware/HDL/SK9822/SK9822.srcs/sources_1/new/Bytes_Transmitter.v
+  C:/Users/Ignatev/Documents/Projects/Fork/ResearchProject/Hardware/HDL/SK9822/SK9822.srcs/sources_1/new/EndBytes_Transmitter.v
+  C:/Users/Ignatev/Documents/Projects/Fork/ResearchProject/Hardware/HDL/SK9822/SK9822.srcs/sources_1/new/FullColors_Transmitter.v
+  C:/Users/Ignatev/Documents/Projects/Fork/ResearchProject/Hardware/HDL/SK9822/SK9822.srcs/sources_1/new/SK9822.v
+  C:/Users/Ignatev/Documents/Projects/Fork/ResearchProject/Hardware/HDL/SK9822/SK9822.srcs/sources_1/new/SPI.v
+  C:/Users/Ignatev/Documents/Projects/Fork/ResearchProject/Hardware/HDL/SK9822/SK9822.srcs/sources_1/new/StartBytes_Transmitter.v
 }
 read_verilog -library "" {
-  C:/Users/Daniil/Desktop/ResearchProject/Vivado_Projects/SK9822_AXI4_30/SK9822_AXI4_30_1_0/hdl/SK9822_AXI4_30_v1_0_LEDs_AXI.v
-  C:/Users/Daniil/Desktop/ResearchProject/Vivado_Projects/SK9822_AXI4_30/SK9822_AXI4_30_1_0/hdl/SK9822_AXI4_30_v1_0_RGB_AXI.v
-  C:/Users/Daniil/Desktop/ResearchProject/Vivado_Projects/SK9822_AXI4_30/SK9822_AXI4_30_1_0/hdl/SK9822_AXI4_30_v1_0_Settings_AXI.v
-  C:/Users/Daniil/Desktop/ResearchProject/Vivado_Projects/SK9822_AXI4_30/SK9822_AXI4_30_1_0/hdl/SK9822_AXI4_30_v1_0.v
+  C:/Users/Ignatev/Documents/Projects/Fork/ResearchProject/Hardware/HDL/SK9822_AXI4_30/SK9822_AXI4_30_1_0/hdl/SK9822_AXI4_30_v1_0_LEDs_AXI.v
+  C:/Users/Ignatev/Documents/Projects/Fork/ResearchProject/Hardware/HDL/SK9822_AXI4_30/SK9822_AXI4_30_1_0/hdl/SK9822_AXI4_30_v1_0_RGB_AXI.v
+  C:/Users/Ignatev/Documents/Projects/Fork/ResearchProject/Hardware/HDL/SK9822_AXI4_30/SK9822_AXI4_30_1_0/hdl/SK9822_AXI4_30_v1_0_Settings_AXI.v
+  C:/Users/Ignatev/Documents/Projects/Fork/ResearchProject/Hardware/HDL/SK9822_AXI4_30/SK9822_AXI4_30_1_0/hdl/SK9822_AXI4_30_v1_0.v
 }
 OPTRACE "Adding files" END { }
 # Mark all dcp files as not used in implementation to prevent them from being

@@ -7,7 +7,7 @@
       "name": "design_main",
       "rev_ctrl_bd_flag": "RevCtrlBdOff",
       "synth_flow_mode": "Hierarchical",
-      "tool_version": "2023.2.1"
+      "tool_version": "2023.2"
     },
     "design_tree": {
       "processing_system7_0": "",
@@ -1182,7 +1182,7 @@
         "components": {
           "xbar": {
             "vlnv": "xilinx.com:ip:axi_crossbar:2.1",
-            "ip_revision": "31",
+            "ip_revision": "30",
             "xci_name": "design_main_xbar_0",
             "xci_path": "ip\\design_main_xbar_0\\design_main_xbar_0.xci",
             "inst_hier_path": "ps7_0_axi_periph/xbar",
