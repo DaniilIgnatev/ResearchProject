@@ -17,7 +17,7 @@
 // ICSR
 #define SK9822_AXI4_CSR_SLV_REG3_OFFSET 12
 
-#define LED_number 30    // The number of LEDs in chain. Must be in range 1..256
+#define LED_number 30    // The number of LEDs in chain.
 #define max_brightness 8 // The maximum allowed brightness.
 
 /**************************** Type Definitions *****************************/
@@ -27,72 +27,70 @@ typedef enum
 {
   binary, // Operation in turn on/off mode
   full    // Operation in 0...255 mode
-}
-ColorSourcesEnum;
+} ColorSourcesEnum;
 
 // Brightness mode selection options
 typedef enum
 {
-  global,     // global brightness is used for all LEDs
-  individual  // each LED uses its own brightness value
-}
-BrightnessSourcesEnum;
+  global,    // global brightness is used for all LEDs
+  individual // each LED uses its own brightness value
+} BrightnessSourcesEnum;
 
 // Settings structure
 typedef struct
 {
-    union
+  union
+  {
+    volatile uint32_t reg;
+
+    struct
     {
-        volatile uint32_t reg;
+      volatile uint32_t TI : 1;    // Transmission status
+      volatile uint32_t INSEL : 1; // Color source selection
+      volatile uint32_t LOOP : 1;  // Continuous transmission option
+      uint32_t : 29;
+    } bit;
+  } CSR;
 
-        struct
-        {
-            volatile uint32_t TI : 1;    // Transmission status
-            volatile uint32_t INSEL : 1; // Color source selection
-            volatile uint32_t LOOP : 1;  // Continuous transmission option
-            uint32_t : 29;
-        } bit;
-    } CSR;
+  union
+  {
+    volatile uint32_t reg;
 
-    union
+    struct
     {
-        volatile uint32_t reg;
+      volatile uint32_t ST : 1; // Start transmission command
+      uint32_t : 6;
+      volatile uint32_t SYNC_ST : 1; // Start synchronous transmission command
+      uint32_t : 24;
+    } bit;
+  } TSR;
 
-        struct
-        {
-            volatile uint32_t ST : 1; // Start transmission command
-            uint32_t : 6;
-            volatile uint32_t SYNC_ST : 1; // Start synchronous transmission command
-            uint32_t : 24;
-        } bit;
-    } TSR;
+  union
+  {
+    volatile uint32_t reg;
 
-    union
+    struct
     {
-        volatile uint32_t reg;
+      volatile uint32_t INSEL : 1; // Global brightness input selection in full colored mode
+      uint32_t : 2;
+      volatile uint32_t GB : 5; // Global brightness value
+      uint32_t : 24;
+    } bit;
+  } GBCR;
 
-        struct
-        {
-            volatile uint32_t INSEL : 1; // Global brightness input selection in full colored mode
-            uint32_t : 2;
-            volatile uint32_t GB : 5; // Global brightness value
-            uint32_t : 24;
-        } bit;
-    } GBCR;
+  union
+  {
+    volatile uint32_t reg;
 
-    union
+    struct
     {
-        volatile uint32_t reg;
-
-        struct
-        {
-            volatile uint32_t TIEN : 1; // Transmission interrupt enable
-            volatile uint32_t TI : 1;   // Transmission interrupt status
-            volatile uint32_t CTI : 1;  // Clear transmission interrupt
-            volatile uint32_t STI : 1;  // Set transmission interrupt
-            uint32_t : 28;
-        } bit;
-    } ICSR;
+      volatile uint32_t TIEN : 1; // Transmission interrupt enable
+      volatile uint32_t TI : 1;   // Transmission interrupt status
+      volatile uint32_t CTI : 1;  // Clear transmission interrupt
+      volatile uint32_t STI : 1;  // Set transmission interrupt
+      uint32_t : 28;
+    } bit;
+  } ICSR;
 } Settings_Type;
 
 // Arbitrary LED structure
@@ -112,20 +110,20 @@ typedef union
 
 typedef struct
 {
-	uintptr_t Settings_BaseAddress;
-    uintptr_t LED_BaseAddress;
-	uintptr_t R_BaseAddress;
-	uintptr_t G_BaseAddress;
-	uintptr_t B_BaseAddress;
+  uintptr_t Settings_BaseAddress;
+  uintptr_t LED_BaseAddress;
+  uintptr_t R_BaseAddress;
+  uintptr_t G_BaseAddress;
+  uintptr_t B_BaseAddress;
 } SK9822_BaseAddresses;
 
 typedef struct
 {
-	ColorSourcesEnum colorSource;
-	BrightnessSourcesEnum brightnessSource;
-	uint8_t global_brightness;
-	bool transmission_interrupt_enable;
-	bool continuous_mode;
+  ColorSourcesEnum colorSource;
+  BrightnessSourcesEnum brightnessSource;
+  uint8_t global_brightness;
+  bool transmission_interrupt_enable;
+  bool continuous_mode;
 } SK9822_TransmissionOptions;
 
 LED_Type init_SK9822_LEDType(uint32_t brightness, uint32_t R, uint32_t G, uint32_t B);
@@ -187,11 +185,11 @@ void SK9822_set_B(uintptr_t B_BaseAddress, uint8_t id, bool on_off);
 SK9822_BaseAddresses init_SK9822_BaseAddressesType(uintptr_t Settings_BaseAddress, uintptr_t LED_BaseAddress, uintptr_t R_BaseAddress, uintptr_t G_BaseAddress, uintptr_t B_BaseAddress);
 
 SK9822_TransmissionOptions init_SK9822_TransmissionOptionsType(
-        ColorSourcesEnum colorSource,
-        BrightnessSourcesEnum brightnessSource,
-        uint8_t global_brightness,
-        bool transmission_interrupt_enable,
-        bool continuous_mode);
+    ColorSourcesEnum colorSource,
+    BrightnessSourcesEnum brightnessSource,
+    uint8_t global_brightness,
+    bool transmission_interrupt_enable,
+    bool continuous_mode);
 
 void SK9822_transmission_setup(SK9822_BaseAddresses addresses, SK9822_TransmissionOptions options);
 
