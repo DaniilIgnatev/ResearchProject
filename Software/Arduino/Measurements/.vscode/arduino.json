@@ -1,5 +1,5 @@
 {
     "board": "arduino:avr:uno",
     "port": "COM9",
-    "sketch": "Blink_copy_20240229124159.ino"
+    "sketch": "Measurements.ino"
 }
