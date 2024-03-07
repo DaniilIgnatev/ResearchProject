@@ -59,12 +59,12 @@ Vivado quite often does not allow to synthesise a project created on another com
 * Add "ZynqQ7 Processing System" IP to the block design.
 * Click "Run Block Automation" sugggestion at the top of the design.
 * Keep the default settings and click "OK".
-* Click "Run Connection Automation" suggestion at the top of the design.
-* Select all interfaces to automate at the left side. Click "OK".
 * Open "processing system7_0", go to "Presets" and select "Apply Configuration".
 * Select configuration "Hardware/HDL/SK9822_ZTurn_30x2LEDs/SK9822_ZTurn.tcl".
 * Add "SK9822_AXI4_30_v1.0" to the block design.
 * Add another "SK9822_AXI4_30_v1.0" to the block design.
+* Click "Run Connection Automation" suggestion at the top of the design.
+* Select all interfaces to automate at the left side. Click "OK".
 * Right-click on the block design and select "Regenerate Layout".
 * Connect "RESETN" of "SK9822_AXI4_30_0" and "SK9822_AXI4_30_1" to "FCLK_RESET0_N" of "processing system7_0".
 * Open "processing system7_0" IP customisation and go to "Clock Configuration".
