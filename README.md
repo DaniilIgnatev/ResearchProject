@@ -54,11 +54,13 @@ Vivado quite often does not allow to synthesise a project created on another com
 * When you need to select the part, choose the package "clg400" and Speed "-1", then you can easily find the part "xc7z020clg400-1" and select it. Press "Next".
 * Check out the summary and press "Finish".
 * Go to "IP Catalog", do right click on existing repositories and select "Add Repository" from the drop-down list.
-* Navigate to the repository directory and go down to "Hardware/HDL". Click "Select" and then "OK". Controller's IP cores will be added to your setup.
+* Navigate to the repository directory and go down to "Hardware/HDL/SK9822_AXI4_30". Click "Select" and then "OK". Controller's IP cores will be added to your setup.
 * Create a new empty block design with any name.
 * Add "ZynqQ7 Processing System" IP to the block design.
 * Click "Run Block Automation" sugggestion at the top of the design.
 * Keep the default settings and click "OK".
+* Open "processing system7_0", go to "Presets" and select "Apply Configuration".
+* Select configuration "Hardware/HDL/SK9822_ZTurn_30x2LEDs/SK9822_ZTurn.tcl".
 * Add "SK9822_AXI4_30_v1.0" to the block design.
 * Add another "SK9822_AXI4_30_v1.0" to the block design.
 * Click "Run Connection Automation" suggestion at the top of the design.
@@ -149,7 +151,7 @@ This folder already contains a prepaired set of projects as a Vitis solution, wh
 * Click "Create Platform Component".
 * Select a default name and click "Next".
 * Select "Hardware Design" and click "Browse".
-* In the dialog window open "Hardware/HDL/SK9822_ZTurn_30x2LEDs/design_main_wrapper.xsa" file and click "Next".
+* In the dialog window open "Hardware/HDL/SK9822_ZTurn_30x2LEDs/design_1_wrapper.xsa" file and click "Next".
 * After a while the app will update configuration and detect the processor, just click "Next" and the "Finish".
 * Open "Flow" window in Vitis and select component "platform".
 * Run "Build" action.
